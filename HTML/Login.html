@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login – ZOON Pet Shop</title>
+    <link rel="icon" href="/icon.jpg" type="image/jpg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="/CSS/Style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span>📞 +62 895 - 3664 - 6043 5</span>
+            <span>⏰ Buka: Senin–Sabtu, 08.00–20.00</span>
+        </div>
+
+        <nav>
+            <a href="Beranda.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <div class="logo-text">
+                    <span>ZOON</span>
+                    <span>Pet Shop</span>
+                </div>
+            </a>
+
+            <input type="checkbox" id="navtoggle" class="navtoggle">
+
+            <ul class="nav-links">
+                <li><a href="Beranda.html">Beranda</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="Layanan.html">Layanan</a></li>
+                <li><a href="Grooming.html">Grooming</a></li>
+                <li><a href="Klinik.html">Klinik</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Kontak.html">Kontak</a></li>
+                <li><a href="Tentang.html">Tentang</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="Shop.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <a href="Login.html" class="btn-nav-login">
+                    <i class="fas fa-user"></i> 
+                    <span class="login-text">Login</span>
+                </a>
+                <label for="navtoggle" class="list-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ── LOGIN PAGE ── -->
+        <section class="login-page">
+            <div class="login-wrapper">
+
+                <!-- PANEL KIRI -->
+                <div class="login-panel-left">
+                    <div class="panel-deco-circle-1"></div>
+                    <div class="panel-deco-circle-2"></div>
+
+                    <div class="panel-hero">
+                        <div class="panel-emoji-circle">🐾</div>
+                        <h2>Selamat<br>Datang<br>Kembali!</h2>
+                        <p>Masuk ke akunmu dan nikmati pengalaman belanja produk hewan peliharaan terbaik.</p>
+                    </div>
+
+                    <div class="panel-features">
+                        <div class="panel-feature">
+                            <div class="panel-feature-icon">🛒</div>
+                            Lacak pesanan dengan mudah
+                        </div>
+                        <div class="panel-feature">
+                            <div class="panel-feature-icon">⭐</div>
+                            Simpan produk favorit
+                        </div>
+                        <div class="panel-feature">
+                            <div class="panel-feature-icon">🎁</div>
+                            Akses promo eksklusif member
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL KANAN (FORM) -->
+                <div class="login-panel-right">
+                    <h2 class="login-title">Masuk Akun</h2>
+                    <p class="login-subtitle">Belum punya akun? <a href="Register.html">Daftar sekarang</a></p>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="nama@email.com"
+                                autocomplete="email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="password" name="password" class="form-input"
+                                placeholder="Masukkan password" autocomplete="current-password" />
+                            <button type="button" class="toggle-pass" onclick="togglePassword()">
+                                <i class="fas fa-eye" id="eye-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember" />
+                            Ingat saya
+                        </label>
+                        <a href="#" class="forgot-link">Lupa password?</a>
+                    </div>
+
+                    <button type="button" class="btn-login" onclick="alert('Login berhasil!')">
+                        <i class="fas fa-sign-in-alt"></i> &nbsp;Masuk Sekarang
+                    </button>
+
+                    <div class="login-divider">
+                        <hr /><span>atau masuk dengan</span>
+                        <hr />
+                    </div>
+
+                    <div class="social-login-btns">
+                        <a href="#" class="btn-social-login">
+                            <i class="fab fa-google"></i> Google
+                        </a>
+                        <a href="#" class="btn-social-login">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZOON</title>
+    <link rel="icon" href="/icon.jpg" type="image/jpg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/Style.css" />
+</head>
+
+<body>
+    <!-- ── TOP BAR ── -->
+    <header>
+        <div class="topbar">
+            <span>📞 +62 895 - 3664 - 6043 5</span>
+            <span>⏰ Buka: Senin–Sabtu, 08.00–20.00</span>
+        </div>
+
+        <nav>
+            <a href="Beranda.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <div class="logo-text">
+                    <span>ZOON</span>
+                    <span>Pet Shop</span>
+                </div>
+            </a>
+
+            <input type="checkbox" id="navtoggle" class="navtoggle">
+
+            <ul class="nav-links">
+                <li><a href="Beranda.html">Beranda</a></li>
+                <li><a href="Shop.html" class="active">Shop</a></li>
+                <li><a href="Layanan.html">Layanan</a></li>
+                <li><a href="Grooming.html">Grooming</a></li>
+                <li><a href="Klinik.html">Klinik</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Kontak.html">Kontak</a></li>
+                <li><a href="Tentang.html">Tentang</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="Shop.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <a href="Login.html" class="btn-nav-login">
+                    <i class="fas fa-user"></i> 
+                    <span class="login-text">Login</span>
+                </a>
+                <label for="navtoggle" class="list-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <!-- ── PAGE HERO ── -->
+        <div class="page-hero">
+            <div class="page-hero-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Beranda</a>
+                    <i class="fas fa-chevron-right" style="font-size:10px;"></i>
+                    <span>Shop</span>
+                </div>
+                <h1>Toko<br>Online Kami</h1>
+                <p>Temukan ribuan produk terbaik untuk hewan peliharaan Anda — makanan, mainan, aksesoris, dan perlengkapan
+                    lengkap.</p>
+            </div>
+            <div class="page-hero-icon">🛒</div>
+        </div>
+
+        <!-- ── SHOP ── -->
+        <section class="shop-section">
+
+            <!-- PROMO BANNER -->
+            <div class="promo-banner">
+                <div class="promo-banner-text">
+                    <h3>🎉 Promo Spesial Bulan Ini!</h3>
+                    <p>Diskon hingga 30% untuk semua produk makanan premium. Gratis ongkir untuk pembelian di atas Rp
+                        150.000.</p>
+                </div>
+                <div class="promo-banner-icon">🎊</div>
+            </div>
+
+            <div class="shop-wrapper">
+
+                <!-- ── SIDEBAR FILTER(semua filter di samping kiri) ── -->
+                <aside class="shop-sidebar">
+
+                    <div class="filter-widget">
+                        <h4><i class="fas fa-th-large"></i> Kategori</h4>
+                        <ul class="filter-kategori">
+                            <li><a href="#" class="active">Semua Produk <span>48</span></a></li>
+                            <li><a href="#">Makanan hewan <span>14</span></a></li>
+                            <li><a href="#">Aksesoris <span>12</span></a></li>
+                            <li><a href="#">Snack &amp; Treat <span>8</span></a></li>
+                            <li><a href="#">Mainan <span>7</span></a></li>
+                            <li><a href="#">Toilet <span>5</span></a></li>
+                            <li><a href="#">Kandang <span>2</span></a></li>
+                        </ul>
+                    </div>
+
+
+                    <!-- Note: untuk filter akan berupa tampilan saja karena belum di pasangkan dengan javascript -->
+                    <div class="filter-widget">
+                        <h4><i class="fas fa-tag"></i> Rentang Harga</h4>
+                        <div class="price-range-labels">
+                            <span>Rp 0</span>
+                            <span>Rp 500.000</span>
+                        </div>
+                        <input type="range" class="price-slider" min="0" max="500000" value="500000" />
+                        <div class="price-inputs">
+                            <input type="text" value="Rp 0" placeholder="Min" />
+                            <input type="text" value="Rp 500.000" placeholder="Max" />
+                        </div>
+                    </div>
+
+                    <div class="filter-widget">
+                        <h4><i class="fas fa-star"></i> Rating</h4>
+                        <ul class="rating-filter">
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked />
+                                    <span class="stars-display">★★★★★</span> (5)
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked />
+                                    <span class="stars-display">★★★★☆</span> (4+)
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span class="stars-display">★★★☆☆</span> (3+)
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span class="stars-display">★★☆☆☆</span> (2+)
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-widget">
+                        <h4><i class="fas fa-box"></i> Brand</h4>
+                        <ul class="brand-filter">
+                            <li><label><input type="checkbox" checked /> Royal Canin</label></li>
+                            <li><label><input type="checkbox" checked /> Pro Plan</label></li>
+                            <li><label><input type="checkbox" /> Hill's Science</label></li>
+                            <li><label><input type="checkbox" /> Whiskas</label></li>
+                            <li><label><input type="checkbox" /> Pedigree</label></li>
+                            <li><label><input type="checkbox" /> Drools</label></li>
+                        </ul>
+                        <button class="btn-filter-reset"><i class="fas fa-undo"></i> Reset Filter</button>
+                    </div>
+
+                </aside>
+
+                <!-- ── PRODUK UTAMA ── -->
+                <div class="shop-main">
+
+                    <!-- TOOLBAR -->
+                    <div class="shop-toolbar">
+                        <div class="shop-toolbar-left">
+                            Menampilkan <strong>1–12</strong> dari <strong>48 produk</strong>
+                        </div>
+                        <div class="shop-toolbar-right">
+                            <select class="sort-select">
+                                <option>Urutkan: Terpopuler</option>
+                                <option>Harga: Rendah ke Tinggi</option>
+                                <option>Harga: Tinggi ke Rendah</option>
+                                <option>Rating Tertinggi</option>
+                                <option>Terbaru</option>
+                            </select>
+                            <div class="view-toggle">
+                                <button class="view-btn active" title="Grid"><i class="fas fa-th"></i></button>
+                                <button class="view-btn" title="List"><i class="fas fa-list"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GRID PRODUK -->
+                    <div class="produk-grid">
+
+                        <!-- 1 -->
+                        <div class="produk-card">
+                            <span class="produk-badge terlaris">🔥 Terlaris</span>
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/R-C_Kitten.jpg"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Makanan hewan</div>
+                                <h4>Royal Canin Kitten - wet food 85gr isi 12pcs</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(128 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 285.000</span>
+                                    <span class="harga-coret">Rp 320.000</span>
+                                    <span class="harga-diskon">-11%</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Kitten wet food 85gr isi 12pcs')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                    <!-- Note: ini kode yang akan di pakai nanti setelah uts untuk menyambung ke js dan buat cart cuma karena di minta tanpa js maka kode ini tidak di pakai untuk sekarang  -->
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 2 -->
+                        <div class="produk-card">
+                            <span class="produk-badge baru">✨ Baru</span>
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/Royal-canin-hair-skin-care.webp" alt="Royal Canin Hair & Skin Care Adult dry food 4KG"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Makanan hewan</div>
+                                <h4>Royal Canin Hair & Skin Care Adult - dry food 4KG</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span>(87 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 632.700</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Hair & Skin Care Adult dry food 4KG')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 3 -->
+                        <div class="produk-card">
+                            <span class="produk-badge diskon">🏷️ Diskon 30%</span>
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/Tas Kucing Astronot.webp" alt="Tas kucing astronot"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Aksesoris</div>
+                                <h4>Tas kucing astronot</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(203 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 162.400</span>
+                                    <span class="harga-coret">Rp 232.500</span>
+                                    <span class="harga-diskon">-30%</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'Tas kucing astronot')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 4 -->
+                        <div class="produk-card">
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/Tali_anjing.jfif" alt="tali anjing"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Aksesoris</div>
+                                <h4>Tali anjing - bisa custom nama</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(64 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 25.000</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'Tali anjing - bisa custom nama')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 5 -->
+                        <div class="produk-card">
+                            <span class="produk-badge terlaris">🔥 Terlaris</span>
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/w_mackarel_80.webp" alt="whiskas 80g"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Makanan hewan</div>
+                                <h4>Whiskas Adult 1+ Mackerel Flavour - wet food 80gr</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(156 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 9.000</span>
+                                    <span class="harga-coret">Rp 10.000</span>
+                                    <span class="harga-diskon">-10%</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'Whiskas Adult 1+ Mackerel Flavour-wet food 80gr')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 6 -->
+                        <div class="produk-card">
+                            <span class="produk-badge baru">✨ Baru</span>
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/kandang_hamster.jpeg" alt="kandang_hamster"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Kandang</div>
+                                <h4>Kandang hamster - bonus hamster wheel</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span>(42 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 289.000</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'Kandang hamster - bonus hamster wheel')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 7 -->
+                        <div class="produk-card">
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/Pedigree PRO High Protein Adult Mini & Small Breed.jpeg" alt="pedigree pro high"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Makanan Anjing</div>
+                                <h4>Pedigree PRO High Protein Adult Mini & Small Breed - dry food 1.3KG</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span>(38 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 165.000</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'Pedigree PRO High Protein Adult Mini & Small Breed - dry food 1.3KG')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 8 -->
+                        <div class="produk-card">
+                            <span class="produk-badge diskon">🏷️ Diskon 20%</span>
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/mainan gigitan hewan.webp" alt="mainan gigitan"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Mainan</div>
+                                <h4>Mainan gigitan hewan -  TPR (Thermoplastic Rubber)</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(91 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 7.900</span>
+                                    <span class="harga-coret">Rp 10.000</span>
+                                    <span class="harga-diskon">-20%</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'Tempat Makan Stainless Set')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 9 -->
+                        <div class="produk-card">
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/Royal Canin Regular Fit 32.webp" alt="Royal Canin Regular Fit 32"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Makanan hewan</div>
+                                <h4>Royal Canin Regular Fit 32 - dry food 400gr</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(174 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 47.000</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Regular Fit 32 - dry food 400gr')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 10 -->
+                        <div class="produk-card">
+                            <span class="produk-badge baru">✨ Baru</span>
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/toilet kucing.webp" alt="toilet kucing"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Toilet</div>
+                                <h4> FOCAT Cat Litter Box M20 - toilet untuk Kucing</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span>(29 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 55.000</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'FOCAT Cat Litter Box M20')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 11 -->
+                        <div class="produk-card">
+                            <span class="produk-badge terlaris">🔥 Terlaris</span>
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/alas tidur anjing 1.jpg" alt="alas tidur"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Aksesoris</div>
+                                <h4>Cooling pad - alas tidur anjing sejuk</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(212 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 55.000</span>
+                                    <span class="harga-coret">Rp 65.000</span>
+                                    <span class="harga-diskon">-15%</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'Cooling pad - alas tidur anjing sejuk')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 12 -->
+                        <div class="produk-card">
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="/foto/dog litter box.jpeg" alt="dog litter box"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Toilet</div>
+                                <h4>Dog litter box - toilet untuk anjing</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span>(55 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 60.000</span>
+                                </div>
+                                <button class="btn-keranjang" onclick="addToCart(this, 'Dog litter box - toilet untuk anjing')">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- PAGINATION -->
+                    <div class="shop-pagination">
+                        <a href="#" class="page-btn"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="page-btn active">1</a>
+                        <a href="#" class="page-btn">2</a>
+                        <a href="#" class="page-btn">3</a>
+                        <a href="#" class="page-btn">4</a>
+                        <a href="#" class="page-btn"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+        <h2>Tidak Menemukan<br>Produk yang Dicari?</h2>
+        <p>Hubungi kami dan kami akan membantu menemukan atau memesan produk khusus untuk hewan peliharaan Anda.</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/6281234567890" class="btn-primary">
+                <i class="fab fa-whatsapp"></i> Tanya via WhatsApp
+            </a>
+            <a href="kontak.html" class="btn-light">Hubungi Kami</a>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="Beranda.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                    <div class="logo-text">
+                        <span>ZOON</span>
+                        <span>Pet Shop</span>
+                    </div>
+                </a>
+                <p>Toko hewan peliharaan terpercaya dengan produk berkualitas dan layanan profesional untuk hewan
+                    kesayangan Anda.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/zoon_medan/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h5>Tentang Kami</h5>
+                <ul>
+                    <li><a href="Tentang.html">Profil Perusahaan</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Klinik.html">Klinik Hewan</a></li>
+                    <li><a href="Grooming.html">Grooming</a></li>
+                    <li><a href="Layanan.html">Layanan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Sosial Media</h5>
+                <ul>
+                    <li><i class="fab fa-facebook"></i> <a href="#">zoon_medan</a></li>
+                    <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/zoon_medan/">zoon_medan</a>
+                    </li>
+                    <li><i class="fab fa-tiktok"></i> <a href="#">zoon_medan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Layanan Pelanggan</h5>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +62 895 3664 6043 5</li>
+                    <li><i class="fas fa-envelope"></i> zoon.medan@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Medan, Sumatera Utara</li>
+                    <li><i class="fas fa-clock"></i> Senin–Sabtu: 08.00–20.00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>ZOON &mdash; A Pet Shop &amp; Peliharaan Anda &copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ── CART NOTIFICATION ── -->
+    <div class="cart-notif" id="cartNotif">
+        <i class="fas fa-check-circle"></i>
+        <span id="cartNotifText">Produk ditambahkan!</span>
+    </div>
+</body>
+</html>

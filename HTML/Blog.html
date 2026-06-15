@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZOON</title>
+    <link rel="icon" href="/icon.jpg" type="image/jpg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/Style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span>📞 +62 895 - 3664 - 6043 5</span>
+            <span>⏰ Buka: Senin–Sabtu, 08.00–20.00</span>
+        </div>
+
+        <nav>
+            <a href="Beranda.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <div class="logo-text">
+                    <span>ZOON</span>
+                    <span>Pet Shop</span>
+                </div>
+            </a>
+
+            <input type="checkbox" id="navtoggle" class="navtoggle">
+
+            <ul class="nav-links">
+                <li><a href="Beranda.html">Beranda</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="Layanan.html">Layanan</a></li>
+                <li><a href="Grooming.html">Grooming</a></li>
+                <li><a href="Klinik.html">Klinik</a></li>
+                <li><a href="Blog.html" class="active">Blog</a></li>
+                <li><a href="Kontak.html">Kontak</a></li>
+                <li><a href="Tentang.html">Tentang</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="Shop.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <a href="Login.html" class="btn-nav-login">
+                    <i class="fas fa-user"></i> 
+                    <span class="login-text">Login</span>
+                </a>
+                <label for="navtoggle" class="list-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ── PAGE HERO ── -->
+        <div class="page-hero">
+            <div class="page-hero-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Beranda</a>
+                    <i class="fas fa-chevron-right" style="font-size:10px;"></i>
+                    <span>Blog</span>
+                </div>
+                <h1>Blog &amp;<br>Artikel</h1>
+                <p>Tips, informasi, dan panduan lengkap seputar perawatan hewan peliharaan dari para ahli kami.</p>
+            </div>
+            <div class="page-hero-icon">📝</div>
+        </div>
+
+        <!-- ── BLOG SECTION ── -->
+        <section class="blog-section">
+            <div class="blog-wrapper">
+
+                <!-- KONTEN UTAMA -->
+                <div class="blog-main">
+
+                    <!-- ARTIKEL FEATURED -->
+                    <div class="blog-featured">
+                        <div class="blog-featured-img">
+                            🐾
+                            <span class="featured-tag">⭐ Artikel Pilihan</span>
+                        </div>
+                        <div class="blog-featured-body">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> 15 April 2026</span>
+                                <span><i class="fas fa-user"></i> drh. Budi Santoso</span>
+                                <span><i class="fas fa-clock"></i> 5 menit baca</span>
+                                <span><i class="fas fa-tag"></i> Kesehatan</span>
+                            </div>
+                            <h2>Panduan Lengkap Vaksinasi Anjing dan Kucing: Jadwal, Jenis, dan Manfaatnya</h2>
+                            <p>Vaksinasi adalah salah satu langkah paling penting untuk menjaga kesehatan hewan
+                                peliharaan
+                                Anda. Dengan vaksinasi yang tepat dan terjadwal, hewan peliharaan Anda akan terlindungi
+                                dari
+                                berbagai penyakit berbahaya seperti rabies, distemper, dan parvovirus. Artikel ini
+                                membahas
+                                lengkap jadwal dan jenis vaksin yang dibutuhkan.</p>
+                            <a href="#" class="blog-read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- GRID ARTIKEL -->
+                    <div class="blog-grid">
+
+                        <div class="blog-card">
+                            <div class="blog-card-img" style="background: linear-gradient(135deg, #e8f7f9, #b2dfe4);">
+                                🐱
+                                <span class="card-tag">Grooming</span>
+                            </div>
+                            <div class="blog-card-body">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 10 April 2026</span>
+                                    <span><i class="fas fa-clock"></i> 4 menit</span>
+                                </div>
+                                <h3>7 Cara Merawat Bulu Kucing Agar Selalu Bersih dan Mengkilap</h3>
+                                <p>Bulu kucing yang sehat mencerminkan kondisi tubuh yang baik. Simak tips mudah merawat
+                                    bulu kucing di rumah tanpa perlu ke salon mahal.</p>
+                                <a href="#" class="blog-read-more">Baca <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-card-img" style="background: linear-gradient(135deg, #fff3e0, #ffe0b8);">
+                                🥩
+                                <span class="card-tag">Nutrisi</span>
+                            </div>
+                            <div class="blog-card-body">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 8 April 2026</span>
+                                    <span><i class="fas fa-clock"></i> 6 menit</span>
+                                </div>
+                                <h3>Makanan yang Berbahaya untuk Anjing: Daftar Lengkap yang Harus Dihindari</h3>
+                                <p>Tidak semua makanan manusia aman untuk anjing. Ketahui daftar makanan berbahaya yang
+                                    wajib kamu hindari agar anjingmu tetap sehat.</p>
+                                <a href="#" class="blog-read-more">Baca <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-card-img" style="background: linear-gradient(135deg, #e8f8f0, #b2e4c8);">
+                                🏥
+                                <span class="card-tag">Klinik</span>
+                            </div>
+                            <div class="blog-card-body">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 5 April 2026</span>
+                                    <span><i class="fas fa-clock"></i> 3 menit</span>
+                                </div>
+                                <h3>Tanda-Tanda Kucing Sakit yang Sering Diabaikan Pemilik</h3>
+                                <p>Kucing sering menyembunyikan rasa sakitnya. Pelajari tanda-tanda kucing tidak sehat
+                                    yang
+                                    perlu kamu waspadai sejak dini.</p>
+                                <a href="#" class="blog-read-more">Baca <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-card-img" style="background: linear-gradient(135deg, #f0eaff, #d4b8f0);">
+                                🎓
+                                <span class="card-tag">Pelatihan</span>
+                            </div>
+                            <div class="blog-card-body">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 2 April 2026</span>
+                                    <span><i class="fas fa-clock"></i> 5 menit</span>
+                                </div>
+                                <h3>Cara Melatih Anjing Duduk dan Diam dalam 7 Hari untuk Pemula</h3>
+                                <p>Melatih anjing tidak perlu mahal. Dengan konsistensi dan teknik yang tepat, anjingmu
+                                    bisa
+                                    menguasai perintah dasar hanya dalam seminggu.</p>
+                                <a href="#" class="blog-read-more">Baca <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-card-img" style="background: linear-gradient(135deg, #ffeaea, #ffb8b8);">
+                                ❤️
+                                <span class="card-tag">Tips</span>
+                            </div>
+                            <div class="blog-card-body">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 28 Maret 2026</span>
+                                    <span><i class="fas fa-clock"></i> 4 menit</span>
+                                </div>
+                                <h3>Cara Memilih Hewan Peliharaan Pertama yang Tepat untuk Keluarga</h3>
+                                <p>Memilih hewan peliharaan pertama perlu pertimbangan matang. Simak panduan lengkap
+                                    memilih
+                                    hewan yang cocok untuk gaya hidupmu.</p>
+                                <a href="#" class="blog-read-more">Baca <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-card-img" style="background: linear-gradient(135deg, #e8f7f9, #c8ecf0);">
+                                🏨
+                                <span class="card-tag">Penitipan</span>
+                            </div>
+                            <div class="blog-card-body">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 25 Maret 2026</span>
+                                    <span><i class="fas fa-clock"></i> 3 menit</span>
+                                </div>
+                                <h3>Tips Memilih Pet Hotel yang Aman dan Terpercaya saat Mudik Lebaran</h3>
+                                <p>Mau mudik tapi bingung menitipkan hewan peliharaan? Ini dia tips memilih pet hotel
+                                    yang
+                                    aman agar kamu tenang selama perjalanan.</p>
+                                <a href="#" class="blog-read-more">Baca <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- PAGINATION -->
+                    <div class="pagination">
+                        <a href="#" class="page-btn"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="page-btn active">1</a>
+                        <a href="#" class="page-btn">2</a>
+                        <a href="#" class="page-btn">3</a>
+                        <a href="#" class="page-btn">4</a>
+                        <a href="#" class="page-btn"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <aside class="blog-sidebar">
+
+                    <!-- SEARCH -->
+                    <div class="sidebar-widget">
+                        <h4>🔍 Cari Artikel</h4>
+                        <div class="sidebar-search">
+                            <input type="text" placeholder="Cari artikel..." />
+                            <button><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- KATEGORI -->
+                    <div class="sidebar-widget">
+                        <h4>📂 Kategori</h4>
+                        <ul class="kategori-list">
+                            <li><a href="#">Kesehatan <span>12</span></a></li>
+                            <li><a href="#">Grooming <span>8</span></a></li>
+                            <li><a href="#">Nutrisi & Makanan <span>10</span></a></li>
+                            <li><a href="#">Pelatihan <span>6</span></a></li>
+                            <li><a href="#">Tips & Trik <span>15</span></a></li>
+                            <li><a href="#">Penitipan <span>4</span></a></li>
+                            <li><a href="#">Klinik <span>9</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ARTIKEL POPULER -->
+                    <div class="sidebar-widget">
+                        <h4>🔥 Artikel Populer</h4>
+                        <ul class="populer-list">
+
+                            <li class="populer-item">
+                                <div class="populer-thumb"
+                                    style="background: linear-gradient(135deg, #e8f7f9, #b2dfe4);">🐶
+                                </div>
+                                <div class="populer-info">
+                                    <h5>10 Ras Anjing Terbaik untuk Keluarga dengan Anak Kecil</h5>
+                                    <span><i class="fas fa-eye"></i> 4.2K views</span>
+                                </div>
+                            </li>
+
+                            <li class="populer-item">
+                                <div class="populer-thumb"
+                                    style="background: linear-gradient(135deg, #fff3e0, #ffe0b8);">🐱
+                                </div>
+                                <div class="populer-info">
+                                    <h5>Cara Mengatasi Kucing yang Tidak Mau Makan Selama 2 Hari</h5>
+                                    <span><i class="fas fa-eye"></i> 3.8K views</span>
+                                </div>
+                            </li>
+
+                            <li class="populer-item">
+                                <div class="populer-thumb"
+                                    style="background: linear-gradient(135deg, #e8f8f0, #b2e4c8);">💉
+                                </div>
+                                <div class="populer-info">
+                                    <h5>Panduan Lengkap Vaksinasi Hewan Peliharaan 2026</h5>
+                                    <span><i class="fas fa-eye"></i> 3.1K views</span>
+                                </div>
+                            </li>
+
+                            <li class="populer-item">
+                                <div class="populer-thumb"
+                                    style="background: linear-gradient(135deg, #f0eaff, #d4b8f0);">✂️
+                                </div>
+                                <div class="populer-info">
+                                    <h5>Berapa Sering Harus Grooming Anjing? Ini Jawabannya</h5>
+                                    <span><i class="fas fa-eye"></i> 2.7K views</span>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <!-- TAG CLOUD -->
+                    <div class="sidebar-widget">
+                        <h4>🏷️ Tag</h4>
+                        <div class="tag-cloud">
+                            <a href="#">Anjing</a>
+                            <a href="#">Kucing</a>
+                            <a href="#">Vaksinasi</a>
+                            <a href="#">Grooming</a>
+                            <a href="#">Nutrisi</a>
+                            <a href="#">Kesehatan</a>
+                            <a href="#">Pelatihan</a>
+                            <a href="#">Kelinci</a>
+                            <a href="#">Hamster</a>
+                            <a href="#">Penitipan</a>
+                            <a href="#">Tips</a>
+                            <a href="#">Dokter</a>
+                        </div>
+                    </div>
+
+                    <!-- NEWSLETTER -->
+                    <div class="newsletter-widget">
+                        <h4>📬 Newsletter</h4>
+                        <p>Dapatkan artikel terbaru dan tips perawatan hewan langsung di email kamu!</p>
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="Email kamu..." />
+                            <button>Langganan Sekarang</button>
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- ── CTA ── -->
+        <section class="cta-section">
+            <h2>Ada Pertanyaan Seputar<br>Hewan Peliharaan Anda?</h2>
+            <p>Konsultasikan langsung dengan dokter hewan dan groomer profesional kami. Gratis untuk konsultasi pertama!
+            </p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/6281234567890" class="btn-primary">
+                    <i class="fab fa-whatsapp"></i> Tanya via WhatsApp
+                </a>
+                <a href="klinik.html" class="btn-light">Buat Janji Klinik</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="Beranda.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                    <div class="logo-text">
+                        <span>ZOON</span>
+                        <span>Pet Shop</span>
+                    </div>
+                </a>
+                <p>Toko hewan peliharaan terpercaya dengan produk berkualitas dan layanan profesional untuk hewan
+                    kesayangan Anda.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/zoon_medan/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h5>Tentang Kami</h5>
+                <ul>
+                    <li><a href="Tentang.html">Profil Perusahaan</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Klinik.html">Klinik Hewan</a></li>
+                    <li><a href="Grooming.html">Grooming</a></li>
+                    <li><a href="Layanan.html">Layanan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Sosial Media</h5>
+                <ul>
+                    <li><i class="fab fa-facebook"></i> <a href="#">zoon_medan</a></li>
+                    <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/zoon_medan/">zoon_medan</a>
+                    </li>
+                    <li><i class="fab fa-tiktok"></i> <a href="#">zoon_medan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Layanan Pelanggan</h5>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +62 895 3664 6043 5</li>
+                    <li><i class="fas fa-envelope"></i> zoon.medan@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Medan, Sumatera Utara</li>
+                    <li><i class="fas fa-clock"></i> Senin–Sabtu: 08.00–20.00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>ZOON &mdash; A Pet Shop &amp; Peliharaan Anda &copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

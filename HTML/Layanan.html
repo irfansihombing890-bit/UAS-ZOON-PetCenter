@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZOON</title>
+    <link rel="icon" href="/icon.jpg" type="image/jpg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/Style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span>📞 +62 895 - 3664 - 6043 5</span>
+            <span>⏰ Buka: Senin–Sabtu, 08.00–20.00</span>
+        </div>
+
+        <nav>
+            <a href="Beranda.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <div class="logo-text">
+                    <span>ZOON</span>
+                    <span>Pet Shop</span>
+                </div>
+            </a>
+
+            <input type="checkbox" id="navtoggle" class="navtoggle">
+
+            <ul class="nav-links">
+                <li><a href="Beranda.html">Beranda</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="Layanan.html" class="active">Layanan</a></li>
+                <li><a href="Grooming.html">Grooming</a></li>
+                <li><a href="Klinik.html">Klinik</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Kontak.html">Kontak</a></li>
+                <li><a href="Tentang.html">Tentang</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="Shop.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <a href="Login.html" class="btn-nav-login">
+                    <i class="fas fa-user"></i> 
+                    <span class="login-text">Login</span>
+                </a>
+                <label for="navtoggle" class="list-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ── PAGE HERO ── -->
+        <div class="page-hero">
+            <div class="page-hero-content">
+                <div class="breadcrumb">
+                    <a href="Beranda.html">Beranda</a>
+                    <i class="fas fa-chevron-right" style="font-size:10px;"></i>
+                    <span>Layanan</span>
+                </div>
+                <h1>Layanan<br>Kami</h1>
+                <p>Kami menyediakan berbagai layanan profesional untuk menjaga kesehatan, kebersihan, dan kebahagiaan
+                    hewan
+                    peliharaan kesayangan Anda.</p>
+            </div>
+            <div class="page-hero-icon">🐾</div>
+        </div>
+
+        <!-- ── LAYANAN UTAMA ── -->
+        <section class="layanan-section">
+            <h2 class="section-title">Semua Layanan Kami</h2>
+
+            <div class="layanan-grid">
+
+                <!-- GROOMING -->
+                <div class="layanan-card">
+                    <div class="layanan-card-header">
+                        <div class="layanan-card-icon teal">✂️</div>
+                        <div class="layanan-card-info">
+                            <h3>Grooming</h3>
+                            <p>Perawatan penampilan hewan peliharaan Anda secara menyeluruh oleh groomer profesional
+                                berpengalaman.</p>
+                        </div>
+                    </div>
+                    <ul class="layanan-card-features">
+                        <li><i class="fas fa-check-circle"></i> Mandi & blow dry dengan shampoo premium</li>
+                        <li><i class="fas fa-check-circle"></i> Potong bulu sesuai gaya yang diinginkan</li>
+                        <li><i class="fas fa-check-circle"></i> Potong kuku & bersihkan telinga</li>
+                        <li><i class="fas fa-check-circle"></i> Parfum & pita hias (opsional)</li>
+                        <li><i class="fas fa-check-circle"></i> Tersedia untuk anjing & kucing semua ras</li>
+                    </ul>
+                    <div class="layanan-card-footer">
+                        <div class="layanan-card-price">Mulai Rp 80.000 <span>/ sesi</span></div>
+                        <a href="/HTML/Grooming.html" class="btn-outline">LIHAT DETAIL</a>
+                    </div>
+                </div>
+
+                <!-- KLINIK -->
+                <div class="layanan-card">
+                    <div class="layanan-card-header">
+                        <div class="layanan-card-icon orange">🏥</div>
+                        <div class="layanan-card-info">
+                            <h3>Klinik Hewan</h3>
+                            <p>Pemeriksaan dan perawatan medis oleh dokter hewan bersertifikat dengan peralatan modern.
+                            </p>
+                        </div>
+                    </div>
+                    <ul class="layanan-card-features">
+                        <li><i class="fas fa-check-circle"></i> Konsultasi & pemeriksaan umum</li>
+                        <li><i class="fas fa-check-circle"></i> Vaksinasi lengkap & pencegahan penyakit</li>
+                        <li><i class="fas fa-check-circle"></i> Pengobatan & perawatan luka</li>
+                        <li><i class="fas fa-check-circle"></i> Pemeriksaan laboratorium dasar</li>
+                        <li><i class="fas fa-check-circle"></i> Sterilisasi & operasi minor</li>
+                    </ul>
+                    <div class="layanan-card-footer">
+                        <div class="layanan-card-price">Mulai Rp 50.000 <span>/ konsultasi</span></div>
+                        <a href="klinik.html" class="btn-outline">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <!-- PET HOTEL -->
+                <div class="layanan-card">
+                    <div class="layanan-card-header">
+                        <div class="layanan-card-icon green">🏨</div>
+                        <div class="layanan-card-info">
+                            <h3>Pet Hotel</h3>
+                            <p>Penitipan hewan yang nyaman, aman, dan menyenangkan saat Anda bepergian jauh.</p>
+                        </div>
+                    </div>
+                    <ul class="layanan-card-features">
+                        <li><i class="fas fa-check-circle"></i> Kandang bersih & nyaman dengan pendingin</li>
+                        <li><i class="fas fa-check-circle"></i> Makan 2x sehari sesuai kebutuhan</li>
+                        <li><i class="fas fa-check-circle"></i> Waktu bermain & olahraga terjadwal</li>
+                        <li><i class="fas fa-check-circle"></i> Laporan harian via WhatsApp</li>
+                        <li><i class="fas fa-check-circle"></i> CCTV 24 jam & penjaga malam</li>
+                    </ul>
+                    <div class="layanan-card-footer">
+                        <div class="layanan-card-price">Mulai Rp 100.000 <span>/ malam</span></div>
+                        <a href="kontak.html" class="btn-outline">Booking Sekarang</a>
+                    </div>
+                </div>
+
+                <!-- ANTAR JEMPUT -->
+                <div class="layanan-card">
+                    <div class="layanan-card-header">
+                        <div class="layanan-card-icon purple">🚗</div>
+                        <div class="layanan-card-info">
+                            <h3>Antar Jemput</h3>
+                            <p>Layanan transportasi khusus hewan peliharaan yang aman dan nyaman langsung ke lokasi
+                                Anda.
+                            </p>
+                        </div>
+                    </div>
+                    <ul class="layanan-card-features">
+                        <li><i class="fas fa-check-circle"></i> Armada khusus hewan dengan ventilasi baik</li>
+                        <li><i class="fas fa-check-circle"></i> Driver terlatih &amp; berpengalaman</li>
+                        <li><i class="fas fa-check-circle"></i> Penjemputan tepat waktu</li>
+                        <li><i class="fas fa-check-circle"></i> Tersedia untuk area Kota Medan</li>
+                        <li><i class="fas fa-check-circle"></i> Notifikasi keberangkatan &amp; tiba</li>
+                    </ul>
+                    <div class="layanan-card-footer">
+                        <div class="layanan-card-price">Mulai Rp 30.000 <span>/ perjalanan</span></div>
+                        <a href="kontak.html" class="btn-outline">Pesan Sekarang</a>
+                    </div>
+                </div>
+
+                <!-- TRAINING -->
+                <div class="layanan-card">
+                    <div class="layanan-card-header">
+                        <div class="layanan-card-icon teal">🎓</div>
+                        <div class="layanan-card-info">
+                            <h3>Pelatihan Hewan</h3>
+                            <p>Program pelatihan terstruktur untuk membentuk perilaku positif hewan peliharaan Anda.</p>
+                        </div>
+                    </div>
+                    <ul class="layanan-card-features">
+                        <li><i class="fas fa-check-circle"></i> Pelatihan dasar: duduk, diam, datang</li>
+                        <li><i class="fas fa-check-circle"></i> Koreksi perilaku nakal & agresif</li>
+                        <li><i class="fas fa-check-circle"></i> Sosialisasi dengan hewan & manusia</li>
+                        <li><i class="fas fa-check-circle"></i> Sesi privat atau kelompok kecil</li>
+                        <li><i class="fas fa-check-circle"></i> Panduan latihan untuk pemilik</li>
+                    </ul>
+                    <div class="layanan-card-footer">
+                        <div class="layanan-card-price">Mulai Rp 150.000 <span>/ sesi</span></div>
+                        <a href="kontak.html" class="btn-outline">Daftar Sekarang</a>
+                    </div>
+                </div>
+
+                <!-- FOTO HEWAN -->
+                <div class="layanan-card">
+                    <div class="layanan-card-header">
+                        <div class="layanan-card-icon orange">📸</div>
+                        <div class="layanan-card-info">
+                            <h3>Foto Hewan Profesional</h3>
+                            <p>Abadikan momen spesial hewan peliharaan Anda dengan sesi foto profesional yang
+                                menggemaskan.
+                            </p>
+                        </div>
+                    </div>
+                    <ul class="layanan-card-features">
+                        <li><i class="fas fa-check-circle"></i> Studio foto dengan latar belakang pilihan</li>
+                        <li><i class="fas fa-check-circle"></i> Fotografer profesional berpengalaman</li>
+                        <li><i class="fas fa-check-circle"></i> 10–20 foto hasil edit siap cetak</li>
+                        <li><i class="fas fa-check-circle"></i> Tersedia props &amp; aksesoris lucu</li>
+                        <li><i class="fas fa-check-circle"></i> File digital resolusi tinggi</li>
+                    </ul>
+                    <div class="layanan-card-footer">
+                        <div class="layanan-card-price">Mulai Rp 200.000 <span>/ sesi</span></div>
+                        <a href="kontak.html" class="btn-outline">Booking Sekarang</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── PROSES LAYANAN ── -->
+        <section class="proses-section">
+            <h2 class="section-title">Cara Memesan Layanan</h2>
+            <div class="proses-grid">
+                <div class="proses-card">
+                    <div class="proses-number">1</div>
+                    <h4>Pilih Layanan</h4>
+                    <p>Pilih layanan yang sesuai kebutuhan hewan peliharaan Anda dari daftar layanan kami.</p>
+                </div>
+                <div class="proses-card">
+                    <div class="proses-number">2</div>
+                    <h4>Hubungi Kami</h4>
+                    <p>Hubungi kami via WhatsApp, telepon, atau datang langsung ke toko untuk booking.</p>
+                </div>
+                <div class="proses-card">
+                    <div class="proses-number">3</div>
+                    <h4>Konfirmasi Jadwal</h4>
+                    <p>Kami akan konfirmasi jadwal dan persiapan yang perlu dilakukan sebelum layanan.</p>
+                </div>
+                <div class="proses-card">
+                    <div class="proses-number">4</div>
+                    <h4>Nikmati Hasilnya</h4>
+                    <p>Hewan peliharaan Anda mendapatkan perawatan terbaik dari tim kami yang berpengalaman.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── JADWAL & KONTAK ── -->
+        <section class="jadwal-section">
+            <h2 class="section-title">Jam Operasional &amp; Kontak</h2>
+            <div class="jadwal-grid">
+
+                <div class="jadwal-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Hari</th>
+                                <th>Jam Buka</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Senin – Jumat</td>
+                                <td>08.00 – 20.00</td>
+                                <td><span class="badge-buka">Buka</span></td>
+                            </tr>
+                            <tr>
+                                <td>Sabtu</td>
+                                <td>08.00 – 21.00</td>
+                                <td><span class="badge-buka">Buka</span></td>
+                            </tr>
+                            <tr>
+                                <td>Minggu</td>
+                                <td>09.00 – 18.00</td>
+                                <td><span class="badge-buka">Buka</span></td>
+                            </tr>
+                            <tr>
+                                <td>Hari Libur Nasional</td>
+                                <td>–</td>
+                                <td><span class="badge-tutup">Tutup</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="kontak-cepat">
+                    <h3>Hubungi Kami Langsung</h3>
+                    <a href="https://wa.me/6281234567890" class="kontak-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="kontak-item-text">
+                            <strong>WhatsApp</strong>
+                            <span>+62 895 - 3664 - 60435 (Respon Cepat)</span>
+                        </div>
+                    </a>
+                    <a href="tel:+6295366460435" class="kontak-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="kontak-item-text">
+                            <strong>Telepon</strong>
+                            <span>+62 895 - 3664 - 60435</span>
+                        </div>
+                    </a>
+                    <a href="mailto:zoon.medan@gmail.com" class="kontak-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="kontak-item-text">
+                            <strong>Email</strong>
+                            <span>zoon.medan@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="kontak.html" class="kontak-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="kontak-item-text">
+                            <strong>Alamat</strong>
+                            <span>Jl. Peliharaan No. 12, Medan, Sumatera Utara</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── FAQ ── -->
+        <section class="faq-section">
+            <h2 class="section-title">Pertanyaan yang Sering Ditanya</h2>
+            <div class="faq-list">
+
+                <div class="faq-item open">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Apakah saya perlu membuat janji terlebih dahulu?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Untuk layanan grooming, klinik, dan foto, sebaiknya buat janji terlebih dahulu agar waktu
+                        pelayanan
+                        lebih terjadwal dan tidak perlu menunggu lama. Anda bisa booking via WhatsApp atau telepon kami.
+                        Untuk pembelian produk di toko, tidak perlu janji.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Apakah hewan peliharaan saya aman selama di Pet Hotel?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Tentu! Kami memiliki CCTV 24 jam, penjaga malam, dan kandang yang bersih dengan ventilasi baik.
+                        Kami
+                        juga akan mengirimkan foto dan laporan kondisi hewan peliharaan Anda setiap hari melalui
+                        WhatsApp
+                        agar Anda tetap tenang.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Berapa lama proses grooming berlangsung?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Durasi grooming tergantung ukuran dan jenis bulu hewan peliharaan Anda. Rata-rata untuk anjing
+                        kecil
+                        sekitar 1–2 jam, anjing besar 2–3 jam, dan kucing sekitar 1–1,5 jam. Kami akan memberitahukan
+                        estimasi waktu saat booking.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Apakah tersedia layanan darurat di klinik?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Ya, kami menerima kasus darurat pada jam operasional kami. Untuk kondisi darurat di luar jam
+                        buka,
+                        silakan hubungi nomor WhatsApp kami dan kami akan memberikan arahan terbaik. Kami juga bekerja
+                        sama
+                        dengan klinik 24 jam untuk kasus-kasus yang membutuhkan penanganan segera.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Apakah ada diskon untuk pelanggan setia?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Tentu ada! Kami memiliki program Member ZOON di mana pelanggan setia mendapatkan poin setiap
+                        kali menggunakan layanan atau berbelanja. Poin dapat ditukar dengan diskon layanan, produk
+                        gratis,
+                        atau voucher khusus. Daftarkan diri Anda saat berkunjung ke toko kami.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── CTA BANNER ── -->
+        <section class="cta-section">
+            <h2>Siap Memberikan yang Terbaik<br>untuk Hewan Kesayangan Anda?</h2>
+            <p>Hubungi kami sekarang dan dapatkan konsultasi gratis untuk layanan pertama Anda bersama ZOON!</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/6281234567890" class="btn-primary">
+                    <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                </a>
+                <a href="kontak.html" class="btn-light">Lihat Kontak Lainnya</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="Beranda.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                    <div class="logo-text">
+                        <span>ZOON</span>
+                        <span>Pet Shop</span>
+                    </div>
+                </a>
+                <p>Toko hewan peliharaan terpercaya dengan produk berkualitas dan layanan profesional untuk hewan
+                    kesayangan Anda.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h5>Tentang Kami</h5>
+                <ul>
+                    <li><a href="Tentang.html">Profil Perusahaan</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Klinik.html">Klinik Hewan</a></li>
+                    <li><a href="Grooming.html">Grooming</a></li>
+                    <li><a href="Layanan.html">Layanan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Sosial Media</h5>
+                <ul>
+                    <li><i class="fab fa-facebook"></i> <a href="#">zoon_medan</a></li>
+                    <li><i class="fab fa-instagram"></i> <a href="#">zoon_medan</a></li>
+                    <li><i class="fab fa-tiktok"></i> <a href="#">zoon_medan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Layanan Pelanggan</h5>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +62 895 3664 6043 5</li>
+                    <li><i class="fas fa-envelope"></i> zoon.medan@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Medan, Sumatera Utara</li>
+                    <li><i class="fas fa-clock"></i> Senin–Sabtu: 08.00–20.00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>ZOON &mdash; A Pet Shop &amp; Peliharaan Anda &copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

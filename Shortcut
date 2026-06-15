@@ -1,0 +1,25 @@
+Ctrl + Shift + L → Ganti semua kata yang sama sekaligus (multi-cursor)
+
+Ctrl + F → Cari di file
+Ctrl + H → Replace (ganti kata)
+Ctrl + Shift + F → Cari di seluruh project
+Ctrl + G → Lompat ke baris tertentu
+Alt + ↑ / ↓ → Pindah baris ke atas/bawah
+
+Ctrl + S → Simpan file
+Ctrl + N → File baru
+Ctrl + O → Buka file
+Ctrl + P → Cari file dengan cepat
+Ctrl + W → Tutup tab
+Ctrl + Shift + N → Buka window baru
+
+Ctrl + D → Pilih kata yang sama satu per satu
+Alt + Click → Multi cursor manual
+Ctrl + / → Comment / uncomment
+Shift + Alt + ↓ / ↑ → Duplikat baris
+Ctrl + X → Potong baris (tanpa blok juga bisa)
+Ctrl + Enter → Tambah baris baru di bawah
+Ctrl + Shift + Enter → Tambah baris di atas
+
+Shift + Alt + F → Format code otomatis
+Ctrl + K + F → Format bagian tertentu

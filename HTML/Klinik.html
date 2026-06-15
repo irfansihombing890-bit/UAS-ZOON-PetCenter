@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZOON</title>
+    <link rel="icon" href="/icon.jpg" type="image/jpg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/Style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span>📞 +62 895 - 3664 - 6043 5</span>
+            <span>⏰ Buka: Senin–Sabtu, 08.00–20.00</span>
+        </div>
+
+        <nav>
+            <a href="Beranda.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <div class="logo-text">
+                    <span>ZOON</span>
+                    <span>Pet Shop</span>
+                </div>
+            </a>
+
+            <input type="checkbox" id="navtoggle" class="navtoggle">
+
+            <ul class="nav-links">
+                <li><a href="Beranda.html">Beranda</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="Layanan.html">Layanan</a></li>
+                <li><a href="Grooming.html">Grooming</a></li>
+                <li><a href="Klinik.html" class="active">Klinik</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Kontak.html">Kontak</a></li>
+                <li><a href="Tentang.html">Tentang</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="Shop.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <a href="Login.html" class="btn-nav-login">
+                    <i class="fas fa-user"></i> 
+                    <span class="login-text">Login</span>
+                </a>
+                <label for="navtoggle" class="list-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ── PAGE HERO ── -->
+        <div class="page-hero">
+            <div class="page-hero-content">
+                <div class="breadcrumb">
+                    <a href="Beranda.html">Beranda</a>
+                    <i class="fas fa-chevron-right" style="font-size:10px;"></i>
+                    <span>Klinik Hewan</span>
+                </div>
+                <h1>Klinik<br>Hewan Kami</h1>
+                <p>Kesehatan hewan peliharaan Anda adalah prioritas utama kami. Ditangani langsung oleh dokter hewan
+                    bersertifikat dengan pengalaman bertahun-tahun.</p>
+            </div>
+            <div class="page-hero-icon">🏥</div>
+        </div>
+
+        <!-- ── STATS BAR ── -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Dokter Hewan Bersertifikat</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3.000+</div>
+                <div class="stat-label">Pasien Ditangani</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Tahun Pengalaman</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Tingkat Kepuasan Pasien</div>
+            </div>
+        </div>
+
+        <!-- ── TIM DOKTER ── -->
+        <section class="dokter-section">
+            <h2 class="section-title">Tim Dokter Kami</h2>
+            <div class="dokter-grid">
+
+                <div class="dokter-card">
+                    <div class="dokter-avatar">👨‍⚕️</div>
+                    <div class="dokter-info">
+                        <h3>Drh. Hippocrates</h3>
+                        <span class="dokter-spesialis">Dokter Hewan Umum</span>
+                        <p>Lulusan FKH Universitas Gadjah Mada dengan pengalaman 10 tahun menangani berbagai kasus
+                            penyakit
+                            anjing dan kucing.</p>
+                        <div class="dokter-jadwal">
+                            <span><i class="fas fa-calendar-alt"></i> Senin – Jumat</span>
+                            <span><i class="fas fa-clock"></i> 08.00 – 14.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dokter-card">
+                    <div class="dokter-avatar">👩‍⚕️</div>
+                    <div class="dokter-info">
+                        <h3>drh. Avicenna</h3>
+                        <span class="dokter-spesialis">Spesialis Bedah Hewan</span>
+                        <p>Spesialis bedah hewan lulusan IPB University dengan keahlian khusus dalam operasi ortopedi
+                            dan
+                            bedah minor.</p>
+                        <div class="dokter-jadwal">
+                            <span><i class="fas fa-calendar-alt"></i> Selasa & Kamis</span>
+                            <span><i class="fas fa-clock"></i> 14.00 – 20.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dokter-card">
+                    <div class="dokter-avatar">👨‍⚕️</div>
+                    <div class="dokter-info">
+                        <h3>drh. Edward Jenner</h3>
+                        <span class="dokter-spesialis">Spesialis Dermatologi</span>
+                        <p>Ahli penyakit kulit dan bulu hewan peliharaan. Berpengalaman menangani kasus alergi dan
+                            infeksi
+                            kulit.</p>
+                        <div class="dokter-jadwal">
+                            <span><i class="fas fa-calendar-alt"></i> Rabu & Sabtu</span>
+                            <span><i class="fas fa-clock"></i> 09.00 – 17.00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── LAYANAN KLINIK ── -->
+        <section class="klinik-layanan">
+            <h2 class="section-title">Layanan Medis Tersedia</h2>
+            <div class="klinik-layanan-grid">
+
+                <div class="klinik-layanan-card">
+                    <span class="klinik-layanan-icon">🩺</span>
+                    <h4>Pemeriksaan Umum</h4>
+                    <p>Pemeriksaan kesehatan menyeluruh untuk mendeteksi masalah kesehatan sejak dini.</p>
+                    <div class="klinik-layanan-price">Rp 50.000</div>
+                </div>
+
+                <div class="klinik-layanan-card">
+                    <span class="klinik-layanan-icon">💉</span>
+                    <h4>Vaksinasi</h4>
+                    <p>Vaksinasi lengkap sesuai jadwal untuk melindungi hewan peliharaan dari berbagai penyakit
+                        berbahaya.
+                    </p>
+                    <div class="klinik-layanan-price">Mulai Rp 75.000</div>
+                </div>
+
+                <div class="klinik-layanan-card">
+                    <span class="klinik-layanan-icon">🔬</span>
+                    <h4>Laboratorium</h4>
+                    <p>Pemeriksaan darah, urin, dan feses dengan alat laboratorium modern dan hasil cepat.</p>
+                    <div class="klinik-layanan-price">Mulai Rp 100.000</div>
+                </div>
+
+                <div class="klinik-layanan-card">
+                    <span class="klinik-layanan-icon">🏥</span>
+                    <h4>Rawat Inap</h4>
+                    <p>Fasilitas rawat inap bersih dan nyaman dengan pengawasan 24 jam oleh tenaga medis terlatih.</p>
+                    <div class="klinik-layanan-price">Mulai Rp 150.000/malam</div>
+                </div>
+
+                <div class="klinik-layanan-card">
+                    <span class="klinik-layanan-icon">✂️</span>
+                    <h4>Operasi &amp; Sterilisasi</h4>
+                    <p>Prosedur operasi dan sterilisasi yang aman dengan anestesi modern dan pemantauan ketat.</p>
+                    <div class="klinik-layanan-price">Mulai Rp 350.000</div>
+                </div>
+
+                <div class="klinik-layanan-card">
+                    <span class="klinik-layanan-icon">🦷</span>
+                    <h4>Perawatan Gigi</h4>
+                    <p>Pembersihan karang gigi, pencabutan gigi, dan perawatan mulut untuk hewan peliharaan.</p>
+                    <div class="klinik-layanan-price">Mulai Rp 120.000</div>
+                </div>
+
+                <div class="klinik-layanan-card">
+                    <span class="klinik-layanan-icon">🩹</span>
+                    <h4>Perawatan Luka</h4>
+                    <p>Pembersihan dan perawatan luka, penjahitan, serta pergantian perban secara rutin.</p>
+                    <div class="klinik-layanan-price">Mulai Rp 60.000</div>
+                </div>
+
+                <div class="klinik-layanan-card">
+                    <span class="klinik-layanan-icon">📋</span>
+                    <h4>Sertifikat Kesehatan</h4>
+                    <p>Penerbitan sertifikat kesehatan hewan untuk keperluan perjalanan, pindahan, atau pameran.</p>
+                    <div class="klinik-layanan-price">Rp 80.000</div>
+                </div>
+
+                <div class="klinik-layanan-card">
+                    <span class="klinik-layanan-icon">🐛</span>
+                    <h4>Pengobatan Parasit</h4>
+                    <p>Penanganan kutu, tungau, cacing, dan parasit lainnya dengan obat-obatan yang aman dan efektif.
+                    </p>
+                    <div class="klinik-layanan-price">Mulai Rp 45.000</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── PENYAKIT UMUM ── -->
+        <section class="penyakit-section">
+            <h2 class="section-title">Penyakit yang Sering Kami Tangani</h2>
+            <div class="penyakit-grid">
+
+                <div class="penyakit-card">
+                    <span class="penyakit-icon">🤧</span>
+                    <h4>Flu &amp; Infeksi Saluran Napas</h4>
+                    <p>Batuk, bersin, dan infeksi pernapasan atas yang umum pada anjing &amp; kucing.</p>
+                </div>
+
+                <div class="penyakit-card">
+                    <span class="penyakit-icon">🤢</span>
+                    <h4>Gangguan Pencernaan</h4>
+                    <p>Muntah, diare, sembelit, dan masalah lambung lainnya.</p>
+                </div>
+
+                <div class="penyakit-card">
+                    <span class="penyakit-icon">🦟</span>
+                    <h4>Infestasi Parasit</h4>
+                    <p>Kutu, tungau, cacing, dan parasit internal maupun eksternal lainnya.</p>
+                </div>
+
+                <div class="penyakit-card">
+                    <span class="penyakit-icon">🤕</span>
+                    <h4>Penyakit Kulit</h4>
+                    <p>Alergi, jamur, eksim, dan berbagai infeksi kulit yang menyebabkan rasa gatal.</p>
+                </div>
+
+                <div class="penyakit-card">
+                    <span class="penyakit-icon">🦴</span>
+                    <h4>Masalah Tulang &amp; Sendi</h4>
+                    <p>Keseleo, patah tulang, radang sendi, dan cedera akibat aktivitas fisik.</p>
+                </div>
+
+                <div class="penyakit-card">
+                    <span class="penyakit-icon">👁️</span>
+                    <h4>Infeksi Mata &amp; Telinga</h4>
+                    <p>Konjungtivitis, otitis, dan infeksi organ sensorik lainnya yang perlu penanganan cepat.</p>
+                </div>
+
+                <div class="penyakit-card">
+                    <span class="penyakit-icon">❤️</span>
+                    <h4>Penyakit Jantung</h4>
+                    <p>Deteksi dini dan penanganan penyakit kardiovaskular pada hewan peliharaan.</p>
+                </div>
+
+                <div class="penyakit-card">
+                    <span class="penyakit-icon">🦷</span>
+                    <h4>Masalah Gigi &amp; Mulut</h4>
+                    <p>Karang gigi, gigi berlubang, radang gusi yang sering terlewat dari perhatian pemilik.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── BOOKING JANJI TEMU ── -->
+        <section class="booking-section">
+            <h2 class="section-title">Buat Janji Temu</h2>
+            <div class="booking-wrapper">
+
+                <div class="booking-info">
+                    <h3>Kenapa Harus Buat Janji Dulu?</h3>
+                    <p>Dengan membuat janji temu, Anda akan mendapatkan pelayanan yang lebih cepat dan terjadwal tanpa
+                        perlu
+                        menunggu antrian panjang.</p>
+                    <ul class="booking-info-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Tidak perlu menunggu antrian lama — dokter sudah siap menangani hewan peliharaan Anda.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Dokter dapat mempersiapkan penanganan yang lebih tepat sesuai keluhan yang Anda sampaikan.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Anda akan mendapatkan pengingat jadwal melalui WhatsApp sehari sebelum kunjungan.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Tersedia jadwal pagi dan sore sesuai waktu yang Anda inginkan.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Bisa juga langsung datang tanpa janji — kami tetap layani sesuai antrian.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="booking-form">
+                    <h4>📋 Form Janji Temu</h4>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nama Pemilik *</label>
+                            <input type="text" placeholder="Contoh: Budi Santoso" />
+                        </div>
+                        <div class="form-group">
+                            <label>Nomor WhatsApp *</label>
+                            <input type="tel" placeholder="08xx-xxxx-xxxx" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nama Hewan *</label>
+                            <input type="text" placeholder="Contoh: Milo" />
+                        </div>
+                        <div class="form-group">
+                            <label>Jenis Hewan *</label>
+                            <select>
+                                <option value="">-- Pilih Jenis --</option>
+                                <option>Anjing</option>
+                                <option>Kucing</option>
+                                <option>Kelinci</option>
+                                <option>Hamster</option>
+                                <option>Burung</option>
+                                <option>Lainnya</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Layanan yang Dibutuhkan *</label>
+                            <select>
+                                <option value="">-- Pilih Layanan --</option>
+                                <option>Pemeriksaan Umum</option>
+                                <option>Vaksinasi</option>
+                                <option>Pemeriksaan Laboratorium</option>
+                                <option>Operasi / Sterilisasi</option>
+                                <option>Perawatan Gigi</option>
+                                <option>Perawatan Luka</option>
+                                <option>Konsultasi</option>
+                                <option>Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Pilih Dokter</label>
+                            <select>
+                                <option value="">-- Pilih Dokter --</option>
+                                <option>drh. Budi Santoso</option>
+                                <option>drh. Sari Dewi</option>
+                                <option>drh. Rizky Pratama</option>
+                                <option>Dokter yang Tersedia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Tanggal Kunjungan *</label>
+                            <input type="date" />
+                        </div>
+                        <div class="form-group">
+                            <label>Jam Kunjungan *</label>
+                            <select>
+                                <option value="">-- Pilih Jam --</option>
+                                <option>08.00 – 09.00</option>
+                                <option>09.00 – 10.00</option>
+                                <option>10.00 – 11.00</option>
+                                <option>11.00 – 12.00</option>
+                                <option>13.00 – 14.00</option>
+                                <option>14.00 – 15.00</option>
+                                <option>15.00 – 16.00</option>
+                                <option>16.00 – 17.00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Keluhan / Catatan Tambahan</label>
+                        <textarea
+                            placeholder="Ceritakan keluhan hewan peliharaan Anda atau hal yang perlu diketahui dokter..."></textarea>
+                    </div>
+
+                    <button class="form-submit" onclick="submitBooking()">
+                        <i class="fas fa-calendar-check"></i> Buat Janji Sekarang
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── TESTIMONI ── -->
+        <section class="testimoni-section">
+            <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
+            <div class="testimoni-grid">
+
+                <div class="testimoni-card">
+                    <div class="testimoni-stars">★★★★★</div>
+                    <p>"Dokternya sangat ramah dan sabar menangani kucing saya yang takut. Penjelasannya jelas dan
+                        obatnya
+                        manjur. Kucingku sudah sembuh dalam 3 hari!"</p>
+                    <div class="testimoni-author">
+                        <div class="testimoni-avatar">🤭</div>
+                        <div class="testimoni-author-info">
+                            <strong>Xi Jinping</strong>
+                            <span>Pemilik Kucing Persia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimoni-card">
+                    <div class="testimoni-stars">★★★★★</div>
+                    <p>"Pelayanan sangat profesional! Anjing saya dioperasi sterilisasi di sini dan hasilnya sangat
+                        memuaskan. Fasilitas bersih dan dokternya berpengalaman."</p>
+                    <div class="testimoni-author">
+                        <div class="testimoni-avatar">😏</div>
+                        <div class="testimoni-author-info">
+                            <strong>Donald Trump</strong>
+                            <span>Pemilik Golden Retriever</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimoni-card">
+                    <div class="testimoni-stars">★★★★☆</div>
+                    <p>"Harga terjangkau untuk kualitas pelayanan yang sangat baik. Dokternya benar-benar peduli dengan
+                        hewan peliharaan. Saya sudah langganan 2 tahun di sini."</p>
+                    <div class="testimoni-author">
+                        <div class="testimoni-avatar">😉</div>
+                        <div class="testimoni-author-info">
+                            <strong>Vladimir Putin</strong>
+                            <span>Pemilik Siberian Husky</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── CTA BANNER ── -->
+        <section class="cta-section">
+            <h2>Kesehatan Hewan Peliharaan<br>Adalah Prioritas Kami</h2>
+            <p>Jangan tunggu sampai sakit parah. Bawa hewan peliharaan Anda untuk pemeriksaan rutin setiap 6 bulan
+                sekali.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/6281234567890" class="btn-primary">
+                    <i class="fab fa-whatsapp"></i> Booking via WhatsApp
+                </a>
+                <a href="layanan.html" class="btn-light">Lihat Semua Layanan</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="Beranda.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                    <div class="logo-text">
+                        <span>ZOON</span>
+                        <span>Pet Shop</span>
+                    </div>
+                </a>
+                <p>Toko hewan peliharaan terpercaya dengan produk berkualitas dan layanan profesional untuk hewan
+                    kesayangan Anda.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/zoon_medan/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h5>Tentang Kami</h5>
+                <ul>
+                    <li><a href="Tentang.html">Profil Perusahaan</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Klinik.html">Klinik Hewan</a></li>
+                    <li><a href="Grooming.html">Grooming</a></li>
+                    <li><a href="Layanan.html">Layanan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Sosial Media</h5>
+                <ul>
+                    <li><i class="fab fa-facebook"></i> <a href="#">zoon_medan</a></li>
+                    <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/zoon_medan/">zoon_medan</a>
+                    </li>
+                    <li><i class="fab fa-tiktok"></i> <a href="#">zoon_medan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Layanan Pelanggan</h5>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +62 895 3664 6043 5</li>
+                    <li><i class="fas fa-envelope"></i> zoon.medan@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Medan, Sumatera Utara</li>
+                    <li><i class="fas fa-clock"></i> Senin–Sabtu: 08.00–20.00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>ZOON &mdash; A Pet Shop &amp; Peliharaan Anda &copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

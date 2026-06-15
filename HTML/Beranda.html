@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZOON</title>
+    <link rel="icon" href="/icon.jpg" type="image/jpg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+    <link rel="stylesheet" href="/CSS/Style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span>📞 +62 895 - 3664 - 6043 5</span>
+            <span>⏰ Buka: Senin–Sabtu, 08.00–20.00</span>
+        </div>
+
+        <nav>
+            <a href="Beranda.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <div class="logo-text">
+                    <span>ZOON</span>
+                    <span>Pet Shop</span>
+                </div>
+            </a>
+
+            <input type="checkbox" id="navtoggle" class="navtoggle">
+
+            <ul class="nav-links">
+                <li><a href="Beranda.html" class="active">Beranda</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="Layanan.html">Layanan</a></li>
+                <li><a href="Grooming.html">Grooming</a></li>
+                <li><a href="Klinik.html">Klinik</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Kontak.html">Kontak</a></li>
+                <li><a href="Tentang.html">Tentang</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="Shop.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <a href="Login.html" class="btn-nav-login">
+                    <i class="fas fa-user"></i>
+                    <span class="login-text">Login</span>
+                </a>
+                <label for="navtoggle" class="list-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ── HERO ── -->
+        <section class="hero">
+            <div class="hero-circle"></div>
+            <div class="hero-content">
+                <h1>Perawatan Terbaik<br>untuk Hewan<br>Peliharaan Anda</h1>
+                <a href="Shop.html" class="btn-primary">Belanja Sekarang</a>
+            </div>
+            <div class="hero-image">
+                <span class="hero-emoji">🐕</span>
+            </div>
+            <div class="hero-dots">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+
+        <!-- ── CATEGORIES ── -->
+        <section class="categories">
+            <h2 class="section-title">Kategoris</h2>
+
+            <div class="cat-grid">
+                <div class="cat-card">
+                    <div class="cat-card-img-placeholder">🐶</div>
+                    Anjing
+                </div>
+                <div class="cat-card">
+                    <div class="cat-card-img-placeholder">😺</div>
+                    Kucing
+                </div>
+                <div class="cat-card">
+                    <div class="cat-card-img-placeholder">🐥</div>
+                    Burung
+                </div>
+            </div>
+
+            <div class="cat-grid-2">
+                <div class="cat-card-orange">
+                    <div class="cat-info">
+                        <h3>Makanan<br>&amp; Snack</h3>
+                        <a href="Makanan.html" class="btn-white">Lihat Semua</a>
+                    </div>
+                    <div class="cat-img-placeholder">🍽️</div>
+                </div>
+                <div class="cat-card-orange">
+                    <div class="cat-info">
+                        <h3>Aksesoris<br>&amp; Perlengkapan</h3>
+                        <a href="Shop.html" class="btn-white">Lihat Semua</a>
+                    </div>
+                    <div class="cat-img-placeholder">🧣</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── FEATURED PRODUCTS ── -->
+        <section class="featured">
+            <h2 class="section-title">Produk Unggulan</h2>
+            <div class="prod-grid">
+                <div class="prod-card">
+                    <div class="prod-img-placeholder" style="background:#fdf0e0;">🥩</div>
+                    <h4>Makanan Kering</h4>
+                    <p>Nutrisi lengkap untuk anjing &amp; kucing</p>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-placeholder" style="background:#e8f7f9;">🐾</div>
+                    <h4>Mainan Interaktif</h4>
+                    <p>Mainan seru untuk hewan kesayanganmu</p>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-placeholder" style="background:#fff5e0;">🍖</div>
+                    <h4>Snack &amp; Treat</h4>
+                    <p>Camilan sehat pilihan hewan peliharaan</p>
+                </div>
+            </div>
+            <div class="featured-cta">
+                <a href="Shop.html" class="btn-primary">Belanja Sekarang</a>
+            </div>
+        </section>
+
+        <!-- ── SERVICES ── -->
+        <section class="services">
+            <h2 class="section-title">Layanan Kami</h2>
+            <div class="svc-grid">
+                <div class="svc-card">
+                    <span class="svc-icon">✂️</span>
+                    <h4>Grooming</h4>
+                    <p>Mandi, potong kuku, dan perawatan bulu profesional</p>
+                </div>
+                <div class="svc-card">
+                    <span class="svc-icon">🏥</span>
+                    <h4>Klinik Hewan</h4>
+                    <p>Pemeriksaan dan pengobatan oleh dokter berpengalaman</p>
+                </div>
+                <div class="svc-card">
+                    <span class="svc-icon">🏨</span>
+                    <h4>Pet Hotel</h4>
+                    <p>Penitipan hewan yang nyaman dan aman</p>
+                </div>
+                <div class="svc-card">
+                    <span class="svc-icon">🚗</span>
+                    <h4>Antar Jemput</h4>
+                    <p>Layanan jemput hewan ke lokasi kamu</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── WHY US ── -->
+        <section class="why-us">
+            <h2 class="section-title">Mengapa ZOON ?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Produk Terjamin</h4>
+                    <p>Semua produk berkualitas dan telah tersertifikasi</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-truck"></i></div>
+                    <h4>Pengiriman Cepat</h4>
+                    <p>Pengiriman ke seluruh kota dengan cepat dan aman</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-headset"></i></div>
+                    <h4>Layanan 24 Jam</h4>
+                    <p>Tim kami siap membantu kapan pun kamu butuhkan</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-heart"></i></div>
+                    <h4>Penuh Kasih Sayang</h4>
+                    <p>Setiap hewan diperlakukan dengan cinta dan perhatian</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="Beranda.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                    <div class="logo-text">
+                        <span>ZOON</span>
+                        <span>Pet Shop</span>
+                    </div>
+                </a>
+                <p>Toko hewan peliharaan terpercaya dengan produk berkualitas dan layanan profesional untuk hewan
+                    kesayangan Anda.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/zoon_medan/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h5>Tentang Kami</h5>
+                <ul>
+                    <li><a href="Tentang.html">Profil Perusahaan</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Klinik.html">Klinik Hewan</a></li>
+                    <li><a href="Grooming.html">Grooming</a></li>
+                    <li><a href="Layanan.html">Layanan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Sosial Media</h5>
+                <ul>
+                    <li><i class="fab fa-facebook"></i> <a href="#">zoon_medan</a></li>
+                    <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/zoon_medan/">zoon_medan</a>
+                    </li>
+                    <li><i class="fab fa-tiktok"></i> <a href="#">zoon_medan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Layanan Pelanggan</h5>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +62 895 3664 6043 5</li>
+                    <li><i class="fas fa-envelope"></i> zoon.medan@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Medan, Sumatera Utara</li>
+                    <li><i class="fas fa-clock"></i> Senin–Sabtu: 08.00–20.00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>ZOON &mdash; A Pet Shop &amp; Peliharaan Anda &copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

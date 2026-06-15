@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZOON</title>
+    <link rel="icon" href="/icon.jpg" type="image/jpg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/Style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span>📞 +62 895 - 3664 - 6043 5</span>
+            <span>⏰ Buka: Senin–Sabtu, 08.00–20.00</span>
+        </div>
+
+        <nav>
+            <a href="Beranda.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <div class="logo-text">
+                    <span>ZOON</span>
+                    <span>Pet Shop</span>
+                </div>
+            </a>
+
+            <input type="checkbox" id="navtoggle" class="navtoggle">
+
+            <ul class="nav-links">
+                <li><a href="Beranda.html">Beranda</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="Layanan.html">Layanan</a></li>
+                <li><a href="Grooming.html">Grooming</a></li>
+                <li><a href="Klinik.html">Klinik</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Kontak.html" class="active">Kontak</a></li>
+                <li><a href="Tentang.html">Tentang</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="Shop.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <a href="Login.html" class="btn-nav-login">
+                    <i class="fas fa-user"></i> 
+                    <span class="login-text">Login</span>
+                </a>
+                <label for="navtoggle" class="list-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ── PAGE HERO ── -->
+        <div class="page-hero">
+            <div class="page-hero-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Beranda</a>
+                    <i class="fas fa-chevron-right" style="font-size:10px;"></i>
+                    <span>Kontak</span>
+                </div>
+                <h1>Hubungi<br>Kami</h1>
+                <p>Ada pertanyaan, saran, atau ingin booking layanan? Kami siap membantu kamu kapan saja. Jangan ragu
+                    untuk
+                    menghubungi kami!</p>
+            </div>
+            <div class="page-hero-icon">📞</div>
+        </div>
+
+        <!-- ── KONTAK UTAMA ── -->
+        <section class="kontak-section">
+            <div class="kontak-wrapper">
+
+                <!-- INFO KONTAK -->
+                <div class="kontak-info">
+                    <h3>Kami Senang<br><span>Mendengar dari Anda</span></h3>
+                    <p>Hubungi kami melalui berbagai saluran komunikasi yang tersedia. Tim kami siap merespons
+                        pertanyaan
+                        Anda dengan cepat dan ramah.</p>
+
+                    <div class="kontak-detail-list">
+
+                        <a href="https://wa.me/62895366460435" class="kontak-detail-item">
+                            <div class="kontak-detail-icon green">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="kontak-detail-text">
+                                <strong>WhatsApp (Respon Tercepat)</strong>
+                                <span>+62 895 - 3664 6043 5<br>Respon dalam 5–15 menit pada jam buka</span>
+                            </div>
+                        </a>
+
+                        <a href="tel:+6261123456" class="kontak-detail-item">
+                            <div class="kontak-detail-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="kontak-detail-text">
+                                <strong>Telepon</strong>
+                                <span>(061) 123-456<br>Senin – Sabtu, 08.00 – 20.00 WIB</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:info@happypaws.com" class="kontak-detail-item">
+                            <div class="kontak-detail-icon orange">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="kontak-detail-text">
+                                <strong>Email</strong>
+                                <span>zoon.medan@gmail.com<br>Dibalas dalam 1x24 jam kerja</span>
+                            </div>
+                        </a>
+
+                        <a href="#lokasi" class="kontak-detail-item">
+                            <div class="kontak-detail-icon purple">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="kontak-detail-text">
+                                <strong>Alamat Toko</strong>
+                                <span>Jl. Peliharaan No. 12, Kel. Petisah Tengah<br>Kec. Medan Petisah, Kota Medan
+                                    20112</span>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <!-- SOSIAL MEDIA -->
+                    <div class="kontak-sosmed">
+                        <h4>Ikuti Kami di Sosial Media</h4>
+                        <div class="kontak-sosmed-links">
+                            <a href="#" class="sosmed-btn fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+                            <a href="#" class="sosmed-btn ig"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="#" class="sosmed-btn tt"><i class="fab fa-tiktok"></i> TikTok</a>
+                            <a href="https://wa.me/6281234567890" class="sosmed-btn wa"><i class="fab fa-whatsapp"></i>
+                                WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORM KONTAK -->
+                <div class="kontak-form-box">
+                    <h4>📬 Kirim Pesan ke Kami</h4>
+                    <p>Isi form di bawah ini dan kami akan segera menghubungi Anda melalui WhatsApp atau email.</p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nama Lengkap *</label>
+                            <input type="text" placeholder="Nama kamu" />
+                        </div>
+                        <div class="form-group">
+                            <label>Nomor WhatsApp *</label>
+                            <input type="tel" placeholder="08xx-xxxx-xxxx" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="email@kamu.com (opsional)" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Topik Pesan *</label>
+                        <select>
+                            <option value="">-- Pilih Topik --</option>
+                            <option>Pertanyaan Produk</option>
+                            <option>Booking Grooming</option>
+                            <option>Janji Klinik Hewan</option>
+                            <option>Penitipan Hewan (Pet Hotel)</option>
+                            <option>Antar Jemput</option>
+                            <option>Komplain / Saran</option>
+                            <option>Kerjasama / Mitra</option>
+                            <option>Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pesan *</label>
+                        <textarea placeholder="Tuliskan pesan, pertanyaan, atau keluhan kamu di sini..."></textarea>
+                    </div>
+
+                    <button class="form-submit" onclick="kirimPesan()">
+                        <i class="fas fa-paper-plane"></i> Kirim Pesan Sekarang
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── LOKASI & PETA ── -->
+        <section class="lokasi-section" id="lokasi">
+            <h2 class="section-title">Lokasi Toko Kami</h2>
+            <div class="lokasi-wrapper">
+
+                <!-- INFO LOKASI -->
+                <div class="lokasi-info">
+                    <h3>Temukan Kami di Sini</h3>
+
+                    <div class="lokasi-detail">
+                        <div class="lokasi-row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Alamat Lengkap</strong>
+                                <span>Jl. Peliharaan No. 12, Kel. Petisah Tengah, Kec. Medan Petisah, Kota Medan,
+                                    Sumatera
+                                    Utara 20112</span>
+                            </div>
+                        </div>
+                        <div class="lokasi-row">
+                            <i class="fas fa-directions"></i>
+                            <div>
+                                <strong>Patokan</strong>
+                                <span>Sebelah Minimarket AlphaMArt Jl. Peliharaan, 200m dari Taman Beringin Medan</span>
+                            </div>
+                        </div>
+                        <div class="lokasi-row">
+                            <i class="fas fa-car"></i>
+                            <div>
+                                <strong>Parkir</strong>
+                                <span>Tersedia parkir mobil dan motor di depan toko, gratis untuk pelanggan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JADWAL BUKA -->
+                    <div class="jadwal-singkat">
+                        <h4><i class="fas fa-clock"></i> Jam Operasional</h4>
+                        <div class="jadwal-row">
+                            <strong>Senin – Jumat</strong>
+                            <span class="open">08.00 – 20.00</span>
+                        </div>
+                        <div class="jadwal-row">
+                            <strong>Sabtu</strong>
+                            <span class="open">08.00 – 21.00</span>
+                        </div>
+                        <div class="jadwal-row">
+                            <strong>Minggu</strong>
+                            <span class="open">09.00 – 18.00</span>
+                        </div>
+                        <div class="jadwal-row">
+                            <strong>Hari Libur Nasional</strong>
+                            <span class="closed">Tutup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PETA PLACEHOLDER -->
+                <div class="lokasi-map">
+                    <div class="map-placeholder-icon">📍</div>
+                    <div class="map-placeholder-text">
+                        <h4>ZOON Pet Shop</h4>
+                        <p>Jl. Peliharaan No. 12, Medan Petisah<br>Kota Medan, Sumatera Utara</p>
+                        <a href="https://maps.google.com/?q=Medan+Petisah+Sumatera+Utara" target="_blank"
+                            class="btn-maps">
+                            <i class="fas fa-map"></i> Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── FAQ KONTAK ── -->
+        <section class="faq-kontak">
+            <h2 class="section-title">Pertanyaan Umum</h2>
+            <div class="faq-kontak-grid">
+
+                <div class="faq-kontak-card">
+                    <h4><i class="fas fa-question-circle"></i> Apakah bisa konsultasi via WhatsApp?</h4>
+                    <p>Ya! Kamu bisa konsultasi langsung via WhatsApp di nomor +62 895 - 3664 - 60435. Tim kami akan
+                        merespons
+                        dalam 5–15 menit pada jam operasional. Untuk kondisi darurat hewan peliharaan, segera hubungi
+                        kami.
+                    </p>
+                </div>
+
+                <div class="faq-kontak-card">
+                    <h4><i class="fas fa-question-circle"></i> Bagaimana cara booking grooming?</h4>
+                    <p>Booking bisa dilakukan via WhatsApp, telepon, atau datang langsung ke toko. Sebaiknya booking
+                        minimal
+                        1 hari sebelumnya agar waktu kamu lebih terjadwal dan tidak perlu mengantri lama.</p>
+                </div>
+
+                <div class="faq-kontak-card">
+                    <h4><i class="fas fa-question-circle"></i> Apakah ada layanan pengiriman produk?</h4>
+                    <p>Ya, kami melayani pengiriman produk ke seluruh wilayah Kota Medan dan sekitarnya. Pemesanan bisa
+                        dilakukan via WhatsApp. Minimal pembelian untuk pengiriman adalah Rp 100.000.</p>
+                </div>
+
+                <div class="faq-kontak-card">
+                    <h4><i class="fas fa-question-circle"></i> Berapa lama respon email?</h4>
+                    <p>Email akan dibalas dalam 1x24 jam di hari kerja (Senin–Sabtu). Untuk respon lebih cepat, kami
+                        sangat
+                        menyarankan untuk menghubungi via WhatsApp karena dimonitoring langsung oleh tim kami.</p>
+                </div>
+
+                <div class="faq-kontak-card">
+                    <h4><i class="fas fa-question-circle"></i> Apakah ada biaya konsultasi?</h4>
+                    <p>Konsultasi via WhatsApp untuk pertanyaan umum seputar produk dan layanan gratis! Untuk konsultasi
+                        medis lebih mendalam dengan dokter hewan, silakan buat janji temu di klinik kami.</p>
+                </div>
+
+                <div class="faq-kontak-card">
+                    <h4><i class="fas fa-question-circle"></i> Bagaimana cara menjadi mitra ZOON?</h4>
+                    <p>Kami membuka peluang kerjasama dengan berbagai pihak. Silakan kirim email ke info@happypaws.com
+                        dengan subject "Kerjasama" atau hubungi kami langsung via WhatsApp untuk diskusi lebih lanjut.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── CTA ── -->
+        <section class="cta-section">
+            <h2>Masih Ada Pertanyaan?<br>Kami Siap Membantu!</h2>
+            <p>Jangan ragu menghubungi kami kapan saja. Tim ZOON selalu siap memberikan solusi terbaik untuk hewan
+                peliharaan Anda.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/6281234567890" class="btn-primary">
+                    <i class="fab fa-whatsapp"></i> Chat WhatsApp Sekarang
+                </a>
+                <a href="klinik.html" class="btn-light">Buat Janji Klinik</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="Beranda.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                    <div class="logo-text">
+                        <span>ZOON</span>
+                        <span>Pet Shop</span>
+                    </div>
+                </a>
+                <p>Toko hewan peliharaan terpercaya dengan produk berkualitas dan layanan profesional untuk hewan
+                    kesayangan Anda.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/zoon_medan/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h5>Tentang Kami</h5>
+                <ul>
+                    <li><a href="Tentang.html">Profil Perusahaan</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Klinik.html">Klinik Hewan</a></li>
+                    <li><a href="Grooming.html">Grooming</a></li>
+                    <li><a href="Layanan.html">Layanan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Sosial Media</h5>
+                <ul>
+                    <li><i class="fab fa-facebook"></i> <a href="#">zoon_medan</a></li>
+                    <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/zoon_medan/">zoon_medan</a>
+                    </li>
+                    <li><i class="fab fa-tiktok"></i> <a href="#">zoon_medan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Layanan Pelanggan</h5>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +62 895 3664 6043 5</li>
+                    <li><i class="fas fa-envelope"></i> zoon.medan@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Medan, Sumatera Utara</li>
+                    <li><i class="fas fa-clock"></i> Senin–Sabtu: 08.00–20.00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>ZOON &mdash; A Pet Shop &amp; Peliharaan Anda &copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
