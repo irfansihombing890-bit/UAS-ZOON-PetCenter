@@ -1,0 +1,16 @@
+:root {
+    --teal: #00A8B5;
+    --teal-dark: #007f8c;
+    --orange: #F7941D;
+    --orange-dark: #e07d08;
+    --light-blue: #E8F7F9;
+    --white: #ffffff;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --footer-bg: #1a3a4a;
+
+    --teals: #1abc9c;
+    --oranges: #f39c12;
+    --text-darks: #1f2a44;
+    --text-grays: #666;
+}

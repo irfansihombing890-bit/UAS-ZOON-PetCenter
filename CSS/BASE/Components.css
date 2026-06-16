@@ -1,0 +1,97 @@
+/* ── BUTTONS GLOBAL ── */
+.btn-primary {
+    display: inline-block;
+    background: var(--orange);
+    color: #ffffff;
+    padding: 13px 30px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.2s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: var(--orange-dark);
+    transform: translateY(-2px);
+}
+
+.btn-white {
+    background: #ffffff;
+    color: var(--orange);
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.btn-white:hover {
+    background: #fff8f0;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 2px solid var(--teal);
+    color: var(--teal);
+    padding: 9px 22px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+    cursor: pointer;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--teal);
+    color: #ffffff;
+}
+
+.btn-light {
+    display: inline-block;
+    background: #ffffff;
+    color: var(--teal);
+    padding: 13px 30px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.btn-light:hover {
+    background: var(--light-blue);
+    transform: translateY(-2px);
+}
+
+.btn-maps {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--teal);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-maps:hover {
+    background: var(--teal-dark);
+    transform: translateY(-2px);
+}

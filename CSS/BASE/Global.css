@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-dark);
+    background: #ffffff;
+}
+
+/* Memastikan semua gambar mengecil secara responsif */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* GLOBAL WRAPPER */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* SECTION SPACING */
+section {
+    padding: 60px 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 36px;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

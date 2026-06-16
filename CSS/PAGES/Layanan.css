@@ -1,0 +1,512 @@
+/* ── PAGE HERO (dipakai semua halaman dalam) ── */
+.page-hero {
+    background: linear-gradient(135deg, var(--teal) 0%, #009aaa 60%, #00b5c8 100%);
+    padding: 70px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: -80px;
+    width: 360px;
+    height: 360px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    left: 40%;
+    bottom: -100px;
+    width: 260px;
+    height: 260px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.page-hero-content {
+    z-index: 2;
+}
+
+.page-hero-content .breadcrumb {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.page-hero-content .breadcrumb a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.page-hero-content .breadcrumb a:hover {
+    color: #ffffff;
+}
+
+.page-hero-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.page-hero-content p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+.page-hero-icon {
+    font-size: 130px;
+    z-index: 2;
+    opacity: 0.9;
+}
+
+/* ── LAYANAN UTAMA CARDS ── */
+.layanan-section {
+    background: #ffffff;
+}
+
+.layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.layanan-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.layanan-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.13);
+}
+
+.layanan-card-header {
+    padding: 32px 32px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.layanan-card-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.layanan-card-icon.teal {
+    background: var(--light-blue);
+}
+
+.layanan-card-icon.orange {
+    background: #fff3e0;
+}
+
+.layanan-card-icon.green {
+    background: #e8f8f0;
+}
+
+.layanan-card-icon.purple {
+    background: #f0eaff;
+}
+
+.layanan-card-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.layanan-card-info p {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.layanan-card-features {
+    padding: 0 32px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.layanan-card-features li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+.layanan-card-features li i {
+    color: var(--teal);
+    font-size: 13px;
+    width: 16px;
+}
+
+.layanan-card-footer {
+    padding: 20px 32px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.layanan-card-price {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--teal);
+}
+
+.layanan-card-price span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-gray);
+}
+
+/* ── PROSES LAYANAN ── */
+.proses-section {
+    background: #f9fefe;
+}
+
+.proses-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    position: relative;
+}
+
+.proses-grid::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: calc(12.5% + 20px);
+    right: calc(12.5% + 20px);
+    height: 3px;
+    background: linear-gradient(to right, var(--teal), var(--orange));
+    border-radius: 2px;
+    z-index: 0;
+}
+
+.proses-card {
+    text-align: center;
+    padding: 20px 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.proses-number {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    box-shadow: 0 4px 16px rgba(0, 168, 181, 0.35);
+}
+
+.proses-card:nth-child(even) .proses-number {
+    background: var(--orange);
+    box-shadow: 0 4px 16px rgba(247, 148, 29, 0.35);
+}
+
+.proses-card h4 {
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.proses-card p {
+    font-size: 13px;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* ── JADWAL & JAM ── */
+.jadwal-section {
+    background: var(--teal);
+}
+
+.jadwal-section .section-title {
+    color: #ffffff;
+}
+
+.jadwal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.jadwal-table {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.jadwal-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.jadwal-table th {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 14px 20px;
+    text-align: left;
+    font-weight: 800;
+    font-size: 13px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.jadwal-table td {
+    padding: 14px 20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.jadwal-table tr:last-child td {
+    border-bottom: none;
+}
+
+.badge-buka {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.badge-tutup {
+    background: rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.5);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.kontak-cepat {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.kontak-cepat h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.kontak-item {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.kontak-item:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.kontak-item i {
+    font-size: 22px;
+    width: 28px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.kontak-item-text strong {
+    display: block;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.kontak-item-text span {
+    font-size: 13px;
+    opacity: 0.75;
+}
+
+/* ── FAQ ── */
+.faq-section {
+    background: #ffffff;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    border: 2px solid #eef8f9;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.faq-item.open {
+    border-color: var(--teal);
+}
+
+.faq-question {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--text-dark);
+    user-select: none;
+}
+
+.faq-question i {
+    color: var(--teal);
+    font-size: 16px;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+.faq-item.open .faq-question i {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s;
+    padding: 0 24px;
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 300px;
+    padding: 0 24px 20px;
+}
+
+/* ── CTA BANNER ── */
+.cta-section {
+    background: linear-gradient(135deg, #1a3a4a 0%, #0d2535 100%);
+    padding: 70px 5%;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.cta-section p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 32px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ── RESPONSIVE LAYANAN ── */
+@media (max-width: 900px) {
+    .page-hero {
+        padding: 50px 5%;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .page-hero-content h1 {
+        font-size: 30px;
+    }
+    .page-hero-icon {
+        font-size: 80px;
+    }
+    .layanan-grid {
+        grid-template-columns: 1fr;
+    }
+    .proses-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .proses-grid::before {
+        display: none;
+    }
+    .jadwal-grid {
+        grid-template-columns: 1fr;
+    }
+    .cta-section {
+        padding: 50px 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .proses-grid {
+        grid-template-columns: 1fr;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
