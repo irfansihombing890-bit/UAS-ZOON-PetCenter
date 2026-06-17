@@ -602,3 +602,7 @@
         align-items: flex-start;
     }
 }
+
+.cta-buttons {
+    margin-top: 14px;
+}

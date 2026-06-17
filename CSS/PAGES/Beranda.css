@@ -349,3 +349,174 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Container Utama (Diperkecil ukurannya) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh; /* Tidak lagi full 100vh agar lebih ringkas */
+    padding: 80px 8%; /* Menambah jarak pinggir */
+    background-color: var(--navy-blue, #0B1B3D);
+    color: white;
+    overflow: hidden;
+  }
+  
+  /* Bagian Kiri */
+  .hero-left {
+    width: 50%;
+    position: relative;
+    height: 350px; /* Disesuaikan tinggi kontennya */
+  }
+  
+  .hero-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+  
+  .hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+  }
+  
+  /* Teks diperkecil */
+  .hero-content h1 {
+    font-size: 2.4rem; /* Dari 3rem menjadi 2.4rem */
+    margin-bottom: 12px;
+    color: var(--teal, #00A8B5);
+  }
+  
+  .hero-content p {
+    font-size: 1.05rem; /* Dari 1.2rem menjadi 1.05rem */
+    margin-bottom: 25px;
+    line-height: 1.5;
+    color: #E2E8F0;
+  }
+  
+  /* Bagian Kanan: 3D Cards (Diperkecil) */
+  .hero-right {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 900px;
+  }
+  
+  /* Ukuran Kartu Slider diperkecil */
+  .slider-container {
+    position: relative;
+    width: 250px;  /* Dari 300px ke 250px */
+    height: 340px; /* Dari 400px ke 340px */
+    transform-style: preserve-3d;
+  }
+  
+  .slider-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px; /* Lengkungan sedikit dikurangi proporsional */
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  }
+  
+  .slider-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slider-card h3 {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  /* Posisi 3D Cards (Jarak geser diperkecil) */
+  .slider-card.active {
+    transform: translateX(0) translateZ(0) rotateY(0);
+    z-index: 3;
+    opacity: 1;
+  }
+  
+  .slider-card.next {
+    /* translateX dikurangi dari 120px ke 90px */
+    transform: translateX(90px) translateZ(-120px) rotateY(-20deg);
+    z-index: 2;
+    opacity: 0.6;
+  }
+  
+  .slider-card.prev {
+    transform: translateX(-90px) translateZ(-120px) rotateY(20deg);
+    z-index: 1;
+    opacity: 0.6;
+  }
+  
+  /* Progress Indicator */
+  .progress-container {
+    width: 250px; /* Mengikuti lebar kartu baru */
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin-top: 30px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #00A8B5;
+    border-radius: 10px;
+  }
+  
+  @keyframes fillProgress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+  }
+
+  /* ── ANIMASI TEKS MASUK (FADE IN UP) ── */
+
+/* 1. Atur posisi awal teks agar bersembunyi dan turun sedikit */
+.hero-content h1,
+.hero-content p,
+.hero-content .btn-primary {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* 2. Jalankan animasi hanya saat slide mendapatkan class 'active' */
+.hero-slide.active .hero-content h1 {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Delay 0.2 detik untuk paragraf */
+.hero-slide.active .hero-content p {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+/* Delay 0.4 detik untuk tombol agar muncul terakhir */
+.hero-slide.active .hero-content .btn-primary {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+/* 3. Definisi Keyframes Animasi */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
