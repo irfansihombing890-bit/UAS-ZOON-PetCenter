@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-dark);
+    background: #ffffff;
+}
+
+/* Memastikan semua gambar mengecil secara responsif */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* GLOBAL WRAPPER */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* SECTION SPACING */
+section {
+    padding: 60px 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 36px;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ── KEMBALIKAN GAYA HEADER HALAMAN (GROOMING, KLINIK, DLL) ── */
+.page-hero {
+    background: linear-gradient(135deg, var(--teal) 0%, #009aaa 60%, #00b5c8 100%);
+    padding: 70px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px; /* Jarak antara header dan konten di bawahnya */
+}
+
+/* Lingkaran dekorasi di background */
+.page-hero::before {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: -80px;
+    width: 360px;
+    height: 360px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    left: 40%;
+    bottom: -100px;
+    width: 260px;
+    height: 260px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.page-hero-content {
+    z-index: 2;
+}
+
+/* Gaya Breadcrumb (Beranda > Grooming) */
+.page-hero-content .breadcrumb {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.page-hero-content .breadcrumb a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.page-hero-content .breadcrumb a:hover {
+    color: #ffffff;
+}
+
+/* Judul (Grooming Profesional) */
+.page-hero-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: capitalize;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+/* Deskripsi kecil di bawah judul */
+.page-hero-content p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 500px;
+    line-height: 1.7;
+    margin-top: 0;
+}
+
+/* Ikon atau elemen di sebelah kanan (seperti gunting atau gambar) */
+.page-hero-icon {
+    font-size: 130px;
+    z-index: 2;
+    opacity: 0.9;
+}
+
+/* Memperbaiki jarak untuk tag h1 dan p agar tidak berantakan jika berada di luar page-hero */
+main > h1 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark, #333);
+}
+
+main > p {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-gray, #666);
+}
+
+/* ── RESPONSIVE HERO ── */
+@media (max-width: 900px) {
+    .page-hero {
+        padding: 50px 5%;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .page-hero-content h1 {
+        font-size: 30px;
+    }
+    .page-hero-icon {
+        font-size: 80px;
+    }
+}

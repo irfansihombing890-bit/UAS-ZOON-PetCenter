@@ -1,0 +1,522 @@
+/* ── HERO ── */
+.hero {
+    background: linear-gradient(135deg, var(--teal) 0%, #009aaa 60%, #00b5c8 100%);
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    right: 200px;
+    top: -60px;
+    width: 380px;
+    height: 380px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 500px;
+    padding: 60px 60px;
+}
+
+.hero-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.15;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.hero-image {
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-image .hero-emoji {
+    font-size: 200px;
+    line-height: 1;
+}
+
+.hero-circle {
+    position: absolute;
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 340px;
+    height: 340px;
+    background: var(--orange);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-dots {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.hero-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.hero-dots span.active {
+    background: #ffffff;
+}
+
+/* ── CATEGORIES ── */
+.categories {
+    background: #ffffff;
+}
+
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.cat-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cat-card {
+    background: var(--light-blue);
+    border-radius: 16px;
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    font-weight: 800;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.cat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 168, 181, 0.18);
+}
+
+.cat-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.cat-card-img-placeholder {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b2dfe4, #7ecfd6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+}
+
+.cat-card-orange {
+    background: var(--orange);
+    border-radius: 16px;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    position: relative;
+}
+
+.cat-card-orange:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(247, 148, 29, 0.3);
+}
+
+.cat-card-orange .cat-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.cat-img-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    flex-shrink: 0;
+}
+
+/* ── FEATURED PRODUCTS ── */
+.featured {
+    background: #f9fefe;
+}
+
+.prod-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 36px;
+}
+
+.prod-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.prod-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.prod-img-placeholder {
+    width: 110px;
+    height: 110px;
+    border-radius: 16px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 54px;
+}
+
+.prod-card h4 {
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.prod-card p {
+    font-size: 13px;
+    color: var(--text-gray);
+}
+
+.featured-cta {
+    text-align: center;
+}
+
+/* ── SERVICES ── */
+.services {
+    background: var(--teal);
+}
+
+.services .section-title {
+    color: #ffffff;
+}
+
+.svc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.svc-card {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    color: #ffffff;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.svc-card:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-4px);
+}
+
+.svc-icon {
+    font-size: 40px;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.svc-card h4 {
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.svc-card p {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+/* ── WHY US ── */
+.why-us {
+    background: #ffffff;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.why-card {
+    text-align: center;
+    padding: 24px 16px;
+}
+
+.why-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 30px;
+    color: var(--teal);
+}
+
+.why-card h4 {
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.why-card p {
+    font-size: 13px;
+    color: var(--text-gray);
+}
+
+/* RESPONSIVE BERANDA */
+@media (max-width: 900px) {
+    .hero-content {
+        padding: 40px 5%;
+    }
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    .hero-image .hero-emoji {
+        font-size: 120px;
+    }
+    .hero-circle {
+        width: 220px;
+        height: 220px;
+        right: 30px;
+    }
+    .cat-grid,
+    .prod-grid,
+    .svc-grid,
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .cat-grid,
+    .cat-grid-2,
+    .prod-grid,
+    .svc-grid,
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Container Utama (Diperkecil ukurannya) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh; /* Tidak lagi full 100vh agar lebih ringkas */
+    padding: 80px 8%; /* Menambah jarak pinggir */
+    background-color: var(--navy-blue, #0B1B3D);
+    color: white;
+    overflow: hidden;
+  }
+  
+  /* Bagian Kiri */
+  .hero-left {
+    width: 50%;
+    position: relative;
+    height: 350px; /* Disesuaikan tinggi kontennya */
+  }
+  
+  .hero-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+  
+  .hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+  }
+  
+  /* Teks diperkecil */
+  .hero-content h1 {
+    font-size: 2.4rem; /* Dari 3rem menjadi 2.4rem */
+    margin-bottom: 12px;
+    color: var(--teal, #00A8B5);
+  }
+  
+  .hero-content p {
+    font-size: 1.05rem; /* Dari 1.2rem menjadi 1.05rem */
+    margin-bottom: 25px;
+    line-height: 1.5;
+    color: #E2E8F0;
+  }
+  
+  /* Bagian Kanan: 3D Cards (Diperkecil) */
+  .hero-right {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 900px;
+  }
+  
+  /* Ukuran Kartu Slider diperkecil */
+  .slider-container {
+    position: relative;
+    width: 250px;  /* Dari 300px ke 250px */
+    height: 340px; /* Dari 400px ke 340px */
+    transform-style: preserve-3d;
+  }
+  
+  .slider-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px; /* Lengkungan sedikit dikurangi proporsional */
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  }
+  
+  .slider-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slider-card h3 {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  /* Posisi 3D Cards (Jarak geser diperkecil) */
+  .slider-card.active {
+    transform: translateX(0) translateZ(0) rotateY(0);
+    z-index: 3;
+    opacity: 1;
+  }
+  
+  .slider-card.next {
+    /* translateX dikurangi dari 120px ke 90px */
+    transform: translateX(90px) translateZ(-120px) rotateY(-20deg);
+    z-index: 2;
+    opacity: 0.6;
+  }
+  
+  .slider-card.prev {
+    transform: translateX(-90px) translateZ(-120px) rotateY(20deg);
+    z-index: 1;
+    opacity: 0.6;
+  }
+  
+  /* Progress Indicator */
+  .progress-container {
+    width: 250px; /* Mengikuti lebar kartu baru */
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin-top: 30px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #00A8B5;
+    border-radius: 10px;
+  }
+  
+  @keyframes fillProgress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+  }
+
+  /* ── ANIMASI TEKS MASUK (FADE IN UP) ── */
+
+/* 1. Atur posisi awal teks agar bersembunyi dan turun sedikit */
+.hero-content h1,
+.hero-content p,
+.hero-content .btn-primary {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* 2. Jalankan animasi hanya saat slide mendapatkan class 'active' */
+.hero-slide.active .hero-content h1 {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Delay 0.2 detik untuk paragraf */
+.hero-slide.active .hero-content p {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+/* Delay 0.4 detik untuk tombol agar muncul terakhir */
+.hero-slide.active .hero-content .btn-primary {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+/* 3. Definisi Keyframes Animasi */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

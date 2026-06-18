@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="/CSS/Style.css" />
+    <link rel="stylesheet" href="../CSS/Style.css">
 </head>
 
 <body>
@@ -35,9 +35,23 @@
             <ul class="nav-links">
                 <li><a href="Beranda.html">Beranda</a></li>
                 <li><a href="Shop.html">Shop</a></li>
-                <li><a href="Layanan.html">Layanan</a></li>
-                <li><a href="Grooming.html">Grooming</a></li>
-                <li><a href="Klinik.html">Klinik</a></li>
+                
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" aria-label="Menu Layanan">
+                            Layanan
+                            <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="Grooming.html">Grooming</a>
+                            <a href="Klinik.html">Klinik</a>
+                            <a href="PetHotel.html">Pet Hotel</a>
+                        </div>
+                    </div>
+                </li>
+                
                 <li><a href="Blog.html">Blog</a></li>
                 <li><a href="Kontak.html" class="active">Kontak</a></li>
                 <li><a href="Tentang.html">Tentang</a></li>

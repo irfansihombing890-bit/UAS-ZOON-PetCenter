@@ -1,0 +1,577 @@
+/* ── KATEGORI MAKANAN ── */
+.makanan-kategori {
+    background: #ffffff;
+}
+
+.makanan-kat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.makanan-kat-card {
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+}
+
+.makanan-kat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,168,181,0.15);
+    border-color: var(--teal);
+}
+
+.makanan-kat-card.active {
+    border-color: var(--teal);
+    background: var(--light-blue);
+}
+
+.makanan-kat-card:nth-child(1) {
+    background: linear-gradient(135deg, #e8f7f9, #c8ecf0);
+}
+
+.makanan-kat-card:nth-child(2) {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b8);
+}
+
+.makanan-kat-card:nth-child(3) {
+    background: linear-gradient(135deg, #e8f8f0, #b2e4c8);
+}
+
+.makanan-kat-card:nth-child(4) {
+    background: linear-gradient(135deg, #f0eaff, #d4b8f0);
+}
+
+.makanan-kat-icon {
+    font-size: 52px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.makanan-kat-card h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.makanan-kat-card p {
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+/* ── NUTRISI INFO ── */
+.nutrisi-section {
+    background: var(--teal);
+}
+
+.nutrisi-section .section-title {
+    color: #ffffff;
+}
+
+.nutrisi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.nutrisi-card {
+    background: rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    color: #ffffff;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.nutrisi-card:hover {
+    background: rgba(255,255,255,0.22);
+    transform: translateY(-4px);
+}
+
+.nutrisi-icon {
+    font-size: 42px;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.nutrisi-card h4 {
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.nutrisi-card p {
+    font-size: 13px;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+/* ── PRODUK MAKANAN ── */
+.makanan-produk {
+    background: #f9fefe;
+}
+
+.makanan-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.makanan-tab {
+    padding: 10px 22px;
+    border-radius: 30px;
+    border: 2px solid #eef0f3;
+    background: #ffffff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--text-gray);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.makanan-tab:hover {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: #ffffff;
+}
+
+.makanan-tab.active {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: #ffffff;
+}
+
+.makanan-produk-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.makanan-card {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.makanan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.11);
+}
+
+.makanan-card-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+.makanan-card-badge.rekomendasi {
+    background: var(--teal);
+    color: #ffffff;
+}
+
+.makanan-card-badge.diskon {
+    background: #e74c3c;
+    color: #ffffff;
+}
+
+.makanan-card-badge.baru {
+    background: var(--orange);
+    color: #ffffff;
+}
+
+.makanan-card-img {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+}
+
+.makanan-card-img.anjing {
+    background: linear-gradient(135deg, #e8f7f9, #c8ecf0);
+}
+
+.makanan-card-img.kucing {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b8);
+}
+
+.makanan-card-img.snack {
+    background: linear-gradient(135deg, #e8f8f0, #b2e4c8);
+}
+
+.makanan-card-img.burung {
+    background: linear-gradient(135deg, #f0eaff, #d4b8f0);
+}
+
+.makanan-card-body {
+    padding: 14px 16px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.makanan-card-brand {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+}
+
+.makanan-card-body h4 {
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    line-height: 1.4;
+    flex: 1;
+}
+
+.makanan-card-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.makanan-card-rating .stars {
+    color: var(--orange);
+    font-size: 11px;
+}
+
+.makanan-card-rating span {
+    font-size: 11px;
+    color: var(--text-gray);
+}
+
+.makanan-card-berat {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.berat-tag {
+    background: var(--light-blue);
+    color: var(--teal);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: all 0.15s;
+}
+
+.berat-tag:hover {
+    border-color: var(--teal);
+    background: #ffffff;
+}
+
+.berat-tag.active {
+    border-color: var(--teal);
+    background: #ffffff;
+}
+
+.makanan-card-harga {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.makanan-harga-utama {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--teal);
+}
+
+.makanan-harga-coret {
+    font-size: 11px;
+    color: #bbb;
+    text-decoration: line-through;
+}
+
+.makanan-harga-diskon {
+    background: #ffeaea;
+    color: #e74c3c;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+
+.btn-makanan-beli {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    padding: 9px;
+    background: var(--teal);
+    color: #ffffff;
+    border: none;
+    border-radius: 9px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.btn-makanan-beli:hover {
+    background: var(--teal-dark);
+    transform: translateY(-1px);
+}
+
+/* ── PANDUAN NUTRISI ── */
+.panduan-section {
+    background: #ffffff;
+}
+
+.panduan-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.panduan-visual {
+    background: linear-gradient(135deg, var(--light-blue), #c8ecf0);
+    border-radius: 22px;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.panduan-visual::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 180px;
+    height: 180px;
+    background: rgba(247,148,29,0.12);
+    border-radius: 50%;
+}
+
+.panduan-text h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 14px;
+    line-height: 1.25;
+}
+
+.panduan-text h3 span {
+    color: var(--teal);
+}
+
+.panduan-text p {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.panduan-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.panduan-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #f9fefe;
+    border-radius: 12px;
+    border-left: 3px solid var(--teal);
+}
+
+.panduan-list li .panduan-num {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--teal);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 28px;
+}
+
+.panduan-list li div strong {
+    display: block;
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+}
+
+.panduan-list li div span {
+    font-size: 12px;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+/* ── BRAND SECTION ── */
+.brand-section {
+    background: #f9fefe;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.brand-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.brand-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,168,181,0.14);
+    border-color: var(--teal);
+}
+
+.brand-logo {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.brand-card h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.brand-card span {
+    font-size: 11px;
+    color: var(--text-gray);
+}
+
+/* ── TIPS PEMBERIAN MAKAN ── */
+.tips-makan-section {
+    background: var(--teal);
+}
+
+.tips-makan-section .section-title {
+    color: #ffffff;
+}
+
+.tips-makan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.tips-makan-card {
+    background: rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 26px 22px;
+    color: #ffffff;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.tips-makan-card:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-4px);
+}
+
+.tips-makan-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.tips-makan-card h4 {
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.tips-makan-card p {
+    font-size: 13px;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+/* ── RESPONSIVE MAKANAN ── */
+@media (max-width: 900px) {
+    .makanan-kat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .nutrisi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .makanan-produk-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .panduan-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .panduan-visual {
+        min-height: 180px;
+        font-size: 80px;
+    }
+    .brand-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .tips-makan-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .makanan-kat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .makanan-produk-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tips-makan-grid {
+        grid-template-columns: 1fr;
+    }
+}

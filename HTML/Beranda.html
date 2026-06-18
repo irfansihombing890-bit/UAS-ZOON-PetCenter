@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 
-    <link rel="stylesheet" href="/CSS/Style.css" />
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <script defer src="../JS/pages/beranda.js"></script>
 </head>
 
 <body>
@@ -37,9 +38,23 @@
             <ul class="nav-links">
                 <li><a href="Beranda.html" class="active">Beranda</a></li>
                 <li><a href="Shop.html">Shop</a></li>
-                <li><a href="Layanan.html">Layanan</a></li>
-                <li><a href="Grooming.html">Grooming</a></li>
-                <li><a href="Klinik.html">Klinik</a></li>
+                
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" aria-label="Menu Layanan">
+                            Layanan
+                            <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="Grooming.html">Grooming</a>
+                            <a href="Klinik.html">Klinik</a>
+                            <a href="PetHotel.html">Pet Hotel</a>
+                        </div>
+                    </div>
+                </li>
+                
                 <li><a href="Blog.html">Blog</a></li>
                 <li><a href="Kontak.html">Kontak</a></li>
                 <li><a href="Tentang.html">Tentang</a></li>
@@ -66,19 +81,61 @@
 
     <main>
         <!-- ── HERO ── -->
-        <section class="hero">
-            <div class="hero-circle"></div>
-            <div class="hero-content">
-                <h1>Perawatan Terbaik<br>untuk Hewan<br>Peliharaan Anda</h1>
-                <a href="Shop.html" class="btn-primary">Belanja Sekarang</a>
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <!-- Kiri: Teks & Gambar -->
+            <div class="hero-left">
+            <!-- Slide 1: Grooming -->
+            <div class="hero-slide active" id="slide-0">
+                <!-- Gambar background abstrak atau elemen grafis (opsional) -->
+                <div class="hero-content">
+                <h1>Premium Grooming & Spa</h1>
+                <p>Perawatan estetika dan relaksasi menggunakan sampo hypoallergenic khusus untuk menjaga kebersihan dan kenyamanan hewan peliharaan Anda[cite: 3].</p>
+                <a href="Grooming.html" class="btn-primary">Booking Jadwal</a>
+                </div>
             </div>
-            <div class="hero-image">
-                <span class="hero-emoji">🐕</span>
+            
+            <!-- Slide 2: Klinik -->
+            <div class="hero-slide" id="slide-1">
+                <div class="hero-content">
+                <h1>Klinik Hewan 24 Jam</h1>
+                <p>Ditangani oleh dokter hewan lulusan terbaik dengan fasilitas premium: In-house Lab, X-Ray, dan ruang rawat inap terpisah[cite: 3].</p>
+                <a href="Klinik.html" class="btn-primary">Hubungi Dokter</a>
+                </div>
             </div>
-            <div class="hero-dots">
-                <span class="active"></span>
-                <span></span>
-                <span></span>
+        
+            <!-- Slide 3: Pet Hotel -->
+            <div class="hero-slide" id="slide-2">
+                <div class="hero-content">
+                <h1>Premium Pet Hotel</h1>
+                <p>Fasilitas kamar individu eksklusif (bukan kandang besi) yang dilengkapi laporan harian foto/video dan akses dokter hewan darurat[cite: 3].</p>
+                <a href="Hotel.html" class="btn-primary">Pesan Kamar</a>
+                </div>
+            </div>
+            </div>
+        
+            <!-- Kanan: 3D Cards & Progress Bar -->
+            <div class="hero-right">
+            <div class="slider-container" id="card-slider">
+                <!-- Cards -->
+                <div class="slider-card active" data-index="0">
+                <img src="aset/grooming-card.jpg" alt="Grooming">
+                <h3>Grooming</h3>
+                </div>
+                <div class="slider-card next" data-index="1">
+                <img src="aset/klinik-card.jpg" alt="Klinik">
+                <h3>Klinik</h3>
+                </div>
+                <div class="slider-card prev" data-index="2">
+                <img src="aset/hotel-card.jpg" alt="Pet Hotel">
+                <h3>Pet Hotel</h3>
+                </div>
+            </div>
+        
+            <!-- Progress Indicator -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
             </div>
         </section>
 
@@ -256,6 +313,7 @@
             <p>ZOON &mdash; A Pet Shop &amp; Peliharaan Anda &copy; 2026. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
 
 </html>

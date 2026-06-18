@@ -1,0 +1,504 @@
+/* ── TENTANG INTRO ── */
+.tentang-intro {
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tentang-intro-visual {
+    background: linear-gradient(135deg, var(--light-blue), #c8ecf0);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 340px;
+    font-size: 130px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tentang-intro-visual::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(247, 148, 29, 0.15);
+    border-radius: 50%;
+}
+
+.tentang-intro-text h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    line-height: 1.25;
+}
+
+.tentang-intro-text h2 span {
+    color: var(--teal);
+}
+
+.tentang-intro-text p {
+    font-size: 15px;
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.tentang-tahun {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--light-blue);
+    color: var(--teal);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* ── VISI MISI ── */
+.visi-misi {
+    background: #f9fefe;
+}
+
+.visi-misi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.visi-card {
+    border-radius: 22px;
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.visi-card.visi {
+    background: var(--teal);
+    color: #ffffff;
+}
+
+.visi-card.misi {
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    border: 2px solid var(--light-blue);
+}
+
+.visi-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.visi-card-icon {
+    font-size: 44px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.visi-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 14px;
+}
+
+.visi-card.visi h3 {
+    color: #ffffff;
+}
+
+.visi-card.misi h3 {
+    color: var(--text-dark);
+}
+
+.visi-card p {
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.visi-card.visi p {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.visi-card.misi p {
+    color: var(--text-gray);
+}
+
+.misi-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.misi-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+.misi-list li i {
+    color: var(--teal);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* ── NILAI KAMI ── */
+.nilai-section {
+    background: var(--teal);
+}
+
+.nilai-section .section-title {
+    color: #ffffff;
+}
+
+.nilai-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.nilai-card {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 30px 22px;
+    text-align: center;
+    color: #ffffff;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.nilai-card:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-4px);
+}
+
+.nilai-icon {
+    font-size: 44px;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.nilai-card h4 {
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.nilai-card p {
+    font-size: 13px;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+/* ── TIM KAMI ── */
+.tim-section {
+    background: #ffffff;
+}
+
+.tim-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+}
+
+.tim-card {
+    background: #f9fefe;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.25s, box-shadow 0.25s;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+}
+
+.tim-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.11);
+}
+
+.tim-avatar {
+    background: linear-gradient(135deg, var(--light-blue), #b2dfe4);
+    padding: 32px 20px 20px;
+    font-size: 72px;
+    line-height: 1;
+}
+
+.tim-card:nth-child(even) .tim-avatar {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b8);
+}
+
+.tim-info {
+    padding: 18px 20px 24px;
+}
+
+.tim-info h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.tim-jabatan {
+    display: inline-block;
+    background: var(--light-blue);
+    color: var(--teal);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.tim-info p {
+    font-size: 12px;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.tim-sosial {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.tim-sosial a {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--light-blue);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.tim-sosial a:hover {
+    background: var(--teal);
+    color: #ffffff;
+}
+
+/* ── PENCAPAIAN / MILESTONE ── */
+.milestone-section {
+    background: #f9fefe;
+}
+
+.milestone-list {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.milestone-list::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--teal), var(--orange));
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.milestone-item {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 0;
+    align-items: center;
+    margin-bottom: 36px;
+}
+
+.milestone-content {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+}
+
+.milestone-content h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.milestone-content p {
+    font-size: 13px;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.milestone-item:nth-child(odd) .milestone-content {
+    grid-column: 1;
+}
+
+.milestone-item:nth-child(odd) .milestone-empty {
+    grid-column: 3;
+}
+
+.milestone-item:nth-child(even) .milestone-content {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.milestone-item:nth-child(even) .milestone-empty {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.milestone-dot {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    z-index: 1;
+}
+
+.milestone-year {
+    background: var(--teal);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.milestone-item:nth-child(even) .milestone-year {
+    background: var(--orange);
+}
+
+.milestone-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--teal);
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 3px var(--teal);
+}
+
+.milestone-item:nth-child(even) .milestone-circle {
+    background: var(--orange);
+    box-shadow: 0 0 0 3px var(--orange);
+}
+
+/* ── MITRA & SERTIFIKAT ── */
+.mitra-section {
+    background: #ffffff;
+}
+
+.mitra-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.mitra-card {
+    background: #f9fefe;
+    border-radius: 14px;
+    padding: 24px 16px;
+    text-align: center;
+    border: 2px solid var(--light-blue);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.mitra-card:hover {
+    border-color: var(--teal);
+    background: var(--light-blue);
+    transform: translateY(-3px);
+}
+
+.mitra-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.mitra-card span {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-gray);
+}
+
+/* ── RESPONSIVE TENTANG ── */
+@media (max-width: 900px) {
+    .tentang-intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .tentang-intro-visual {
+        min-height: 200px;
+        font-size: 90px;
+    }
+    .visi-misi-grid {
+        grid-template-columns: 1fr;
+    }
+    .nilai-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tim-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .milestone-list::before {
+        left: 24px;
+    }
+    .milestone-item {
+        grid-template-columns: 50px 1fr;
+        gap: 16px;
+    }
+    .milestone-dot {
+        grid-column: 1;
+    }
+    .milestone-content {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+    }
+    .milestone-empty {
+        display: none;
+    }
+    .mitra-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .nilai-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .tim-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .mitra-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
