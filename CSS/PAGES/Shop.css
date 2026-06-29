@@ -458,7 +458,6 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    width: 100%;
     padding: 10px;
     background: var(--teal);
     color: #ffffff;
@@ -540,6 +539,39 @@
     font-size: 64px;
 }
 
+/* update untuk tombol keranjang dan beli */
+.produk-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.produk-actions .btn-keranjang {
+    flex: 1;
+}
+
+.btn-beli {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    background: var(--orange);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-beli:hover {
+    background: #e08c00;
+    transform: translateY(-1px);
+}
+
 /* ── RESPONSIVE SHOP ── */
 @media (max-width: 1024px) {
     .produk-grid {
@@ -576,3 +608,4 @@
 .cta-buttons {
     margin-top: 14px;
 }
+

@@ -36,12 +36,13 @@
             <ul class="nav-links">
                 <li><a href="Beranda.html">Beranda</a></li>
                 <li><a href="Shop.html" class="active">Shop</a></li>
-                
+
                 <li>
                     <div class="dropdown">
                         <button class="dropbtn" aria-label="Menu Layanan">
                             Layanan
-                            <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </button>
@@ -52,7 +53,7 @@
                         </div>
                     </div>
                 </li>
-                
+
                 <li><a href="Blog.html">Blog</a></li>
                 <li><a href="Kontak.html">Kontak</a></li>
                 <li><a href="Tentang.html">Tentang</a></li>
@@ -65,7 +66,7 @@
                     <span class="cart-badge">3</span>
                 </a>
                 <a href="Login.html" class="btn-nav-login">
-                    <i class="fas fa-user"></i> 
+                    <i class="fas fa-user"></i>
                     <span class="login-text">Login</span>
                 </a>
                 <label for="navtoggle" class="list-hamburger">
@@ -76,7 +77,7 @@
             </div>
         </nav>
     </header>
-    
+
 
     <main>
         <!-- ── PAGE HERO ── -->
@@ -88,7 +89,8 @@
                     <span>Shop</span>
                 </div>
                 <h1>Toko<br>Online Kami</h1>
-                <p>Temukan ribuan produk terbaik untuk hewan peliharaan Anda — makanan, mainan, aksesoris, dan perlengkapan
+                <p>Temukan ribuan produk terbaik untuk hewan peliharaan Anda — makanan, mainan, aksesoris, dan
+                    perlengkapan
                     lengkap.</p>
             </div>
             <div class="page-hero-icon">🛒</div>
@@ -115,13 +117,13 @@
                     <div class="filter-widget">
                         <h4><i class="fas fa-th-large"></i> Kategori</h4>
                         <ul class="filter-kategori">
-                            <li><a href="#" class="active">Semua Produk <span>48</span></a></li>
-                            <li><a href="#">Makanan hewan <span>14</span></a></li>
-                            <li><a href="#">Aksesoris <span>12</span></a></li>
-                            <li><a href="#">Snack &amp; Treat <span>8</span></a></li>
-                            <li><a href="#">Mainan <span>7</span></a></li>
-                            <li><a href="#">Toilet <span>5</span></a></li>
-                            <li><a href="#">Kandang <span>2</span></a></li>
+                            <li><a href="#" class="active" data-kategori="semua">Semua Produk <span>14</span></a></li>
+                            <li><a href="#" data-kategori="makanan">Makanan hewan <span>5</span></a></li>
+                            <li><a href="#" data-kategori="aksesoris">Aksesoris <span>3</span></a></li>
+                            <li><a href="#" data-kategori="snack">Snack &amp; Treat <span>0</span></a></li>
+                            <li><a href="#" data-kategori="mainan">Mainan <span>3</span></a></li>
+                            <li><a href="#" data-kategori="toilet">Toilet <span>2</span></a></li>
+                            <li><a href="#" data-kategori="kandang">Kandang <span>1</span></a></li>
                         </ul>
                     </div>
 
@@ -131,12 +133,12 @@
                         <h4><i class="fas fa-tag"></i> Rentang Harga</h4>
                         <div class="price-range-labels">
                             <span>Rp 0</span>
-                            <span>Rp 500.000</span>
+                            <span>Rp 1.000.000</span>
                         </div>
-                        <input type="range" class="price-slider" min="0" max="500000" value="500000" />
+                        <input type="range" class="price-slider" min="0" max="1000000" value="1000000" />
                         <div class="price-inputs">
                             <input type="text" value="Rp 0" placeholder="Min" />
-                            <input type="text" value="Rp 500.000" placeholder="Max" />
+                            <input type="text" value="Rp 1.000.000" placeholder="Max" />
                         </div>
                     </div>
 
@@ -200,7 +202,7 @@
                     <div class="produk-grid">
 
                         <!-- 1 -->
-                        <div class="produk-card">
+                        <div class="produk-card" data-kategori="makanan" data-harga="285000" data-rating="5">
                             <span class="produk-badge terlaris">🔥 Terlaris</span>
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
@@ -217,19 +219,24 @@
                                     <span class="harga-coret">Rp 320.000</span>
                                     <span class="harga-diskon">-11%</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Kitten wet food 85gr isi 12pcs')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                    <!-- Note: ini kode yang akan di pakai nanti setelah uts untuk menyambung ke js dan buat cart cuma karena di minta tanpa js maka kode ini tidak di pakai untuk sekarang  -->
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Kitten 85gr 12pcs')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- 2 -->
-                        <div class="produk-card">
+                        <div class="produk-card" data-kategori="makanan" data-harga="632700" data-rating="5">
                             <span class="produk-badge baru">✨ Baru</span>
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
-                            <div class="produk-img"><img src="../foto/Royal-canin-hair-skin-care.webp" alt="Royal Canin Hair & Skin Care Adult dry food 4KG"></div>
+                            <div class="produk-img"><img src="../foto/Royal-canin-hair-skin-care.webp"
+                                    alt="Royal Canin Hair & Skin Care Adult dry food 4KG"></div>
                             <div class="produk-body">
                                 <div class="produk-kategori">Makanan hewan</div>
                                 <h4>Royal Canin Hair & Skin Care Adult - dry food 4KG</h4>
@@ -240,18 +247,24 @@
                                 <div class="produk-harga">
                                     <span class="harga-utama">Rp 632.700</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Hair & Skin Care Adult dry food 4KG')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Hair & Skin Care Adult dry food 4KG')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- 3 -->
-                        <div class="produk-card">
+                        <div class="produk-card" data-kategori="aksesoris" data-harga="162400" data-rating="5">
                             <span class="produk-badge diskon">🏷️ Diskon 30%</span>
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
-                            <div class="produk-img"><img src="../foto/Tas Kucing Astronot.webp" alt="Tas kucing astronot"></div>
+                            <div class="produk-img"><img src="../foto/Tas Kucing Astronot.webp"
+                                    alt="Tas kucing astronot"></div>
                             <div class="produk-body">
                                 <div class="produk-kategori">Aksesoris</div>
                                 <h4>Tas kucing astronot</h4>
@@ -264,14 +277,19 @@
                                     <span class="harga-coret">Rp 232.500</span>
                                     <span class="harga-diskon">-30%</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'Tas kucing astronot')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Tas kucing astronot')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- 4 -->
-                        <div class="produk-card">
+                        <div class="produk-card" data-kategori="aksesoris" data-harga="25000" data-rating="5">
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
                             <div class="produk-img"><img src="../foto/Tali_anjing.jfif" alt="tali anjing"></div>
@@ -285,14 +303,19 @@
                                 <div class="produk-harga">
                                     <span class="harga-utama">Rp 25.000</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'Tali anjing - bisa custom nama')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Tali anjing')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- 5 -->
-                        <div class="produk-card">
+                        <div class="produk-card" data-kategori="makanan" data-harga="9000" data-rating="5">
                             <span class="produk-badge terlaris">🔥 Terlaris</span>
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
@@ -309,14 +332,19 @@
                                     <span class="harga-coret">Rp 10.000</span>
                                     <span class="harga-diskon">-10%</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'Whiskas Adult 1+ Mackerel Flavour-wet food 80gr')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Whiskas Adult 1+ Mackerel Flavour wet food 80gr')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- 6 -->
-                        <div class="produk-card">
+                        <div class="produk-card" data-kategori="kandang" data-harga="289000" data-rating="4">
                             <span class="produk-badge baru">✨ Baru</span>
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
@@ -331,17 +359,24 @@
                                 <div class="produk-harga">
                                     <span class="harga-utama">Rp 289.000</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'Kandang hamster - bonus hamster wheel')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Kandang hamster')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- 7 -->
-                        <div class="produk-card">
+                        <div class="produk-card" data-kategori="makanan" data-harga="165000" data-rating="4">
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
-                            <div class="produk-img"><img src="../foto/Pedigree PRO High Protein Adult Mini & Small Breed.jpeg" alt="pedigree pro high"></div>
+                            <div class="produk-img"><img
+                                    src="../foto/Pedigree PRO High Protein Adult Mini & Small Breed.jpeg"
+                                    alt="pedigree pro high"></div>
                             <div class="produk-body">
                                 <div class="produk-kategori">Makanan Anjing</div>
                                 <h4>Pedigree PRO High Protein Adult Mini & Small Breed - dry food 1.3KG</h4>
@@ -352,21 +387,27 @@
                                 <div class="produk-harga">
                                     <span class="harga-utama">Rp 165.000</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'Pedigree PRO High Protein Adult Mini & Small Breed - dry food 1.3KG')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Pedigree PRO High Protein Adult Mini & Small Breed')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- 8 -->
-                        <div class="produk-card">
+                        <div class="produk-card" data-kategori="mainan" data-harga="7900" data-rating="5">
                             <span class="produk-badge diskon">🏷️ Diskon 20%</span>
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
-                            <div class="produk-img"><img src="../foto/mainan gigitan hewan.webp" alt="mainan gigitan"></div>
+                            <div class="produk-img"><img src="../foto/mainan gigitan hewan.webp" alt="mainan gigitan">
+                            </div>
                             <div class="produk-body">
                                 <div class="produk-kategori">Mainan</div>
-                                <h4>Mainan gigitan hewan -  TPR (Thermoplastic Rubber)</h4>
+                                <h4>Mainan gigitan hewan - TPR (Thermoplastic Rubber)</h4>
                                 <div class="produk-rating">
                                     <span class="stars">★★★★★</span>
                                     <span>(91 ulasan)</span>
@@ -376,17 +417,23 @@
                                     <span class="harga-coret">Rp 10.000</span>
                                     <span class="harga-diskon">-20%</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'Tempat Makan Stainless Set')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Mainan gigitan hewan - TPR')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- 9 -->
-                        <div class="produk-card">
+                        <div class="produk-card" data-kategori="makanan" data-harga="47000" data-rating="5">
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
-                            <div class="produk-img"><img src="../foto/Royal Canin Regular Fit 32.webp" alt="Royal Canin Regular Fit 32"></div>
+                            <div class="produk-img"><img src="../foto/Royal Canin Regular Fit 32.webp"
+                                    alt="Royal Canin Regular Fit 32"></div>
                             <div class="produk-body">
                                 <div class="produk-kategori">Makanan hewan</div>
                                 <h4>Royal Canin Regular Fit 32 - dry food 400gr</h4>
@@ -397,14 +444,19 @@
                                 <div class="produk-harga">
                                     <span class="harga-utama">Rp 47.000</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Regular Fit 32 - dry food 400gr')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Regular Fit 32 - dry food 400gr')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- 10 -->
-                        <div class="produk-card">
+                        <div class="produk-card" data-kategori="toilet" data-harga="55000" data-rating="4">
                             <span class="produk-badge baru">✨ Baru</span>
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
@@ -419,14 +471,19 @@
                                 <div class="produk-harga">
                                     <span class="harga-utama">Rp 55.000</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'FOCAT Cat Litter Box M20')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'FOCAT Cat Litter Box M20')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- 11 -->
-                        <div class="produk-card">
+                        <div class="produk-card " data-kategori="aksesoris" data-harga="55000" data-rating="4">
                             <span class="produk-badge terlaris">🔥 Terlaris</span>
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
@@ -443,14 +500,19 @@
                                     <span class="harga-coret">Rp 65.000</span>
                                     <span class="harga-diskon">-15%</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'Cooling pad - alas tidur anjing sejuk')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Cooling pad - alas tidur anjing')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- 12 -->
-                        <div class="produk-card">
+                        <div class="produk-card" data-kategori="toilet" data-harga="60000" data-rating="4">
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
                             <div class="produk-img"><img src="../foto/dog litter box.jpeg" alt="dog litter box"></div>
@@ -464,9 +526,197 @@
                                 <div class="produk-harga">
                                     <span class="harga-utama">Rp 60.000</span>
                                 </div>
-                                <button class="btn-keranjang" onclick="addToCart(this, 'Dog litter box - toilet untuk anjing')">
-                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
-                                </button>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Dog litter box')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 13 -->
+                        <div class="produk-card" data-kategori="mainan" data-harga="40000" data-rating="4">
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="../foto/mainan bel.webp" alt="mainan bel"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Mainan</div>
+                                <h4>Bell toy -Mainan bel untuk anjing dan juga kucing </h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span>(55 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 40.000</span>
+                                </div>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Bell toy')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 14 -->
+                        <div class="produk-card" data-kategori="mainan" data-harga="20000" data-rating="4">
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="../foto/hamster_wheel.jpeg" alt="hamster wheel"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Mainan</div>
+                                <h4>Hamster Wheel - mainan hamster agar terus aktif </h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(105 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 20.000</span>
+                                </div>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Hamster Wheel')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 15 -->
+                        <div class="produk-card" data-kategori="makanan" data-harga="100000" data-rating="4">
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="../foto/H_1kg_hamtoro.jpeg" alt="Hamtoro 1Kg"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Makanan hewan</div>
+                                <h4>Hamtoro seedmix - Makanan hamster 1KG </h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(225 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 100.000</span>
+                                </div>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Hamtoro seedmix 1KG')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 16 -->
+                        <div class="produk-card" data-kategori="makanan" data-harga="55000" data-rating="4">
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="../foto/H_500g_hamtoro.jpeg" alt="hamtoro 500g"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Makanan hewan</div>
+                                <h4>Hamtoro seedmix - Makanan hamster 500g </h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(102 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 60.000</span>
+                                </div>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Hamtoro seedmix 500g')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 17 -->
+                        <div class="produk-card" data-kategori="kandang" data-harga="230000" data-rating="5">
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="../foto/kandang_kucing.webp" alt="kandang kucing"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Kandang</div>
+                                <h4>Kandang kucing - kandang kucing nyaman ukuran 35cm x 35cm </h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(105 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 230.000</span>
+                                </div>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Kandang kucing 35cm x 35cm')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 18 -->
+                        <div class="produk-card" data-kategori="kandang" data-harga="120000" data-rating="5">
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="../foto/k_kucing.jfif" alt="kandang kucing"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Kandang</div>
+                                <h4>Pet cargo - kandang kucing untuk di bawa berpergian </h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(105 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 120.000</span>
+                                </div>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Pet cargo')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 19 -->
+                        <div class="produk-card" data-kategori="makanan" data-harga="55000" data-rating="5">
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="../foto/P_chicken loaf.jpeg" alt="makanan anak anjing">
+                            </div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Makanan hewan</div>
+                                <h4>Pedigree chicken loaf 400g - makanan basah untuk anak anjing </h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(135 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 55.000</span>
+                                </div>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang" onclick="addToCart(this, 'Pedigree chicken loaf 400g')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -566,4 +816,5 @@
     <script src="../JS/pages/shop.js"></script>
 
 </body>
+
 </html>
