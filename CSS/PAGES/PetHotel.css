@@ -1,0 +1,515 @@
+/* ── HOTEL FEATURES ── */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.feature-card {
+    background: var(--light-blue);
+    border-radius: 14px;
+    padding: 30px 22px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 168, 181, 0.12);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 16px;
+    background: var(--teal);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.feature-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 13.5px;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* ── ROOM CATEGORIES ── */
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.room-card {
+    background: #ffffff;
+    border: 1px solid #eef0f3;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.room-card:hover {
+    transform: translateY(-6px);
+}
+
+.room-card.featured {
+    border: 2px solid var(--orange);
+    box-shadow: 0 14px 30px rgba(247, 148, 29, 0.15);
+}
+
+.room-image {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 46px;
+    color: #ffffff;
+}
+
+.room-image.standard {
+    background: linear-gradient(135deg, #8fd7de, var(--teal));
+}
+
+.room-image.deluxe {
+    background: linear-gradient(135deg, #ffc978, var(--orange));
+}
+
+.room-image.executive {
+    background: linear-gradient(135deg, #34495e, var(--text-dark));
+}
+
+.room-body {
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.room-body h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: var(--text-dark);
+}
+
+.room-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.room-list li {
+    font-size: 13.5px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.room-list li i {
+    color: var(--teal);
+    font-size: 12px;
+}
+
+.room-price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 18px;
+}
+
+.room-price span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-gray);
+}
+
+.room-body a {
+    margin-top: auto;
+    text-align: center;
+}
+
+/* ── BOOKING CTA ── */
+.hotel-cta {
+    background: linear-gradient(135deg, var(--teal) 0%, #009aaa 60%, #00b5c8 100%);
+}
+
+.hotel-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.hotel-cta h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.hotel-cta p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── DAILY ACTIVITIES (TIMELINE) ── */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 10px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 54px;
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: var(--light-blue);
+    z-index: 0;
+}
+
+.timeline-item {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex: 1;
+}
+
+.timeline-time {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--teal);
+    margin-bottom: 8px;
+}
+
+.timeline-dot {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 10px;
+    background: #ffffff;
+    border: 3px solid var(--teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    font-size: 16px;
+}
+
+.timeline-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* ── GALLERY ── */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery-item {
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    color: #ffffff;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.06);
+}
+
+.gallery-item.g1 {
+    background: linear-gradient(135deg, var(--teal), #00b5c8);
+}
+
+.gallery-item.g2 {
+    background: linear-gradient(135deg, var(--orange), #ffc978);
+}
+
+.gallery-item.g3 {
+    background: linear-gradient(135deg, #34495e, var(--text-dark));
+}
+
+.gallery-item.g4 {
+    background: linear-gradient(135deg, #8fd7de, var(--teal));
+}
+
+.gallery-item.g5 {
+    background: linear-gradient(135deg, #ffb199, var(--orange-dark));
+}
+
+.gallery-item.g6 {
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+}
+
+.gallery-item.g7 {
+    background: linear-gradient(135deg, #556270, var(--text-dark));
+}
+
+.gallery-item.g8 {
+    background: linear-gradient(135deg, var(--orange-dark), var(--orange));
+}
+
+.gallery-item.g9 {
+    background: linear-gradient(135deg, #5dd9e5, var(--teal-dark));
+}
+
+/* ── PRICING ── */
+.pricing-section {
+    background: var(--light-blue);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.pricing-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 34px 28px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--orange);
+    transform: scale(1.04);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--orange);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.pricing-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.pricing-amount {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--teal);
+    margin-bottom: 20px;
+}
+
+.pricing-amount span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-gray);
+}
+
+.pricing-card .room-list {
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.pricing-card a {
+    margin-top: auto;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    border: 1px solid #eef0f3;
+    border-radius: 14px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.stars {
+    color: var(--orange);
+    font-size: 16px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.testimonial-card p {
+    font-size: 14px;
+    color: var(--text-dark);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.testimonial-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 13.5px;
+    color: var(--teal);
+}
+
+/* ── FAQ ── */
+.faq-list {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    border: 1px solid #eef0f3;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    padding: 18px 22px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14.5px;
+    font-weight: 800;
+    color: var(--text-dark);
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-question i {
+    color: var(--teal);
+    transition: transform 0.25s ease;
+}
+
+.faq-item.open .faq-question i {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 22px;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px;
+    padding: 0 22px 20px;
+}
+
+.faq-answer p {
+    font-size: 13.5px;
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .room-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+
+    .hotel-cta-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}

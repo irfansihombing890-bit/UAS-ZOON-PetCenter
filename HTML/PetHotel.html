@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Hotel | ZOON</title>
+    <link rel="icon" href="/icon.jpg" type="image/jpg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../CSS/Style.css">
+</head>
+<body>
+    <!-- ── TOP BAR & NAVBAR ── -->
+    <header>
+        <div class="topbar">
+            <span>📞 +62 895 - 3664 - 6043 5</span>
+            <span>⏰ Buka: Senin–Sabtu, 08.00–20.00</span>
+        </div>
+        <nav>
+            <a href="Beranda.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <div class="logo-text">
+                    <span>ZOON</span>
+                    <span>Pet Shop</span>
+                </div>
+            </a>
+            <input type="checkbox" id="navtoggle" class="navtoggle">
+            <ul class="nav-links">
+                <li><a href="Beranda.html">Beranda</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn active" aria-label="Menu Layanan">
+                            Layanan
+                            <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="Grooming.html">Grooming</a>
+                            <a href="Klinik.html">Klinik</a>
+                            <a href="PetHotel.html" class="active">Pet Hotel</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Kontak.html">Kontak</a></li>
+                <li><a href="Tentang.html">Tentang</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="Shop.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <a href="Login.html" class="btn-nav-login">
+                    <i class="fas fa-user"></i>
+                    <span class="login-text">Login</span>
+                </a>
+                <label for="navtoggle" class="list-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ── HERO ── -->
+        <div class="page-hero">
+            <div class="page-hero-content">
+                <div class="breadcrumb">
+                    <a href="Beranda.html">Beranda</a> <span>/</span> <span>Pet Hotel</span>
+                </div>
+                <h1>Rumah Kedua yang<br>Terasa Seperti Rumah</h1>
+                <p>Kamar individu yang nyaman, laporan harian foto &amp; video, serta akses dokter hewan darurat — supaya Anda tetap tenang saat bepergian.</p>
+                <a href="#kategori-kamar" class="btn-light" style="margin-top:20px;">Lihat Kategori Kamar</a>
+            </div>
+            <div class="page-hero-icon">
+                <i class="fas fa-house-chimney-medical"></i>
+            </div>
+        </div>
+
+        <!-- ── HOTEL FEATURES ── -->
+        <section class="hotel-features">
+            <div class="container">
+                <h2 class="section-title">Fasilitas Hotel</h2>
+                <div class="feature-grid">
+                    <div class="feature-card" data-reveal>
+                        <div class="feature-icon"><i class="fas fa-paw"></i></div>
+                        <h3>Individual Room</h3>
+                        <p>Setiap hewan memiliki kamar pribadi yang nyaman.</p>
+                    </div>
+                    <div class="feature-card" data-reveal>
+                        <div class="feature-icon"><i class="fas fa-camera"></i></div>
+                        <h3>Daily Update</h3>
+                        <p>Foto &amp; video dikirim setiap hari.</p>
+                    </div>
+                    <div class="feature-card" data-reveal>
+                        <div class="feature-icon"><i class="fas fa-stethoscope"></i></div>
+                        <h3>24 Hour Vet</h3>
+                        <p>Dokter siap kapan saja.</p>
+                    </div>
+                    <div class="feature-card" data-reveal>
+                        <div class="feature-icon"><i class="fas fa-bath"></i></div>
+                        <h3>Premium Care</h3>
+                        <p>Area steril dengan standar hotel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── ROOM CATEGORIES ── -->
+        <section id="kategori-kamar" class="room-section">
+            <div class="container">
+                <h2 class="section-title">Room Categories</h2>
+                <div class="room-grid">
+
+                    <div class="room-card" data-reveal>
+                        <div class="room-image standard">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="room-body">
+                            <h3>Standard Room</h3>
+                            <ul class="room-list">
+                                <li><i class="fas fa-check"></i> AC</li>
+                                <li><i class="fas fa-check"></i> Soft Bed</li>
+                                <li><i class="fas fa-check"></i> CCTV</li>
+                                <li><i class="fas fa-check"></i> Daily Cleaning</li>
+                            </ul>
+                            <div class="room-price">Rp90.000<span>/malam</span></div>
+                            <a href="Kontak.html" class="btn-outline">Book</a>
+                        </div>
+                    </div>
+
+                    <div class="room-card featured" data-reveal>
+                        <div class="room-image deluxe">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="room-body">
+                            <h3>Deluxe Room</h3>
+                            <ul class="room-list">
+                                <li><i class="fas fa-check"></i> AC</li>
+                                <li><i class="fas fa-check"></i> Soft Bed</li>
+                                <li><i class="fas fa-check"></i> CCTV</li>
+                                <li><i class="fas fa-check"></i> Daily Cleaning</li>
+                            </ul>
+                            <div class="room-price">Rp120.000<span>/malam</span></div>
+                            <a href="Kontak.html" class="btn-primary">Book</a>
+                        </div>
+                    </div>
+
+                    <div class="room-card" data-reveal>
+                        <div class="room-image executive">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="room-body">
+                            <h3>Executive Suite</h3>
+                            <ul class="room-list">
+                                <li><i class="fas fa-check"></i> AC</li>
+                                <li><i class="fas fa-check"></i> Soft Bed</li>
+                                <li><i class="fas fa-check"></i> CCTV</li>
+                                <li><i class="fas fa-check"></i> Daily Cleaning</li>
+                            </ul>
+                            <div class="room-price">Rp180.000<span>/malam</span></div>
+                            <a href="Kontak.html" class="btn-outline">Book</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── BOOKING CTA ── -->
+        <section class="hotel-cta">
+            <div class="container hotel-cta-inner">
+                <div>
+                    <h2>Ready to Book?</h2>
+                    <p>Buat reservasi sekarang dan nikmati hotel premium untuk hewan kesayangan Anda.</p>
+                </div>
+                <a href="Kontak.html" class="btn-white">Reservasi</a>
+            </div>
+        </section>
+
+        <!-- ── DAILY ACTIVITIES ── -->
+        <section class="activity-section">
+            <div class="container">
+                <h2 class="section-title">Daily Activities</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-time">08.00</div>
+                        <div class="timeline-dot"><i class="fas fa-bowl-food"></i></div>
+                        <div class="timeline-label">Breakfast</div>
+                    </div>
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-time">09.00</div>
+                        <div class="timeline-dot"><i class="fas fa-bone"></i></div>
+                        <div class="timeline-label">Play Time</div>
+                    </div>
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-time">11.00</div>
+                        <div class="timeline-dot"><i class="fas fa-paw"></i></div>
+                        <div class="timeline-label">Nap Time</div>
+                    </div>
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-time">13.00</div>
+                        <div class="timeline-dot"><i class="fas fa-bowl-food"></i></div>
+                        <div class="timeline-label">Lunch</div>
+                    </div>
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-time">16.00</div>
+                        <div class="timeline-dot"><i class="fas fa-shield-dog"></i></div>
+                        <div class="timeline-label">Walking</div>
+                    </div>
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-time">18.00</div>
+                        <div class="timeline-dot"><i class="fas fa-bowl-food"></i></div>
+                        <div class="timeline-label">Dinner</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── GALLERY ── -->
+        <section class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item g1" data-reveal><i class="fas fa-paw"></i></div>
+                    <div class="gallery-item g2" data-reveal><i class="fas fa-bed"></i></div>
+                    <div class="gallery-item g3" data-reveal><i class="fas fa-bath"></i></div>
+                    <div class="gallery-item g4" data-reveal><i class="fas fa-bone"></i></div>
+                    <div class="gallery-item g5" data-reveal><i class="fas fa-house"></i></div>
+                    <div class="gallery-item g6" data-reveal><i class="fas fa-stethoscope"></i></div>
+                    <div class="gallery-item g7" data-reveal><i class="fas fa-shield-dog"></i></div>
+                    <div class="gallery-item g8" data-reveal><i class="fas fa-camera"></i></div>
+                    <div class="gallery-item g9" data-reveal><i class="fas fa-heart"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── PRICING ── -->
+        <section class="pricing-section">
+            <div class="container">
+                <h2 class="section-title">Pricing</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card" data-reveal>
+                        <h3>Basic</h3>
+                        <div class="pricing-amount">Rp120K<span>/malam</span></div>
+                        <ul class="room-list">
+                            <li><i class="fas fa-check"></i> Room</li>
+                            <li><i class="fas fa-check"></i> Feeding</li>
+                            <li><i class="fas fa-check"></i> Cleaning</li>
+                        </ul>
+                        <a href="Kontak.html" class="btn-outline">Choose</a>
+                    </div>
+                    <div class="pricing-card featured" data-reveal>
+                        <div class="pricing-badge">Paling Populer</div>
+                        <h3>Premium</h3>
+                        <div class="pricing-amount">Rp180K<span>/malam</span></div>
+                        <ul class="room-list">
+                            <li><i class="fas fa-check"></i> Deluxe</li>
+                            <li><i class="fas fa-check"></i> Grooming</li>
+                            <li><i class="fas fa-check"></i> Vet</li>
+                            <li><i class="fas fa-check"></i> Daily Video</li>
+                        </ul>
+                        <a href="Kontak.html" class="btn-primary">Choose</a>
+                    </div>
+                    <div class="pricing-card" data-reveal>
+                        <h3>VIP</h3>
+                        <div class="pricing-amount">Rp250K<span>/malam</span></div>
+                        <ul class="room-list">
+                            <li><i class="fas fa-check"></i> Executive</li>
+                            <li><i class="fas fa-check"></i> Spa</li>
+                            <li><i class="fas fa-check"></i> Priority</li>
+                            <li><i class="fas fa-check"></i> CCTV</li>
+                        </ul>
+                        <a href="Kontak.html" class="btn-outline">Choose</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── TESTIMONIALS ── -->
+        <section class="testimonial-section">
+            <div class="container">
+                <h2 class="section-title">Testimonial</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card" data-reveal>
+                        <div class="stars">★★★★★</div>
+                        <p>"Kucing saya betah sekali."</p>
+                        <div class="testimonial-name">— Sarah</div>
+                    </div>
+                    <div class="testimonial-card" data-reveal>
+                        <div class="stars">★★★★★</div>
+                        <p>"Foto update tiap hari."</p>
+                        <div class="testimonial-name">— Kevin</div>
+                    </div>
+                    <div class="testimonial-card" data-reveal>
+                        <div class="stars">★★★★★</div>
+                        <p>"Pelayanannya sangat profesional."</p>
+                        <div class="testimonial-name">— Andi</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── FAQ ── -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">FAQ</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Bagaimana proses check-in?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Anda cukup datang sesuai jadwal reservasi, mengisi data hewan, lalu tim kami akan melakukan assessment kondisi fisik sebelum check-in.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Apakah ada dokter?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Ya, dokter hewan siap sedia selama 24 jam untuk kondisi darurat maupun kontrol rutin.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Apakah membawa makanan sendiri?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Boleh. Anda bisa membawa makanan khusus hewan Anda, atau menggunakan menu makan yang telah kami sediakan.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Bagaimana jika sakit?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Tim kami akan segera menghubungi Anda dan hewan akan langsung dirujuk ke Klinik ZOON untuk penanganan lebih lanjut.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="Beranda.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                    <div class="logo-text">
+                        <span>ZOON</span>
+                        <span>Pet Shop</span>
+                    </div>
+                </a>
+                <p>Toko hewan peliharaan terpercaya dengan produk berkualitas dan layanan profesional untuk hewan
+                    kesayangan Anda.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/zoon_medan/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5>Tentang Kami</h5>
+                <ul>
+                    <li><a href="Tentang.html">Profil Perusahaan</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Klinik.html">Klinik Hewan</a></li>
+                    <li><a href="Grooming.html">Grooming</a></li>
+                    <li><a href="Layanan.html">Layanan</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Sosial Media</h5>
+                <ul>
+                    <li><i class="fab fa-facebook"></i> <a href="#">zoon_medan</a></li>
+                    <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/zoon_medan/">zoon_medan</a>
+                    </li>
+                    <li><i class="fab fa-tiktok"></i> <a href="#">zoon_medan</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Layanan Pelanggan</h5>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +62 895 3664 6043 5</li>
+                    <li><i class="fas fa-envelope"></i> zoon.medan@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Medan, Sumatera Utara</li>
+                    <li><i class="fas fa-clock"></i> Senin–Sabtu: 08.00–20.00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>ZOON &mdash; A Pet Shop &amp; Peliharaan Anda &copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ── FAQ ACCORDION ──
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+    </script>
+</body>
+</html>
