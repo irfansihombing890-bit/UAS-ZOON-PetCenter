@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZOON</title>
+    <title>Grooming & Spa — ZOON Pet Center</title>
     <link rel="icon" href="/icon.jpg" type="image/jpg">
 
     <link
@@ -36,12 +36,13 @@
             <ul class="nav-links">
                 <li><a href="Beranda.html">Beranda</a></li>
                 <li><a href="Shop.html">Shop</a></li>
-                
+
                 <li>
                     <div class="dropdown">
                         <button class="dropbtn active" aria-label="Menu Layanan">
                             Layanan
-                            <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </button>
@@ -52,7 +53,7 @@
                         </div>
                     </div>
                 </li>
-                
+
                 <li><a href="Blog.html">Blog</a></li>
                 <li><a href="Kontak.html">Kontak</a></li>
                 <li><a href="Tentang.html">Tentang</a></li>
@@ -65,7 +66,7 @@
                     <span class="cart-badge">3</span>
                 </a>
                 <a href="Login.html" class="btn-nav-login">
-                    <i class="fas fa-user"></i> 
+                    <i class="fas fa-user"></i>
                     <span class="login-text">Login</span>
                 </a>
                 <label for="navtoggle" class="list-hamburger">
@@ -77,270 +78,299 @@
         </nav>
     </header>
 
+    <!-- ── MAIN CONTENT: GROOMING ── -->
     <main>
-        <!-- ── PAGE HERO ── -->
+
+        <!-- 1. HERO -->
         <div class="page-hero">
             <div class="page-hero-content">
                 <div class="breadcrumb">
                     <a href="Beranda.html">Beranda</a>
-                    <i class="fas fa-chevron-right" style="font-size:10px;"></i>
+                    <span>/</span>
                     <span>Grooming</span>
                 </div>
-                <h1>Grooming<br>Profesional</h1>
-                <p>Tampilkan sisi terbaik hewan peliharaan Anda. Groomer berpengalaman kami siap memberikan perawatan
-                    penuh
-                    kasih sayang.</p>
+                <h1>Grooming Profesional &amp; Spa</h1>
+                <p>Perawatan estetika dan relaksasi untuk hewan kesayangan Anda, menggunakan produk hypoallergenic oleh
+                    groomer bersertifikat.</p>
+                <a href="#booking" class="btn-primary" style="margin-top:20px;">Booking Sekarang</a>
             </div>
             <div class="page-hero-icon">✂️</div>
         </div>
 
-        <!-- ── INTRO ── -->
-        <section class="grooming-intro">
-            <div class="grooming-intro-text">
-                <h2>Mengapa Grooming<br><span>Itu Penting?</span></h2>
-                <p>Grooming bukan sekadar soal penampilan. Perawatan rutin membantu menjaga kesehatan kulit, bulu, kuku,
-                    dan
-                    telinga hewan peliharaan Anda agar tetap bersih dan bebas dari infeksi.</p>
-                <ul class="grooming-intro-list">
-                    <li><i class="fas fa-check-circle"></i> Mencegah kusut dan penumpukan bulu rontok</li>
-                    <li><i class="fas fa-check-circle"></i> Mendeteksi kutu, tungau, atau luka lebih awal</li>
-                    <li><i class="fas fa-check-circle"></i> Menjaga kuku tidak terlalu panjang agar nyaman berjalan</li>
-                    <li><i class="fas fa-check-circle"></i> Membuat hewan lebih nyaman dan tidak bau</li>
-                    <li><i class="fas fa-check-circle"></i> Mempererat hubungan antara pemilik dan hewan peliharaan</li>
-                </ul>
-                <a href="#paket" class="btn-primary">Lihat Paket Grooming</a>
-            </div>
-            <div class="grooming-intro-visual">🐩</div>
-        </section>
-
-        <!-- ── PAKET GROOMING ── -->
-        <section class="paket-section" id="paket">
-            <h2 class="section-title">Paket Grooming Kami</h2>
-            <div class="paket-grid">
-
-                <!-- PAKET BASIC -->
-                <div class="paket-card">
-                    <div class="paket-header">
-                        <span class="paket-icon">🛁</span>
-                        <h3>Paket Basic</h3>
-                        <p>Cocok untuk perawatan rutin bulanan</p>
-                    </div>
-                    <div class="paket-price">
-                        <div class="price-main">Rp 80.000</div>
-                        <div class="price-note">per sesi</div>
-                    </div>
-                    <ul class="paket-features">
-                        <li><i class="fas fa-check"></i> Mandi dengan shampoo standar</li>
-                        <li><i class="fas fa-check"></i> Blow dry & sisir bulu</li>
-                        <li><i class="fas fa-check"></i> Potong kuku</li>
-                        <li><i class="fas fa-check"></i> Bersihkan telinga</li>
-                        <li class="no"><i class="fas fa-times"></i> Potong bulu</li>
-                        <li class="no"><i class="fas fa-times"></i> Parfum & pita</li>
-                        <li class="no"><i class="fas fa-times"></i> Shampoo premium</li>
-                    </ul>
-                    <div class="paket-footer">
-                        <a href="kontak.html" class="btn-outline">Pilih Paket</a>
-                    </div>
+        <!-- 2. STATS BAR -->
+        <section class="grooming-stats">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">5.000+</span>
+                    <span class="stat-label">Hewan Dirawat</span>
                 </div>
-
-                <!-- PAKET STANDARD (POPULAR) -->
-                <div class="paket-card popular">
-                    <span class="popular-badge">⭐ Terpopuler</span>
-                    <div class="paket-header">
-                        <span class="paket-icon">✨</span>
-                        <h3>Paket Standard</h3>
-                        <p>Pilihan terbaik untuk perawatan lengkap</p>
-                    </div>
-                    <div class="paket-price">
-                        <div class="price-main">Rp 150.000</div>
-                        <div class="price-note">per sesi</div>
-                    </div>
-                    <ul class="paket-features">
-                        <li><i class="fas fa-check"></i> Mandi dengan shampoo premium</li>
-                        <li><i class="fas fa-check"></i> Blow dry & sisir bulu</li>
-                        <li><i class="fas fa-check"></i> Potong kuku</li>
-                        <li><i class="fas fa-check"></i> Bersihkan telinga</li>
-                        <li><i class="fas fa-check"></i> Potong &amp; rapikan bulu</li>
-                        <li><i class="fas fa-check"></i> Parfum &amp; pita hias</li>
-                        <li class="no"><i class="fas fa-times"></i> Masker bulu & spa</li>
-                    </ul>
-                    <div class="paket-footer">
-                        <a href="kontak.html" class="btn-primary">Pilih Paket</a>
-                    </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.9 <i class="fas fa-star"></i></span>
+                    <span class="stat-label">Rating Pelanggan</span>
                 </div>
-
-                <!-- PAKET PREMIUM -->
-                <div class="paket-card">
-                    <div class="paket-header">
-                        <span class="paket-icon">👑</span>
-                        <h3>Paket Premium</h3>
-                        <p>Perawatan spa mewah untuk si kesayangan</p>
-                    </div>
-                    <div class="paket-price">
-                        <div class="price-main">Rp 250.000</div>
-                        <div class="price-note">per sesi</div>
-                    </div>
-                    <ul class="paket-features">
-                        <li><i class="fas fa-check"></i> Mandi dengan shampoo premium</li>
-                        <li><i class="fas fa-check"></i> Blow dry & sisir bulu</li>
-                        <li><i class="fas fa-check"></i> Potong kuku & kikir halus</li>
-                        <li><i class="fas fa-check"></i> Bersihkan telinga mendalam</li>
-                        <li><i class="fas fa-check"></i> Potong &amp; styling bulu</li>
-                        <li><i class="fas fa-check"></i> Parfum &amp; pita hias</li>
-                        <li><i class="fas fa-check"></i> Masker bulu &amp; spa treatment</li>
-                    </ul>
-                    <div class="paket-footer">
-                        <a href="kontak.html" class="btn-outline">Pilih Paket</a>
-                    </div>
+                <div class="stat-item">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label">Groomer Bersertifikat</span>
                 </div>
-
-            </div>
-        </section>
-
-        <!-- ── GALERI ── -->
-        <section class="galeri-section">
-            <h2 class="section-title">Galeri Hasil Grooming</h2>
-            <div class="galeri-grid">
-                <div class="galeri-item">🐩<span class="galeri-label">Pudel Styling</span></div>
-                <div class="galeri-item">🐱<span class="galeri-label">Kucing Persia</span></div>
-                <div class="galeri-item">🐶<span class="galeri-label">Husky Mandi</span></div>
-                <div class="galeri-item">🐈<span class="galeri-label">Maine Coon</span></div>
-                <div class="galeri-item">🦮<span class="galeri-label">Golden Retriever</span></div>
-                <div class="galeri-item">😺<span class="galeri-label">Anggora Trim</span></div>
-                <div class="galeri-item">🐕<span class="galeri-label">Shih Tzu</span></div>
-                <div class="galeri-item">🐈‍⬛<span class="galeri-label">Kucing Hitam</span></div>
-            </div>
-        </section>
-
-        <!-- ── TIM GROOMER ── -->
-        <section class="groomer-section">
-            <h2 class="section-title">Tim Groomer Kami</h2>
-            <div class="groomer-grid">
-
-                <div class="groomer-card">
-                    <div class="groomer-avatar">🧔‍♂️</div>
-                    <h4>Zidni Al Hafizh Razid</h4>
-                    <span class="groomer-exp">7 Tahun Pengalaman</span>
-                    <p>Spesialis grooming anjing berbulu panjang seperti Shih Tzu, Pudel, dan Yorkshire.</p>
-                </div>
-
-                <div class="groomer-card">
-                    <div class="groomer-avatar">👨‍🦲</div>
-                    <h4>Irvan Maruli Sihombing</h4>
-                    <span class="groomer-exp">5 Tahun Pengalaman</span>
-                    <p>Ahli styling anjing ras besar seperti Husky, Golden Retriever, dan German Shepherd.</p>
-                </div>
-
-                <div class="groomer-card">
-                    <div class="groomer-avatar">👨‍🦱</div>
-                    <h4>Irgi Al Fahrezi Nasution</h4>
-                    <span class="groomer-exp">4 Tahun Pengalaman</span>
-                    <p>Spesialis grooming kucing berbagai ras, termasuk Persia, Maine Coon, dan Anggora.</p>
-                </div>
-
-                <div class="groomer-card">
-                    <div class="groomer-avatar">👨‍🦰</div>
-                    <h4>Fadil Taufikkurrahman Harahap</h4>
-                    <span class="groomer-exp">3 Tahun Pengalaman</span>
-                    <p>Groomer serba bisa yang menangani berbagai jenis hewan peliharaan dengan sabar dan lembut.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ── TIPS GROOMING ── -->
-        <section class="tips-section">
-            <h2 class="section-title">Tips Merawat Hewan di Rumah</h2>
-            <div class="tips-grid">
-
-                <div class="tips-card">
-                    <div class="tips-number">01</div>
-                    <h4>Sisir Bulu Setiap Hari</h4>
-                    <p>Menyisir bulu setiap hari mencegah kusut dan mengurangi bulu rontok yang berserakan di rumah.
-                        Gunakan
-                        sisir yang sesuai jenis bulu hewan.</p>
-                </div>
-
-                <div class="tips-card">
-                    <div class="tips-number">02</div>
-                    <h4>Mandikan Secara Rutin</h4>
-                    <p>Anjing cukup dimandikan setiap 2–4 minggu sekali, sedangkan kucing bisa 4–6 minggu sekali.
-                        Gunakan
-                        shampoo khusus hewan peliharaan.</p>
-                </div>
-
-                <div class="tips-card">
-                    <div class="tips-number">03</div>
-                    <h4>Periksa Telinga Rutin</h4>
-                    <p>Bersihkan telinga hewan minimal 2 minggu sekali menggunakan cairan pembersih khusus. Telinga
-                        kotor
-                        bisa menjadi sarang bakteri dan jamur.</p>
-                </div>
-
-                <div class="tips-card">
-                    <div class="tips-number">04</div>
-                    <h4>Potong Kuku Berkala</h4>
-                    <p>Kuku yang terlalu panjang bisa menyebabkan kesulitan berjalan dan melukai lantai. Potong setiap
-                        3–4
-                        minggu dengan gunting kuku khusus hewan.</p>
-                </div>
-
-                <div class="tips-card">
-                    <div class="tips-number">05</div>
-                    <h4>Sikat Gigi Hewan</h4>
-                    <p>Gigi hewan peliharaan juga perlu dibersihkan minimal 2–3 kali seminggu dengan pasta gigi dan
-                        sikat
-                        khusus hewan agar tidak ada karang gigi.</p>
-                </div>
-
-                <div class="tips-card">
-                    <div class="tips-number">06</div>
-                    <h4>Grooming Profesional</h4>
-                    <p>Bawa hewan peliharaan ke groomer profesional setidaknya sebulan sekali untuk perawatan menyeluruh
-                        yang tidak bisa dilakukan di rumah.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ── PROSES ── -->
-        <section class="proses-section">
-            <h2 class="section-title">Alur Grooming di ZOON</h2>
-            <div class="proses-grid">
-                <div class="proses-card">
-                    <div class="proses-number">1</div>
-                    <h4>Check-In</h4>
-                    <p>Datang sesuai jadwal, kami akan mencatat kondisi awal dan kebutuhan grooming hewan Anda.</p>
-                </div>
-                <div class="proses-card">
-                    <div class="proses-number">2</div>
-                    <h4>Pemeriksaan Awal</h4>
-                    <p>Groomer memeriksa kondisi kulit, bulu, dan telinga sebelum memulai proses grooming.</p>
-                </div>
-                <div class="proses-card">
-                    <div class="proses-number">3</div>
-                    <h4>Proses Grooming</h4>
-                    <p>Mandi, blow dry, potong bulu, kuku, dan telinga dilakukan dengan penuh kasih sayang.</p>
-                </div>
-                <div class="proses-card">
-                    <div class="proses-number">4</div>
-                    <h4>Selesai & Cantik</h4>
-                    <p>Hewan peliharaan Anda siap pulang dengan penampilan bersih, wangi, dan menawan!</p>
+                <div class="stat-item">
+                    <span class="stat-number">3 Tahun</span>
+                    <span class="stat-label">Melayani Medan</span>
                 </div>
             </div>
         </section>
 
-        <!-- ── CTA ── -->
-        <section class="cta-section">
-            <h2>Jadwalkan Grooming<br>Sekarang Juga!</h2>
-            <p>Dapatkan konsultasi gratis tentang paket grooming yang paling sesuai untuk hewan peliharaan Anda.</p>
-            <div class="cta-buttons">
-                <a href="https://wa.me/6281234567890" class="btn-primary">
-                    <i class="fab fa-whatsapp"></i> Booking via WhatsApp
-                </a>
-                <a href="layanan.html" class="btn-light">Lihat Semua Layanan</a>
+        <!-- 3. KEUNGGULAN -->
+        <section class="grooming-features">
+            <div class="container">
+                <h2 class="section-title">Kenapa Grooming di ZOON?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-pump-soap"></i></div>
+                        <h3>Sampo Hypoallergenic</h3>
+                        <p>Produk khusus yang aman untuk kulit sensitif dan menjaga kenyamanan hewan peliharaan Anda.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-user-check"></i></div>
+                        <h3>Groomer Bersertifikat</h3>
+                        <p>Tenaga ahli terlatih yang menangani setiap hewan dengan lembut dan penuh empati.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-notes-medical"></i></div>
+                        <h3>Pengecekan Alergi</h3>
+                        <p>Riwayat alergi dicek terlebih dahulu sebelum proses grooming dimulai demi keamanan.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-camera"></i></div>
+                        <h3>Update Real-Time</h3>
+                        <p>Anda menerima foto/video selama proses berlangsung agar tetap merasa tenang.</p>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- 4. PAKET GROOMING -->
+        <section class="grooming-packages">
+            <div class="container">
+                <h2 class="section-title">Paket Grooming &amp; Spa</h2>
+                <div class="package-grid">
+                    <div class="package-card">
+                        <h3>Basic Bath</h3>
+                        <p class="package-desc">Mandi, keringkan, sisir bulu, dan pembersihan telinga dasar.</p>
+                        <div class="package-price">Mulai Rp 75.000</div>
+                        <ul class="package-list">
+                            <li><i class="fas fa-check"></i> Mandi sampo premium</li>
+                            <li><i class="fas fa-check"></i> Blow dry &amp; sisir bulu</li>
+                            <li><i class="fas fa-check"></i> Pembersihan telinga dasar</li>
+                        </ul>
+                        <a href="#booking" class="btn-outline">Pilih Paket</a>
+                    </div>
+
+                    <div class="package-card featured">
+                        <span class="package-badge">Terpopuler</span>
+                        <h3>Full Grooming</h3>
+                        <p class="package-desc">Perawatan lengkap termasuk potong bulu dan kuku sesuai gaya.</p>
+                        <div class="package-price">Mulai Rp 150.000</div>
+                        <ul class="package-list">
+                            <li><i class="fas fa-check"></i> Semua di paket Basic</li>
+                            <li><i class="fas fa-check"></i> Potong &amp; styling bulu</li>
+                            <li><i class="fas fa-check"></i> Potong kuku &amp; bersihkan telinga</li>
+                            <li><i class="fas fa-check"></i> Parfum hewan</li>
+                        </ul>
+                        <a href="#booking" class="btn-primary">Pilih Paket</a>
+                    </div>
+
+                    <div class="package-card">
+                        <h3>Spa Premium</h3>
+                        <p class="package-desc">Relaksasi penuh dengan terapi spa untuk hewan kesayangan.</p>
+                        <div class="package-price">Mulai Rp 250.000</div>
+                        <ul class="package-list">
+                            <li><i class="fas fa-check"></i> Semua di Full Grooming</li>
+                            <li><i class="fas fa-check"></i> Spa &amp; pijat relaksasi</li>
+                            <li><i class="fas fa-check"></i> Masker bulu khusus</li>
+                        </ul>
+                        <a href="#booking" class="btn-outline">Pilih Paket</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. TIM GROOMER (ASIMETRIS) -->
+        <section class="grooming-team">
+            <div class="container">
+                <h2 class="section-title">Kenali Groomer Kami</h2>
+                <div class="team-row">
+                    <div class="team-photo">
+                        <img src="../Images/groomer-1.jpg" alt="Groomer profesional ZOON">
+                        <div class="team-exp-badge">5+ Tahun Pengalaman</div>
+                    </div>
+                    <div class="team-text">
+                        <span class="team-tag">Lulusan Terbaik</span>
+                        <h3>Ditangani Tenaga Ahli Bersertifikat</h3>
+                        <p>Setiap groomer ZOON menjalani pelatihan internal dan sertifikasi sebelum menangani hewan
+                            kesayangan Anda. Kami memahami bahasa tubuh hewan agar proses grooming tetap nyaman dan
+                            minim stres, bahkan untuk hewan yang sensitif sekalipun.</p>
+                        <div class="team-points">
+                            <div class="team-point"><i class="fas fa-check-circle"></i> Penanganan lembut &amp; penuh
+                                kesabaran</div>
+                            <div class="team-point"><i class="fas fa-check-circle"></i> Memahami kondisi medis dasar
+                                hewan</div>
+                            <div class="team-point"><i class="fas fa-check-circle"></i> Update berkala selama proses
+                                berlangsung</div>
+                        </div>
+                        <a href="Tentang.html" class="btn-outline">Lihat Tim Kami</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PROSES GROOMING -->
+        <section class="grooming-process" style="background: var(--light-blue);">
+            <div class="container">
+                <h2 class="section-title">Proses Grooming di ZOON</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <h4>Reservasi</h4>
+                        <p>Booking jadwal lewat website, telepon, atau datang langsung ke ZOON.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <h4>Check-in</h4>
+                        <p>Konfirmasi layanan dengan sambutan hangat dari tim kami.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <h4>Assessment</h4>
+                        <p>Pengecekan kondisi fisik dan riwayat alergi sebelum tindakan.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <h4>Grooming</h4>
+                        <p>Proses perawatan sesuai paket dengan update foto/video ke pemilik.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">5</div>
+                        <h4>Check-out</h4>
+                        <p>Hewan dikembalikan bersih dan wangi, lengkap dengan laporan hasil.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. TESTIMONI -->
+        <section class="grooming-testimonials">
+            <div class="container">
+                <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Bulu kucing saya jadi halus banget dan wangi tahan lama. Stafnya
+                            juga ramah dan sabar sama kucing saya yang galak!"</p>
+                        <div class="testimonial-author">
+                            <img src="../Images/customer-1.jpg" alt="Pelanggan ZOON">
+                            <div>
+                                <span class="author-name">Sarah W.</span>
+                                <span class="author-pet">Pemilik Kucing Persia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card featured-testimonial">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Paling suka karena dapat update foto selama proses grooming. Jadi
+                            tenang nungguinnya, anjing saya juga pulang dalam keadaan rapi sekali."</p>
+                        <div class="testimonial-author">
+                            <img src="../Images/customer-2.jpg" alt="Pelanggan ZOON">
+                            <div>
+                                <span class="author-name">Budi Santoso</span>
+                                <span class="author-pet">Pemilik Golden Retriever</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Harga sebanding sama kualitasnya. Spa premiumnya bikin kucing saya
+                            lebih rileks, kelihatan banget dari cara dia tidur setelah pulang."</p>
+                        <div class="testimonial-author">
+                            <img src="../Images/customer-3.jpg" alt="Pelanggan ZOON">
+                            <div>
+                                <span class="author-name">Linda Tan</span>
+                                <span class="author-pet">Pemilik Kucing Anggora</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. GALLERY BEFORE & AFTER -->
+        <section class="grooming-gallery">
+            <div class="container">
+                <h2 class="section-title">Before &amp; After</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="../Images/grooming-1.jpg" alt="Hasil grooming ZOON"></div>
+                    <div class="gallery-item"><img src="../Images/grooming-2.jpg" alt="Hasil grooming ZOON"></div>
+                    <div class="gallery-item"><img src="../Images/grooming-3.jpg" alt="Hasil grooming ZOON"></div>
+                    <div class="gallery-item"><img src="../Images/grooming-4.jpg" alt="Hasil grooming ZOON"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. FAQ -->
+        <section class="grooming-faq" style="background: var(--light-blue);">
+            <div class="container">
+                <h2 class="section-title">Pertanyaan Umum</h2>
+                <div class="faq-list">
+                    <details class="faq-item" open>
+                        <summary>Berapa lama proses grooming berlangsung?</summary>
+                        <p>Tergantung paket dan kondisi bulu hewan. Umumnya 45–90 menit untuk Basic Bath, dan 1.5–2.5
+                            jam untuk Full Grooming atau Spa Premium.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Apakah perlu booking terlebih dahulu?</summary>
+                        <p>Sangat disarankan untuk booking melalui website atau telepon agar kami bisa menyiapkan jadwal
+                            dan groomer terbaik untuk hewan Anda.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Bagaimana jika hewan saya memiliki alergi kulit?</summary>
+                        <p>Tim kami wajib melakukan pengecekan riwayat alergi sebelum memulai proses, dan akan
+                            menggunakan produk hypoallergenic yang sesuai dengan kondisi hewan Anda.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Apakah hewan saya aman jika terlihat sakit saat check-in?</summary>
+                        <p>Hewan yang terindikasi penyakit menular (jamur, kutu parah) saat check-in akan kami arahkan
+                            ke Klinik terlebih dahulu sebelum proses grooming dilanjutkan demi keamanan bersama.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Apakah saya bisa menunggu selama proses grooming?</summary>
+                        <p>Tentu boleh. Namun kami juga menyediakan update foto/video berkala jika Anda ingin
+                            meninggalkan hewan dan kembali saat proses selesai.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CTA BOOKING -->
+        <section class="grooming-cta" id="booking">
+            <div class="container cta-content">
+                <h2>Siap Manjakan Hewan Kesayangan Anda?</h2>
+                <p>Booking jadwal grooming sekarang dan rasakan pengalaman perawatan premium di ZOON Medan.</p>
+                <a href="Kontak.html" class="btn-light">Booking Sekarang</a>
+            </div>
+        </section>
+
     </main>
 
     <!-- ── FOOTER ── -->
@@ -401,4 +431,5 @@
         </div>
     </footer>
 </body>
+
 </html>
