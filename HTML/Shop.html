@@ -61,10 +61,10 @@
 
             <div class="nav-right">
                 <a href="#"><i class="fas fa-search"></i></a>
-                <a href="Shop.html" class="cart-icon">
+                <button class="cart-icon" id="cartIconBtn">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-badge">3</span>
-                </a>
+                    <span class="cart-badge" id="navCartBadge">0</span>
+                </button>
                 <a href="Login.html" class="btn-nav-login">
                     <i class="fas fa-user"></i>
                     <span class="login-text">Login</span>
@@ -147,25 +147,25 @@
                         <ul class="rating-filter">
                             <li>
                                 <label>
-                                    <input type="checkbox" checked />
+                                    <input type="checkbox" data-rating="5" />
                                     <span class="stars-display">★★★★★</span> (5)
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked />
+                                    <input type="checkbox" data-rating="4" />
                                     <span class="stars-display">★★★★☆</span> (4+)
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" />
+                                    <input type="checkbox" data-rating="3" />
                                     <span class="stars-display">★★★☆☆</span> (3+)
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" />
+                                    <input type="checkbox" data-rating="2" />
                                     <span class="stars-display">★★☆☆☆</span> (2+)
                                 </label>
                             </li>
@@ -220,7 +220,8 @@
                                     <span class="harga-diskon">-11%</span>
                                 </div>
                                 <div class="produk-actions">
-                                    <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Kitten 85gr 12pcs')">
+                                    <button class="btn-keranjang"
+                                        onclick="addToCart(this, 'Royal Canin Kitten 85gr 12pcs')">
                                         <i class="fas fa-shopping-cart"></i> Keranjang
                                     </button>
                                     <button class="btn-beli">
@@ -231,7 +232,7 @@
                         </div>
 
                         <!-- 2 -->
-                        <div class="produk-card" data-kategori="makanan" data-harga="632700" data-rating="5">
+                        <div class="produk-card" data-kategori="makanan" data-harga="632700" data-rating="4">
                             <span class="produk-badge baru">✨ Baru</span>
                             <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
                                     class="fas fa-heart"></i></button>
@@ -248,7 +249,8 @@
                                     <span class="harga-utama">Rp 632.700</span>
                                 </div>
                                 <div class="produk-actions">
-                                    <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Hair & Skin Care Adult dry food 4KG')">
+                                    <button class="btn-keranjang"
+                                        onclick="addToCart(this, 'Royal Canin Hair & Skin Care Adult dry food 4KG')">
                                         <i class="fas fa-shopping-cart"></i> Keranjang
                                     </button>
                                     <button class="btn-beli">
@@ -333,7 +335,8 @@
                                     <span class="harga-diskon">-10%</span>
                                 </div>
                                 <div class="produk-actions">
-                                    <button class="btn-keranjang" onclick="addToCart(this, 'Whiskas Adult 1+ Mackerel Flavour wet food 80gr')">
+                                    <button class="btn-keranjang"
+                                        onclick="addToCart(this, 'Whiskas Adult 1+ Mackerel Flavour wet food 80gr')">
                                         <i class="fas fa-shopping-cart"></i> Keranjang
                                     </button>
                                     <button class="btn-beli">
@@ -388,7 +391,8 @@
                                     <span class="harga-utama">Rp 165.000</span>
                                 </div>
                                 <div class="produk-actions">
-                                    <button class="btn-keranjang" onclick="addToCart(this, 'Pedigree PRO High Protein Adult Mini & Small Breed')">
+                                    <button class="btn-keranjang"
+                                        onclick="addToCart(this, 'Pedigree PRO High Protein Adult Mini & Small Breed')">
                                         <i class="fas fa-shopping-cart"></i> Keranjang
                                     </button>
                                     <button class="btn-beli">
@@ -418,7 +422,8 @@
                                     <span class="harga-diskon">-20%</span>
                                 </div>
                                 <div class="produk-actions">
-                                    <button class="btn-keranjang" onclick="addToCart(this, 'Mainan gigitan hewan - TPR')">
+                                    <button class="btn-keranjang"
+                                        onclick="addToCart(this, 'Mainan gigitan hewan - TPR')">
                                         <i class="fas fa-shopping-cart"></i> Keranjang
                                     </button>
                                     <button class="btn-beli">
@@ -445,7 +450,8 @@
                                     <span class="harga-utama">Rp 47.000</span>
                                 </div>
                                 <div class="produk-actions">
-                                    <button class="btn-keranjang" onclick="addToCart(this, 'Royal Canin Regular Fit 32 - dry food 400gr')">
+                                    <button class="btn-keranjang"
+                                        onclick="addToCart(this, 'Royal Canin Regular Fit 32 - dry food 400gr')">
                                         <i class="fas fa-shopping-cart"></i> Keranjang
                                     </button>
                                     <button class="btn-beli">
@@ -501,7 +507,8 @@
                                     <span class="harga-diskon">-15%</span>
                                 </div>
                                 <div class="produk-actions">
-                                    <button class="btn-keranjang" onclick="addToCart(this, 'Cooling pad - alas tidur anjing')">
+                                    <button class="btn-keranjang"
+                                        onclick="addToCart(this, 'Cooling pad - alas tidur anjing')">
                                         <i class="fas fa-shopping-cart"></i> Keranjang
                                     </button>
                                     <button class="btn-beli">
@@ -657,7 +664,8 @@
                                     <span class="harga-utama">Rp 230.000</span>
                                 </div>
                                 <div class="produk-actions">
-                                    <button class="btn-keranjang" onclick="addToCart(this, 'Kandang kucing 35cm x 35cm')">
+                                    <button class="btn-keranjang"
+                                        onclick="addToCart(this, 'Kandang kucing 35cm x 35cm')">
                                         <i class="fas fa-shopping-cart"></i> Keranjang
                                     </button>
                                     <button class="btn-beli">
@@ -710,7 +718,37 @@
                                     <span class="harga-utama">Rp 55.000</span>
                                 </div>
                                 <div class="produk-actions">
-                                    <button class="btn-keranjang" onclick="addToCart(this, 'Pedigree chicken loaf 400g')">
+                                    <button class="btn-keranjang"
+                                        onclick="addToCart(this, 'Pedigree chicken loaf 400g')">
+                                        <i class="fas fa-shopping-cart"></i> Keranjang
+                                    </button>
+                                    <button class="btn-beli">
+                                        <i class="fas fa-money-bill-wave"></i> Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 20 -->
+                        <div class="produk-card" data-kategori="snack" data-harga="25000" data-rating="5">
+                            <span class="produk-badge baru">✨ Baru</span>
+                            <button class="produk-wishlist" onclick="toggleWishlist(this)"><i
+                                    class="fas fa-heart"></i></button>
+                            <div class="produk-img"><img src="../foto/dental_stik_anjing.jpg"
+                                    alt="dental stick anjing rasa ayam"></div>
+                            <div class="produk-body">
+                                <div class="produk-kategori">Snack & Treat</div>
+                                <h4>Dental stick anjing rasa ayam - bantu bersihkan gigi</h4>
+                                <div class="produk-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(67 ulasan)</span>
+                                </div>
+                                <div class="produk-harga">
+                                    <span class="harga-utama">Rp 25.000</span>
+                                </div>
+                                <div class="produk-actions">
+                                    <button class="btn-keranjang"
+                                        onclick="addToCart(this, 'Dental stick anjing rasa ayam')">
                                         <i class="fas fa-shopping-cart"></i> Keranjang
                                     </button>
                                     <button class="btn-beli">
@@ -813,7 +851,33 @@
         <span id="cartNotifText">Produk ditambahkan!</span>
     </div>
 
+    <!-- ── CART SIDEBAR ── -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <span><i class="fas fa-shopping-cart"></i> Keranjang (<span id="cartCount">0</span>)</span>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Keranjang masih kosong</p>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total</span>
+                <span id="cartTotal">Rp 0</span>
+            </div>
+            <button class="btn-checkout">Checkout</button>
+        </div>
+    </aside>
+
     <script src="../JS/pages/shop.js"></script>
+    <script src="../JS/pages/cart.js"></script>
+    
 
 </body>
 

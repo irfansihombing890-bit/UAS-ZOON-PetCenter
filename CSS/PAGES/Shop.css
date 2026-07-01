@@ -242,37 +242,7 @@
     border-color: var(--teal);
 }
 
-.view-toggle {
-    display: flex;
-    gap: 4px;
-}
 
-.view-btn {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    border: 2px solid #eef0f3;
-    background: #ffffff;
-    color: var(--text-gray);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    transition: all 0.2s;
-}
-
-.view-btn.active {
-    background: var(--teal);
-    border-color: var(--teal);
-    color: #ffffff;
-}
-
-.view-btn:hover {
-    background: var(--teal);
-    border-color: var(--teal);
-    color: #ffffff;
-}
 
 /* ── PRODUK GRID ── */
 .produk-grid {

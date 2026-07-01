@@ -170,6 +170,27 @@ function initKategoriFilter() {
     });
 }
 
+// otomatis menhitung jumlah barang sesuai kategori
+function updateKategoriCount() {
+    const allCards = getAllCards();
+    const links = document.querySelectorAll('.filter-kategori a');
+
+    links.forEach(link => {
+        const kategori = link.dataset.kategori;
+        const countSpan = link.querySelector('span');
+        if (!countSpan) return;
+
+        let jumlah;
+        if (kategori === 'semua') {
+            jumlah = allCards.length;
+        } else {
+            jumlah = allCards.filter(card => card.dataset.kategori === kategori).length;
+        }
+
+        countSpan.textContent = jumlah;
+    });
+}
+
 // ── INIT FILTER HARGA ──
 function initHargaFilter() {
     const slider = document.querySelector('.price-slider');
@@ -211,7 +232,7 @@ function initSort() {
 
     // Ganti opsi sort sesuai permintaan
     sortSelect.innerHTML = `
-        <option value="terpopuler">Urutkan: Terpopuler</option>
+        <option value="terpopuler">Urutkan: Rekomendasi</option>
         <option value="harga-asc">Harga: Rendah ke Tinggi</option>
         <option value="harga-desc">Harga: Tinggi ke Rendah</option>
         <option value="rating">Rating Tertinggi</option>
@@ -233,21 +254,6 @@ function toggleWishlist(btn) {
 }
 
 
-// ── CART NOTIFICATION ──
-function addToCart(btn, productName) {
-    const notif = document.getElementById('cartNotif');
-    const notifText = document.getElementById('cartNotifText');
-    if (!notif || !notifText) return;
-
-    notifText.textContent = `"${productName}" ditambahkan!`;
-    notif.classList.add('show');
-
-    clearTimeout(notif._timeout);
-    notif._timeout = setTimeout(() => {
-        notif.classList.remove('show');
-    }, 2500);
-}
-
 
 // ── INIT SEMUA ──
 document.addEventListener('DOMContentLoaded', () => {
@@ -256,5 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initKategoriFilter();
     initHargaFilter();
     initRatingFilter();
+    updateKategoriCount();  
     applyFilters(); // jalankan filter pertama kali untuk set filteredCards
 });
