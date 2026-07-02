@@ -253,6 +253,83 @@ function toggleWishlist(btn) {
     btn.classList.toggle('active');
 }
 
+// ── MODAL PRODUK ──
+function initModal() {
+    const overlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+
+    if (overlay) overlay.addEventListener('click', closeModal);
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    // Klik foto atau area card (selain tombol)
+    document.querySelectorAll('.produk-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('button')) return;
+            openModal(card);
+        });
+    });
+}
+
+function openModal(card) {
+    const img = card.querySelector('.produk-img img');
+    const nama = card.querySelector('h4').textContent.trim();
+    const kategori = card.querySelector('.produk-kategori').textContent.trim();
+    const stars = card.querySelector('.produk-rating .stars').textContent.trim();
+    const ulasan = card.querySelector('.produk-rating span:last-child').textContent.trim();
+    const hargaUtama = card.querySelector('.harga-utama').textContent.trim();
+    const hargaCoret = card.querySelector('.harga-coret');
+    const hargaDiskon = card.querySelector('.harga-diskon');
+    const badge = card.querySelector('.produk-badge');
+    const deskripsi = card.dataset.deskripsi || '-';
+
+    // Isi konten modal
+    document.getElementById('modalImg').innerHTML = `<img src="${img.src}" alt="${nama}">`;
+    document.getElementById('modalNama').textContent = nama;
+    document.getElementById('modalKategori').textContent = kategori;
+    document.getElementById('modalDeskripsi').textContent = deskripsi;
+    document.getElementById('modalRating').innerHTML = `<span class="stars">${stars}</span> ${ulasan}`;
+
+    // Badge
+    const modalBadge = document.getElementById('modalBadge');
+    if (badge) {
+        modalBadge.textContent = badge.textContent.trim();
+        modalBadge.className = 'modal-badge ' + [...badge.classList]
+            .find(c => ['terlaris','baru','diskon'].includes(c));
+    } else {
+        modalBadge.className = 'modal-badge kosong';
+    }
+
+    // Harga
+    let hargaHTML = `<span class="harga-utama">${hargaUtama}</span>`;
+    if (hargaCoret) hargaHTML += `<span class="harga-coret">${hargaCoret.textContent}</span>`;
+    if (hargaDiskon) hargaHTML += `<span class="harga-diskon">${hargaDiskon.textContent}</span>`;
+    document.getElementById('modalHarga').innerHTML = hargaHTML;
+
+    // Tombol keranjang & beli di modal
+    const btnKeranjang = document.getElementById('modalBtnKeranjang');
+    const btnBeli = document.getElementById('modalBtnBeli');
+    btnKeranjang.onclick = () => { addToCart(btnKeranjang, nama); closeModal(); };
+    btnBeli.onclick = () => closeModal();
+
+    document.getElementById('modalOverlay').classList.add('show');
+    document.getElementById('modalProduk').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('show');
+    document.getElementById('modalProduk').classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+
+
+
+
 
 
 // ── INIT SEMUA ──
@@ -264,4 +341,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initRatingFilter();
     updateKategoriCount();  
     applyFilters(); // jalankan filter pertama kali untuk set filteredCards
+    initModal();
 });
