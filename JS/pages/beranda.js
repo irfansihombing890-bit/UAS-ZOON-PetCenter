@@ -1,3 +1,44 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Mengambil elemen dari HTML
+    const btnPanggil = document.getElementById("toggleAnimalsBtn");
+    const pemandangan = document.getElementById("sceneryArea");
+    const hewanAtas = document.getElementById("topAnimalsArea");
+    
+    let isTampil = false;
+
+    // 2. Jika tombol ditemukan, pasang logika klik
+    if (btnPanggil) {
+        btnPanggil.addEventListener("click", (e) => {
+            e.preventDefault(); 
+            
+            // Cari elemen Teks dan elemen Ikon SVG di dalam tombol
+            const teksTombol = btnPanggil.querySelector(".btn-text");
+            const ikonSvg = btnPanggil.querySelector(".paw-icon");
+            
+            // Ubah status
+            isTampil = !isTampil;
+            
+            if (isTampil) {
+                // SAAT HEWAN MUNCUL: Ganti Teks & Sembunyikan Ikon SVG
+                if (teksTombol) teksTombol.innerText = "Biarkan Mereka Istirahat 🌙";
+                if (ikonSvg) ikonSvg.style.display = "none"; // HILANGKAN IKON
+                
+                btnPanggil.classList.add("active-state");
+                if (pemandangan) pemandangan.classList.add("active");
+                if (hewanAtas) hewanAtas.classList.add("active");
+            } else {
+                // SAAT HEWAN SEMBUNYI: Kembalikan Teks & Munculkan Ikon SVG
+                if (teksTombol) teksTombol.innerText = "Panggil Pet"; 
+                if (ikonSvg) ikonSvg.style.display = ""; // MUNCULKAN IKON KEMBALI
+                
+                btnPanggil.classList.remove("active-state");
+                if (pemandangan) pemandangan.classList.remove("active");
+                if (hewanAtas) hewanAtas.classList.remove("active");
+            }
+        });
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.hero-slide');
     const cards = document.querySelectorAll('.slider-card');

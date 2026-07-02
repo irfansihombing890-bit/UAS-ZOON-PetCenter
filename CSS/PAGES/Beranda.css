@@ -350,89 +350,85 @@
     }
 }
 
-/* Container Utama (Diperkecil ukurannya) */
+/* Container Utama Slider */
 .hero-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 80vh; /* Tidak lagi full 100vh agar lebih ringkas */
-    padding: 80px 8%; /* Menambah jarak pinggir */
+    min-height: 80vh; 
+    padding: 80px 8%; 
     background-color: var(--navy-blue, #0B1B3D);
     color: white;
     overflow: hidden;
-  }
+}
   
-  /* Bagian Kiri */
-  .hero-left {
+.hero-left {
     width: 50%;
     position: relative;
-    height: 350px; /* Disesuaikan tinggi kontennya */
-  }
+    height: 350px; 
+}
   
-  .hero-slide {
+.hero-slide {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.8s ease, visibility 0.8s ease;
-  }
+}
   
-  .hero-slide.active {
+.hero-slide.active {
     opacity: 1;
     visibility: visible;
     z-index: 2;
-  }
+}
   
-  /* Teks diperkecil */
-  .hero-content h1 {
-    font-size: 2.4rem; /* Dari 3rem menjadi 2.4rem */
+.hero-content h1 {
+    font-size: 2.4rem; 
     margin-bottom: 12px;
     color: var(--teal, #00A8B5);
-  }
+}
   
-  .hero-content p {
-    font-size: 1.05rem; /* Dari 1.2rem menjadi 1.05rem */
+.hero-content p {
+    font-size: 1.05rem; 
     margin-bottom: 25px;
     line-height: 1.5;
     color: #E2E8F0;
-  }
+}
   
-  /* Bagian Kanan: 3D Cards (Diperkecil) */
-  .hero-right {
+.hero-right {
     width: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
     perspective: 900px;
-  }
+}
   
-  /* Ukuran Kartu Slider diperkecil */
-  .slider-container {
+.slider-container {
     position: relative;
-    width: 250px;  /* Dari 300px ke 250px */
-    height: 340px; /* Dari 400px ke 340px */
+    width: 250px;  
+    height: 340px; 
     transform-style: preserve-3d;
-  }
+}
   
-  .slider-card {
+.slider-card {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 16px; /* Lengkungan sedikit dikurangi proporsional */
+    border-radius: 16px; 
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  }
+}
   
-  .slider-card img {
+.slider-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+}
   
-  .slider-card h3 {
+.slider-card h3 {
     position: absolute;
     bottom: 15px;
     left: 15px;
@@ -440,53 +436,47 @@
     padding: 6px 12px;
     border-radius: 6px;
     font-size: 1rem;
-  }
+}
   
-  /* Posisi 3D Cards (Jarak geser diperkecil) */
-  .slider-card.active {
+.slider-card.active {
     transform: translateX(0) translateZ(0) rotateY(0);
     z-index: 3;
     opacity: 1;
-  }
+}
   
-  .slider-card.next {
-    /* translateX dikurangi dari 120px ke 90px */
+.slider-card.next {
     transform: translateX(90px) translateZ(-120px) rotateY(-20deg);
     z-index: 2;
     opacity: 0.6;
-  }
+}
   
-  .slider-card.prev {
+.slider-card.prev {
     transform: translateX(-90px) translateZ(-120px) rotateY(20deg);
     z-index: 1;
     opacity: 0.6;
-  }
+}
   
-  /* Progress Indicator */
-  .progress-container {
-    width: 250px; /* Mengikuti lebar kartu baru */
+.progress-container {
+    width: 250px; 
     height: 5px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     margin-top: 30px;
     overflow: hidden;
-  }
+}
   
-  .progress-bar {
+.progress-bar {
     height: 100%;
     width: 0%;
     background: #00A8B5;
     border-radius: 10px;
-  }
+}
   
-  @keyframes fillProgress {
+@keyframes fillProgress {
     0% { width: 0%; }
     100% { width: 100%; }
-  }
+}
 
-  /* ── ANIMASI TEKS MASUK (FADE IN UP) ── */
-
-/* 1. Atur posisi awal teks agar bersembunyi dan turun sedikit */
 .hero-content h1,
 .hero-content p,
 .hero-content .btn-primary {
@@ -494,29 +484,236 @@
   transform: translateY(30px);
 }
 
-/* 2. Jalankan animasi hanya saat slide mendapatkan class 'active' */
-.hero-slide.active .hero-content h1 {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.hero-slide.active .hero-content h1 { animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.hero-slide.active .hero-content p { animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards; }
+.hero-slide.active .hero-content .btn-primary { animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards; }
+
+.paw-icon {
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 1px;
+    margin-left: 2px;
 }
 
-/* Delay 0.2 detik untuk paragraf */
-.hero-slide.active .hero-content p {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
-}
-
-/* Delay 0.4 detik untuk tombol agar muncul terakhir */
-.hero-slide.active .hero-content .btn-primary {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
-}
-
-/* 3. Definisi Keyframes Animasi */
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   STYLE INTERACTIVE SECTION (ANIMASI HEWAN BERSIH)
+   ========================================================= */
+:root {
+    --bg-color: #F9F8F6;
+    --text-main: #1A2B3C;
+    --text-accent: #D4A373;
+    --ticker-bg: #1A2B3C;
+    --ticker-text: #F9F8F6;
+    --scenery-color: #E2DFD8;
+    --scenery-accent: #C2BCAE;
+}
+
+.interactive-hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.ticker-wrap { position: absolute; top: 0; width: 100%; background-color: var(--ticker-bg); padding: 12px 0; overflow: hidden; display: flex; white-space: nowrap; z-index: 10; }
+.ticker { display: inline-block; white-space: nowrap; animation: ticker 25s linear infinite; font-size: 0.9rem; letter-spacing: 1px; color: var(--ticker-text); font-weight: 300; text-transform: uppercase; }
+.ticker-wrap:hover .ticker { animation-play-state: paused; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.ticker-item { margin: 0 2rem; display: inline-flex; align-items: center; gap: 0.5rem; }
+.ticker-dot { color: var(--text-accent); font-weight: bold; }
+
+.interactive-content { text-align: center; max-width: 800px; padding: 0 2rem; z-index: 50; margin-top: -5vh; }
+.interactive-content .tagline { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 600; line-height: 1.1; color: var(--text-main); margin-bottom: 1.5rem; opacity: 0; transform: translateX(-100px); animation: slideInLeft 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; animation-delay: 0.2s; }
+.interactive-content .tagline span { color: var(--text-accent); font-style: italic; }
+.interactive-content .description { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.8; color: #4A5568; max-width: 650px; margin: 0 auto; opacity: 0; transform: translateX(100px); animation: slideInRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; animation-delay: 0.6s; }
+@keyframes slideInLeft { to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { to { opacity: 1; transform: translateX(0); } }
+
+.premium-btn { 
+    position: relative;
+    z-index: 50;
+    margin-top: 2.5rem; 
+    padding: 14px 36px; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    font-size: 1rem; 
+    font-weight: 600; 
+    color: var(--bg-color); 
+    background-color: var(--text-main); 
+    border: 2px solid var(--text-main); 
+    border-radius: 50px; 
+    cursor: pointer; 
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); 
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; 
+    animation-delay: 1s; 
+}
+.premium-btn:hover { background-color: transparent; color: var(--text-main); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(26, 43, 60, 0.15); }
+.premium-btn.active-state { background-color: var(--text-accent); border-color: var(--text-accent); color: var(--bg-color); }
+.premium-btn.active-state:hover { background-color: transparent; color: var(--text-accent); }
+
+.sky-decorations { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; overflow: hidden; }
+.cloud { position: absolute; opacity: 0.5; filter: blur(1px); }
+.cloud-1 { width: 180px; top: 15%; left: -200px; animation: floatCloud 45s linear infinite; }
+.cloud-2 { width: 120px; top: 30%; right: -150px; animation: floatCloudReverse 60s linear infinite; opacity: 0.3; }
+.cloud-3 { width: 200px; top: 10%; left: -250px; animation: floatCloud 55s linear infinite; animation-delay: 20s; }
+.cloud-4 { width: 150px; top: 40%; left: -200px; animation: floatCloud 50s linear infinite; animation-delay: 5s; opacity: 0.4; }
+.cloud-5 { width: 220px; top: 5%; right: -250px; animation: floatCloudReverse 70s linear infinite; animation-delay: 15s; opacity: 0.2; }
+.cloud-6 { width: 100px; top: 60%; left: -150px; animation: floatCloud 40s linear infinite; animation-delay: 30s; opacity: 0.5; }
+.bird { position: absolute; width: 45px; opacity: 0.6; }
+.bird-1 { top: 20%; left: -50px; animation: flyBird 25s linear infinite; }
+.bird-2 { top: 35%; left: -50px; animation: flyBird 35s linear infinite; animation-delay: 12s; transform: scale(0.7); }
+.bird-3 { top: 15%; left: -50px; animation: flyBird 28s linear infinite; animation-delay: 5s; transform: scale(0.8); }
+.bird-4 { top: 55%; right: -50px; animation: flyBirdReverse 30s linear infinite; animation-delay: 2s; transform: scale(0.6); }
+.bird-5 { top: 25%; left: -50px; animation: flyBird 22s linear infinite; animation-delay: 18s; transform: scale(0.9); }
+@keyframes floatCloud { 0% { transform: translateX(0); } 100% { transform: translateX(120vw); } }
+@keyframes floatCloudReverse { 0% { transform: translateX(0); } 100% { transform: translateX(-120vw); } }
+@keyframes flyBird { 0% { transform: translateX(0) translateY(0) rotate(5deg); } 25% { transform: translateX(30vw) translateY(-20px) rotate(0deg); } 50% { transform: translateX(60vw) translateY(15px) rotate(-5deg); } 75% { transform: translateX(90vw) translateY(-15px) rotate(0deg); } 100% { transform: translateX(120vw) translateY(0) rotate(5deg); } }
+@keyframes flyBirdReverse { 0% { transform: translateX(0) translateY(0) rotate(-5deg) scaleX(-1); } 25% { transform: translateX(-30vw) translateY(-20px) rotate(0deg) scaleX(-1); } 50% { transform: translateX(-60vw) translateY(15px) rotate(5deg) scaleX(-1); } 75% { transform: translateX(-90vw) translateY(-15px) rotate(0deg) scaleX(-1); } 100% { transform: translateX(-120vw) translateY(0) rotate(-5deg) scaleX(-1); } }
+
+/* Hewan Bersih (Tidak ditimpa layer) */
+.top-animals-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 21; }
+.top-pet { position: absolute; top: -150px; width: 95px; height: 95px; border-radius: 50%; object-fit: cover; border: 4px solid var(--bg-color); box-shadow: 0 15px 30px rgba(26, 43, 60, 0.2); cursor: pointer; pointer-events: auto; opacity: 0; transition: all 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.top-pet.left { left: 8%; } .top-pet.right { right: 8%; }
+.top-animals-container.active .top-pet { opacity: 1; top: 60px; animation: petBreathe 3s ease-in-out infinite alternate; animation-delay: 0.8s; }
+
+.bottom-scenery { position: absolute; bottom: 0; left: 0; width: 100%; height: 250px; z-index: 20; pointer-events: none; }
+.nature-bg { position: absolute; bottom: 40px; width: 100%; height: 120px; z-index: 21; display: flex; justify-content: space-between; align-items: flex-end; padding: 0 2%; opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+.bottom-scenery.active .nature-bg { opacity: 1; transform: translateY(0); }
+.grass-tuft { fill: var(--scenery-color); width: 45px; height: auto; }
+.tree-silhouette { fill: var(--scenery-accent); width: 90px; height: auto; opacity: 0.6; }
+.flower { fill: #E5989B; width: 25px; height: auto; }
+
+.fence { 
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    height: 30px; 
+    background-color: #00A8B5; /* Warna latar dasar diubah */
+    background-image: repeating-linear-gradient(90deg, transparent, transparent 15px, #00A8B5 15px, #00A8B5 60px); /* Warna pola pagar diubah */
+    border-top: 4px solid #00A8B5; /* Warna garis batas atas diubah */
+    z-index: 22; 
+    transition: height 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.bottom-scenery.active .fence {
+    height: 40px;
+}
+
+.animals-container { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; z-index: 21; pointer-events: none; }
+.pet { position: absolute; left: var(--p-left); bottom: -150px; width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 5px solid var(--bg-color); box-shadow: 0 15px 25px rgba(0,0,0,0.15); cursor: pointer; pointer-events: auto; opacity: 0; transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.pet:hover { filter: brightness(1.1); transform: translateY(-15px) scale(1.1) !important; box-shadow: 0 20px 30px rgba(212, 163, 115, 0.5); border-color: var(--text-accent); z-index: 30; animation-play-state: paused !important; }
+.bottom-scenery.active .pet { opacity: 1; bottom: var(--p-bottom); transform: translateY(0); animation: petBreathe 2.5s ease-in-out infinite alternate; animation-delay: 0.8s; }
+@keyframes petBreathe { 0% { transform: translateY(0); } 100% { transform: translateY(-8px); } }
+
+/* ========================================================
+   CSS MODAL POPUP (KUNCI STRUKTUR LAYOUT ABSOLUT)
+   ======================================================== */
+   #petModal {
+    position: fixed !important; top: 0 !important; left: 0 !important; 
+    width: 100vw !important; height: 100vh !important; 
+    background: rgba(26, 43, 60, 0.8) !important; backdrop-filter: blur(10px) !important; 
+    display: flex !important; justify-content: center !important; align-items: center !important; 
+    z-index: 999999 !important; opacity: 0; visibility: hidden; transition: all 0.4s ease !important;
+}
+#petModal.show { opacity: 1; visibility: visible; }
+
+/* Mengunci layout menjadi vertikal (atas ke bawah) */
+#petModal .modal-content {
+    display: flex !important; 
+    flex-direction: column !important; 
+    align-items: center !important; 
+    justify-content: flex-start !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important; 
+    background: #F9F8F6 !important; 
+    padding: 3rem 2rem 2.5rem 2rem !important; 
+    border-radius: 24px !important; 
+    max-width: 450px !important; width: 90% !important; 
+    transform: translateY(30px) scale(0.95); 
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important; 
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25) !important; 
+    position: relative !important;
+    box-sizing: border-box !important; margin: 0 !important;
+}
+#petModal.show .modal-content { transform: translateY(0) scale(1); }
+
+#petModal .close-btn { 
+    position: absolute !important; top: 15px !important; right: 20px !important; 
+    font-size: 2rem !important; color: #999 !important; cursor: pointer !important; 
+    transition: color 0.3s !important; z-index: 10 !important;
+    line-height: 1 !important; border: none !important; background: transparent !important;
+    padding: 0 !important; margin: 0 !important; font-weight: bold !important;
+}
+#petModal .close-btn:hover { color: #1A2B3C !important; }
+
+#petModal .carousel-wrapper { 
+    position: relative !important; display: flex !important; align-items: center !important; 
+    justify-content: center !important; margin-bottom: 1.5rem !important; margin-top: 0 !important;
+    width: 100% !important; 
+}
+
+#petModal .carousel-img-container { 
+    width: 250px !important; height: 250px !important; border-radius: 50% !important; 
+    overflow: hidden !important; border: 4px solid #D4A373 !important; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; 
+    position: relative !important; flex-shrink: 0 !important; margin: 0 !important;
+}
+
+#petModal .modal-img { 
+    width: 100% !important; height: 100% !important; object-fit: cover !important; 
+    transition: opacity 0.3s ease !important; display: block !important;
+    padding: 0 !important; margin: 0 !important;
+}
+#petModal .modal-img.fade { opacity: 0.5 !important; }
+
+#petModal .nav-btn { 
+    background: #1A2B3C !important; color: white !important; border: none !important; 
+    width: 40px !important; height: 40px !important; border-radius: 50% !important; 
+    font-size: 1.2rem !important; cursor: pointer !important; position: absolute !important; 
+    display: flex !important; justify-content: center !important; align-items: center !important; 
+    transition: all 0.3s ease !important; box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important; 
+    z-index: 5 !important; padding: 0 !important; margin: 0 !important;
+}
+#petModal .nav-btn:hover { background: #D4A373 !important; transform: scale(1.1) !important; }
+#petModal .nav-btn.prev { left: 10px !important; } 
+#petModal .nav-btn.next { right: 10px !important; }
+
+/* Memaksa titik dan teks untuk mengambil lebar penuh agar berada di bawah gambar */
+#petModal .carousel-dots { 
+    display: flex !important; justify-content: center !important; align-items: center !important;
+    gap: 8px !important; margin-bottom: 1.5rem !important; width: 100% !important; 
+}
+#petModal .dot { width: 8px !important; height: 8px !important; background-color: #CCC !important; border-radius: 50% !important; cursor: pointer !important; transition: all 0.3s ease !important; display: inline-block !important; margin: 0 !important; padding: 0 !important;}
+#petModal .dot.active { background-color: #D4A373 !important; transform: scale(1.3) !important; width: 16px !important; border-radius: 10px !important; }
+
+#petModal .modal-title { 
+    font-family: 'Playfair Display', serif !important; font-size: 1.8rem !important; 
+    color: #1A2B3C !important; margin: 0 0 0.5rem 0 !important; line-height: 1.2 !important; 
+    width: 100% !important; text-align: center !important; display: block !important;
+}
+#petModal .modal-desc { 
+    font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 0.95rem !important; 
+    color: #666 !important; line-height: 1.6 !important; margin: 0 !important; 
+    width: 100% !important; text-align: center !important; display: block !important;
+}
+
+/* Responsif Mobile untuk Modal */
+@media (max-width: 768px) {
+    #petModal .carousel-img-container { width: 200px !important; height: 200px !important; }
+    #petModal .nav-btn { width: 35px !important; height: 35px !important; font-size: 1rem !important; }
+    #petModal .nav-btn.prev { left: 0px !important; } 
+    #petModal .nav-btn.next { right: 0px !important; }
 }
