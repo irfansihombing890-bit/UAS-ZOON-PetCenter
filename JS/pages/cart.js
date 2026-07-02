@@ -6,12 +6,24 @@ function saveCart() {
     localStorage.setItem('zoonCart', JSON.stringify(cart));
 }
 
-// ── TAMBAH PRODUK KE KERANJANG ──
+// menambah produk ke keranjang dari card dan juga deskripsi produk
 function addToCart(btn, productName) {
     const card = btn.closest('.produk-card');
-    const imgSrc = card.querySelector('.produk-img img').getAttribute('src');
-    const hargaText = card.querySelector('.harga-utama').textContent;
-    const harga = parseInt(card.dataset.harga);
+    let imgSrc = '';
+    let hargaText = '';
+    let harga = 0;
+
+    if (card) {
+        // Dipanggil dari card langsung
+        imgSrc = card.querySelector('.produk-img img').getAttribute('src');
+        hargaText = card.querySelector('.harga-utama').textContent;
+        harga = parseInt(card.dataset.harga);
+    } else {
+        // Dipanggil dari modal
+        imgSrc = document.getElementById('modalImg').querySelector('img').getAttribute('src');
+        hargaText = document.getElementById('modalHarga').querySelector('.harga-utama').textContent;
+        harga = parseInt(hargaText.replace(/\D/g, ''));
+    }
 
     const existingItem = cart.find(item => item.name === productName);
 
