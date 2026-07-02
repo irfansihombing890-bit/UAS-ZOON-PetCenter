@@ -285,20 +285,29 @@ function openModal(card) {
     const hargaDiskon = card.querySelector('.harga-diskon');
     const badge = card.querySelector('.produk-badge');
     const deskripsi = card.dataset.deskripsi || '-';
+    const baris = deskripsi.split('@@');
 
     // Isi konten modal
     document.getElementById('modalImg').innerHTML = `<img src="${img.src}" alt="${nama}">`;
     document.getElementById('modalNama').textContent = nama;
     document.getElementById('modalKategori').textContent = kategori;
-    document.getElementById('modalDeskripsi').textContent = deskripsi;
     document.getElementById('modalRating').innerHTML = `<span class="stars">${stars}</span> ${ulasan}`;
+    document.getElementById('modalDeskripsi').innerHTML = baris
+    .map(b => {
+        const poin = b.split('|');
+        if (poin.length > 1) {
+            return poin.map(p => `<span style="display:block; margin-bottom:4px;">• ${p.trim()}</span>`).join('');
+        }
+        return `<span style="display:block; margin-bottom:6px;">${b.trim()}</span>`;
+    })
+    .join('');
 
     // Badge
     const modalBadge = document.getElementById('modalBadge');
     if (badge) {
         modalBadge.textContent = badge.textContent.trim();
         modalBadge.className = 'modal-badge ' + [...badge.classList]
-            .find(c => ['terlaris','baru','diskon'].includes(c));
+            .find(c => ['terlaris', 'baru', 'diskon'].includes(c));
     } else {
         modalBadge.className = 'modal-badge kosong';
     }
@@ -339,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initKategoriFilter();
     initHargaFilter();
     initRatingFilter();
-    updateKategoriCount();  
+    updateKategoriCount();
     applyFilters(); // jalankan filter pertama kali untuk set filteredCards
     initModal();
 });
