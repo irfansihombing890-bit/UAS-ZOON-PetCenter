@@ -7,13 +7,16 @@
     <title>ZOON</title>
     <link rel="icon" href="/icon.jpg" type="image/jpg">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="stylesheet" href="../CSS/PAGES/Beranda.css">
+    
+    <script defer src="../JS/components/Popup.js"></script>
     <script defer src="../JS/pages/beranda.js"></script>
 </head>
 
@@ -80,103 +83,137 @@
     </header>
 
     <main>
-        <!-- ── HERO ── -->
-        <!-- HERO SECTION -->
         <section class="hero-section">
-            <!-- Kiri: Teks & Gambar -->
             <div class="hero-left">
-            <!-- Slide 1: Grooming -->
-            <div class="hero-slide active" id="slide-0">
-                <!-- Gambar background abstrak atau elemen grafis (opsional) -->
-                <div class="hero-content">
-                <h1>Premium Grooming & Spa</h1>
-                <p>Perawatan estetika dan relaksasi menggunakan sampo hypoallergenic khusus untuk menjaga kebersihan dan kenyamanan hewan peliharaan Anda[cite: 3].</p>
-                <a href="Grooming.html" class="btn-primary">Booking Jadwal</a>
+                <div class="hero-slide active" id="slide-0">
+                    <div class="hero-content">
+                        <h1>Premium Grooming & Spa</h1>
+                        <p>Perawatan estetika dan relaksasi menggunakan sampo hypoallergenic khusus untuk menjaga kebersihan dan kenyamanan hewan peliharaan Anda.</p>
+                        <a href="Grooming.html" class="btn-primary">Booking Jadwal</a>
+                    </div>
                 </div>
-            </div>
+                
+                <div class="hero-slide" id="slide-1">
+                    <div class="hero-content">
+                        <h1>Klinik Hewan 24 Jam</h1>
+                        <p>Ditangani oleh dokter hewan lulusan terbaik dengan fasilitas premium: In-house Lab, X-Ray, dan ruang rawat inap terpisah.</p>
+                        <a href="Klinik.html" class="btn-primary">Hubungi Dokter</a>
+                    </div>
+                </div>
             
-            <!-- Slide 2: Klinik -->
-            <div class="hero-slide" id="slide-1">
-                <div class="hero-content">
-                <h1>Klinik Hewan 24 Jam</h1>
-                <p>Ditangani oleh dokter hewan lulusan terbaik dengan fasilitas premium: In-house Lab, X-Ray, dan ruang rawat inap terpisah[cite: 3].</p>
-                <a href="Klinik.html" class="btn-primary">Hubungi Dokter</a>
+                <div class="hero-slide" id="slide-2">
+                    <div class="hero-content">
+                        <h1>Premium Pet Hotel</h1>
+                        <p>Fasilitas kamar individu eksklusif (bukan kandang besi) yang dilengkapi laporan harian foto/video dan akses dokter hewan darurat.</p>
+                        <a href="Hotel.html" class="btn-primary">Pesan Kamar</a>
+                    </div>
                 </div>
             </div>
         
-            <!-- Slide 3: Pet Hotel -->
-            <div class="hero-slide" id="slide-2">
-                <div class="hero-content">
-                <h1>Premium Pet Hotel</h1>
-                <p>Fasilitas kamar individu eksklusif (bukan kandang besi) yang dilengkapi laporan harian foto/video dan akses dokter hewan darurat[cite: 3].</p>
-                <a href="Hotel.html" class="btn-primary">Pesan Kamar</a>
-                </div>
-            </div>
-            </div>
-        
-            <!-- Kanan: 3D Cards & Progress Bar -->
             <div class="hero-right">
-            <div class="slider-container" id="card-slider">
-                <!-- Cards -->
-                <div class="slider-card active" data-index="0">
-                <img src="aset/grooming-card.jpg" alt="Grooming">
-                <h3>Grooming</h3>
-                </div>
-                <div class="slider-card next" data-index="1">
-                <img src="aset/klinik-card.jpg" alt="Klinik">
-                <h3>Klinik</h3>
-                </div>
-                <div class="slider-card prev" data-index="2">
-                <img src="aset/hotel-card.jpg" alt="Pet Hotel">
-                <h3>Pet Hotel</h3>
-                </div>
-            </div>
-        
-            <!-- Progress Indicator -->
-            <div class="progress-container">
-                <div class="progress-bar" id="progress-bar"></div>
-            </div>
-            </div>
-        </section>
-
-        <!-- ── CATEGORIES ── -->
-        <section class="categories">
-            <h2 class="section-title">Kategoris</h2>
-
-            <div class="cat-grid">
-                <div class="cat-card">
-                    <div class="cat-card-img-placeholder">🐶</div>
-                    Anjing
-                </div>
-                <div class="cat-card">
-                    <div class="cat-card-img-placeholder">😺</div>
-                    Kucing
-                </div>
-                <div class="cat-card">
-                    <div class="cat-card-img-placeholder">🐥</div>
-                    Burung
-                </div>
-            </div>
-
-            <div class="cat-grid-2">
-                <div class="cat-card-orange">
-                    <div class="cat-info">
-                        <h3>Makanan<br>&amp; Snack</h3>
-                        <a href="Makanan.html" class="btn-white">Lihat Semua</a>
+                <div class="slider-container" id="card-slider">
+                    <div class="slider-card active" data-index="0">
+                        <img src="aset/grooming-card.jpg" alt="Grooming">
+                        <h3>Grooming</h3>
                     </div>
-                    <div class="cat-img-placeholder">🍽️</div>
-                </div>
-                <div class="cat-card-orange">
-                    <div class="cat-info">
-                        <h3>Aksesoris<br>&amp; Perlengkapan</h3>
-                        <a href="Shop.html" class="btn-white">Lihat Semua</a>
+                    <div class="slider-card next" data-index="1">
+                        <img src="aset/klinik-card.jpg" alt="Klinik">
+                        <h3>Klinik</h3>
                     </div>
-                    <div class="cat-img-placeholder">🧣</div>
+                    <div class="slider-card prev" data-index="2">
+                        <img src="aset/hotel-card.jpg" alt="Pet Hotel">
+                        <h3>Pet Hotel</h3>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
                 </div>
             </div>
         </section>
 
-        <!-- ── FEATURED PRODUCTS ── -->
+        <section class="interactive-hero">
+            <div class="ticker-wrap">
+                <div class="ticker">
+                    <span class="ticker-item">Klinik Hewan 24 Jam <span class="ticker-dot">♦</span></span>
+                    <span class="ticker-item">Premium Pet Hotel <span class="ticker-dot">♦</span></span>
+                    <span class="ticker-item">Grooming & Spa Eksklusif <span class="ticker-dot">♦</span></span>
+                    <span class="ticker-item">Fasilitas In-house Lab <span class="ticker-dot">♦</span></span>
+                    <span class="ticker-item">Klinik Hewan 24 Jam <span class="ticker-dot">♦</span></span>
+                    <span class="ticker-item">Premium Pet Hotel <span class="ticker-dot">♦</span></span>
+                    <span class="ticker-item">Grooming & Spa Eksklusif <span class="ticker-dot">♦</span></span>
+                    <span class="ticker-item">Fasilitas In-house Lab <span class="ticker-dot">♦</span></span>
+                </div>
+            </div>
+    
+            <div class="interactive-content">
+                <h1 class="tagline">Pure Trust, <br><span>Pure Joy.</span></h1>
+                <p class="description">
+                    Layanan perawatan hewan terpadu kelas premium. Kami menghadirkan Klinik 24 Jam, Pet Hotel eksklusif, hingga fasilitas Grooming & Spa untuk memastikan ketenangan bagi Anda dan kenyamanan bagi mereka.
+                </p>
+                
+                <button id="toggleAnimalsBtn" class="premium-btn">
+                    <span class="btn-text">Panggil Pet</span>
+                    <svg class="paw-icon" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#27a7dd"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                       <circle cx="11" cy="4" r="2"/>
+                       <circle cx="18" cy="8" r="2"/>
+                       <circle cx="20" cy="16" r="2"/>
+                       <path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/>
+                   </svg>
+                </button>
+            </div>
+    
+            <div class="sky-decorations">
+                <svg class="cloud cloud-1" viewBox="0 0 100 50"><path d="M20 40 Q10 40 10 30 Q10 20 20 20 Q25 10 40 10 Q55 10 60 20 Q75 15 85 25 Q95 35 80 40 Z" fill="#93CAED"/></svg>
+                <svg class="cloud cloud-2" viewBox="0 0 100 50"><path d="M20 40 Q10 40 10 30 Q10 20 20 20 Q25 10 40 10 Q55 10 60 20 Q75 15 85 25 Q95 35 80 40 Z" fill="#93CAED"/></svg>
+                <svg class="cloud cloud-3" viewBox="0 0 100 50"><path d="M20 40 Q10 40 10 30 Q10 20 20 20 Q25 10 40 10 Q55 10 60 20 Q75 15 85 25 Q95 35 80 40 Z" fill="#93CAED"/></svg>
+                <svg class="cloud cloud-4" viewBox="0 0 100 50"><path d="M20 40 Q10 40 10 30 Q10 20 20 20 Q25 10 40 10 Q55 10 60 20 Q75 15 85 25 Q95 35 80 40 Z" fill="#93CAED"/></svg>
+                <svg class="cloud cloud-5" viewBox="0 0 100 50"><path d="M20 40 Q10 40 10 30 Q10 20 20 20 Q25 10 40 10 Q55 10 60 20 Q75 15 85 25 Q95 35 80 40 Z" fill="#93CAED"/></svg>
+                <svg class="cloud cloud-6" viewBox="0 0 100 50"><path d="M20 40 Q10 40 10 30 Q10 20 20 20 Q25 10 40 10 Q55 10 60 20 Q75 15 85 25 Q95 35 80 40 Z" fill="#93CAED"/></svg>
+                <svg class="bird bird-1" viewBox="0 0 50 50"><path d="M10 25 Q 20 15 25 25 Q 30 15 40 25" stroke="var(--text-accent)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+                <svg class="bird bird-2" viewBox="0 0 50 50"><path d="M10 25 Q 20 15 25 25 Q 30 15 40 25" stroke="var(--text-accent)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+                <svg class="bird bird-3" viewBox="0 0 50 50"><path d="M10 25 Q 20 15 25 25 Q 30 15 40 25" stroke="var(--text-accent)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+                <svg class="bird bird-4" viewBox="0 0 50 50"><path d="M10 25 Q 20 15 25 25 Q 30 15 40 25" stroke="var(--text-accent)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+                <svg class="bird bird-5" viewBox="0 0 50 50"><path d="M10 25 Q 20 15 25 25 Q 30 15 40 25" stroke="var(--text-accent)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+            </div>
+    
+            <div class="top-animals-container" id="topAnimalsArea">
+                <img src="https://images.unsplash.com/photo-1552728089-571ebd416f4c?auto=format&fit=crop&w=300&q=80" 
+                     class="pet top-pet left" style="transition-delay: 0.15s;"
+                     data-name="Rio sang Macaw" data-desc="Burung eksotis yang cerdas dan ramah. Selalu menyapa setiap tamu dengan gembira!"
+                     data-images='["https://images.unsplash.com/photo-1552728089-571ebd416f4c?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1522856339183-5a7a72667384?auto=format&fit=crop&w=500&q=80"]'>
+                <img src="https://images.unsplash.com/photo-1425082661705-1834bfddef8e?auto=format&fit=crop&w=300&q=80" 
+                     class="pet top-pet right" style="transition-delay: 0.3s;"
+                     data-name="Hamtaro si Mungil" data-desc="Penghuni terkecil kami yang sangat lincah, memiliki area bermain VIP khusus di Pet Hotel."
+                     data-images='["https://images.unsplash.com/photo-1425082661705-1834bfddef8e?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1548658091-623b0a233bde?auto=format&fit=crop&w=500&q=80"]'>
+            </div>
+    
+            <div class="bottom-scenery" id="sceneryArea">
+                <div class="nature-bg">
+                    <svg class="tree-silhouette" viewBox="0 0 100 100"><path d="M50 10 L20 50 L40 50 L10 90 L90 90 L60 50 L80 50 Z"/><rect x="45" y="90" width="10" height="10" fill="#8B5A2B"/></svg>
+                    <svg class="grass-tuft" viewBox="0 0 50 50"><path d="M25 50 Q20 20 10 10 Q25 30 25 50 M25 50 Q30 20 40 10 Q25 30 25 50 M25 50 Q25 15 25 5 Q25 25 25 50" stroke="var(--scenery-color)" stroke-width="4" fill="none"/></svg>
+                    <svg class="flower" viewBox="0 0 50 50"><circle cx="25" cy="25" r="8" fill="#FFB5A7"/><circle cx="25" cy="10" r="10" fill="#FCD5CE"/><circle cx="40" cy="25" r="10" fill="#FCD5CE"/><circle cx="25" cy="40" r="10" fill="#FCD5CE"/><circle cx="10" cy="25" r="10" fill="#FCD5CE"/></svg>
+                    <svg class="grass-tuft" viewBox="0 0 50 50" style="height: 30px;"><path d="M25 50 Q15 25 5 15 Q25 35 25 50 M25 50 Q35 25 45 15 Q25 35 25 50" stroke="var(--scenery-color)" stroke-width="4" fill="none"/></svg>
+                    <svg class="flower" viewBox="0 0 50 50" style="width: 20px;"><circle cx="25" cy="25" r="8" fill="#E5989B"/><circle cx="25" cy="10" r="10" fill="#FFB4A2"/><circle cx="40" cy="25" r="10" fill="#FFB4A2"/><circle cx="25" cy="40" r="10" fill="#FFB4A2"/><circle cx="10" cy="25" r="10" fill="#FFB4A2"/></svg>
+                    <svg class="tree-silhouette" viewBox="0 0 100 100" style="width:70px;"><circle cx="50" cy="40" r="30" /><circle cx="30" cy="60" r="20" /><circle cx="70" cy="60" r="20" /><rect x="45" y="80" width="10" height="20" fill="#8B5A2B"/></svg>
+                </div>
+    
+                <div class="animals-container">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&q=80" class="pet" style="--p-left: 8%; --p-bottom: 25px; transition-delay: 0.1s;" data-name="Cody sang Corgi" data-desc="Siap menyambutmu di Pet Hotel kami dengan senyuman hangat setiap hari!" data-images='["https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1597626133663-53df9633b799?auto=format&fit=crop&w=500&q=80"]'>
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=300&q=80" class="pet" style="--p-left: 28%; --p-bottom: 45px; transition-delay: 0.25s;" data-name="Luna si Manja" data-desc="Baru saja selesai sesi Grooming & Spa premium. Bulu selembut awan!" data-images='["https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=500&q=80"]'>
+                    <img src="https://images.unsplash.com/photo-1537151608804-ea2f1ea14a15?auto=format&fit=crop&w=300&q=80" class="pet" style="--p-left: 48%; --p-bottom: 20px; transition-delay: 0.4s;" data-name="Max sang Penjaga" data-desc="Dokter jaga kami memastikan Max selalu sehat dan aktif 24 jam sehari." data-images='["https://images.unsplash.com/photo-1537151608804-ea2f1ea14a15?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=500&q=80"]'>
+                    <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=300&q=80" class="pet" style="--p-left: 68%; --p-bottom: 50px; transition-delay: 0.55s;" data-name="Garfield si Oren" data-desc="Nutrisi seimbang dari Pet Shop kami membuat energinya tidak pernah habis!" data-images='["https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=500&q=80"]'>
+                    <img src="https://images.unsplash.com/photo-1605568420105-ce2a31c186e8?auto=format&fit=crop&w=300&q=80" class="pet" style="--p-left: 85%; --p-bottom: 30px; transition-delay: 0.7s;" data-name="Snowy si Husky" data-desc="Selalu ceria setelah mendapatkan vaksin lengkap di Klinik 24 Jam kami." data-images='["https://images.unsplash.com/photo-1605568420105-ce2a31c186e8?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1617895153857-82fe79adfcd4?auto=format&fit=crop&w=500&q=80"]'>
+                </div>
+                <div class="fence"></div>
+            </div>
+        </section>
+
         <section class="featured">
             <h2 class="section-title">Produk Unggulan</h2>
             <div class="prod-grid">
@@ -201,7 +238,6 @@
             </div>
         </section>
 
-        <!-- ── SERVICES ── -->
         <section class="services">
             <h2 class="section-title">Layanan Kami</h2>
             <div class="svc-grid">
@@ -228,7 +264,6 @@
             </div>
         </section>
 
-        <!-- ── WHY US ── -->
         <section class="why-us">
             <h2 class="section-title">Mengapa ZOON ?</h2>
             <div class="why-grid">
@@ -256,7 +291,6 @@
         </section>
     </main>
 
-    <!-- ── FOOTER ── -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
@@ -267,8 +301,7 @@
                         <span>Pet Shop</span>
                     </div>
                 </a>
-                <p>Toko hewan peliharaan terpercaya dengan produk berkualitas dan layanan profesional untuk hewan
-                    kesayangan Anda.</p>
+                <p>Toko hewan peliharaan terpercaya dengan produk berkualitas dan layanan profesional untuk hewan kesayangan Anda.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/zoon_medan/"><i class="fab fa-instagram"></i></a>
@@ -292,8 +325,7 @@
                 <h5>Sosial Media</h5>
                 <ul>
                     <li><i class="fab fa-facebook"></i> <a href="#">zoon_medan</a></li>
-                    <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/zoon_medan/">zoon_medan</a>
-                    </li>
+                    <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/zoon_medan/">zoon_medan</a></li>
                     <li><i class="fab fa-tiktok"></i> <a href="#">zoon_medan</a></li>
                 </ul>
             </div>
@@ -308,12 +340,25 @@
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>ZOON &mdash; A Pet Shop &amp; Peliharaan Anda &copy; 2026. All rights reserved.</p>
         </div>
     </footer>
 
+    <div class="modal-overlay" id="petModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <div class="carousel-wrapper">
+                <button class="nav-btn prev" id="prevBtn" title="Sebelumnya">&#10094;</button>
+                <div class="carousel-img-container">
+                    <img src="" alt="" class="modal-img" id="modalImg">
+                </div>
+                <button class="nav-btn next" id="nextBtn" title="Selanjutnya">&#10095;</button>
+            </div>
+            <div class="carousel-dots" id="dotsContainer"></div>
+            <h3 class="modal-title" id="modalTitle">Nama Hewan</h3>
+            <p class="modal-desc" id="modalDesc">Deskripsi</p>
+        </div>
+    </div>
 </body>
-
 </html>
