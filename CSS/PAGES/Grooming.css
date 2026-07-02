@@ -400,14 +400,16 @@
 /* ── GALLERY ── */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 6px;
 }
 
 .gallery-item {
     border-radius: 12px;
     overflow: hidden;
     aspect-ratio: 1 / 1;
+    max-height: 350px;
 }
 
 .gallery-item img {
