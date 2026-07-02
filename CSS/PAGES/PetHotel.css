@@ -209,6 +209,9 @@
     overflow: hidden;
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .room-card:hover {
@@ -251,6 +254,9 @@
 
 .room-body {
     padding: 22px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .room-list {
@@ -291,6 +297,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
+    margin-top: auto;
 }
 
 .room-price {
@@ -533,64 +540,83 @@
     color: var(--text-gray);
 }
 
-/* ── GALLERY ── */
+/* ── ARSITEKTUR GRID ── */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    gap: 20px;
 }
 
+/* ── KOTAK WADAH GAMBAR ── */
 .gallery-item {
     aspect-ratio: 1 / 1;
-    border-radius: 14px;
+    /* Tetap menjaga struktur kotak */
+    border-radius: 16px;
+    overflow: hidden;
+    /* Memastikan gambar yang meluap terpotong oleh radius */
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Kedalaman dasar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ── PERLAKUAN PADA GAMBAR (Anti-Distorsi) ── */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Memotong gambar secara proporsional dari tengah, tidak akan gepeng */
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* Transisi zoom yang sangat halus */
+}
+
+/* ── PERSPEKTIF ALTERNATIF: OVERLAY ICON ── */
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    /* Membentangkan overlay seluas wadah */
+    background: rgba(0, 0, 0, 0.45);
+    /* Kaca film gelap transparan */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 34px;
+    opacity: 0;
+    /* Sembunyikan secara default */
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.gallery-overlay i {
+    font-size: 38px;
     color: #ffffff;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.35s ease;
+    transform: translateY(20px);
+    /* Posisi awal icon agak ke bawah */
+    transition: transform 0.4s ease;
 }
 
+/* ── INTERAKSI HOVER (Menghidupkan Galeri) ── */
 .gallery-item:hover {
-    transform: scale(1.06);
+    transform: translateY(-5px);
+    /* Kotak sedikit terangkat */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    /* Bayangan melebar */
 }
 
-.gallery-item.g1 {
-    background: linear-gradient(135deg, var(--teal), #00b5c8);
+/* Gambar akan melakukan zoom-in perlahan saat disorot */
+.gallery-item:hover img {
+    transform: scale(1.08);
 }
 
-.gallery-item.g2 {
-    background: linear-gradient(135deg, var(--orange), #ffc978);
+/* Overlay gelap muncul */
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
 }
 
-.gallery-item.g3 {
-    background: linear-gradient(135deg, #34495e, var(--text-dark));
-}
-
-.gallery-item.g4 {
-    background: linear-gradient(135deg, #8fd7de, var(--teal));
-}
-
-.gallery-item.g5 {
-    background: linear-gradient(135deg, #ffb199, var(--orange-dark));
-}
-
-.gallery-item.g6 {
-    background: linear-gradient(135deg, var(--teal-dark), var(--teal));
-}
-
-.gallery-item.g7 {
-    background: linear-gradient(135deg, #556270, var(--text-dark));
-}
-
-.gallery-item.g8 {
-    background: linear-gradient(135deg, var(--orange-dark), var(--orange));
-}
-
-.gallery-item.g9 {
-    background: linear-gradient(135deg, #5dd9e5, var(--teal-dark));
+/* Icon bergerak naik secara mulus ke tengah */
+.gallery-item:hover .gallery-overlay i {
+    transform: translateY(0);
 }
 
 /* ── TESTIMONIALS ── */
