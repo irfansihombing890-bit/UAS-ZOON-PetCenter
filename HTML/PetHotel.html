@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../CSS/Style.css">
 </head>
+
 <body>
     <!-- ── TOP BAR & NAVBAR ── -->
     <header>
@@ -70,45 +72,83 @@
     </header>
 
     <main>
-        <!-- ── HERO ── -->
-        <div class="page-hero">
-            <div class="page-hero-content">
-                <div class="breadcrumb">
+        <!-- ── HERO + BOOKING BAR ── -->
+        <div class="pethotel-hero">
+            <div class="pethotel-hero-overlay"></div>
+            <div class="container pethotel-hero-content">
+                <div class="breadcrumb light">
                     <a href="Beranda.html">Beranda</a> <span>/</span> <span>Pet Hotel</span>
                 </div>
                 <h1>Rumah Kedua yang<br>Terasa Seperti Rumah</h1>
-                <p>Kamar individu yang nyaman, laporan harian foto &amp; video, serta akses dokter hewan darurat — supaya Anda tetap tenang saat bepergian.</p>
-                <a href="#kategori-kamar" class="btn-light" style="margin-top:20px;">Lihat Kategori Kamar</a>
+                <p>Kamar individu yang nyaman, laporan harian foto &amp; video, serta akses dokter hewan darurat.</p>
             </div>
-            <div class="page-hero-icon">
-                <i class="fas fa-house-chimney-medical"></i>
+        </div>
+
+        <div class="container">
+            <div class="booking-bar">
+                <div class="booking-field">
+                    <label>Check In</label>
+                    <div class="booking-input">
+                        <i class="fas fa-calendar"></i>
+                        <input type="date" value="2025-07-12">
+                    </div>
+                </div>
+                <div class="booking-field">
+                    <label>Check Out</label>
+                    <div class="booking-input">
+                        <i class="fas fa-calendar"></i>
+                        <input type="date" value="2025-07-15">
+                        <i class="fas fa-rotate booking-swap"></i>
+                    </div>
+                </div>
+                <div class="booking-field">
+                    <label>Tipe Hewan</label>
+                    <div class="booking-input">
+                        <i class="fas fa-paw"></i>
+                        <select>
+                            <option>Anjing</option>
+                            <option>Kucing</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="booking-field">
+                    <label>Tipe Kamar</label>
+                    <div class="booking-input">
+                        <i class="fas fa-bed"></i>
+                        <select>
+                            <option>Deluxe Room</option>
+                            <option>Executive Room</option>
+                            <option>Family Suite</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn-check">Cek Ketersediaan</button>
             </div>
         </div>
 
         <!-- ── HOTEL FEATURES ── -->
         <section class="hotel-features">
             <div class="container">
-                <h2 class="section-title">Fasilitas Hotel</h2>
                 <div class="feature-grid">
                     <div class="feature-card" data-reveal>
-                        <div class="feature-icon"><i class="fas fa-paw"></i></div>
+                        <div class="feature-icon"><i class="fas fa-house"></i></div>
                         <h3>Individual Room</h3>
-                        <p>Setiap hewan memiliki kamar pribadi yang nyaman.</p>
+                        <p>Setiap hewan memiliki kamar pribadi yang nyaman dan bersih.</p>
                     </div>
                     <div class="feature-card" data-reveal>
                         <div class="feature-icon"><i class="fas fa-camera"></i></div>
                         <h3>Daily Update</h3>
-                        <p>Foto &amp; video dikirim setiap hari.</p>
+                        <p>Foto &amp; video aktivitas hewan dikirim setiap hari melalui WhatsApp.</p>
                     </div>
                     <div class="feature-card" data-reveal>
                         <div class="feature-icon"><i class="fas fa-stethoscope"></i></div>
                         <h3>24 Hour Vet</h3>
-                        <p>Dokter siap kapan saja.</p>
+                        <p>Dokter hewan siap 24 jam untuk keadaan darurat kapan saja.</p>
                     </div>
                     <div class="feature-card" data-reveal>
-                        <div class="feature-icon"><i class="fas fa-bath"></i></div>
+                        <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
                         <h3>Premium Care</h3>
-                        <p>Area steril dengan standar hotel.</p>
+                        <p>Lingkungan higienis dengan standar kebersihan setara hotel premium.</p>
                     </div>
                 </div>
             </div>
@@ -117,57 +157,67 @@
         <!-- ── ROOM CATEGORIES ── -->
         <section id="kategori-kamar" class="room-section">
             <div class="container">
-                <h2 class="section-title">Room Categories</h2>
+                <h2 class="section-title">Pilihan Kamar</h2>
+                <p class="section-subtitle">Pilih kamar terbaik untuk kenyamanan hewan kesayangan Anda.</p>
+
                 <div class="room-grid">
 
                     <div class="room-card" data-reveal>
-                        <div class="room-image standard">
-                            <i class="fas fa-bed"></i>
+                        <div class="room-image">
+                            <img src="https://picsum.photos/seed/deluxe-room/600/450" alt="Deluxe Room">
+                            <span class="room-badge teal">Deluxe Room</span>
                         </div>
                         <div class="room-body">
-                            <h3>Standard Room</h3>
                             <ul class="room-list">
-                                <li><i class="fas fa-check"></i> AC</li>
-                                <li><i class="fas fa-check"></i> Soft Bed</li>
-                                <li><i class="fas fa-check"></i> CCTV</li>
-                                <li><i class="fas fa-check"></i> Daily Cleaning</li>
+                                <li><i class="fas fa-check"></i> AC &amp; Ventilasi Optimal</li>
+                                <li><i class="fas fa-check"></i> Tempat Tidur Empuk</li>
+                                <li><i class="fas fa-check"></i> CCTV 24 Jam</li>
+                                <li><i class="fas fa-check"></i> Pembersihan Harian</li>
                             </ul>
-                            <div class="room-price">Rp90.000<span>/malam</span></div>
-                            <a href="Kontak.html" class="btn-outline">Book</a>
-                        </div>
-                    </div>
-
-                    <div class="room-card featured" data-reveal>
-                        <div class="room-image deluxe">
-                            <i class="fas fa-bed"></i>
-                        </div>
-                        <div class="room-body">
-                            <h3>Deluxe Room</h3>
-                            <ul class="room-list">
-                                <li><i class="fas fa-check"></i> AC</li>
-                                <li><i class="fas fa-check"></i> Soft Bed</li>
-                                <li><i class="fas fa-check"></i> CCTV</li>
-                                <li><i class="fas fa-check"></i> Daily Cleaning</li>
-                            </ul>
-                            <div class="room-price">Rp120.000<span>/malam</span></div>
-                            <a href="Kontak.html" class="btn-primary">Book</a>
+                            <div class="room-footer">
+                                <div class="room-price teal">Rp120.000<span>/malam</span></div>
+                                <a href="Kontak.html" class="btn-pill teal">Pilih Kamar</a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="room-card" data-reveal>
-                        <div class="room-image executive">
-                            <i class="fas fa-bed"></i>
+                        <div class="room-image">
+                            <img src="https://picsum.photos/seed/executive-room/600/450" alt="Executive Room">
+                            <span class="room-badge orange">Executive Room</span>
                         </div>
                         <div class="room-body">
-                            <h3>Executive Suite</h3>
                             <ul class="room-list">
-                                <li><i class="fas fa-check"></i> AC</li>
-                                <li><i class="fas fa-check"></i> Soft Bed</li>
-                                <li><i class="fas fa-check"></i> CCTV</li>
-                                <li><i class="fas fa-check"></i> Daily Cleaning</li>
+                                <li><i class="fas fa-check"></i> Kamar Lebih Luas</li>
+                                <li><i class="fas fa-check"></i> Tempat Tidur Premium</li>
+                                <li><i class="fas fa-check"></i> Air Purifier</li>
+                                <li><i class="fas fa-check"></i> Playtime Harian</li>
+                                <li><i class="fas fa-check"></i> Update Foto &amp; Video</li>
                             </ul>
-                            <div class="room-price">Rp180.000<span>/malam</span></div>
-                            <a href="Kontak.html" class="btn-outline">Book</a>
+                            <div class="room-footer">
+                                <div class="room-price orange">Rp180.000<span>/malam</span></div>
+                                <a href="Kontak.html" class="btn-pill orange">Pilih Kamar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="room-card" data-reveal>
+                        <div class="room-image">
+                            <img src="https://picsum.photos/seed/family-suite/600/450" alt="Family Suite">
+                            <span class="room-badge purple">Family Suite</span>
+                        </div>
+                        <div class="room-body">
+                            <ul class="room-list">
+                                <li><i class="fas fa-check"></i> Untuk 2 - 3 Hewan</li>
+                                <li><i class="fas fa-check"></i> Indoor Playground</li>
+                                <li><i class="fas fa-check"></i> Makanan Premium</li>
+                                <li><i class="fas fa-check"></i> Dokter Check-Up Harian</li>
+                                <li><i class="fas fa-check"></i> Update Foto &amp; Video</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price purple">Rp250.000<span>/malam</span></div>
+                                <a href="Kontak.html" class="btn-pill purple">Pilih Kamar</a>
+                            </div>
                         </div>
                     </div>
 
@@ -175,14 +225,58 @@
             </div>
         </section>
 
-        <!-- ── BOOKING CTA ── -->
+        <!-- ── BOOKING CTA BANNER ── -->
         <section class="hotel-cta">
-            <div class="container hotel-cta-inner">
-                <div>
-                    <h2>Ready to Book?</h2>
-                    <p>Buat reservasi sekarang dan nikmati hotel premium untuk hewan kesayangan Anda.</p>
+            <div class="container">
+                <div class="hotel-cta-card">
+                    <div class="hotel-cta-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="hotel-cta-text">
+                        <h2>Siap Memberikan Pengalaman<br>Menginap Terbaik?</h2>
+                        <p>Reservasi sekarang dan berikan kenyamanan seperti di rumah kedua untuk mereka.</p>
+                    </div>
+                    <a href="Kontak.html" class="btn-white">
+                        Reservasi Sekarang <i class="fas fa-paw"></i>
+                    </a>
+                    <i class="fas fa-paw cta-paw p1"></i>
+                    <i class="fas fa-paw cta-paw p2"></i>
+                    <i class="fas fa-paw cta-paw p3"></i>
                 </div>
-                <a href="Kontak.html" class="btn-white">Reservasi</a>
+            </div>
+        </section>
+
+        <!-- ── MINI FEATURE STRIP ── -->
+        <section class="mini-feature-strip">
+            <div class="container">
+                <div class="mini-feature-grid">
+                    <div class="mini-feature-card">
+                        <div class="mini-feature-icon"><i class="fas fa-bowl-food"></i></div>
+                        <div>
+                            <h4>Makanan Premium</h4>
+                            <p>Diberikan sesuai kebutuhan</p>
+                        </div>
+                    </div>
+                    <div class="mini-feature-card">
+                        <div class="mini-feature-icon"><i class="fas fa-spa"></i></div>
+                        <div>
+                            <h4>Area Steril &amp; Bersih</h4>
+                            <p>Dibersihkan setiap hari</p>
+                        </div>
+                    </div>
+                    <div class="mini-feature-card">
+                        <div class="mini-feature-icon"><i class="fas fa-bone"></i></div>
+                        <div>
+                            <h4>Playtime Terjadwal</h4>
+                            <p>Aktivitas fisik setiap hari</p>
+                        </div>
+                    </div>
+                    <div class="mini-feature-card">
+                        <div class="mini-feature-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div>
+                            <h4>Keamanan Terjamin</h4>
+                            <p>CCTV &amp; Pet Sitter 24/7</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -243,67 +337,58 @@
             </div>
         </section>
 
-        <!-- ── PRICING ── -->
-        <section class="pricing-section">
-            <div class="container">
-                <h2 class="section-title">Pricing</h2>
-                <div class="pricing-grid">
-                    <div class="pricing-card" data-reveal>
-                        <h3>Basic</h3>
-                        <div class="pricing-amount">Rp120K<span>/malam</span></div>
-                        <ul class="room-list">
-                            <li><i class="fas fa-check"></i> Room</li>
-                            <li><i class="fas fa-check"></i> Feeding</li>
-                            <li><i class="fas fa-check"></i> Cleaning</li>
-                        </ul>
-                        <a href="Kontak.html" class="btn-outline">Choose</a>
-                    </div>
-                    <div class="pricing-card featured" data-reveal>
-                        <div class="pricing-badge">Paling Populer</div>
-                        <h3>Premium</h3>
-                        <div class="pricing-amount">Rp180K<span>/malam</span></div>
-                        <ul class="room-list">
-                            <li><i class="fas fa-check"></i> Deluxe</li>
-                            <li><i class="fas fa-check"></i> Grooming</li>
-                            <li><i class="fas fa-check"></i> Vet</li>
-                            <li><i class="fas fa-check"></i> Daily Video</li>
-                        </ul>
-                        <a href="Kontak.html" class="btn-primary">Choose</a>
-                    </div>
-                    <div class="pricing-card" data-reveal>
-                        <h3>VIP</h3>
-                        <div class="pricing-amount">Rp250K<span>/malam</span></div>
-                        <ul class="room-list">
-                            <li><i class="fas fa-check"></i> Executive</li>
-                            <li><i class="fas fa-check"></i> Spa</li>
-                            <li><i class="fas fa-check"></i> Priority</li>
-                            <li><i class="fas fa-check"></i> CCTV</li>
-                        </ul>
-                        <a href="Kontak.html" class="btn-outline">Choose</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- ── TESTIMONIALS ── -->
-        <section class="testimonial-section">
+        <section class="pethotel-testimonials">
             <div class="container">
-                <h2 class="section-title">Testimonial</h2>
+                <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
                 <div class="testimonial-grid">
-                    <div class="testimonial-card" data-reveal>
-                        <div class="stars">★★★★★</div>
-                        <p>"Kucing saya betah sekali."</p>
-                        <div class="testimonial-name">— Sarah</div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Bulu kucing saya jadi halus banget dan wangi tahan lama. Stafnya
+                            juga ramah dan sabar sama kucing saya yang galak!"</p>
+                        <div class="testimonial-author">
+                            <img src="../Images/customer-1.jpg" alt="Pelanggan ZOON">
+                            <div>
+                                <span class="author-name">Sarah W.</span>
+                                <span class="author-pet">Pemilik Kucing Persia</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="testimonial-card" data-reveal>
-                        <div class="stars">★★★★★</div>
-                        <p>"Foto update tiap hari."</p>
-                        <div class="testimonial-name">— Kevin</div>
+
+                    <div class="testimonial-card featured-testimonial">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Paling suka karena dapat update foto selama proses grooming. Jadi
+                            tenang nungguinnya, anjing saya juga pulang dalam keadaan rapi sekali."</p>
+                        <div class="testimonial-author">
+                            <img src="../Images/customer-2.jpg" alt="Pelanggan ZOON">
+                            <div>
+                                <span class="author-name">Budi Santoso</span>
+                                <span class="author-pet">Pemilik Golden Retriever</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="testimonial-card" data-reveal>
-                        <div class="stars">★★★★★</div>
-                        <p>"Pelayanannya sangat profesional."</p>
-                        <div class="testimonial-name">— Andi</div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Harga sebanding sama kualitasnya. Spa premiumnya bikin kucing saya
+                            lebih rileks, kelihatan banget dari cara dia tidur setelah pulang."</p>
+                        <div class="testimonial-author">
+                            <img src="../Images/customer-3.jpg" alt="Pelanggan ZOON">
+                            <div>
+                                <span class="author-name">Linda Tan</span>
+                                <span class="author-pet">Pemilik Kucing Anggora</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -320,7 +405,8 @@
                             <i class="fas fa-plus"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Anda cukup datang sesuai jadwal reservasi, mengisi data hewan, lalu tim kami akan melakukan assessment kondisi fisik sebelum check-in.</p>
+                            <p>Anda cukup datang sesuai jadwal reservasi, mengisi data hewan, lalu tim kami akan
+                                melakukan assessment kondisi fisik sebelum check-in.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -338,7 +424,8 @@
                             <i class="fas fa-plus"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Boleh. Anda bisa membawa makanan khusus hewan Anda, atau menggunakan menu makan yang telah kami sediakan.</p>
+                            <p>Boleh. Anda bisa membawa makanan khusus hewan Anda, atau menggunakan menu makan yang
+                                telah kami sediakan.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -347,7 +434,8 @@
                             <i class="fas fa-plus"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Tim kami akan segera menghubungi Anda dan hewan akan langsung dirujuk ke Klinik ZOON untuk penanganan lebih lanjut.</p>
+                            <p>Tim kami akan segera menghubungi Anda dan hewan akan langsung dirujuk ke Klinik ZOON
+                                untuk penanganan lebih lanjut.</p>
                         </div>
                     </div>
                 </div>
@@ -421,4 +509,5 @@
         });
     </script>
 </body>
+
 </html>
