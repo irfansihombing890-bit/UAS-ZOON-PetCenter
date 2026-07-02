@@ -134,3 +134,61 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSlider(currentIndex);
     startAutoPlay();
 });
+
+// ── MOUSE WHEEL SCROLL UNTUK SHOP SLIDER ──
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderTrack = document.querySelector('.slider-track.horizontal-scroll');
+    
+    if (sliderTrack) {
+        sliderTrack.addEventListener('wheel', (evt) => {
+            // Menggunakan Math.abs agar deteksi roda mouse akurat tanpa konflik
+            if (Math.abs(evt.deltaY) > 0) {
+                evt.preventDefault(); // Matikan scroll layar sesaat
+                sliderTrack.scrollLeft += evt.deltaY; // Paksa elemen bergeser ke samping
+            }
+        }, { passive: false });
+    }
+});
+
+/* ======================================================
+   SHOP SECTION — ANIMASI SCROLL (IntersectionObserver)
+   Tempel di bagian paling BAWAH file beranda.js
+   ====================================================== */
+
+   (function () {
+    'use strict';
+
+    /* Tandai bahwa JS aktif → CSS baru pakai kelas ini untuk
+       menyembunyikan kartu sebelum animasi masuk */
+    document.documentElement.classList.add('js-animations');
+
+    var shopSection = document.querySelector('.shop-slider');
+    var cards       = document.querySelectorAll('.shop-slider .slider-item.produk-card');
+
+    if (!shopSection || !cards.length) return;
+
+    var observer = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+
+                /* 1 — Animasikan section header dari atas */
+                shopSection.classList.add('is-visible');
+
+                /* 2 — Munculkan setiap kartu dengan jeda 80ms */
+                cards.forEach(function (card, index) {
+                    setTimeout(function () {
+                        card.classList.add('card-visible');
+                    }, index * 80);
+                });
+
+                /* Hentikan observing setelah satu kali trigger */
+                observer.unobserve(entry.target);
+            });
+        },
+        { threshold: 0.1 } /* trigger saat 10% section masuk layar */
+    );
+
+    observer.observe(shopSection);
+
+})();

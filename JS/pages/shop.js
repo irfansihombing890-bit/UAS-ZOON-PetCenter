@@ -352,3 +352,105 @@ document.addEventListener('DOMContentLoaded', () => {
     applyFilters(); // jalankan filter pertama kali untuk set filteredCards
     initModal();
 });
+
+// ── SISTEM POPUP DARI BERANDA KE SHOP ──
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const produkId = urlParams.get('produk');
+
+    if (produkId) {
+        // Data 8 produk dari slider beranda
+        const dataProdukSlider = {
+            'RCKitten': {
+                img: '../foto/R-C_Kitten.jpg', kategori: 'Makanan hewan', nama: 'Royal Canin Kitten - wet food 85gr isi 12pcs',
+                rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.9 (128 ulasan)', badge: '🔥 Terlaris', classBadge: 'terlaris',
+                harga: '<span class="harga-utama">Rp 285.000</span><span class="harga-coret" style="text-decoration:line-through; font-size:12px; color:#64748b;">Rp 320.000</span>',
+                desc: 'Makanan basah premium untuk anak kucing (kitten) yang mendukung pertumbuhan optimal dan kekebalan tubuh.'
+            },
+            'RCHairSkin': {
+                img: '../foto/Royal-canin-hair-skin-care.webp', kategori: 'Makanan hewan', nama: 'Royal Canin Hair & Skin Care Adult - dry food 4KG',
+                rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.8 (87 ulasan)', badge: '✨ Baru', classBadge: 'baru',
+                harga: '<span class="harga-utama">Rp 632.700</span>',
+                desc: 'Makanan kering khusus untuk menjaga kesehatan kulit dan keindahan bulu kucing dewasa.'
+            },
+            'TasAstronot': {
+                img: '../foto/Tas Kucing Astronot.webp', kategori: 'Aksesoris', nama: 'Tas kucing astronot transparan',
+                rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 5.0 (203 ulasan)', badge: '🏷️ -30%', classBadge: 'diskon',
+                harga: '<span class="harga-utama">Rp 162.400</span><span class="harga-coret" style="text-decoration:line-through; font-size:12px; color:#64748b;">Rp 232.500</span>',
+                desc: 'Tas carrier ransel astronot transparan agar anabul bisa melihat pemandangan saat jalan-jalan.'
+            },
+            'TaliAnjing': {
+                img: '../foto/Tali_anjing.jfif', kategori: 'Aksesoris', nama: 'Tali anjing adjustable - bisa custom nama',
+                rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.7 (64 ulasan)', badge: '', classBadge: '',
+                harga: '<span class="harga-utama">Rp 25.000</span>',
+                desc: 'Tali tuntun (leash) anjing yang kuat dan nyaman. Bisa custom cetak nama peliharaan Anda.'
+            },
+            'WhiskasAdult': {
+                img: '../foto/w_mackarel_80.webp', kategori: 'Makanan hewan', nama: 'Whiskas Adult 1+ Mackerel Flavour - wet 80gr',
+                rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.9 (156 ulasan)', badge: '🔥 Terlaris', classBadge: 'terlaris',
+                harga: '<span class="harga-utama">Rp 9.000</span><span class="harga-coret" style="text-decoration:line-through; font-size:12px; color:#64748b;">Rp 10.000</span>',
+                desc: 'Makanan basah rasa makarel yang lezat dan bergizi lengkap untuk kucing dewasa.'
+            },
+            'KandangHamster': {
+                img: '../foto/kandang_hamster.jpeg', kategori: 'Kandang', nama: 'Kandang hamster luas - bonus hamster wheel',
+                rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.8 (42 ulasan)', badge: '✨ Baru', classBadge: 'baru',
+                harga: '<span class="harga-utama">Rp 289.000</span>',
+                desc: 'Kandang hamster tingkat yang luas, sudah termasuk bonus mainan roda putar (wheel).'
+            },
+            'PedigreeAdult': {
+                img: '../foto/Pedigree PRO High Protein Adult Mini & Small Breed.jpeg', kategori: 'Makanan Anjing', nama: 'Pedigree PRO High Protein Adult Mini 1.3KG',
+                rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.7 (38 ulasan)', badge: '', classBadge: '',
+                harga: '<span class="harga-utama">Rp 165.000</span>',
+                desc: 'Makanan anjing tinggi protein untuk menjaga massa otot dan energi anjing ras kecil.'
+            },
+            'MainanGigitan': {
+                img: '../foto/mainan gigitan hewan.webp', kategori: 'Mainan', nama: 'Mainan gigitan hewan - TPR Rubber Premium',
+                rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 5.0 (91 ulasan)', badge: '🏷️ -20%', classBadge: 'diskon',
+                harga: '<span class="harga-utama">Rp 7.900</span><span class="harga-coret" style="text-decoration:line-through; font-size:12px; color:#64748b;">Rp 10.000</span>',
+                desc: 'Mainan gigitan bahan karet TPR yang awet dan membantu membersihkan karang gigi hewan.'
+            }
+        };
+
+        const item = dataProdukSlider[produkId];
+        
+        if (item) {
+            // Inject data ke HTML Modal
+            document.getElementById('modalImg').innerHTML = `<img src="${item.img}" alt="${item.nama}" style="width:100%; height:100%; object-fit:contain;">`;
+            document.getElementById('modalKategori').innerHTML = item.kategori;
+            document.getElementById('modalNama').innerHTML = item.nama;
+            document.getElementById('modalRating').innerHTML = item.rating;
+            document.getElementById('modalDeskripsi').innerHTML = item.desc;
+            document.getElementById('modalHarga').innerHTML = item.harga;
+            
+            const badgeEl = document.getElementById('modalBadge');
+            if (item.badge !== '') {
+                badgeEl.className = `modal-badge ${item.classBadge}`;
+                badgeEl.innerHTML = item.badge;
+            } else {
+                badgeEl.className = 'modal-badge kosong';
+                badgeEl.innerHTML = '';
+            }
+
+            // Tampilkan Modal
+            const modalOverlay = document.getElementById('modalOverlay');
+            const modalProduk = document.getElementById('modalProduk');
+            
+            modalOverlay.classList.add('show');
+            modalProduk.classList.add('show');
+            document.body.style.overflow = 'hidden';
+
+            setTimeout(() => { document.querySelector('.shop-section').scrollIntoView({ behavior: 'smooth' }); }, 100);
+
+            // Bersihkan URL saat ditutup
+            const cleanUrl = () => {
+                window.history.replaceState({}, document.title, window.location.pathname);
+                modalOverlay.classList.remove('show');
+                modalProduk.classList.remove('show');
+                document.body.style.overflow = '';
+            };
+
+            document.getElementById('modalClose').addEventListener('click', cleanUrl);
+            modalOverlay.addEventListener('click', cleanUrl);
+        }
+    }
+});

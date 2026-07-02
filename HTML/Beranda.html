@@ -214,29 +214,188 @@
             </div>
         </section>
 
-        <section class="featured">
-            <h2 class="section-title">Produk Unggulan</h2>
-            <div class="prod-grid">
-                <div class="prod-card">
-                    <div class="prod-img-placeholder" style="background:#fdf0e0;">🥩</div>
-                    <h4>Makanan Kering</h4>
-                    <p>Nutrisi lengkap untuk anjing &amp; kucing</p>
-                </div>
-                <div class="prod-card">
-                    <div class="prod-img-placeholder" style="background:#e8f7f9;">🐾</div>
-                    <h4>Mainan Interaktif</h4>
-                    <p>Mainan seru untuk hewan kesayanganmu</p>
-                </div>
-                <div class="prod-card">
-                    <div class="prod-img-placeholder" style="background:#fff5e0;">🍖</div>
-                    <h4>Snack &amp; Treat</h4>
-                    <p>Camilan sehat pilihan hewan peliharaan</p>
+        <!-- =====================================================================
+     GANTI SECTION INI DI Beranda.html
+     Cari: <section class="shop-slider section-padding">
+     Ganti seluruh blok sampai </section> penutupnya
+     ===================================================================== -->
+
+<section class="shop-slider section-padding">
+    <div class="section-header">
+        <div class="header-left">
+            <span class="sub-title"><i class="fas fa-crown"></i> Koleksi Premium</span>
+            <h2 class="section-title">Produk Pilihan ZOON</h2>
+            <p class="header-desc">Temukan produk terlaris, makanan bergizi, dan aksesoris eksklusif untuk kebahagiaan hewan kesayangan Anda.</p>
+        </div>
+        <a href="Shop.html" class="btn-lihat-semua">
+            Lihat Semua <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="slider-wrapper hide-arrows">
+        <div class="slider-track horizontal-scroll">
+
+            <div class="produk-card slider-item" onclick="window.location.href='Shop.html?produk=RCKitten'">
+                <span class="produk-badge terlaris">Terlaris</span>
+                <div class="produk-img"><img src="../foto/R-C_Kitten.jpg" alt="RC Kitten"></div>
+                <div class="produk-body">
+                    <div class="produk-kategori">Makanan Hewan</div>
+                    <h4>Royal Canin Kitten - wet food 85gr isi 12pcs</h4>
+                    <div class="produk-rating">
+                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                        <span>(128)</span>
+                    </div>
+                    <div class="produk-harga">
+                        <span class="harga-utama">Rp 285.000</span>
+                        <span class="harga-coret">Rp 320.000</span>
+                        <span class="harga-diskon">-11%</span>
+                    </div>
+                    <button class="btn-tambah-keranjang" onclick="event.stopPropagation()">
+                        <i class="fas fa-shopping-cart"></i> Tambah
+                    </button>
                 </div>
             </div>
-            <div class="featured-cta">
-                <a href="Shop.html" class="btn-primary">Belanja Sekarang</a>
+
+            <div class="produk-card slider-item" onclick="window.location.href='Shop.html?produk=RCHairSkin'">
+                <span class="produk-badge baru">Baru</span>
+                <div class="produk-img"><img src="../foto/Royal-canin-hair-skin-care.webp" alt="RC Hair & Skin"></div>
+                <div class="produk-body">
+                    <div class="produk-kategori">Makanan Hewan</div>
+                    <h4>Royal Canin Hair & Skin Care Adult - dry food 4KG</h4>
+                    <div class="produk-rating">
+                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+                        <span>(87)</span>
+                    </div>
+                    <div class="produk-harga">
+                        <span class="harga-utama">Rp 632.700</span>
+                    </div>
+                    <button class="btn-tambah-keranjang" onclick="event.stopPropagation()">
+                        <i class="fas fa-shopping-cart"></i> Tambah
+                    </button>
+                </div>
             </div>
-        </section>
+
+            <div class="produk-card slider-item" onclick="window.location.href='Shop.html?produk=TasAstronot'">
+                <span class="produk-badge diskon">Diskon</span>
+                <div class="produk-img"><img src="../foto/Tas Kucing Astronot.webp" alt="Tas Kucing"></div>
+                <div class="produk-body">
+                    <div class="produk-kategori">Aksesoris</div>
+                    <h4>Tas kucing astronot</h4>
+                    <div class="produk-rating">
+                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                        <span>(203)</span>
+                    </div>
+                    <div class="produk-harga">
+                        <span class="harga-utama">Rp 162.400</span>
+                        <span class="harga-coret">Rp 232.500</span>
+                        <span class="harga-diskon">-30%</span>
+                    </div>
+                    <button class="btn-tambah-keranjang" onclick="event.stopPropagation()">
+                        <i class="fas fa-shopping-cart"></i> Tambah
+                    </button>
+                </div>
+            </div>
+
+            <div class="produk-card slider-item" onclick="window.location.href='Shop.html?produk=TaliAnjing'">
+                <div class="produk-img"><img src="../foto/Tali_anjing.jfif" alt="Tali anjing"></div>
+                <div class="produk-body">
+                    <div class="produk-kategori">Aksesoris</div>
+                    <h4>Tali anjing - bisa custom nama</h4>
+                    <div class="produk-rating">
+                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
+                        <span>(64)</span>
+                    </div>
+                    <div class="produk-harga">
+                        <span class="harga-utama">Rp 25.000</span>
+                    </div>
+                    <button class="btn-tambah-keranjang" onclick="event.stopPropagation()">
+                        <i class="fas fa-shopping-cart"></i> Tambah
+                    </button>
+                </div>
+            </div>
+
+            <div class="produk-card slider-item" onclick="window.location.href='Shop.html?produk=WhiskasAdult'">
+                <span class="produk-badge terlaris">Terlaris</span>
+                <div class="produk-img"><img src="../foto/w_mackarel_80.webp" alt="Whiskas 80g"></div>
+                <div class="produk-body">
+                    <div class="produk-kategori">Makanan Hewan</div>
+                    <h4>Whiskas Adult 1+ Mackerel Flavour - wet 80gr</h4>
+                    <div class="produk-rating">
+                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                        <span>(156)</span>
+                    </div>
+                    <div class="produk-harga">
+                        <span class="harga-utama">Rp 9.000</span>
+                        <span class="harga-coret">Rp 10.000</span>
+                        <span class="harga-diskon">-10%</span>
+                    </div>
+                    <button class="btn-tambah-keranjang" onclick="event.stopPropagation()">
+                        <i class="fas fa-shopping-cart"></i> Tambah
+                    </button>
+                </div>
+            </div>
+
+            <div class="produk-card slider-item" onclick="window.location.href='Shop.html?produk=KandangHamster'">
+                <span class="produk-badge baru">Baru</span>
+                <div class="produk-img"><img src="../foto/kandang_hamster.jpeg" alt="Kandang Hamster"></div>
+                <div class="produk-body">
+                    <div class="produk-kategori">Kandang</div>
+                    <h4>Kandang hamster luas - bonus wheel</h4>
+                    <div class="produk-rating">
+                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+                        <span>(42)</span>
+                    </div>
+                    <div class="produk-harga">
+                        <span class="harga-utama">Rp 289.000</span>
+                    </div>
+                    <button class="btn-tambah-keranjang" onclick="event.stopPropagation()">
+                        <i class="fas fa-shopping-cart"></i> Tambah
+                    </button>
+                </div>
+            </div>
+
+            <div class="produk-card slider-item" onclick="window.location.href='Shop.html?produk=PedigreeAdult'">
+                <div class="produk-img"><img src="../foto/Pedigree PRO High Protein Adult Mini & Small Breed.jpeg" alt="Pedigree"></div>
+                <div class="produk-body">
+                    <div class="produk-kategori">Makanan Anjing</div>
+                    <h4>Pedigree PRO High Protein Adult Mini 1.3KG</h4>
+                    <div class="produk-rating">
+                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+                        <span>(38)</span>
+                    </div>
+                    <div class="produk-harga">
+                        <span class="harga-utama">Rp 165.000</span>
+                    </div>
+                    <button class="btn-tambah-keranjang" onclick="event.stopPropagation()">
+                        <i class="fas fa-shopping-cart"></i> Tambah
+                    </button>
+                </div>
+            </div>
+
+            <div class="produk-card slider-item" onclick="window.location.href='Shop.html?produk=MainanGigitan'">
+                <span class="produk-badge diskon">Diskon</span>
+                <div class="produk-img"><img src="../foto/mainan gigitan hewan.webp" alt="Mainan Gigitan"></div>
+                <div class="produk-body">
+                    <div class="produk-kategori">Mainan</div>
+                    <h4>Mainan gigitan hewan - TPR Rubber Premium</h4>
+                    <div class="produk-rating">
+                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                        <span>(91)</span>
+                    </div>
+                    <div class="produk-harga">
+                        <span class="harga-utama">Rp 7.900</span>
+                        <span class="harga-coret">Rp 10.000</span>
+                        <span class="harga-diskon">-20%</span>
+                    </div>
+                    <button class="btn-tambah-keranjang" onclick="event.stopPropagation()">
+                        <i class="fas fa-shopping-cart"></i> Tambah
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
         <section class="services">
             <h2 class="section-title">Layanan Kami</h2>

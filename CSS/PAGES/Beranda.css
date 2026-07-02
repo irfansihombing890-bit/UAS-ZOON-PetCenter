@@ -717,3 +717,637 @@
     #petModal .nav-btn.prev { left: 0px !important; } 
     #petModal .nav-btn.next { right: 0px !important; }
 }
+
+/* =====================================================================
+   GANTI BAGIAN INI DI Beranda.css
+   Cari komentar: /* ── HORIZONTAL SCROLL FIX (ANTI MACET) ── */
+/* Hapus dari situ sampai akhir file, lalu paste semua CSS di bawah ini
+   ===================================================================== */
+
+
+/* ── SHOP SLIDER SECTION ── */
+
+.shop-slider.section-padding {
+    background: linear-gradient(180deg, #edfcfd 0%, #f8fafc 60%, #ffffff 100%);
+    padding: 90px 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dekorasi lingkaran teal blur di sudut kanan atas */
+.shop-slider.section-padding::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(0, 168, 181, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+/* Dekorasi lingkaran orange blur di sudut kiri bawah */
+.shop-slider.section-padding::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(247, 148, 29, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+
+/* ── SECTION HEADER ── */
+
+.shop-slider .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 44px;
+    padding-bottom: 28px;
+    border-bottom: none;
+    position: relative;
+    z-index: 1;
+}
+
+/* Garis gradasi pengganti dashed border */
+/* ── PERBAIKAN GARIS BAWAH SECTION HEADER ── */
+/* Paste ini di paling bawah Beranda.css */
+.shop-slider .section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        to right,
+        #00A8B5              0%,
+        #00c4d3             40%,
+        rgba(0,168,181,0.3) 75%,
+        transparent         100%
+    );
+}
+
+.shop-slider .header-left {
+    max-width: 580px;
+}
+
+/* Badge "Koleksi Premium" */
+.shop-slider .sub-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #e07b0a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, #fff7e8, #ffebc8);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(247, 148, 29, 0.2);
+    box-shadow: 0 3px 10px rgba(247, 148, 29, 0.12);
+}
+
+/* Judul section - override global section-title */
+.shop-slider .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #0B1B3D;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+/* Nonaktifkan garis bawah biru dari global .section-title::after */
+.shop-slider .section-title::after {
+    display: none;
+}
+
+.shop-slider .header-desc {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Tombol "Lihat Semua" - sekarang solid gradient */
+.shop-slider .btn-lihat-semua {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #00A8B5, #007f8a);
+    color: #ffffff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 13px 28px;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 6px 18px rgba(0, 168, 181, 0.28);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.shop-slider .btn-lihat-semua i {
+    transition: transform 0.3s ease;
+}
+
+.shop-slider .btn-lihat-semua:hover {
+    background: linear-gradient(135deg, #007f8a, #005f67);
+    box-shadow: 0 10px 28px rgba(0, 168, 181, 0.38);
+    transform: translateY(-3px);
+}
+
+.shop-slider .btn-lihat-semua:hover i {
+    transform: translateX(6px);
+}
+
+
+/* ── SLIDER WRAPPER & TRACK ── */
+
+.slider-wrapper {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.slider-track.horizontal-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 14px 4px 34px 4px;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar kustom */
+.slider-track.horizontal-scroll::-webkit-scrollbar {
+    height: 5px;
+}
+.slider-track.horizontal-scroll::-webkit-scrollbar-track {
+    background: #e8f4f5;
+    border-radius: 10px;
+}
+.slider-track.horizontal-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #00A8B5, #007f8a);
+    border-radius: 10px;
+}
+
+
+/* ── PRODUCT CARDS ── */
+
+.slider-item.produk-card {
+    flex: 0 0 258px;
+    min-width: 258px;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(0, 168, 181, 0.09);
+}
+
+.slider-item.produk-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 22px 48px rgba(0, 168, 181, 0.14),
+                0 8px 18px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ── BADGE ── */
+
+.slider-item .produk-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    z-index: 2;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.14);
+}
+
+.slider-item .produk-badge.terlaris {
+    background: linear-gradient(135deg, #F7941D, #e86b1e);
+    color: #ffffff;
+}
+.slider-item .produk-badge.baru {
+    background: linear-gradient(135deg, #00A8B5, #007f8a);
+    color: #ffffff;
+}
+.slider-item .produk-badge.diskon {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: #ffffff;
+}
+
+
+/* ── GAMBAR PRODUK ── */
+
+.slider-item .produk-img {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e4f9fb, #c8edf2);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Variasi warna background gambar per kartu */
+.slider-item.produk-card:nth-child(3n+2) .produk-img {
+    background: linear-gradient(135deg, #fff4e0, #fddeb8);
+}
+.slider-item.produk-card:nth-child(3n+3) .produk-img {
+    background: linear-gradient(135deg, #e8f8f0, #b8e8cc);
+}
+
+.slider-item .produk-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 14px;
+    transition: transform 0.4s ease;
+}
+
+/* Gambar membesar saat card di-hover */
+.slider-item.produk-card:hover .produk-img img {
+    transform: scale(1.1);
+}
+
+
+/* ── BODY TEKS ── */
+
+.slider-item .produk-body {
+    padding: 16px 18px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-item .produk-kategori {
+    font-size: 10px;
+    font-weight: 700;
+    color: #00A8B5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.slider-item .produk-body h4 {
+    font-weight: 800;
+    font-size: 13.5px;
+    color: #1A2B3C;
+    margin-bottom: 8px;
+    line-height: 1.45;
+    flex: 1;
+    /* Clamp teks ke 2 baris */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.slider-item .produk-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.slider-item .produk-rating .stars {
+    color: #F7941D;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.slider-item .produk-rating span {
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.slider-item .produk-harga {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 13px;
+    flex-wrap: wrap;
+}
+
+.slider-item .harga-utama {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+    color: #0B1B3D;
+}
+
+.slider-item .harga-coret {
+    font-size: 12px;
+    color: #c8d5e0;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.slider-item .harga-diskon {
+    background: linear-gradient(135deg, #ffeaea, #ffd5d5);
+    color: #d93025;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+
+/* ── TOMBOL TAMBAH KE KERANJANG ── */
+
+.btn-tambah-keranjang {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 0;
+    background: linear-gradient(135deg, #00A8B5, #007f8a);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    cursor: pointer;
+    transition: opacity 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+    /* Tersembunyi saat tidak di-hover */
+    opacity: 0;
+    transform: translateY(8px);
+    margin-top: auto;
+}
+
+/* Muncul saat card di-hover */
+.slider-item.produk-card:hover .btn-tambah-keranjang {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-tambah-keranjang:hover {
+    background: linear-gradient(135deg, #007f8a, #005f67);
+    box-shadow: 0 4px 16px rgba(0, 168, 181, 0.4);
+}
+
+.btn-tambah-keranjang i {
+    font-size: 12px;
+}
+
+
+/* ── RESPONSIF MOBILE ── */
+
+@media (max-width: 768px) {
+    .shop-slider.section-padding {
+        padding: 60px 4%;
+    }
+    .shop-slider .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .shop-slider .section-title {
+        font-size: 28px;
+    }
+    .slider-item.produk-card {
+        flex: 0 0 228px;
+        min-width: 228px;
+    }
+    /* Di mobile tombol tambah selalu tampil */
+    .btn-tambah-keranjang {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .shop-slider.section-padding {
+        padding: 48px 4%;
+    }
+    .shop-slider .section-title {
+        font-size: 24px;
+    }
+}
+
+/* ======================================================
+   SHOP SECTION — ANIMASI & PERBAIKAN
+   Tempel di bagian paling BAWAH file Beranda.css
+   ====================================================== */
+
+
+/* ── 1. HAPUS TOMBOL TAMBAH KERANJANG ── */
+
+.btn-tambah-keranjang {
+    display: none !important;
+}
+
+/* Rapikan spacing yang ditinggalkan tombol */
+.slider-item .produk-harga {
+    margin-bottom: 0;
+}
+
+.slider-item .produk-body {
+    padding-bottom: 24px;
+}
+
+
+/* ── 2. STATE AWAL KARTU & HEADER (aktif hanya jika JS loaded) ── */
+/*      Kelas .js-animations ditambahkan JS ke <html>             */
+
+.js-animations .slider-item.produk-card {
+    opacity: 0;
+    transform: translateY(32px);
+}
+
+.js-animations .shop-slider .section-header {
+    opacity: 0;
+}
+
+
+/* ── 3. ANIMASI KARTU MASUK DARI BAWAH ── */
+
+@keyframes shopCardIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slider-item.produk-card.card-visible {
+    animation: shopCardIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+/* ── 4. ANIMASI SECTION HEADER MASUK DARI ATAS ── */
+
+@keyframes shopHeaderIn {
+    from { opacity: 0; transform: translateY(-22px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.shop-slider.is-visible .section-header {
+    animation: shopHeaderIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+}
+
+
+/* ── 5. HOVER: OVERLAY TEAL TIPIS PADA GAMBAR PRODUK ── */
+
+.slider-item .produk-img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 168, 181, 0.1);
+    opacity: 0;
+    transition: opacity 0.32s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.slider-item.produk-card:hover .produk-img::before {
+    opacity: 1;
+}
+
+
+/* ── 6. HOVER: KILAP / SHIMMER SATU KALI ── */
+
+@keyframes imgShimmer {
+    from { left: -75%; }
+    to   { left: 130%; }
+}
+
+.slider-item .produk-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.52),
+        transparent
+    );
+    transform: skewX(-18deg);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+}
+
+.slider-item.produk-card:hover .produk-img::after {
+    opacity: 1;
+    animation: imgShimmer 0.65s ease forwards;
+}
+
+
+/* ── 7. HOVER: BORDER GLOW + SHADOW LEBIH KUAT ── */
+
+.slider-item.produk-card {
+    transition: transform     0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow    0.35s ease,
+                border-color  0.35s ease;
+}
+
+.slider-item.produk-card:hover {
+    border-color: rgba(0, 168, 181, 0.38) !important;
+    box-shadow: 0 22px 48px rgba(0, 168, 181, 0.16),
+                0 8px  18px rgba(0,  0,  0, 0.07),
+                0 0    0 3px rgba(0, 168, 181, 0.07) !important;
+}
+
+
+/* ── 8. HOVER: HARGA "POP" — BESAR & WARNA TEAL ── */
+
+.slider-item .harga-utama {
+    display: inline-block;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                color     0.25s ease;
+}
+
+.slider-item.produk-card:hover .harga-utama {
+    transform: scale(1.1);
+    color: #00A8B5;
+}
+
+
+/* ── 9. HOVER: LABEL KATEGORI MELEBAR ── */
+
+.slider-item .produk-kategori {
+    transition: letter-spacing 0.3s ease, color 0.3s ease;
+}
+
+.slider-item.produk-card:hover .produk-kategori {
+    letter-spacing: 1.8px;
+    color: #007f8a;
+}
+
+
+/* ── 10. HOVER: JUDUL PRODUK BERUBAH WARNA ── */
+
+.slider-item .produk-body h4 {
+    transition: color 0.25s ease;
+}
+
+.slider-item.produk-card:hover .produk-body h4 {
+    color: #00A8B5;
+}
+
+
+/* ── 11. HOVER: BINTANG RATING BERKILAU ── */
+
+.slider-item .produk-rating .stars {
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.slider-item.produk-card:hover .produk-rating .stars {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 4px rgba(247, 148, 29, 0.55));
+}
+
+
+/* ── 12. BADGE MELAYANG NAIK-TURUN TERUS MENERUS ── */
+
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-4px); }
+}
+
+.slider-item .produk-badge {
+    animation: badgeFloat 2.6s ease-in-out infinite;
+}
+
+
+/* ── 13. OVERRIDE: Tombol tetap hilang di mobile ── */
+
+@media (max-width: 768px) {
+    .btn-tambah-keranjang {
+        display: none !important;
+    }
+}
+
