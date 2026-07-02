@@ -525,6 +525,7 @@
     .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
 }
 
 /* ════════════════════════════════════════
@@ -625,12 +626,16 @@
     .grooming-cta .cta-content p {
         font-size: 14px;
     }
+
+    .process-steps .process-step:nth-child(5):last-child {
+        grid-column: 1 / -1;
+    }
 }
 
 /* ════════════════════════════════════════
            RESPONSIVE — HANDPHONE BESAR (max 600px)
         ════════════════════════════════════════ */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     /* Section spacing */
     section {
@@ -780,12 +785,16 @@
     .grooming-cta .cta-content p {
         font-size: 13px;
     }
+
+    .process-steps .process-step:nth-child(5):last-child {
+        grid-column: 1 / -1;
+    }
 }
 
 /* ════════════════════════════════════════
            RESPONSIVE — HANDPHONE KECIL (max 420px)
         ════════════════════════════════════════ */
-@media (max-width: 420px) {
+@media (max-width: 480px) {
 
     /* Section */
     section {
@@ -954,5 +963,9 @@
     .btn-light {
         padding: 11px 20px;
         font-size: 13px;
+    }
+
+    .process-steps .process-step:nth-child(5):last-child {
+        grid-column: 1 / -1;
     }
 }
