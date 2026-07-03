@@ -44,37 +44,66 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.slider-card');
     const progressBar = document.getElementById('progress-bar');
     const sliderContainer = document.getElementById('card-slider');
+
+    cards.forEach(card => {
+        const bgUrl = card.getAttribute('data-bg-horizontal');
+        if (bgUrl) {
+            const preloadImg = new Image();
+            preloadImg.src = bgUrl;
+        }
+    });
     
     let currentIndex = 0;
     const totalSlides = cards.length;
     let autoPlayTimer;
 
-    // Fungsi untuk memperbarui tampilan slide dan card
-    function updateSlider(index) {
-        // Update Teks Kiri
-        slides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i === index) slide.classList.add('active');
-        });
+// Fungsi untuk memperbarui tampilan slide dan card
+function updateSlider(index) {
+    // Update Teks Kiri
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+    });
 
-        // Update 3D Cards Kanan
-        cards.forEach((card, i) => {
-            card.className = 'slider-card'; // Reset semua class
+    // Update 3D Cards Kanan & Background Layer
+    cards.forEach((card, i) => {
+        card.className = 'slider-card'; // Reset semua class
+        
+        // Mengambil elemen div hero-bg sesuai nomor index (0, 1, atau 2)
+        const bgLayer = document.getElementById(`hero-bg-${i}`);
+        
+        if (i === index) {
+            card.classList.add('active');
             
-            if (i === index) {
-                card.classList.add('active');
-            } else if (i === (index + 1) % totalSlides) {
+            // ===== KODE BARU: GANTI BACKGROUND VIA OPACITY LAYER =====
+            if (bgLayer) {
+                // Jika gambar belum pernah di-load di div ini, kita setel
+                if (!bgLayer.style.backgroundImage) {
+                    const bgHorizontal = card.getAttribute('data-bg-horizontal');
+                    bgLayer.style.backgroundImage = `linear-gradient(rgba(11, 27, 61, 0.75), rgba(11, 27, 61, 0.75)), url('${bgHorizontal}')`;
+                }
+                // Munculkan secara halus (trigger CSS opacity)
+                bgLayer.classList.add('active');
+            }
+            // =========================================================
+
+        } else {
+            if (i === (index + 1) % totalSlides) {
                 card.classList.add('next');
             } else {
                 card.classList.add('prev');
             }
-        });
+            
+            // Sembunyikan layer background yang tidak aktif
+            if (bgLayer) bgLayer.classList.remove('active');
+        }
+    });
 
-        // Reset dan mulai ulang animasi Progress Bar
-        progressBar.style.animation = 'none';
-        void progressBar.offsetWidth; // Memicu reflow DOM agar animasi mengulang
-        progressBar.style.animation = 'fillProgress 5s linear forwards';
-    }
+    // Reset dan mulai ulang animasi Progress Bar
+    progressBar.style.animation = 'none';
+    void progressBar.offsetWidth; // Memicu reflow DOM agar animasi mengulang
+    progressBar.style.animation = 'fillProgress 5s linear forwards';
+}
 
     // Fungsi untuk pindah ke slide berikutnya
     function nextSlide() {

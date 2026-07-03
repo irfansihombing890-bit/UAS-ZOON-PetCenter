@@ -84,6 +84,9 @@
 
     <main>
         <section class="hero-section">
+            <div class="hero-bg" id="hero-bg-0"></div>
+            <div class="hero-bg" id="hero-bg-1"></div>
+            <div class="hero-bg" id="hero-bg-2"></div>
             <div class="hero-left">
                 <div class="hero-slide active" id="slide-0">
                     <div class="hero-content">
@@ -112,16 +115,18 @@
         
             <div class="hero-right">
                 <div class="slider-container" id="card-slider">
-                    <div class="slider-card active" data-index="0">
-                        <img src="aset/grooming-card.jpg" alt="Grooming">
+                    <div class="slider-card active" data-index="0" data-bg-horizontal="../foto/Beranda/slider grooming hor.jpg">
+                        <img src="../foto/Beranda/grooming slider ver.jpg" alt="Grooming">
                         <h3>Grooming</h3>
                     </div>
-                    <div class="slider-card next" data-index="1">
-                        <img src="aset/klinik-card.jpg" alt="Klinik">
+                    
+                    <div class="slider-card next" data-index="1" data-bg-horizontal="../foto/Beranda/slide klinik h.jpg">
+                        <img src="../foto/Beranda/slide klink v.jpg" alt="Klinik">
                         <h3>Klinik</h3>
                     </div>
-                    <div class="slider-card prev" data-index="2">
-                        <img src="aset/hotel-card.jpg" alt="Pet Hotel">
+                    
+                    <div class="slider-card prev" data-index="2" data-bg-horizontal="../foto/Beranda/slide hotel h.jpg">
+                        <img src="../foto/Beranda/slide hotel v.jpg" alt="Pet Hotel">
                         <h3>Pet Hotel</h3>
                     </div>
                 </div>
@@ -182,17 +187,30 @@
                 <svg class="bird bird-5" viewBox="0 0 50 50"><path d="M10 25 Q 20 15 25 25 Q 30 15 40 25" stroke="var(--text-accent)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
             </div>
     
+            <!-- KAWANAN ATAS -->
             <div class="top-animals-container" id="topAnimalsArea">
-                <img src="https://images.unsplash.com/photo-1552728089-571ebd416f4c?auto=format&fit=crop&w=300&q=80" 
-                     class="pet top-pet left" style="transition-delay: 0.15s;"
-                     data-name="Rio sang Macaw" data-desc="Burung eksotis yang cerdas dan ramah. Selalu menyapa setiap tamu dengan gembira!"
-                     data-images='["https://images.unsplash.com/photo-1552728089-571ebd416f4c?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1522856339183-5a7a72667384?auto=format&fit=crop&w=500&q=80"]'>
-                <img src="https://images.unsplash.com/photo-1425082661705-1834bfddef8e?auto=format&fit=crop&w=300&q=80" 
-                     class="pet top-pet right" style="transition-delay: 0.3s;"
-                     data-name="Hamtaro si Mungil" data-desc="Penghuni terkecil kami yang sangat lincah, memiliki area bermain VIP khusus di Pet Hotel."
-                     data-images='["https://images.unsplash.com/photo-1425082661705-1834bfddef8e?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1548658091-623b0a233bde?auto=format&fit=crop&w=500&q=80"]'>
+                <img src="../foto/Beranda/p1 v1.jpg" class="pet top-pet" style="left: 7%; --p-top: 20%; transition-delay: 0.1s;"
+                    data-name="Milo" 
+                    data-desc="Si kecil yang penuh energi dan selalu siap mencerahkan hari-harimu."
+                    data-images='["../foto/Beranda/p1 v1.jpg", "../foto/Beranda/p1 v2.jpg", "../foto/Beranda/p1 v3.jpg"]'>
+                
+                <img src="../foto/Beranda/p2 v1.jpg" class="pet top-pet" style="left: 20%; --p-top: 10%; transition-delay: 0.25s;"
+                    data-name="Bella" 
+                    data-desc="Sahabat setia yang selalu ada untuk memberikan kehangatan dan rasa nyaman."
+                    data-images='["../foto/Beranda/p2 v1.jpg", "../foto/Beranda/p2 v2.jpg", "../foto/Beranda/p2 v3.jpg"]'>
+                
+                <img src="../foto/Beranda/p3 v1.jpg" class="pet top-pet" style="right: 20%; --p-top: 10%; transition-delay: 0.4s;"
+                    data-name="Luna" 
+                    data-desc="Tenang, menggemaskan, dan selalu berhasil memikat hati siapa pun yang melihatnya."
+                    data-images='["../foto/Beranda/p3 v1.jpg", "../foto/Beranda/p3 v2.jpg", "../foto/Beranda/p3 v3.jpg"]'>
+                
+                <img src="../foto/Beranda/p4 v1.jpg" class="pet top-pet" style="right: 7%; --p-top: 20%; transition-delay: 0.55s;"
+                    data-name="Kiko" 
+                    data-desc="Penuh rasa ingin tahu dan selalu tidak sabar untuk mengajakmu bermain."
+                    data-images='["../foto/Beranda/p4 v1.jpg", "../foto/Beranda/p4 v2.jpg", "../foto/Beranda/p4 v3.jpg"]'>
             </div>
-    
+
+            <!-- KAWANAN BAWAH -->
             <div class="bottom-scenery" id="sceneryArea">
                 <div class="nature-bg">
                     <svg class="tree-silhouette" viewBox="0 0 100 100"><path d="M50 10 L20 50 L40 50 L10 90 L90 90 L60 50 L80 50 Z"/><rect x="45" y="90" width="10" height="10" fill="#8B5A2B"/></svg>
@@ -202,13 +220,32 @@
                     <svg class="flower" viewBox="0 0 50 50" style="width: 20px;"><circle cx="25" cy="25" r="8" fill="#E5989B"/><circle cx="25" cy="10" r="10" fill="#FFB4A2"/><circle cx="40" cy="25" r="10" fill="#FFB4A2"/><circle cx="25" cy="40" r="10" fill="#FFB4A2"/><circle cx="10" cy="25" r="10" fill="#FFB4A2"/></svg>
                     <svg class="tree-silhouette" viewBox="0 0 100 100" style="width:70px;"><circle cx="50" cy="40" r="30" /><circle cx="30" cy="60" r="20" /><circle cx="70" cy="60" r="20" /><rect x="45" y="80" width="10" height="20" fill="#8B5A2B"/></svg>
                 </div>
-    
+
                 <div class="animals-container">
-                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&q=80" class="pet" style="--p-left: 8%; --p-bottom: 25px; transition-delay: 0.1s;" data-name="Cody sang Corgi" data-desc="Siap menyambutmu di Pet Hotel kami dengan senyuman hangat setiap hari!" data-images='["https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1597626133663-53df9633b799?auto=format&fit=crop&w=500&q=80"]'>
-                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=300&q=80" class="pet" style="--p-left: 28%; --p-bottom: 45px; transition-delay: 0.25s;" data-name="Luna si Manja" data-desc="Baru saja selesai sesi Grooming & Spa premium. Bulu selembut awan!" data-images='["https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=500&q=80"]'>
-                    <img src="https://images.unsplash.com/photo-1537151608804-ea2f1ea14a15?auto=format&fit=crop&w=300&q=80" class="pet" style="--p-left: 48%; --p-bottom: 20px; transition-delay: 0.4s;" data-name="Max sang Penjaga" data-desc="Dokter jaga kami memastikan Max selalu sehat dan aktif 24 jam sehari." data-images='["https://images.unsplash.com/photo-1537151608804-ea2f1ea14a15?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=500&q=80"]'>
-                    <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=300&q=80" class="pet" style="--p-left: 68%; --p-bottom: 50px; transition-delay: 0.55s;" data-name="Garfield si Oren" data-desc="Nutrisi seimbang dari Pet Shop kami membuat energinya tidak pernah habis!" data-images='["https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=500&q=80"]'>
-                    <img src="https://images.unsplash.com/photo-1605568420105-ce2a31c186e8?auto=format&fit=crop&w=300&q=80" class="pet" style="--p-left: 85%; --p-bottom: 30px; transition-delay: 0.7s;" data-name="Snowy si Husky" data-desc="Selalu ceria setelah mendapatkan vaksin lengkap di Klinik 24 Jam kami." data-images='["https://images.unsplash.com/photo-1605568420105-ce2a31c186e8?auto=format&fit=crop&w=500&q=80", "https://images.unsplash.com/photo-1617895153857-82fe79adfcd4?auto=format&fit=crop&w=500&q=80"]'>
+                    <img src="../foto/Beranda/p5 v1.jpg" class="pet" style="left: 5%; --p-bottom: 35px; transition-delay: 0.1s;"
+                         data-name="Cody" 
+                         data-desc="Langkah kecilnya selalu berhasil membuat siapa saja yang melihatnya tersenyum bahagia."
+                         data-images='["../foto/Beranda/p5 v1.jpg", "../foto/Beranda/p5 v2.jpg", "../foto/Beranda/p5 v3.jpg"]'>
+                    
+                    <img src="../foto/Beranda/p6 v1.jpg" class="pet" style="left: 25%; --p-bottom: 95px; transition-delay: 0.2s;"
+                         data-name="Chloe" 
+                         data-desc="Pecinta kenyamanan yang selalu tahu cara bersantai dengan gaya yang anggun."
+                         data-images='["../foto/Beranda/p6 v1.jpg", "../foto/Beranda/p6 v2.jpg", "../foto/Beranda/p6 v3.jpg"]'>
+    
+                    <img src="../foto/Beranda/p7 v1.jpg" class="pet" style="left: calc(50% - 55px); --p-bottom: 35px; transition-delay: 0.3s;"
+                         data-name="Max" 
+                         data-desc="Energinya seakan tak pernah habis, selalu menyambut kepulanganmu dengan sangat antusias."
+                         data-images='["../foto/Beranda/p7 v1.jpg", "../foto/Beranda/p7 v2.jpg", "../foto/Beranda/p7 v3.jpg"]'>
+    
+                    <img src="../foto/Beranda/p8 v1.jpg" class="pet" style="right: 25%; --p-bottom: 95px; transition-delay: 0.4s;"
+                         data-name="Snowy" 
+                         data-desc="Sangat manis dan lembut, dengan tatapan mata yang selalu bisa meluluhkan hatimu."
+                         data-images='["../foto/Beranda/p8 v1.jpg", "../foto/Beranda/p8 v2.jpg", "../foto/Beranda/p8 v3.jpg"]'>
+    
+                    <img src="../foto/Beranda/p9 v1.jpg" class="pet" style="right: 5%; --p-bottom: 35px; transition-delay: 0.5s;"
+                         data-name="Leo" 
+                         data-desc="Kawan yang tenang dan setia, selalu siap memberikan pelukan paling hangat untukmu."
+                         data-images='["../foto/Beranda/p9 v1.jpg", "../foto/Beranda/p9 v2.jpg", "../foto/Beranda/p9 v3.jpg"]'>
                 </div>
                 <div class="fence"></div>
             </div>
@@ -532,7 +569,7 @@
                     <p class="premium-desc text-light">
                         Melalui sistem *Quality Control* kami, Anda akan selalu menerima pembaruan visual secara berkala langsung ke ponsel Anda. Ketenangan Anda adalah prioritas kami.
                     </p>
-                    <a href="#" class="btn-premium-gold">Pelajari Sistem Kami</a>
+                    <a href="Tentang.html" class="btn-premium-gold">Pelajari Sistem Kami</a>
                 </div>
             </div>
         </section>
