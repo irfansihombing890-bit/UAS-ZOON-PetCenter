@@ -177,18 +177,29 @@ nav {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
     flex-wrap: nowrap;
 }
 
-.nav-right > a {
+.nav-right > a:not(.btn-nav-login),
+.nav-right > button.cart-icon {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1; 
     color: var(--text-dark);
     font-size: 18px;
     text-decoration: none;
     transition: color 0.2s;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
 }
 
-.nav-right > a:hover {
+.nav-right > a:not(.btn-nav-login):hover,
+.nav-right > button.cart-icon:hover {
     color: var(--teal);
 }
 
@@ -334,4 +345,126 @@ nav {
         padding: 8px 10px;
         border-radius: 50%;
     }
+}
+
+/* ==========================================
+   PROFILE MENU & POPUP (STATE: LOGGED IN)
+   ========================================== */
+   .profile-menu {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Ikon Bulat Profil */
+.profile-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 4px 10px rgba(0, 168, 181, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 14px rgba(0, 168, 181, 0.4);
+}
+
+/* Popup Informasi Profil */
+.profile-popup {
+    position: absolute;
+    top: 125%;
+    right: 0;
+    width: 260px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid #eef0f3;
+}
+
+/* Class pembantu untuk memunculkan Popup */
+.profile-popup.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.popup-header {
+    padding: 20px 16px;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    color: white;
+    text-align: center;
+}
+
+.popup-header h4 {
+    margin: 0 0 4px 0;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.popup-header span {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.popup-body {
+    padding: 16px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.info-item i {
+    color: var(--teal);
+    font-size: 16px;
+}
+
+.popup-footer {
+    padding: 12px 16px;
+    background: #f9fefe;
+    border-top: 1px solid #eef0f3;
+}
+
+.btn-logout {
+    width: 100%;
+    padding: 10px;
+    background: #ffebe9;
+    color: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-logout:hover {
+    background: #fbd6d2;
+    transform: translateY(-2px);
 }

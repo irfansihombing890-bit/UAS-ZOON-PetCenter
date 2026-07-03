@@ -1,5 +1,8 @@
-/* ── LOGIN PAGE ── */
-.login-page {
+/* =========================================================
+   REGISTER PAGE (Stand-alone CSS)
+   ========================================================= */
+
+   .login-page {
     min-height: calc(100vh - 110px);
     background: linear-gradient(135deg, #e8f7f9 0%, #f9fefe 60%, #fff5e0 100%);
     display: flex;
@@ -11,7 +14,7 @@
 .login-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 880px;
+    max-width: 950px; /* Diperlebar untuk menampung grid 2 kolom */
     width: 100%;
     background: #ffffff;
     border-radius: 24px;
@@ -19,7 +22,7 @@
     overflow: hidden;
 }
 
-/* ── PANEL KIRI ── */
+/* PANEL KIRI */
 .login-panel-left {
     background: linear-gradient(145deg, var(--teal) 0%, var(--teal-dark) 100%);
     padding: 48px 40px;
@@ -115,7 +118,7 @@
     flex-shrink: 0;
 }
 
-/* ── PANEL KANAN (FORM) ── */
+/* PANEL KANAN (FORM REGISTER) */
 .login-panel-right {
     padding: 48px 44px;
     display: flex;
@@ -148,8 +151,15 @@
     text-decoration: underline;
 }
 
+/* GRID FORM REGISTER */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+}
+
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .form-label {
@@ -220,40 +230,8 @@
     color: var(--teal);
 }
 
-.form-options {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text-gray);
-    user-select: none;
-}
-
-.checkbox-label input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--teal);
-    cursor: pointer;
-}
-
-.forgot-link {
-    font-size: 13px;
-    font-weight: 800;
-    color: var(--teal);
-    text-decoration: none;
-}
-
-.forgot-link:hover {
-    text-decoration: underline;
+.toggle-pass:focus {
+    outline: none;
 }
 
 .btn-login {
@@ -270,7 +248,7 @@
     border: none;
     cursor: pointer;
     transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
 .btn-login:hover {
@@ -279,8 +257,8 @@
     box-shadow: 0 8px 20px rgba(247, 148, 29, 0.3);
 }
 
-/* ── RESPONSIVE LOGIN ── */
-@media (max-width: 700px) {
+/* RESPONSIVE REGISTER */
+@media (max-width: 768px) {
     .login-wrapper {
         grid-template-columns: 1fr;
     }
@@ -291,27 +269,19 @@
     .login-panel-right {
         padding: 36px 28px;
     }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* Menghilangkan ikon mata dan tombol X bawaan browser di SEMUA kondisi (password maupun text) */
+/* Fix Browser Default Password Icon */
 .form-input::-ms-reveal,
-.form-input::-ms-clear {
-    display: none !important;
-    width: 0;
-    height: 0;
-}
-
+.form-input::-ms-clear,
 .form-input::-webkit-reveal,
 .form-input::-webkit-clear-button {
     display: none !important;
 }
 
-/* Menghilangkan kotak fokus (outline) bawaan jika ikon mata diklik */
-.toggle-pass:focus {
-    outline: none;
-}
-
-/* Mencegah teks password yang panjang menabrak ikon mata */
-#password {
-    padding-right: 50px !important;
+#password, #confirm_password {
+    padding-right: 40px !important;
 }

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Akun – ZOON Pet Shop</title>
+    <link rel="icon" href="/icon.jpg" type="image/jpg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="stylesheet" href="../CSS/PAGES/Register.css">
+
+    <script defer src="../JS/pages/register.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span>📞 +62 895 - 3664 - 6043 5</span>
+            <span>⏰ Buka: Senin–Sabtu, 08.00–20.00</span>
+        </div>
+
+        <nav>
+            <a href="Beranda.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <div class="logo-text">
+                    <span>ZOON</span>
+                    <span>Pet Shop</span>
+                </div>
+            </a>
+
+            <input type="checkbox" id="navtoggle" class="navtoggle">
+
+            <ul class="nav-links">
+                <li><a href="Beranda.html">Beranda</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" aria-label="Menu Layanan">
+                            Layanan
+                            <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="Grooming.html">Grooming</a>
+                            <a href="Klinik.html">Klinik</a>
+                            <a href="PetHotel.html">Pet Hotel</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Kontak.html">Kontak</a></li>
+                <li><a href="Tentang.html">Tentang</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="Shop.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <a href="Login.html" class="btn-nav-login">
+                    <i class="fas fa-user"></i> 
+                    <span class="login-text">Login</span>
+                </a>
+                <label for="navtoggle" class="list-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-page">
+            <div class="login-wrapper" style="max-width: 950px;">
+
+                <div class="login-panel-left">
+                    <div class="panel-deco-circle-1"></div>
+                    <div class="panel-deco-circle-2"></div>
+
+                    <div class="panel-hero">
+                        <div class="panel-emoji-circle">🎉</div>
+                        <h2>Mari<br>Bergabung!</h2>
+                        <p>Buat akun baru untuk mulai menikmati layanan dan promo eksklusif untuk hewan peliharaan kesayanganmu.</p>
+                    </div>
+
+                    <div class="panel-features">
+                        <div class="panel-feature">
+                            <div class="panel-feature-icon">🛒</div>
+                            Belanja kebutuhan anabul lebih cepat
+                        </div>
+                        <div class="panel-feature">
+                            <div class="panel-feature-icon">📅</div>
+                            Booking Klinik & Grooming instan
+                        </div>
+                        <div class="panel-feature">
+                            <div class="panel-feature-icon">🎁</div>
+                            Akses promo eksklusif member
+                        </div>
+                    </div>
+                </div>
+
+                <div class="login-panel-right">
+                    <h2 class="login-title">Daftar Akun</h2>
+                    <p class="login-subtitle">Sudah punya akun? <a href="Login.html">Masuk di sini</a></p>
+
+                    <form action="#" method="POST" id="registerForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="fullname">Nama Lengkap</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-id-card input-icon"></i>
+                                    <input type="text" id="fullname" name="fullname" class="form-input" placeholder="Masukkan nama" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="username">Username</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" id="username" name="username" class="form-input" placeholder="Buat username" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input type="email" id="email" name="email" class="form-input" placeholder="nama@email.com" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="phone">No HP</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-phone input-icon"></i>
+                                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="08xx-xxxx-xxxx" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="password">Password</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-lock input-icon"></i>
+                                    <input type="password" id="password" name="password" class="form-input" placeholder="Buat password" required />
+                                    <button type="button" class="toggle-pass" onclick="togglePassword('password', 'eye-icon-pass')">
+                                        <i class="fas fa-eye" id="eye-icon-pass"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="confirm_password">Konfirmasi Password</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-lock input-icon"></i>
+                                    <input type="password" id="confirm_password" name="confirm_password" class="form-input" placeholder="Ulangi password" required />
+                                    <button type="button" class="toggle-pass" onclick="togglePassword('confirm_password', 'eye-icon-confirm')">
+                                        <i class="fas fa-eye" id="eye-icon-confirm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-login" style="margin-top: 10px;">
+                            <i class="fas fa-user-plus"></i> &nbsp;Daftar Sekarang
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script defer src="../JS/pages/register.js"></script>
+</body>
+</html>
