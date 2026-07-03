@@ -184,7 +184,7 @@ function buyNow(btn) {
     openCheckout(item, false);
 }
 
-// C. VALIDASI & PROSES AKHIR
+/// C. VALIDASI & PROSES AKHIR
 function processCheckout() {
     let isValid = true;
     
@@ -217,7 +217,7 @@ function processCheckout() {
     const addressInput = document.getElementById('coAddress');
     const paymentInput = document.getElementById('coPaymentMethod');
 
-    // 1. Validasi Nomor HP Alternatif (Opsional, gunakan Regex jika diisi)
+    // 1. Validasi Nomor HP Alternatif
     if (altPhoneInput.value.trim() !== "") {
         const cleanPhone = altPhoneInput.value.replace(/[\s-]/g, '');
         const phoneRegex = /^(\+62|08)[0-9]{8,11}$/;
@@ -226,14 +226,14 @@ function processCheckout() {
         }
     }
 
-    // 2. Validasi Alamat (Wajib, minimal 10 karakter)
+    // 2. Validasi Alamat
     if (addressInput.value.trim() === "") {
         showError('coAddress', 'Alamat pengiriman wajib diisi.');
     } else if (addressInput.value.trim().length < 10) {
         showError('coAddress', 'Alamat terlalu singkat, mohon tuliskan lebih lengkap.');
     }
 
-    // 3. Validasi Metode Pembayaran (Wajib)
+    // 3. Validasi Metode Pembayaran
     if (paymentInput.value === "") {
         showError('coPaymentMethod', 'Silakan pilih metode pembayaran.');
     }
@@ -246,7 +246,44 @@ function processCheckout() {
 
         // Simulasi pengiriman ke server
         setTimeout(() => {
-            alert(`Pesanan Berhasil!\nTerima kasih telah berbelanja menggunakan metode ${paymentInput.value}.`);
+            // 👇 KODE PENYIMPANAN RIWAYAT SHOP DITAMBAHKAN DI SINI 👇
+            let zoonHistory = JSON.parse(sessionStorage.getItem('zoon_history')) || [];
+            const activeUser = JSON.parse(sessionStorage.getItem('zoon_active_user'));
+            const itemDetails = currentCheckoutItems.map(i => `${i.name} (x${i.qty})`).join('<br>');
+            const totalPrice = document.getElementById('coTotalPrice').innerText;
+
+            zoonHistory.push({
+                type: 'shop',
+                user: activeUser,
+                orderId: 'ORD-' + Math.floor(10000 + Math.random() * 90000),
+                date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' }),
+                items: itemDetails,
+                total: totalPrice,
+                status: 'Diproses'
+            });
+            sessionStorage.setItem('zoon_history', JSON.stringify(zoonHistory));
+            // 👆 SELESAI 👆
+
+            // Ubah teks metode pembayaran di dalam popup
+            const successDesc = document.getElementById('successCheckoutDesc');
+            if(successDesc) {
+                successDesc.innerHTML = `Terima kasih telah berbelanja.<br>Metode: <strong>${paymentInput.value}</strong>`;
+            }
+            
+            // Munculkan popup animasi
+            const successOverlay = document.getElementById('successCheckoutOverlay');
+            if(successOverlay) {
+                successOverlay.classList.add('show');
+            } else {
+                alert(`Pesanan Berhasil!\nMetode: ${paymentInput.value}.`);
+            }
+
+            // Bersihkan keranjang HANYA jika checkout dari keranjang
+            if (isFromCart) {
+                cart = [];
+                saveCart();
+                renderCart();
+            }
             
             // Bersihkan keranjang HANYA jika checkout dari keranjang
             if (isFromCart) {
@@ -319,5 +356,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (urlParams.get('openCart') === 'true') {
         setTimeout(() => { openCart(); }, 100);
         window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    // Tombol tutup Popup Berhasil di Shop
+    const btnSuccessOk = document.getElementById('btnSuccessCheckoutOk');
+    if(btnSuccessOk) {
+        btnSuccessOk.addEventListener('click', () => {
+            document.getElementById('successCheckoutOverlay').classList.remove('show');
+        });
     }
 });

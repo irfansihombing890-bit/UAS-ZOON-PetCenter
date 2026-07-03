@@ -281,6 +281,7 @@ function openModal(card) {
     const stars = card.querySelector('.produk-rating .stars').textContent.trim();
     const ulasan = card.querySelector('.produk-rating span:last-child').textContent.trim();
     const hargaUtama = card.querySelector('.harga-utama').textContent.trim();
+    const hargaAsliNumber = parseInt(card.dataset.harga) || 0; // Ambil harga numerik dari dataset
     const hargaCoret = card.querySelector('.harga-coret');
     const hargaDiskon = card.querySelector('.harga-diskon');
     const badge = card.querySelector('.produk-badge');
@@ -318,11 +319,43 @@ function openModal(card) {
     if (hargaDiskon) hargaHTML += `<span class="harga-diskon">${hargaDiskon.textContent}</span>`;
     document.getElementById('modalHarga').innerHTML = hargaHTML;
 
-    // Tombol keranjang & beli di modal
+    // 💡 PERBAIKAN: Fungsi Tombol Keranjang & Beli di Modal
     const btnKeranjang = document.getElementById('modalBtnKeranjang');
     const btnBeli = document.getElementById('modalBtnBeli');
-    btnKeranjang.onclick = () => { addToCart(btnKeranjang, nama); closeModal(); };
-    btnBeli.onclick = () => closeModal();
+    
+    // 1. Logika Tambah ke Keranjang
+    btnKeranjang.onclick = () => { 
+        // Panggil fungsi cart.js secara manual dengan memberikan referensi elemen button ini
+        // Kita simulasikan struktur DOM card agar fungsi addToCart di cart.js tetap berjalan normal
+        card.querySelector('.btn-keranjang').click(); 
+        closeModal(); 
+    };
+
+    // 2. Logika Beli Langsung (Checkout)
+    btnBeli.onclick = () => { 
+        closeModal(); 
+        
+        // Cek login sebelum checkout
+        const activeUserName = JSON.parse(sessionStorage.getItem('zoon_active_user'));
+        if (!activeUserName) {
+            alert("Silakan Login terlebih dahulu untuk melakukan checkout pesanan.");
+            window.location.href = "Login.html";
+            return;
+        }
+
+        // Bentuk array item untuk dikirim ke popup checkout
+        const item = [{ 
+            name: nama, 
+            harga: hargaAsliNumber, 
+            img: img.src, 
+            qty: 1 
+        }];
+        
+        // Panggil fungsi openCheckout yang ada di cart.js
+        if(typeof openCheckout === "function") {
+            openCheckout(item, false);
+        }
+    };
 
     document.getElementById('modalOverlay').classList.add('show');
     document.getElementById('modalProduk').classList.add('show');

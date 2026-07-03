@@ -877,6 +877,27 @@ document.addEventListener("DOMContentLoaded", () => {
             btnSubmit.disabled = true;
 
             setTimeout(() => {
+                // 👇 KODE PENYIMPANAN RIWAYAT GROOMING DITAMBAHKAN DI SINI 👇
+                let zoonHistory = JSON.parse(sessionStorage.getItem('zoon_history')) || [];
+                const activeUser = JSON.parse(sessionStorage.getItem('zoon_active_user'));
+                
+                const pet = document.getElementById('jenisHewan').value;
+                const pkg = document.getElementById('paketGrooming').options[document.getElementById('paketGrooming').selectedIndex].text;
+                const date = document.getElementById('tanggal').value;
+                const time = document.getElementById('jam').value;
+
+                zoonHistory.push({
+                    type: 'grooming',
+                    user: activeUser,
+                    orderId: 'GRM-' + Math.floor(10000 + Math.random() * 90000),
+                    kategori: 'Grooming & Spa',
+                    detail: `${pkg} <br><small>Hewan: ${pet}</small>`,
+                    jadwal: `${date} | Pkl ${time}`,
+                    status: 'Menunggu'
+                });
+                sessionStorage.setItem('zoon_history', JSON.stringify(zoonHistory));
+                // 👆 SELESAI 👆
+
                 closeBookingModal();
                 bookingForm.reset();
                 btnSubmit.innerHTML = originalText;

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riwayat Transaksi | ZOON</title>
+    <link rel="icon" href="/icon.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="stylesheet" href="../CSS/PAGES/Riwayat.css">
+
+    <script defer src="../JS/components/navbar.js"></script>
+    <script defer src="../JS/pages/riwayat.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span>📞 +62 895 - 3664 - 6043 5</span>
+            <span>⏰ Buka: Senin–Sabtu, 08.00–20.00</span>
+        </div>
+        <nav>
+            <a href="Beranda.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-paw"></i></div>
+                <div class="logo-text"><span>ZOON</span><span>Pet Shop</span></div>
+            </a>
+            <input type="checkbox" id="navtoggle" class="navtoggle">
+            <ul class="nav-links">
+                <li><a href="Beranda.html">Beranda</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" aria-label="Menu Layanan">
+                            Layanan <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="Grooming.html">Grooming</a>
+                            <a href="Klinik.html">Klinik</a>
+                            <a href="PetHotel.html">Pet Hotel</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Kontak.html">Kontak</a></li>
+                <li><a href="Tentang.html">Tentang</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="Shop.html" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-badge" id="navCartBadge">0</span></a>
+                <a href="Login.html" class="btn-nav-login" id="navLoginBtn"><i class="fas fa-user"></i><span class="login-text">Login</span></a>
+                <div class="profile-menu" id="navProfileMenu" style="display: none;">
+                    <div class="profile-icon" id="profileIconBtn"></div>
+                    <div class="profile-popup" id="profilePopup">
+                        <div class="popup-header"><h4 id="popupFullName">Nama Lengkap</h4><span id="popupUsername">@username</span></div>
+                        <div class="popup-body"><div class="info-item"><i class="fas fa-phone"></i><span id="popupPhone">08xx-xxxx-xxxx</span></div></div>
+                        <div class="popup-footer" style="display: flex; gap: 8px;">
+                            <a href="Riwayat.html" class="btn-history" style="flex: 1; padding: 10px; background: #e8f7f9; color: var(--teal); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 800; font-size: 13px;"><i class="fas fa-history"></i> Riwayat</a>
+                            <button id="btnLogout" class="btn-logout" style="flex: 1; padding: 10px; background: #ffebe9; color: #e74c3c; border: none; border-radius: 8px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; cursor: pointer;"><i class="fas fa-sign-out-alt"></i> Keluar</button>
+                        </div>
+                    </div>
+                </div>
+                <label for="navtoggle" class="list-hamburger"><span></span><span></span><span></span></label>
+            </div>
+        </nav>
+    </header>
+
+    <main class="history-page">
+        <div class="container">
+            <div class="history-header-page">
+                <h2>Riwayat Transaksi Anda</h2>
+                <p>Pantau semua pesanan produk dan reservasi layanan hewan peliharaan Anda di sini.</p>
+            </div>
+
+            <div class="history-wrapper">
+                <div class="history-tabs">
+                    <button class="history-tab active" data-target="tabShop"><i class="fas fa-shopping-bag"></i> Riwayat Shop</button>
+                    <button class="history-tab" data-target="tabLayanan"><i class="fas fa-concierge-bell"></i> Riwayat Layanan</button>
+                </div>
+
+                <div class="history-body">
+                    <div class="history-content active" id="tabShop">
+                        <div class="table-responsive">
+                            <table class="zoon-table">
+                                <thead>
+                                    <tr>
+                                        <th>No Pesanan</th>
+                                        <th>Tanggal Checkout</th>
+                                        <th>Produk & Jumlah</th>
+                                        <th>Total Harga</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyShop">
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="history-content" id="tabLayanan">
+                        <div class="table-responsive">
+                            <table class="zoon-table">
+                                <thead>
+                                    <tr>
+                                        <th>No Reservasi</th>
+                                        <th>Layanan</th>
+                                        <th>Detail Pemesanan</th>
+                                        <th>Jadwal Pelaksanaan</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyLayanan">
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>ZOON &mdash; A Pet Shop &amp; Peliharaan Anda &copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="global-confirm-overlay" id="logoutConfirmOverlay">
+        <div class="global-confirm-modal">
+            <div class="gc-icon"><i class="fas fa-sign-out-alt"></i></div>
+            <h2 class="gc-title">Keluar Akun?</h2>
+            <p class="gc-desc">Apakah Anda yakin ingin keluar dari akun ZOON Anda?</p>
+            <div class="gc-actions">
+                <button class="btn-gc-cancel" id="btnCancelLogout">Batal</button>
+                <button class="btn-gc-confirm" id="btnConfirmLogout">Ya, Keluar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

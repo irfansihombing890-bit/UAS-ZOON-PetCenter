@@ -95,3 +95,103 @@
     background: var(--teal-dark);
     transform: translateY(-2px);
 }
+
+/* ==========================================
+   GLOBAL SUCCESS MODAL (ANIMASI BERHASIL)
+   ========================================== */
+   .global-success-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999; opacity: 0; visibility: hidden; transition: 0.3s ease;
+}
+.global-success-overlay.show {
+    opacity: 1; visibility: visible;
+}
+.global-success-modal {
+    background: #ffffff; border-radius: 24px; padding: 40px 32px;
+    max-width: 400px; width: 90%; text-align: center;
+    transform: scale(0.8) translateY(20px); transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+.global-success-overlay.show .global-success-modal {
+    transform: scale(1) translateY(0);
+}
+.gs-icon {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; color: #fff; font-size: 36px;
+    animation: gsBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+@keyframes gsBounce {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+.gs-title { 
+    font-family: 'Poppins', sans-serif; font-size: 22px; 
+    font-weight: 800; color: var(--text-dark); margin-bottom: 10px; 
+}
+.gs-desc { 
+    font-size: 14px; color: var(--text-gray); line-height: 1.6; margin-bottom: 24px; 
+}
+.btn-gs-ok {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: #fff; border: none; padding: 12px 30px; border-radius: 10px;
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px;
+    cursor: pointer; transition: 0.2s; width: 100%; box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+}
+.btn-gs-ok:hover { 
+    transform: translateY(-2px); box-shadow: 0 12px 25px rgba(39, 174, 96, 0.4); 
+}
+
+/* ==========================================
+   GLOBAL CONFIRM MODAL (LOGOUT)
+   ========================================== */
+   .global-confirm-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999; opacity: 0; visibility: hidden; transition: 0.3s ease;
+}
+.global-confirm-overlay.show { opacity: 1; visibility: visible; }
+
+.global-confirm-modal {
+    background: #ffffff; border-radius: 24px; padding: 40px 32px;
+    max-width: 400px; width: 90%; text-align: center;
+    transform: scale(0.8) translateY(20px); transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+.global-confirm-overlay.show .global-confirm-modal { transform: scale(1) translateY(0); }
+
+.gc-icon {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: #ffebe9; color: #e74c3c;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; font-size: 36px;
+}
+.gc-title { 
+    font-family: 'Poppins', sans-serif; font-size: 22px; 
+    font-weight: 800; color: var(--text-dark); margin-bottom: 10px; 
+}
+.gc-desc { 
+    font-size: 14px; color: var(--text-gray); line-height: 1.6; margin-bottom: 28px; 
+}
+.gc-actions { 
+    display: flex; gap: 12px; justify-content: center; 
+}
+.btn-gc-cancel {
+    flex: 1; padding: 12px; background: #eef0f3; color: var(--text-dark);
+    border: none; border-radius: 10px; font-weight: 800; font-family: 'Nunito', sans-serif; 
+    cursor: pointer; transition: 0.2s;
+}
+.btn-gc-cancel:hover { background: #e4e7ec; }
+.btn-gc-confirm {
+    flex: 1; padding: 12px; background: #e74c3c; color: #fff;
+    border: none; border-radius: 10px; font-weight: 800; font-family: 'Nunito', sans-serif; 
+    cursor: pointer; transition: 0.2s; box-shadow: 0 8px 20px rgba(231, 76, 60, 0.2);
+}
+.btn-gc-confirm:hover { 
+    background: #c0392b; transform: translateY(-2px); box-shadow: 0 12px 25px rgba(231, 76, 60, 0.35); 
+}

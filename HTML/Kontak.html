@@ -83,8 +83,12 @@
                                 <span id="popupPhone">08xx-xxxx-xxxx</span>
                             </div>
                         </div>
-                        <div class="popup-footer">
-                            <button id="btnLogout" class="btn-logout">
+                        
+                        <div class="popup-footer" style="display: flex; gap: 8px;">
+                            <a href="Riwayat.html" class="btn-history" style="flex: 1; padding: 10px; background: #e8f7f9; color: var(--teal); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 800; font-size: 13px;">
+                                <i class="fas fa-history"></i> Riwayat
+                            </a>
+                            <button id="btnLogout" class="btn-logout" style="flex: 1; padding: 10px; background: #ffebe9; color: #e74c3c; border: none; border-radius: 8px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; cursor: pointer;">
                                 <i class="fas fa-sign-out-alt"></i> Keluar
                             </button>
                         </div>
@@ -427,5 +431,17 @@
             <p>ZOON &mdash; A Pet Shop &amp; Peliharaan Anda &copy; 2026. All rights reserved.</p>
         </div>
     </footer>
+
+    <div class="global-confirm-overlay" id="logoutConfirmOverlay">
+        <div class="global-confirm-modal">
+            <div class="gc-icon"><i class="fas fa-sign-out-alt"></i></div>
+            <h2 class="gc-title">Keluar Akun?</h2>
+            <p class="gc-desc">Apakah Anda yakin ingin keluar dari akun ZOON Anda?</p>
+            <div class="gc-actions">
+                <button class="btn-gc-cancel" id="btnCancelLogout">Batal</button>
+                <button class="btn-gc-confirm" id="btnConfirmLogout">Ya, Keluar</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

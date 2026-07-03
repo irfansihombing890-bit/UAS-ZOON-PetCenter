@@ -487,6 +487,27 @@ document.addEventListener("DOMContentLoaded", () => {
             btnSubmit.disabled = true;
 
             setTimeout(() => {
+                // 👇 KODE PENYIMPANAN RIWAYAT PET HOTEL DITAMBAHKAN DI SINI 👇
+                let zoonHistory = JSON.parse(sessionStorage.getItem('zoon_history')) || [];
+                const activeUser = JSON.parse(sessionStorage.getItem('zoon_active_user'));
+                
+                const pet = document.getElementById('phJenisHewan').value;
+                const room = document.getElementById('phTipeKamar').options[document.getElementById('phTipeKamar').selectedIndex].text;
+                const ciDate = document.getElementById('phCheckInDate').value;
+                const coDate = document.getElementById('phCheckOutDate').value;
+
+                zoonHistory.push({
+                    type: 'pethotel',
+                    user: activeUser,
+                    orderId: 'HTL-' + Math.floor(10000 + Math.random() * 90000),
+                    kategori: 'Pet Hotel',
+                    detail: `${room} <br><small>Hewan: ${pet}</small>`,
+                    jadwal: `${ciDate} s/d<br>${coDate}`,
+                    status: 'Menunggu'
+                });
+                sessionStorage.setItem('zoon_history', JSON.stringify(zoonHistory));
+                // 👆 SELESAI 👆
+
                 closeBookingModal();
                 bookingForm.reset();
                 btnSubmit.innerHTML = originalText;

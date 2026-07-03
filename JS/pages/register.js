@@ -116,8 +116,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Redirect ke halaman Login
                 setTimeout(() => {
-                    alert("Pendaftaran Berhasil! Silakan masuk menggunakan akun Anda.");
-                    window.location.href = "Login.html"; 
+                    const successOverlay = document.getElementById('successRegOverlay');
+                    if (successOverlay) {
+                        // Tampilkan animasi popup
+                        successOverlay.classList.add('show');
+                        
+                        // Hentikan loading tombol form
+                        btnSubmit.innerHTML = `<i class="fas fa-check"></i> Berhasil`;
+                        
+                        // Saat tombol "Lanjut Login" di popup diklik, pindah halaman
+                        document.getElementById('btnSuccessRegOk').addEventListener('click', () => {
+                            window.location.href = "Login.html"; 
+                        });
+                    } else {
+                        // Fallback jika lupa memasang HTML
+                        alert("Pendaftaran Berhasil! Silakan masuk menggunakan akun Anda.");
+                        window.location.href = "Login.html";
+                    }
                 }, 1500);
             }
         });

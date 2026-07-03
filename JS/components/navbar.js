@@ -55,14 +55,47 @@
         }
     });
 
-    // 4. Fitur Keluar (Logout)
+    // 4. Fitur Keluar (Logout) DISEMPURNAKAN
     if (btnLogout) {
-        btnLogout.addEventListener('click', () => {
-            if(confirm("Apakah Anda yakin ingin keluar dari akun?")) {
-                sessionStorage.removeItem('zoon_active_user'); 
-                // Redirect ke halaman Beranda saat logout agar aman
-                window.location.href = "Beranda.html"; 
+        btnLogout.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Tutup popup profil kecil saat logout diklik
+            if(profilePopup) profilePopup.classList.remove('show');
+            
+            const logoutOverlay = document.getElementById('logoutConfirmOverlay');
+            if (logoutOverlay) {
+                logoutOverlay.classList.add('show');
+            } else {
+                // Fallback (jika ada file HTML yang lupa dipasang popup-nya)
+                if(confirm("Apakah Anda yakin ingin keluar dari akun?")) {
+                    sessionStorage.removeItem('zoon_active_user'); 
+                    window.location.href = "Beranda.html"; 
+                }
             }
+        });
+    }
+
+    // Aksi untuk tombol di dalam Popup Logout
+    const btnCancelLogout = document.getElementById('btnCancelLogout');
+    const btnConfirmLogout = document.getElementById('btnConfirmLogout');
+    const logoutOverlay = document.getElementById('logoutConfirmOverlay');
+
+    if (btnCancelLogout) {
+        btnCancelLogout.addEventListener('click', () => {
+            logoutOverlay.classList.remove('show');
+        });
+    }
+
+    if (btnConfirmLogout) {
+        btnConfirmLogout.addEventListener('click', () => {
+            // Animasi loading di tombol logout
+            btnConfirmLogout.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Keluar...';
+            
+            setTimeout(() => {
+                sessionStorage.removeItem('zoon_active_user');
+                window.location.href = "Beranda.html"; 
+            }, 800);
         });
     }
 

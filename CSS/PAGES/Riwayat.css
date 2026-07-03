@@ -1,0 +1,152 @@
+/* =========================================================
+   HALAMAN RIWAYAT
+   ========================================================= */
+   .history-page {
+    padding: 75px 0 60px 0;
+    min-height: 80vh;
+    background: #f5f7fa;
+}
+
+.history-header-page {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.history-header-page h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--teal-dark);
+    margin-bottom: 10px;
+}
+
+.history-header-page p {
+    color: var(--text-gray);
+    font-size: 15px;
+}
+
+.history-wrapper {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+/* ── TABS ── */
+.history-tabs {
+    display: flex;
+    background: #f9fefe;
+    border-bottom: 2px solid #e8f7f9;
+}
+
+.history-tab {
+    flex: 1;
+    padding: 18px 20px;
+    background: none;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #a0aab5;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+
+.history-tab:hover {
+    color: var(--teal);
+    background: rgba(0, 168, 181, 0.05);
+}
+
+.history-tab.active {
+    color: var(--teal);
+    border-bottom-color: var(--teal);
+    background: #ffffff;
+}
+
+/* ── KONTEN & TABEL ── */
+.history-body {
+    padding: 30px;
+}
+
+.history-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.history-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.table-responsive {
+    overflow-x: auto;
+    border: 1px solid #eef0f3;
+    border-radius: 12px;
+}
+
+.zoon-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; 
+}
+
+.zoon-table th, .zoon-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eef0f3;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.zoon-table th {
+    background: var(--light-blue);
+    color: var(--teal);
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+}
+
+.zoon-table tr:hover td { background: #fcfcfc; }
+.zoon-table tr:last-child td { border-bottom: none; }
+
+/* ── STATUS BADGES ── */
+.badge-status {
+    padding: 6px 12px; border-radius: 6px; font-weight: 800;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+    display: inline-block; white-space: nowrap;
+}
+
+.bg-proses { background: #fff3cd; color: #f39c12; }
+.bg-tunggu { background: #e8f7f9; color: var(--teal); }
+.bg-selesai { background: #d4edda; color: #27ae60; }
+
+/* ── STATUS BADGES & EMPTY STATE ── */
+
+.history-kategori { font-weight: 800; color: var(--teal); display: block; }
+
+/* 👇 TAMBAHKAN !important PADA text-align 👇 */
+.empty-history { 
+    text-align: center !important; 
+    padding: 60px 20px !important; 
+    color: #a0aab5; 
+}
+.empty-history i { 
+    font-size: 48px; 
+    color: #e4e7ec; 
+    margin-bottom: 16px; 
+    display: block; 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .history-body { padding: 20px 15px; }
+    .history-tabs { flex-direction: column; }
+    .history-tab { border-bottom: none; border-left: 3px solid transparent; justify-content: flex-start; padding: 15px 20px;}
+    .history-tab.active { border-bottom-color: transparent; border-left-color: var(--teal); }
+}
