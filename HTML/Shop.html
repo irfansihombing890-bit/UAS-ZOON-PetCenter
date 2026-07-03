@@ -1523,6 +1523,77 @@
         </div>
     </aside>
 
+    <div class="checkout-overlay" id="checkoutOverlay"></div>
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-header">
+            <h3>Checkout Pesanan</h3>
+            <button class="checkout-close" id="checkoutClose"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="checkout-body">
+            <div class="checkout-section">
+                <h4>Informasi Pemesan</h4>
+                <div class="co-form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="coName" disabled>
+                </div>
+                <div class="co-form-group">
+                    <label>Email</label>
+                    <input type="email" id="coEmail" disabled>
+                </div>
+                <div class="co-form-group">
+                    <label>No. HP Utama</label>
+                    <input type="text" id="coPhone" disabled>
+                </div>
+            </div>
+
+            <div class="checkout-section">
+                <h4>Informasi Pengiriman</h4>
+                <div class="co-form-group">
+                    <label>No. HP Alternatif (Opsional)</label>
+                    <input type="tel" id="coAltPhone" placeholder="08xx-xxxx-xxxx">
+                </div>
+                <div class="co-form-group">
+                    <label>Alamat Pengiriman *</label>
+                    <textarea id="coAddress" rows="3" placeholder="Masukkan alamat lengkap RT/RW & Kodepos..." required></textarea>
+                </div>
+                <div class="co-form-group">
+                    <label>Catatan Pesanan (Opsional)</label>
+                    <textarea id="coNotes" rows="2" placeholder="Contoh: Titip di pos satpam..."></textarea>
+                </div>
+            </div>
+
+            <div class="checkout-section">
+                <h4>Ringkasan Pesanan</h4>
+                <div id="coOrderItems" class="co-order-items">
+                    </div>
+                <div class="co-order-total">
+                    <span>Total Pembayaran</span>
+                    <strong id="coTotalPrice" style="color: var(--orange);">Rp 0</strong>
+                </div>
+            </div>
+
+            <div class="checkout-section">
+                <h4>Metode Pembayaran *</h4>
+                <div class="co-form-group">
+                    <select id="coPaymentMethod" required>
+                        <option value="">-- Pilih Metode --</option>
+                        <option value="Transfer Bank">💳 Transfer Bank (BCA/Mandiri/BRI)</option>
+                        <option value="Z-Wallet">📱 Z-Wallet (Khusus Member ZOON)</option>
+                        <option value="COD">🚚 COD (Bayar di Tempat)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-footer">
+            <button class="btn-co-cancel" id="btnCancelCheckout">Batal</button>
+            <button class="btn-co-confirm" id="btnConfirmCheckout">
+                <i class="fas fa-check-circle"></i> Selesaikan Pesanan
+            </button>
+        </div>
+    </div>
+
     <!-- ── MODAL PRODUK ATAU UNTUK DESKRIPSI PRODUK ── -->
     <div class="modal-overlay" id="modalOverlay"></div>
     <div class="modal-produk" id="modalProduk">

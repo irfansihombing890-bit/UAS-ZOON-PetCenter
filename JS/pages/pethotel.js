@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // ── 8. BOOKING MODAL (PET HOTEL) ──
+    // ── 8. BOOKING MODAL PET HOTEL (DISEMPURNAKAN) ──
     const bookingOverlay = document.getElementById("bookingOverlay");
     const bookingClose = document.getElementById("bookingClose");
     const bookingForm = document.getElementById("bookingHotelForm");
@@ -328,7 +328,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkInDateInput = document.getElementById("phCheckInDate");
     const checkOutDateInput = document.getElementById("phCheckOutDate");
 
-    // Set minimum tanggal ke hari ini
     if (checkInDateInput) {
         const today = new Date();
         const yyyy = today.getFullYear();
@@ -336,18 +335,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const dd = String(today.getDate()).padStart(2, "0");
         const todayStr = `${yyyy}-${mm}-${dd}`;
         checkInDateInput.setAttribute("min", todayStr);
-        if (checkOutDateInput) {
-            checkOutDateInput.setAttribute("min", todayStr);
-        }
+        if (checkOutDateInput) checkOutDateInput.setAttribute("min", todayStr);
     }
 
-    // Sync check-out min date saat check-in berubah
     if (checkInDateInput && checkOutDateInput) {
         checkInDateInput.addEventListener("change", () => {
             const checkInVal = checkInDateInput.value;
             if (checkInVal) {
                 checkOutDateInput.setAttribute("min", checkInVal);
-                // Jika check-out lebih awal dari check-in, reset
                 if (checkOutDateInput.value && checkOutDateInput.value < checkInVal) {
                     checkOutDateInput.value = "";
                 }
@@ -355,13 +350,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Open modal
     function openBookingModal(kamarValue) {
         if (!bookingOverlay) return;
+
+        // 1. VERIFIKASI LOGIN
+        const activeUserName = JSON.parse(sessionStorage.getItem('zoon_active_user'));
+        if (!activeUserName) {
+            alert("Silakan Login terlebih dahulu untuk melakukan reservasi kamar.");
+            window.location.href = "Login.html";
+            return;
+        }
+
+        // 2. AUTOFILL DATA PEMILIK
+        const users = JSON.parse(sessionStorage.getItem('zoon_users')) || [];
+        const activeUser = users.find(u => u.fullname === activeUserName);
+        if (activeUser) {
+            const ownerName = document.getElementById('ownerName');
+            const ownerPhone = document.getElementById('ownerPhone');
+            if (ownerName) ownerName.value = activeUser.fullname;
+            if (ownerPhone) ownerPhone.value = activeUser.phone;
+        }
+
         bookingOverlay.classList.add("active");
         document.body.style.overflow = "hidden";
 
-        // Pre-select tipe kamar if provided
         if (kamarValue && tipeKamarSelect) {
             const options = tipeKamarSelect.options;
             for (let i = 0; i < options.length; i++) {
@@ -373,7 +385,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Close modal
     function closeBookingModal() {
         if (!bookingOverlay) return;
         bookingOverlay.classList.remove("active");
@@ -386,7 +397,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = "";
     }
 
-    // Attach open handlers — room card buttons
     document.querySelectorAll(".btn-booking-hotel").forEach((btn) => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -395,59 +405,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Close handlers
-    if (bookingClose) {
-        bookingClose.addEventListener("click", closeBookingModal);
-    }
-
-    if (bookingOverlay) {
-        bookingOverlay.addEventListener("click", (e) => {
-            if (e.target === bookingOverlay) closeBookingModal();
-        });
-    }
-
-    if (successClose) {
-        successClose.addEventListener("click", closeSuccessModal);
-    }
-
-    if (successOverlay) {
-        successOverlay.addEventListener("click", (e) => {
-            if (e.target === successOverlay) closeSuccessModal();
-        });
-    }
-
-    // ESC to close
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            if (bookingOverlay && bookingOverlay.classList.contains("active")) {
-                closeBookingModal();
-            }
-            if (successOverlay && successOverlay.classList.contains("active")) {
-                closeSuccessModal();
-            }
-        }
-    });
+    if (bookingClose) bookingClose.addEventListener("click", closeBookingModal);
+    if (bookingOverlay) bookingOverlay.addEventListener("click", (e) => { if (e.target === bookingOverlay) closeBookingModal(); });
+    if (successClose) successClose.addEventListener("click", closeSuccessModal);
 
     // Form validation & submit
     if (bookingForm) {
         bookingForm.addEventListener("submit", (e) => {
             e.preventDefault();
+            let isValid = true;
+            
+            bookingForm.querySelectorAll(".error").forEach(el => el.classList.remove("error"));
+            bookingForm.querySelectorAll(".error-msg").forEach(el => el.remove());
 
-            // Clear previous errors
-            bookingForm.querySelectorAll(".error").forEach((el) => el.classList.remove("error"));
-            bookingForm.querySelectorAll(".error-msg").forEach((el) => el.remove());
-
-            let hasError = false;
             const requiredFields = bookingForm.querySelectorAll("[required]");
 
             requiredFields.forEach((field) => {
                 const value = field.value.trim();
                 if (!value) {
-                    hasError = true;
+                    isValid = false;
                     field.classList.add("error");
 
                     const msg = document.createElement("span");
                     msg.className = "error-msg";
+                    msg.style.color = '#e74c3c';
+                    msg.style.fontSize = '12px';
+                    msg.style.fontWeight = '700';
+                    msg.style.marginTop = '4px';
+                    msg.style.display = 'block';
                     msg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Wajib diisi';
                     field.parentElement.appendChild(msg);
 
@@ -460,17 +445,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // Validate check-out > check-in
-            if (!hasError && checkInDateInput && checkOutDateInput) {
+            // Validasi Khusus: Check Out harus minimal 1 hari setelah Check In
+            if (isValid && checkInDateInput && checkOutDateInput) {
                 const ciDate = checkInDateInput.value;
                 const coDate = checkOutDateInput.value;
-                if (ciDate && coDate && coDate < ciDate) {
-                    hasError = true;
+                if (ciDate && coDate && coDate <= ciDate) {
+                    isValid = false;
                     checkOutDateInput.classList.add("error");
 
                     const msg = document.createElement("span");
                     msg.className = "error-msg";
-                    msg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Check Out harus setelah Check In';
+                    msg.style.color = '#e74c3c';
+                    msg.style.fontSize = '12px';
+                    msg.style.fontWeight = '700';
+                    msg.style.marginTop = '4px';
+                    msg.style.display = 'block';
+                    msg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Check-Out harus setelah Check-In';
                     checkOutDateInput.parentElement.appendChild(msg);
 
                     checkOutDateInput.addEventListener("focus", function onFocus() {
@@ -482,7 +472,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            if (hasError) {
+            if (!isValid) {
                 const firstError = bookingForm.querySelector(".error");
                 if (firstError) {
                     firstError.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -491,17 +481,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Success
-            closeBookingModal();
-            bookingForm.reset();
+            const btnSubmit = bookingForm.querySelector("button[type='submit']");
+            const originalText = btnSubmit.innerHTML;
+            btnSubmit.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Memproses...`;
+            btnSubmit.disabled = true;
 
             setTimeout(() => {
+                closeBookingModal();
+                bookingForm.reset();
+                btnSubmit.innerHTML = originalText;
+                btnSubmit.disabled = false;
+
                 if (successOverlay) {
                     successOverlay.classList.add("active");
                     document.body.style.overflow = "hidden";
                 }
-            }, 300);
+            }, 1500);
         });
     }
-
 });

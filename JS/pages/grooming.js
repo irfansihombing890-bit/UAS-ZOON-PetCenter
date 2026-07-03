@@ -741,7 +741,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // ── 15. BOOKING MODAL ──
+    // ── 15. BOOKING MODAL (DISEMPURNAKAN) ──
     const bookingOverlay = document.getElementById("bookingOverlay");
     const bookingClose = document.getElementById("bookingClose");
     const bookingForm = document.getElementById("bookingForm");
@@ -750,7 +750,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const paketSelect = document.getElementById("paketGrooming");
     const tanggalInput = document.getElementById("tanggal");
 
-    // Set minimum tanggal ke hari ini
+    // Mencegah user memilih tanggal di masa lalu
     if (tanggalInput) {
         const today = new Date();
         const yyyy = today.getFullYear();
@@ -759,13 +759,33 @@ document.addEventListener("DOMContentLoaded", () => {
         tanggalInput.setAttribute("min", `${yyyy}-${mm}-${dd}`);
     }
 
-    // Open modal
+    // Fungsi Buka Modal & Verifikasi
     function openBookingModal(paketValue) {
         if (!bookingOverlay) return;
+
+        // 1. VERIFIKASI LOGIN
+        const activeUserName = JSON.parse(sessionStorage.getItem('zoon_active_user'));
+        if (!activeUserName) {
+            alert("Silakan Login terlebih dahulu untuk menjadwalkan layanan Grooming.");
+            window.location.href = "Login.html";
+            return;
+        }
+
+        // 2. AUTOFILL DATA PEMILIK
+        const users = JSON.parse(sessionStorage.getItem('zoon_users')) || [];
+        const activeUser = users.find(u => u.fullname === activeUserName);
+        if (activeUser) {
+            const ownerName = document.getElementById('ownerName');
+            const ownerPhone = document.getElementById('ownerPhone');
+            if (ownerName) ownerName.value = activeUser.fullname;
+            if (ownerPhone) ownerPhone.value = activeUser.phone;
+        }
+
+        // Buka Popup
         bookingOverlay.classList.add("active");
         document.body.style.overflow = "hidden";
 
-        // Pre-select paket if provided
+        // Auto-select paket jika diklik dari tombol paket tertentu
         if (paketValue && paketSelect) {
             const options = paketSelect.options;
             for (let i = 0; i < options.length; i++) {
@@ -777,7 +797,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Close modal
     function closeBookingModal() {
         if (!bookingOverlay) return;
         bookingOverlay.classList.remove("active");
@@ -790,7 +809,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = "";
     }
 
-    // Attach open handlers to all .btn-booking elements
+    // Mencegat semua klik tombol booking
     document.querySelectorAll(".btn-booking").forEach((btn) => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -799,64 +818,40 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Close handlers
-    if (bookingClose) {
-        bookingClose.addEventListener("click", closeBookingModal);
-    }
-
-    if (bookingOverlay) {
-        bookingOverlay.addEventListener("click", (e) => {
-            if (e.target === bookingOverlay) closeBookingModal();
-        });
-    }
-
-    if (successClose) {
-        successClose.addEventListener("click", closeSuccessModal);
-    }
-
-    if (successOverlay) {
-        successOverlay.addEventListener("click", (e) => {
-            if (e.target === successOverlay) closeSuccessModal();
-        });
-    }
-
-    // ESC to close
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            if (bookingOverlay && bookingOverlay.classList.contains("active")) {
-                closeBookingModal();
-            }
-            if (successOverlay && successOverlay.classList.contains("active")) {
-                closeSuccessModal();
-            }
-        }
-    });
+    if (bookingClose) bookingClose.addEventListener("click", closeBookingModal);
+    if (bookingOverlay) bookingOverlay.addEventListener("click", (e) => { if (e.target === bookingOverlay) closeBookingModal(); });
+    if (successClose) successClose.addEventListener("click", closeSuccessModal);
 
     // Form validation & submit
     if (bookingForm) {
         bookingForm.addEventListener("submit", (e) => {
             e.preventDefault();
+            let isValid = true;
+            
+            // Bersihkan error sebelumnya
+            bookingForm.querySelectorAll(".error").forEach(el => el.classList.remove("error"));
+            bookingForm.querySelectorAll(".error-msg").forEach(el => el.remove());
 
-            // Clear previous errors
-            bookingForm.querySelectorAll(".error").forEach((el) => el.classList.remove("error"));
-            bookingForm.querySelectorAll(".error-msg").forEach((el) => el.remove());
-
-            let hasError = false;
             const requiredFields = bookingForm.querySelectorAll("[required]");
 
+            // Validasi DOM (Muncul peringatan merah di bawah kolom)
             requiredFields.forEach((field) => {
                 const value = field.value.trim();
                 if (!value) {
-                    hasError = true;
+                    isValid = false;
                     field.classList.add("error");
 
-                    // Add error message
                     const msg = document.createElement("span");
                     msg.className = "error-msg";
+                    msg.style.color = '#e74c3c';
+                    msg.style.fontSize = '12px';
+                    msg.style.fontWeight = '700';
+                    msg.style.marginTop = '4px';
+                    msg.style.display = 'block';
                     msg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Wajib diisi';
                     field.parentElement.appendChild(msg);
 
-                    // Remove error on focus
+                    // Hilangkan error jika user mulai mengisi
                     field.addEventListener("focus", function onFocus() {
                         field.classList.remove("error");
                         const errMsg = field.parentElement.querySelector(".error-msg");
@@ -866,8 +861,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            if (hasError) {
-                // Scroll to first error inside modal
+            if (!isValid) {
                 const firstError = bookingForm.querySelector(".error");
                 if (firstError) {
                     firstError.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -876,17 +870,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Success — close booking modal and show success modal
-            closeBookingModal();
-            bookingForm.reset();
+            // Simulasi Proses Loading UX
+            const btnSubmit = bookingForm.querySelector("button[type='submit']");
+            const originalText = btnSubmit.innerHTML;
+            btnSubmit.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Memproses...`;
+            btnSubmit.disabled = true;
 
             setTimeout(() => {
+                closeBookingModal();
+                bookingForm.reset();
+                btnSubmit.innerHTML = originalText;
+                btnSubmit.disabled = false;
+
                 if (successOverlay) {
                     successOverlay.classList.add("active");
                     document.body.style.overflow = "hidden";
                 }
-            }, 300);
+            }, 1500);
         });
     }
-
 });

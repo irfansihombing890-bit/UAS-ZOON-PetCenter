@@ -597,13 +597,15 @@
 
             <form id="bookingForm" class="booking-form" novalidate>
                 <div class="form-grid">
-                    <!-- Nama Hewan -->
+                    
                     <div class="form-group">
-                        <label for="namaHewan"><i class="fas fa-tag"></i> Nama Hewan</label>
-                        <input type="text" id="namaHewan" name="namaHewan" placeholder="Contoh: Mochi" required>
+                        <label for="ownerName"><i class="fas fa-user"></i> Nama Pemilik</label>
+                        <input type="text" id="ownerName" disabled style="background: #f5f7fa; color: #888; cursor: not-allowed; border: 2px solid #e4e7ec;">
                     </div>
-
-                    <!-- Jenis Hewan -->
+                    <div class="form-group">
+                        <label for="ownerPhone"><i class="fas fa-phone"></i> No. HP Utama</label>
+                        <input type="text" id="ownerPhone" disabled style="background: #f5f7fa; color: #888; cursor: not-allowed; border: 2px solid #e4e7ec;">
+                    </div>
                     <div class="form-group">
                         <label for="jenisHewan"><i class="fas fa-dog"></i> Jenis Hewan</label>
                         <select id="jenisHewan" name="jenisHewan" required>
