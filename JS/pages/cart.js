@@ -153,4 +153,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cartIconBtn) cartIconBtn.addEventListener('click', openCart);
     if (cartClose) cartClose.addEventListener('click', closeCart);
     if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
+
+    // ==========================================
+    // TAMBAHAN: AUTO-OPEN CART DARI HALAMAN LAIN
+    // ==========================================
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Cek apakah ada pesan 'openCart=true' di URL
+    if (urlParams.get('openCart') === 'true') {
+        // Beri sedikit jeda waktu (100ms) agar transisi geser terlihat mulus
+        setTimeout(() => {
+            openCart();
+        }, 100);
+        
+        // Hapus parameter dari URL secara diam-diam (UX Best Practice)
+        // Ini memastikan jika user me-refresh (F5) halaman, keranjang tidak terbuka secara berulang
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
 });

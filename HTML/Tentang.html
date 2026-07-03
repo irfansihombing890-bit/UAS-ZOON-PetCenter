@@ -12,6 +12,8 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../CSS/Style.css">
+
+    <script defer src="../JS/components/navbar.js"></script>
 </head>
 
 <body>
@@ -59,19 +61,39 @@
             </ul>
 
             <div class="nav-right">
-                <a href="#"><i class="fas fa-search"></i></a>
                 <a href="Shop.html" class="cart-icon">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge">3</span>
                 </a>
-                <a href="Login.html" class="btn-nav-login">
+                
+                <a href="Login.html" class="btn-nav-login" id="navLoginBtn">
                     <i class="fas fa-user"></i>
                     <span class="login-text">Login</span>
                 </a>
+
+                <div class="profile-menu" id="navProfileMenu" style="display: none;">
+                    <div class="profile-icon" id="profileIconBtn"></div>
+                    <div class="profile-popup" id="profilePopup">
+                        <div class="popup-header">
+                            <h4 id="popupFullName">Nama Lengkap</h4>
+                            <span id="popupUsername">@username</span>
+                        </div>
+                        <div class="popup-body">
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <span id="popupPhone">08xx-xxxx-xxxx</span>
+                            </div>
+                        </div>
+                        <div class="popup-footer">
+                            <button id="btnLogout" class="btn-logout">
+                                <i class="fas fa-sign-out-alt"></i> Keluar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <label for="navtoggle" class="list-hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </label>
             </div>
         </nav>
