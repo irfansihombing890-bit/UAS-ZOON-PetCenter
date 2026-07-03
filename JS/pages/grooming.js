@@ -740,4 +740,153 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+
+    // ── 15. BOOKING MODAL ──
+    const bookingOverlay = document.getElementById("bookingOverlay");
+    const bookingClose = document.getElementById("bookingClose");
+    const bookingForm = document.getElementById("bookingForm");
+    const successOverlay = document.getElementById("successOverlay");
+    const successClose = document.getElementById("successClose");
+    const paketSelect = document.getElementById("paketGrooming");
+    const tanggalInput = document.getElementById("tanggal");
+
+    // Set minimum tanggal ke hari ini
+    if (tanggalInput) {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const dd = String(today.getDate()).padStart(2, "0");
+        tanggalInput.setAttribute("min", `${yyyy}-${mm}-${dd}`);
+    }
+
+    // Open modal
+    function openBookingModal(paketValue) {
+        if (!bookingOverlay) return;
+        bookingOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+        // Pre-select paket if provided
+        if (paketValue && paketSelect) {
+            const options = paketSelect.options;
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].value === paketValue) {
+                    paketSelect.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+    }
+
+    // Close modal
+    function closeBookingModal() {
+        if (!bookingOverlay) return;
+        bookingOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    function closeSuccessModal() {
+        if (!successOverlay) return;
+        successOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    // Attach open handlers to all .btn-booking elements
+    document.querySelectorAll(".btn-booking").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const paket = btn.dataset.paket || "";
+            openBookingModal(paket);
+        });
+    });
+
+    // Close handlers
+    if (bookingClose) {
+        bookingClose.addEventListener("click", closeBookingModal);
+    }
+
+    if (bookingOverlay) {
+        bookingOverlay.addEventListener("click", (e) => {
+            if (e.target === bookingOverlay) closeBookingModal();
+        });
+    }
+
+    if (successClose) {
+        successClose.addEventListener("click", closeSuccessModal);
+    }
+
+    if (successOverlay) {
+        successOverlay.addEventListener("click", (e) => {
+            if (e.target === successOverlay) closeSuccessModal();
+        });
+    }
+
+    // ESC to close
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            if (bookingOverlay && bookingOverlay.classList.contains("active")) {
+                closeBookingModal();
+            }
+            if (successOverlay && successOverlay.classList.contains("active")) {
+                closeSuccessModal();
+            }
+        }
+    });
+
+    // Form validation & submit
+    if (bookingForm) {
+        bookingForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // Clear previous errors
+            bookingForm.querySelectorAll(".error").forEach((el) => el.classList.remove("error"));
+            bookingForm.querySelectorAll(".error-msg").forEach((el) => el.remove());
+
+            let hasError = false;
+            const requiredFields = bookingForm.querySelectorAll("[required]");
+
+            requiredFields.forEach((field) => {
+                const value = field.value.trim();
+                if (!value) {
+                    hasError = true;
+                    field.classList.add("error");
+
+                    // Add error message
+                    const msg = document.createElement("span");
+                    msg.className = "error-msg";
+                    msg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Wajib diisi';
+                    field.parentElement.appendChild(msg);
+
+                    // Remove error on focus
+                    field.addEventListener("focus", function onFocus() {
+                        field.classList.remove("error");
+                        const errMsg = field.parentElement.querySelector(".error-msg");
+                        if (errMsg) errMsg.remove();
+                        field.removeEventListener("focus", onFocus);
+                    });
+                }
+            });
+
+            if (hasError) {
+                // Scroll to first error inside modal
+                const firstError = bookingForm.querySelector(".error");
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: "smooth", block: "center" });
+                    firstError.focus();
+                }
+                return;
+            }
+
+            // Success — close booking modal and show success modal
+            closeBookingModal();
+            bookingForm.reset();
+
+            setTimeout(() => {
+                if (successOverlay) {
+                    successOverlay.classList.add("active");
+                    document.body.style.overflow = "hidden";
+                }
+            }, 300);
+        });
+    }
+
 });

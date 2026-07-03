@@ -98,7 +98,6 @@
                     <div class="booking-input">
                         <i class="fas fa-calendar"></i>
                         <input type="date" value="2025-07-15">
-                        <i class="fas fa-rotate booking-swap"></i>
                     </div>
                 </div>
                 <div class="booking-field">
@@ -150,76 +149,6 @@
                         <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
                         <h3>Premium Care</h3>
                         <p>Lingkungan higienis dengan standar kebersihan setara hotel premium.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── ROOM CATEGORIES ── -->
-        <section id="kategori-kamar" class="room-section">
-            <div class="container">
-                <h2 class="section-title">Pilihan Kamar</h2>
-                <p class="section-subtitle">Pilih kamar terbaik untuk kenyamanan hewan kesayangan Anda.</p>
-
-                <div class="room-grid">
-
-                    <div class="room-card" data-reveal>
-                        <div class="room-image">
-                            <img src="/foto/deluxe room.png" alt="Deluxe Room">
-                            <span class="room-badge teal">Deluxe Room</span>
-                        </div>
-                        <div class="room-body">
-                            <ul class="room-list">
-                                <li><i class="fas fa-check"></i> AC &amp; Ventilasi Optimal</li>
-                                <li><i class="fas fa-check"></i> Tempat Tidur Empuk</li>
-                                <li><i class="fas fa-check"></i> CCTV 24 Jam</li>
-                                <li><i class="fas fa-check"></i> Pembersihan Harian</li>
-                            </ul>
-                            <div class="room-footer">
-                                <div class="room-price teal">Rp120.000<span>/malam</span></div>
-                                <a href="Kontak.html" class="btn-pill teal">Pilih Kamar</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="room-card" data-reveal>
-                        <div class="room-image">
-                            <img src="/foto/executive room.png" alt="Executive Room">
-                            <span class="room-badge orange">Executive Room</span>
-                        </div>
-                        <div class="room-body">
-                            <ul class="room-list">
-                                <li><i class="fas fa-check"></i> Kamar Lebih Luas</li>
-                                <li><i class="fas fa-check"></i> Tempat Tidur Premium</li>
-                                <li><i class="fas fa-check"></i> Air Purifier</li>
-                                <li><i class="fas fa-check"></i> Playtime Harian</li>
-                                <li><i class="fas fa-check"></i> Update Foto &amp; Video</li>
-                            </ul>
-                            <div class="room-footer">
-                                <div class="room-price orange">Rp180.000<span>/malam</span></div>
-                                <a href="Kontak.html" class="btn-pill orange">Pilih Kamar</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="room-card" data-reveal>
-                        <div class="room-image">
-                            <img src="/foto/family suite.png" alt="Family Suite">
-                            <span class="room-badge purple">Family Suite</span>
-                        </div>
-                        <div class="room-body">
-                            <ul class="room-list">
-                                <li><i class="fas fa-check"></i> Untuk 2 - 3 Hewan</li>
-                                <li><i class="fas fa-check"></i> Indoor Playground</li>
-                                <li><i class="fas fa-check"></i> Makanan Premium</li>
-                                <li><i class="fas fa-check"></i> Dokter Check-Up Harian</li>
-                                <li><i class="fas fa-check"></i> Update Foto &amp; Video</li>
-                            </ul>
-                            <div class="room-footer">
-                                <div class="room-price purple">Rp250.000<span>/malam</span></div>
-                                <a href="Kontak.html" class="btn-pill purple">Pilih Kamar</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -291,7 +220,7 @@
                     <!-- Item 4 -->
                     <div class="gallery-item" data-reveal>
                         <img src="/foto/fasilitasbermainhewan.png" alt="Fasilitas Bermain Hewan">
-                        <div class="gallery-overlay"><i class="fas fa-bone"></i></div>  
+                        <div class="gallery-overlay"><i class="fas fa-bone"></i></div>
                     </div>
 
                     <!-- Item 5 -->
@@ -327,6 +256,76 @@
             </div>
         </section>
 
+        <!-- ── ROOM CATEGORIES ── -->
+        <section id="kategori-kamar" class="room-section">
+            <div class="container">
+                <h2 class="section-title">Pilihan Kamar</h2>
+                <p class="section-subtitle">Pilih kamar terbaik untuk kenyamanan hewan kesayangan Anda.</p>
+
+                <div class="room-grid">
+
+                    <div class="room-card" data-reveal>
+                        <div class="room-image">
+                            <img src="/foto/deluxe room.png" alt="Deluxe Room">
+                            <span class="room-badge teal">Deluxe Room</span>
+                        </div>
+                        <div class="room-body">
+                            <ul class="room-list">
+                                <li><i class="fas fa-check"></i> AC &amp; Ventilasi Optimal</li>
+                                <li><i class="fas fa-check"></i> Tempat Tidur Empuk</li>
+                                <li><i class="fas fa-check"></i> CCTV 24 Jam</li>
+                                <li><i class="fas fa-check"></i> Pembersihan Harian</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price teal">Rp120.000<span>/malam</span></div>
+                                <button type="button" class="btn-pill teal btn-booking-hotel" data-kamar="Deluxe Room">Pilih Kamar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="room-card" data-reveal>
+                        <div class="room-image">
+                            <img src="/foto/executive room.png" alt="Executive Room">
+                            <span class="room-badge orange">Executive Room</span>
+                        </div>
+                        <div class="room-body">
+                            <ul class="room-list">
+                                <li><i class="fas fa-check"></i> Kamar Lebih Luas</li>
+                                <li><i class="fas fa-check"></i> Tempat Tidur Premium</li>
+                                <li><i class="fas fa-check"></i> Air Purifier</li>
+                                <li><i class="fas fa-check"></i> Playtime Harian</li>
+                                <li><i class="fas fa-check"></i> Update Foto &amp; Video</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price orange">Rp180.000<span>/malam</span></div>
+                                <button type="button" class="btn-pill orange btn-booking-hotel" data-kamar="Executive Room">Pilih Kamar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="room-card" data-reveal>
+                        <div class="room-image">
+                            <img src="/foto/family suite.png" alt="Family Suite">
+                            <span class="room-badge purple">Family Suite</span>
+                        </div>
+                        <div class="room-body">
+                            <ul class="room-list">
+                                <li><i class="fas fa-check"></i> Untuk 2 - 3 Hewan</li>
+                                <li><i class="fas fa-check"></i> Indoor Playground</li>
+                                <li><i class="fas fa-check"></i> Makanan Premium</li>
+                                <li><i class="fas fa-check"></i> Dokter Check-Up Harian</li>
+                                <li><i class="fas fa-check"></i> Update Foto &amp; Video</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price purple">Rp250.000<span>/malam</span></div>
+                                <button type="button" class="btn-pill purple btn-booking-hotel" data-kamar="Family Suite">Pilih Kamar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ── TESTIMONIALS ── -->
         <section class="pethotel-testimonials">
             <div class="container">
@@ -337,7 +336,8 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"Pelayanan Zoon Pet Hotel sangat memuaskan. Tempatnya bersih, stafnya ramah, dan Poodle saya pulang dengan bahagia. Sangat direkomendasikan!"</p>
+                        <p class="testimonial-text">"Pelayanan Zoon Pet Hotel sangat memuaskan. Tempatnya bersih,
+                            stafnya ramah, dan Poodle saya pulang dengan bahagia. Sangat direkomendasikan!"</p>
                         <div class="testimonial-author">
                             <img src="/foto/profil1.jpg" alt="Pelanggan ZOON">
                             <div>
@@ -353,7 +353,8 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"Titip anabul di sini bikin tenang banget. Selalu dapat update setiap hari, tempatnya nyaman dan luas. Pasti bakal balik lagi!"</p>
+                        <p class="testimonial-text">"Titip anabul di sini bikin tenang banget. Selalu dapat update
+                            setiap hari, tempatnya nyaman dan luas. Pasti bakal balik lagi!"</p>
                         <div class="testimonial-author">
                             <img src="/foto/profil2.jpg" alt="Pelanggan ZOON">
                             <div>
@@ -368,7 +369,8 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"Pet hotel terbaik! Fasilitasnya bersih, aman, dan stafnya sangat telaten. Anjing saya sangat betah selama menginap. Bintang lima!"</p>
+                        <p class="testimonial-text">"Pet hotel terbaik! Fasilitasnya bersih, aman, dan stafnya sangat
+                            telaten. Anjing saya sangat betah selama menginap. Bintang lima!"</p>
                         <div class="testimonial-author">
                             <img src="/foto/profil3.jpg" alt="Pelanggan ZOON">
                             <div>
@@ -390,9 +392,9 @@
                         <h2>Siap Memberikan Pengalaman<br>Menginap Terbaik?</h2>
                         <p>Reservasi sekarang dan berikan kenyamanan seperti di rumah kedua untuk mereka.</p>
                     </div>
-                    <a href="Kontak.html" class="btn-white">
+                    <button type="button" class="btn-white btn-booking-hotel">
                         Reservasi Sekarang <i class="fas fa-paw"></i>
-                    </a>
+                    </button>
                     <i class="fas fa-paw cta-paw p1"></i>
                     <i class="fas fa-paw cta-paw p2"></i>
                     <i class="fas fa-paw cta-paw p3"></i>
@@ -526,6 +528,153 @@
         </div>
     </footer>
 
+    <!-- ── MODAL BOOKING PET HOTEL ── -->
+    <div class="booking-overlay" id="bookingOverlay">
+        <div class="booking-modal">
+            <button class="booking-close" id="bookingClose" aria-label="Tutup">&times;</button>
+
+            <div class="booking-modal-header">
+                <div class="booking-modal-icon">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <h2>Booking Pet Hotel</h2>
+                <p>Isi data berikut untuk reservasi penginapan hewan kesayangan Anda.</p>
+            </div>
+
+            <form id="bookingHotelForm" class="booking-form" novalidate>
+                <div class="form-grid">
+                    <!-- Nama Hewan -->
+                    <div class="form-group">
+                        <label for="phNamaHewan"><i class="fas fa-tag"></i> Nama Hewan</label>
+                        <input type="text" id="phNamaHewan" name="namaHewan" placeholder="Contoh: Mochi" required>
+                    </div>
+
+                    <!-- Jenis Hewan -->
+                    <div class="form-group">
+                        <label for="phJenisHewan"><i class="fas fa-dog"></i> Jenis Hewan</label>
+                        <select id="phJenisHewan" name="jenisHewan" required>
+                            <option value="" disabled selected>Pilih jenis hewan</option>
+                            <option value="Anjing">Anjing</option>
+                            <option value="Kucing">Kucing</option>
+                            <option value="Kelinci">Kelinci</option>
+                            <option value="Hamster">Hamster</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+
+                    <!-- Ras -->
+                    <div class="form-group full-width">
+                        <label for="phRas"><i class="fas fa-dna"></i> Ras</label>
+                        <input type="text" id="phRas" name="ras" placeholder="Contoh: Golden Retriever" required>
+                    </div>
+
+                    <!-- Check In Date -->
+                    <div class="form-group">
+                        <label for="phCheckInDate"><i class="fas fa-calendar-check"></i> Tanggal Check In</label>
+                        <input type="date" id="phCheckInDate" name="checkInDate" required>
+                    </div>
+
+                    <!-- Check In Time -->
+                    <div class="form-group">
+                        <label for="phCheckInTime"><i class="fas fa-clock"></i> Jam Check In</label>
+                        <select id="phCheckInTime" name="checkInTime" required>
+                            <option value="" disabled selected>Pilih jam</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                        </select>
+                    </div>
+
+                    <!-- Check Out Date -->
+                    <div class="form-group">
+                        <label for="phCheckOutDate"><i class="fas fa-calendar-minus"></i> Tanggal Check Out</label>
+                        <input type="date" id="phCheckOutDate" name="checkOutDate" required>
+                    </div>
+
+                    <!-- Check Out Time -->
+                    <div class="form-group">
+                        <label for="phCheckOutTime"><i class="fas fa-clock"></i> Jam Check Out</label>
+                        <select id="phCheckOutTime" name="checkOutTime" required>
+                            <option value="" disabled selected>Pilih jam</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                        </select>
+                    </div>
+
+                    <!-- Tipe Kamar -->
+                    <div class="form-group">
+                        <label for="phTipeKamar"><i class="fas fa-bed"></i> Tipe Kamar</label>
+                        <select id="phTipeKamar" name="tipeKamar" required>
+                            <option value="" disabled selected>Pilih tipe kamar</option>
+                            <option value="Deluxe Room">Deluxe Room — Rp120.000/malam</option>
+                            <option value="Executive Room">Executive Room — Rp180.000/malam</option>
+                            <option value="Family Suite">Family Suite — Rp250.000/malam</option>
+                        </select>
+                    </div>
+
+                    <!-- Jumlah Hewan -->
+                    <div class="form-group">
+                        <label for="phJumlahHewan"><i class="fas fa-paw"></i> Jumlah Hewan</label>
+                        <select id="phJumlahHewan" name="jumlahHewan" required>
+                            <option value="" disabled selected>Pilih jumlah</option>
+                            <option value="1">1 Hewan</option>
+                            <option value="2">2 Hewan</option>
+                            <option value="3">3 Hewan</option>
+                            <option value="4">4 Hewan</option>
+                            <option value="5">5 Hewan</option>
+                        </select>
+                    </div>
+
+                    <!-- Catatan Khusus -->
+                    <div class="form-group full-width">
+                        <label for="phCatatan"><i class="fas fa-sticky-note"></i> Catatan Khusus <span class="optional-tag">(opsional)</span></label>
+                        <textarea id="phCatatan" name="catatan" rows="3" placeholder="Contoh: Hewan saya perlu diet khusus, obat tertentu, dll."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit-booking">
+                    <i class="fas fa-paper-plane"></i> Kirim Reservasi
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── SUCCESS MODAL ── -->
+    <div class="booking-overlay" id="successOverlay">
+        <div class="booking-modal success-modal">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Reservasi Berhasil!</h2>
+                <p>Terima kasih telah melakukan reservasi di ZOON Pet Hotel. Tim kami akan segera menghubungi Anda untuk konfirmasi.</p>
+                <button type="button" class="btn-submit-booking" id="successClose">
+                    <i class="fas fa-thumbs-up"></i> Oke, Mengerti!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/JS/pages/pethotel.js"></script>
 </body>
 
 </html>
