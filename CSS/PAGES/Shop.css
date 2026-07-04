@@ -91,11 +91,7 @@
     transition: all 0.2s;
 }
 
-.filter-kategori li a:hover {
-    background: var(--light-blue);
-    color: var(--teal);
-}
-
+.filter-kategori li a:hover,
 .filter-kategori li a.active {
     background: var(--light-blue);
     color: var(--teal);
@@ -167,7 +163,6 @@
     font-size: 13px;
 }
 
-
 .btn-filter-reset {
     width: 100%;
     padding: 10px;
@@ -193,6 +188,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    min-width: 0; /* Pengaman layout */
 }
 
 /* Toolbar atas */
@@ -242,8 +238,6 @@
     border-color: var(--teal);
 }
 
-
-
 /* ── PRODUK GRID ── */
 .produk-grid {
     display: grid;
@@ -260,6 +254,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    min-width: 0; /* Pengaman kotak agar bisa mengecil */
 }
 
 .produk-card:hover {
@@ -281,20 +276,9 @@
     z-index: 2;
 }
 
-.produk-badge.baru {
-    background: var(--teal);
-    color: #ffffff;
-}
-
-.produk-badge.diskon {
-    background: #e74c3c;
-    color: #ffffff;
-}
-
-.produk-badge.terlaris {
-    background: var(--orange);
-    color: #ffffff;
-}
+.produk-badge.baru { background: var(--teal); color: #ffffff; }
+.produk-badge.diskon { background: #e74c3c; color: #ffffff; }
+.produk-badge.terlaris { background: var(--orange); color: #ffffff; }
 
 /* Wishlist btn */
 .produk-wishlist {
@@ -317,10 +301,7 @@
     z-index: 2;
 }
 
-.produk-wishlist:hover {
-    color: #e74c3c;
-}
-
+.produk-wishlist:hover,
 .produk-wishlist.active {
     color: #e74c3c;
 }
@@ -342,13 +323,8 @@
     display: block;
 }
 
-.produk-card:nth-child(3n+2) .produk-img {
-    background: linear-gradient(135deg, #fff3e0, #ffe0b8);
-}
-
-.produk-card:nth-child(3n+3) .produk-img {
-    background: linear-gradient(135deg, #e8f8f0, #b2e4c8);
-}
+.produk-card:nth-child(3n+2) .produk-img { background: linear-gradient(135deg, #fff3e0, #ffe0b8); }
+.produk-card:nth-child(3n+3) .produk-img { background: linear-gradient(135deg, #e8f8f0, #b2e4c8); }
 
 .produk-body {
     padding: 16px 18px 20px;
@@ -373,6 +349,12 @@
     margin-bottom: 6px;
     line-height: 1.4;
     flex: 1;
+    /* PENGAMAN TEKS: melipat teks panjang agar tidak mendobrak kotak */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
 }
 
 .produk-rating {
@@ -398,6 +380,7 @@
     align-items: center;
     gap: 8px;
     margin-bottom: 14px;
+    flex-wrap: wrap; /* PENGAMAN HARGA: turun ke bawah jika sempit */
 }
 
 .harga-utama {
@@ -423,27 +406,36 @@
     border-radius: 6px;
 }
 
-.btn-keranjang {
+.produk-actions { 
+    display: flex; 
+    gap: 8px; 
+    width: 100%;
+}
+
+.produk-actions .btn-keranjang,
+.produk-actions .btn-beli {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     padding: 10px;
-    background: var(--teal);
-    color: #ffffff;
     border: none;
     border-radius: 10px;
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
     font-size: 13px;
+    color: #ffffff;
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
 }
 
-.btn-keranjang:hover {
-    background: var(--teal-dark);
-    transform: translateY(-1px);
-}
+.btn-keranjang { background: var(--teal); }
+.btn-keranjang:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+.btn-beli { background: var(--orange); }
+.btn-beli:hover { background: #e08c00; transform: translateY(-1px); }
+
 
 /* ── CART NOTIFICATION ── */
 .cart-notif {
@@ -466,10 +458,7 @@
     transition: transform 0.35s, opacity 0.35s;
 }
 
-.cart-notif.show {
-    transform: translateY(0);
-    opacity: 1;
-}
+.cart-notif.show { transform: translateY(0); opacity: 1; }
 
 /* ── SHOP PAGINATION ── */
 .shop-pagination {
@@ -478,6 +467,7 @@
     align-items: center;
     gap: 8px;
     margin-top: 8px;
+    flex-wrap: wrap; /* Mencegah jebol ke samping */
 }
 
 /* ── PROMO BANNER ── */
@@ -504,43 +494,9 @@
     font-size: 14px;
     color: rgba(255,255,255,0.88);
 }
+.promo-banner-icon { font-size: 64px; }
+.cta-buttons { margin-top: 14px; }
 
-.promo-banner-icon {
-    font-size: 64px;
-}
-
-/* update untuk tombol keranjang dan beli */
-.produk-actions {
-    display: flex;
-    gap: 8px;
-}
-
-.produk-actions .btn-keranjang {
-    flex: 1;
-}
-
-.btn-beli {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px;
-    background: var(--orange);
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    font-size: 13px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-}
-
-.btn-beli:hover {
-    background: #e08c00;
-    transform: translateY(-1px);
-}
 
 /* ── MODAL PRODUK ── */
 .modal-overlay {
@@ -552,11 +508,7 @@
     visibility: hidden;
     transition: opacity 0.3s;
 }
-
-.modal-overlay.show {
-    opacity: 1;
-    visibility: visible;
-}
+.modal-overlay.show { opacity: 1; visibility: visible; }
 
 .modal-produk {
     position: fixed;
@@ -574,7 +526,6 @@
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     overflow: hidden;
 }
-
 .modal-produk.show {
     opacity: 1;
     visibility: visible;
@@ -599,10 +550,7 @@
     z-index: 2;
     transition: background 0.2s;
 }
-
-.modal-close:hover {
-    background: #eef0f3;
-}
+.modal-close:hover { background: #eef0f3; }
 
 .modal-content {
     display: grid;
@@ -619,12 +567,7 @@
     padding: 20px;
     min-height: 320px;
 }
-
-.modal-img img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
+.modal-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
 .modal-detail {
     padding: 16px 20px;
@@ -634,7 +577,6 @@
     overflow-y: auto;
     max-height: 70vh;
 }
-
 .modal-detail .produk-actions {
     margin-top: auto;
     padding-top: 12px;
@@ -650,7 +592,6 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 .modal-badge.terlaris { background: var(--orange); color: #fff; }
 .modal-badge.baru { background: var(--teal); color: #fff; }
 .modal-badge.diskon { background: #e74c3c; color: #fff; }
@@ -663,7 +604,6 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 .modal-nama {
     font-size: 15px;
     font-weight: 800;
@@ -671,7 +611,6 @@
     line-height: 1.4;
     margin: 0;
 }
-
 .modal-rating {
     display: flex;
     align-items: center;
@@ -680,30 +619,26 @@
     color: var(--text-gray);
     margin-bottom: 2px;
 }
-
-.modal-rating .stars {
-    color: var(--orange);
-}
+.modal-rating .stars { color: var(--orange); }
 
 .modal-deskripsi-wrap {
     border-top: 2px solid #eef0f3;
     padding-top: 8px;
 }
-
 .modal-deskripsi-label {
     font-size: 11px;
     color: var(--text-gray);
     font-weight: 700;
     margin-bottom: 4px;
 }
-
 .modal-deskripsi {
     font-size: 12px;
     color: var(--text-dark);
     line-height: 1.6;
     margin: 0;
+    overflow-y: auto;
+    max-height: 100px;
 }
-
 .modal-harga-wrap {
     display: flex;
     align-items: center;
@@ -713,67 +648,102 @@
     margin-top: auto; 
 }
 
-/* mengupdate deskripsi item */
-.modal-deskripsi {
-    font-size: 12px;
-    color: var(--text-dark);
-    line-height: 1.6;
-    margin: 0;
-    overflow-y: auto;
-    max-height: 100px;
-}
 
-/* responsive untuk dekskripsi produk */
-@media (max-width: 600px) {
-    .modal-content {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
+/* =========================================================
+   RESPONSIVE LAYOUT (ANTI "STUCK" / GAK NGIKUT KE KIRI)
+   ========================================================= */
 
-    .modal-img {
-        height: 200px;
-    }
-
-    .modal-detail {
-        height: 50vh;
-    }
-}
-
-
-/* ── RESPONSIVE SHOP ── */
 @media (max-width: 1024px) {
-    .produk-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .shop-wrapper { grid-template-columns: 240px 1fr; }
+    .produk-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 900px) {
+    .shop-section {
+        padding: 40px 5%; 
+    }
     .shop-wrapper {
-        grid-template-columns: 1fr;
+        /* BUKAN GRID LAGI: Kita ubah ke flex agar tidak jebol ke samping */
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 24px;
     }
     .shop-sidebar {
         position: static;
-    }
-    .produk-grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
+        width: 100%; /* Memaksa rata kiri penuh */
     }
     .promo-banner {
         flex-direction: column;
         text-align: center;
     }
-}
-
-@media (max-width: 480px) {
     .produk-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media (max-width: 600px) {
+    .shop-section {
+        padding: 30px 4%; /* Jarak layar HP diperkecil */
+    }
+
+    .filter-widget {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Memaksa Toolbar "Urutkan" agar lurus rata kiri & tidak memanjang kaku */
     .shop-toolbar {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        width: 100%;
+        gap: 12px;
+        box-sizing: border-box;
+    }
+    .shop-toolbar-right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .sort-select {
+        width: 100%;
+    }
+
+    /* Mengubah produk menjadi 1 kolom murni anti-stuck */
+    .produk-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+    }
+    
+    .produk-card {
+        width: 100%;
+    }
+
+    .produk-body {
+        padding: 16px;
+    }
+
+    /* Modal (Deskripsi Produk) di HP */
+    .modal-produk {
+        width: 95%;
+        max-height: 90vh;
+    }
+    .modal-content {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .modal-img {
+        min-height: 180px;
+        height: 180px;
+        padding: 16px;
+    }
+    .modal-detail {
+        max-height: calc(90vh - 180px);
+        padding: 16px;
     }
 }
-
-.cta-buttons {
-    margin-top: 14px;
-}
-
