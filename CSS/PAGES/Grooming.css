@@ -1791,3 +1791,43 @@
         font-size: 12.5px;
     }
 }
+
+/* =========================================================
+   FIX BUG LAYOUT: TESTIMONI KE BAWAH (1 KOLOM) & ANTI JEBOL
+   ========================================================= */
+   @media (max-width: 900px) {
+    /* Memaksa 3 kotak testimoni tersusun memanjang ke bawah */
+    .testimonial-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Kunci Utama: Paksa jadi 1 kolom */
+        width: 100% !important;
+        box-sizing: border-box !important;
+        gap: 20px !important;
+    }
+    
+    /* Mengunci kartu agar tidak meluber */
+    .testimonial-card {
+        min-width: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden;
+    }
+    
+    /* Mencegah nama pelanggan atau ulasan yang panjang mendobrak kotak */
+    .testimonial-text, 
+    .author-name, 
+    .author-pet {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal !important;
+    }
+
+    /* Pengaman area foto dan nama */
+    .testimonial-author {
+        max-width: 100%;
+    }
+    .testimonial-author div {
+        min-width: 0;
+        overflow: hidden;
+    }
+}
