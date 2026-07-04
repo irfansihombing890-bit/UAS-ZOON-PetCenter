@@ -395,49 +395,57 @@ document.addEventListener('DOMContentLoaded', () => {
         // Data 8 produk dari slider beranda
         const dataProdukSlider = {
             'RCKitten': {
-                img: '../foto/R-C_Kitten.jpg', kategori: 'Makanan hewan', nama: 'Royal Canin Kitten - wet food 85gr isi 12pcs',
+                img: '../foto/R-C_Kitten.jpg', kategori: 'Makanan hewan', 
+                nama: 'Royal Canin Kitten - wet food 85gr isi 12pcs',
                 rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.9 (128 ulasan)', badge: '🔥 Terlaris', classBadge: 'terlaris',
                 harga: '<span class="harga-utama">Rp 285.000</span><span class="harga-coret" style="text-decoration:line-through; font-size:12px; color:#64748b;">Rp 320.000</span>',
                 desc: 'Makanan basah premium untuk anak kucing (kitten) yang mendukung pertumbuhan optimal dan kekebalan tubuh.'
             },
             'RCHairSkin': {
-                img: '../foto/Royal-canin-hair-skin-care.webp', kategori: 'Makanan hewan', nama: 'Royal Canin Hair & Skin Care Adult - dry food 4KG',
+                img: '../foto/Royal-canin-hair-skin-care.webp', kategori: 'Makanan hewan', 
+                nama: 'Royal Canin Hair & Skin Care Adult - dry food 4KG',
                 rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.8 (87 ulasan)', badge: '✨ Baru', classBadge: 'baru',
                 harga: '<span class="harga-utama">Rp 632.700</span>',
                 desc: 'Makanan kering khusus untuk menjaga kesehatan kulit dan keindahan bulu kucing dewasa.'
             },
             'TasAstronot': {
-                img: '../foto/Tas Kucing Astronot.webp', kategori: 'Aksesoris', nama: 'Tas kucing astronot transparan',
+                img: '../foto/Tas Kucing Astronot.webp', kategori: 'Aksesoris', 
+                nama: 'Tas kucing astronot', // NAMA DISAMAKAN
                 rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 5.0 (203 ulasan)', badge: '🏷️ -30%', classBadge: 'diskon',
                 harga: '<span class="harga-utama">Rp 162.400</span><span class="harga-coret" style="text-decoration:line-through; font-size:12px; color:#64748b;">Rp 232.500</span>',
                 desc: 'Tas carrier ransel astronot transparan agar anabul bisa melihat pemandangan saat jalan-jalan.'
             },
             'TaliAnjing': {
-                img: '../foto/Tali_anjing.jfif', kategori: 'Aksesoris', nama: 'Tali anjing adjustable - bisa custom nama',
+                img: '../foto/Tali_anjing.jfif', kategori: 'Aksesoris', 
+                nama: 'Tali anjing - bisa custom nama', // NAMA DISAMAKAN
                 rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.7 (64 ulasan)', badge: '', classBadge: '',
                 harga: '<span class="harga-utama">Rp 25.000</span>',
                 desc: 'Tali tuntun (leash) anjing yang kuat dan nyaman. Bisa custom cetak nama peliharaan Anda.'
             },
             'WhiskasAdult': {
-                img: '../foto/w_mackarel_80.webp', kategori: 'Makanan hewan', nama: 'Whiskas Adult 1+ Mackerel Flavour - wet 80gr',
+                img: '../foto/w_mackarel_80.webp', kategori: 'Makanan hewan', 
+                nama: 'Whiskas Adult 1+ Mackerel Flavour - wet food 80gr', // NAMA DISAMAKAN
                 rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.9 (156 ulasan)', badge: '🔥 Terlaris', classBadge: 'terlaris',
                 harga: '<span class="harga-utama">Rp 9.000</span><span class="harga-coret" style="text-decoration:line-through; font-size:12px; color:#64748b;">Rp 10.000</span>',
                 desc: 'Makanan basah rasa makarel yang lezat dan bergizi lengkap untuk kucing dewasa.'
             },
             'KandangHamster': {
-                img: '../foto/kandang_hamster.jpeg', kategori: 'Kandang', nama: 'Kandang hamster luas - bonus hamster wheel',
+                img: '../foto/kandang_hamster.jpeg', kategori: 'Kandang', 
+                nama: 'Kandang hamster - bonus hamster wheel', // NAMA DISAMAKAN
                 rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.8 (42 ulasan)', badge: '✨ Baru', classBadge: 'baru',
                 harga: '<span class="harga-utama">Rp 289.000</span>',
                 desc: 'Kandang hamster tingkat yang luas, sudah termasuk bonus mainan roda putar (wheel).'
             },
             'PedigreeAdult': {
-                img: '../foto/Pedigree PRO High Protein Adult Mini & Small Breed.jpeg', kategori: 'Makanan Anjing', nama: 'Pedigree PRO High Protein Adult Mini 1.3KG',
+                img: '../foto/Pedigree PRO High Protein Adult Mini & Small Breed.jpeg', kategori: 'Makanan Anjing', 
+                nama: 'Pedigree PRO High Protein Adult Mini & Small Breed - dry food 1.3KG', // NAMA DISAMAKAN
                 rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 4.7 (38 ulasan)', badge: '', classBadge: '',
                 harga: '<span class="harga-utama">Rp 165.000</span>',
                 desc: 'Makanan anjing tinggi protein untuk menjaga massa otot dan energi anjing ras kecil.'
             },
             'MainanGigitan': {
-                img: '../foto/mainan gigitan hewan.webp', kategori: 'Mainan', nama: 'Mainan gigitan hewan - TPR Rubber Premium',
+                img: '../foto/mainan gigitan hewan.webp', kategori: 'Mainan', 
+                nama: 'Mainan gigitan hewan - TPR (Thermoplastic Rubber)', // NAMA DISAMAKAN
                 rating: '<i class="fas fa-star" style="color:#f59e0b;"></i> 5.0 (91 ulasan)', badge: '🏷️ -20%', classBadge: 'diskon',
                 harga: '<span class="harga-utama">Rp 7.900</span><span class="harga-coret" style="text-decoration:line-through; font-size:12px; color:#64748b;">Rp 10.000</span>',
                 desc: 'Mainan gigitan bahan karet TPR yang awet dan membantu membersihkan karang gigi hewan.'
@@ -484,6 +492,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.getElementById('modalClose').addEventListener('click', cleanUrl);
             modalOverlay.addEventListener('click', cleanUrl);
+
+            // ====================================================================
+            // 💡 FIX: MENGAKTIFKAN TOMBOL KERANJANG & BELI DARI POPUP BERANDA
+            // ====================================================================
+            const btnKeranjang = document.getElementById('modalBtnKeranjang');
+            const btnBeli = document.getElementById('modalBtnBeli');
+            
+            // 1. Cari kartu produk asli yang ada tersembunyi di halaman Shop
+            const matchedCard = Array.from(document.querySelectorAll('.produk-card')).find(c => 
+                c.querySelector('h4').textContent.trim() === item.nama
+            );
+
+            // 2. Jika kartu aslinya ketemu, hubungkan tombolnya!
+            if (matchedCard) {
+                // Fungsi Keranjang
+                btnKeranjang.onclick = () => { 
+                    matchedCard.querySelector('.btn-keranjang').click(); // Simulasikan klik pada kartu asli
+                    cleanUrl(); // Tutup popup
+                };
+
+                // Fungsi Beli Langsung
+                btnBeli.onclick = () => { 
+                    cleanUrl(); // Tutup popup
+                    
+                    // Cek login
+                    const activeUserName = JSON.parse(sessionStorage.getItem('zoon_active_user'));
+                    if (!activeUserName) {
+                        alert("Silakan Login terlebih dahulu untuk melakukan checkout pesanan.");
+                        window.location.href = "Login.html";
+                        return;
+                    }
+                    
+                    // Ambil harga dari kartu asli dan kirim ke checkout
+                    const hargaAsliNumber = parseInt(matchedCard.dataset.harga) || 0;
+                    const itemCheckout = [{ name: item.nama, harga: hargaAsliNumber, img: item.img, qty: 1 }];
+                    
+                    if(typeof openCheckout === "function") {
+                        openCheckout(itemCheckout, false);
+                    }
+                };
+            }
+            // ====================================================================
         }
     }
 });
