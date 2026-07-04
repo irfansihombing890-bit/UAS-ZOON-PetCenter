@@ -297,13 +297,25 @@
 
 .tim-avatar {
     background: linear-gradient(135deg, var(--light-blue), #b2dfe4);
-    padding: 32px 20px 20px;
-    font-size: 72px;
-    line-height: 1;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
 }
 
 .tim-card:nth-child(even) .tim-avatar {
     background: linear-gradient(135deg, #fff3e0, #ffe0b8);
+}
+
+.tim-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.tim-card:hover .tim-avatar img {
+    transform: scale(1.05);
 }
 
 .tim-info {

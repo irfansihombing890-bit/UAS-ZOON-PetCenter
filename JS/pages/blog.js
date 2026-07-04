@@ -3,7 +3,7 @@
 
     const ARTICLES = {
         "vaksinasi-anjing-kucing": {
-            photo: "/foto/vaksinhewan.png",
+            photo: "../foto/vaksinhewan.png",
             emoji: "🐾",
             gradient: "linear-gradient(135deg, #00b4c6, #009aaa)",
             tag: "Kesehatan",
@@ -20,7 +20,7 @@
             ]
         },
         "grooming-bulu-kucing": {
-            photo: "/foto/rawaykucing.jpg",
+            photo: "../foto/rawaykucing.jpg",
             emoji: "🐱",
             gradient: "linear-gradient(135deg, #e8f7f9, #b2dfe4)",
             tag: "Grooming",
@@ -37,7 +37,7 @@
             ]
         },
         "makanan-berbahaya-anjing": {
-            photo: "/foto/anjingmakan1.jpg",
+            photo: "../foto/anjingmakan1.jpg",
             emoji: "🥩",
             gradient: "linear-gradient(135deg, #fff3e0, #ffe0b8)",
             tag: "Nutrisi",
@@ -54,7 +54,7 @@
             ]
         },
         "tanda-kucing-sakit": {
-            photo: "/foto/kucingsakit.jpg",
+            photo: "../foto/kucingsakit.jpg",
             emoji: "🏥",
             gradient: "linear-gradient(135deg, #e8f8f0, #b2e4c8)",
             tag: "Klinik",
@@ -71,7 +71,7 @@
             ]
         },
         "melatih-anjing-duduk": {
-            photo: "/foto/latihanjing.jpg",
+            photo: "../foto/latihanjing.jpg",
             emoji: "🎓",
             gradient: "linear-gradient(135deg, #f0eaff, #d4b8f0)",
             tag: "Pelatihan",
@@ -88,7 +88,7 @@
             ]
         },
         "memilih-hewan-pertama": {
-            photo: "/foto/kucingnakal.jpg",
+            photo: "../foto/kucingnakal.jpg",
             emoji: "❤️",
             gradient: "linear-gradient(135deg, #ffeaea, #ffb8b8)",
             tag: "Tips",
@@ -105,7 +105,7 @@
             ]
         },
         "pet-hotel-mudik": {
-            photo: "/foto/anjingselfie.jpg",
+            photo: "../foto/anjingselfie.jpg",
             emoji: "🏨",
             gradient: "linear-gradient(135deg, #e8f7f9, #c8ecf0)",
             tag: "Penitipan",
