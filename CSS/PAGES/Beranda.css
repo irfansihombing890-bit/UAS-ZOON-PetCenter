@@ -837,3 +837,185 @@
     .bento-large, .bento-tall, .bento-small, .bento-wide { grid-column: span 1; grid-row: span 1; }
     .digital-visuals { display: none; }
 }
+
+/* =============================================================
+   RESPONSIVE ADDITIONS — BERANDA
+   Semua breakpoint yang ditambahkan di sini terpisah dari
+   yang sudah ada di atas, dikelompokkan per section.
+   ============================================================= */
+
+/* ─────────────────────────────────────────────────────────────
+   1. HERO SECTION (Slider Utama)
+   Sebelumnya: tidak ada responsive sama sekali.
+   ───────────────────────────────────────────────────────────── */
+
+/* Tablet landscape & lebar: stack vertikal */
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 90px 6% 60px;
+        min-height: auto;
+        gap: 30px;
+    }
+    .hero-left {
+        width: 100%;
+        height: 250px;
+    }
+    .hero-slide {
+        width: 100%;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content .btn-primary {
+        display: inline-block; /* agar text-align: center bekerja */
+    }
+    .hero-right {
+        width: 100%;
+        align-items: center;
+    }
+}
+
+/* Tablet portrait & mobile besar */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 85px 5% 45px;
+        gap: 24px;
+    }
+    .hero-left      { height: 230px; }
+    .hero-content h1 { font-size: 1.75rem; }
+    .hero-content p  { font-size: 0.9rem; }
+
+    .slider-container { width: 205px; height: 285px; }
+    .slider-card.next { transform: translateX(62px) translateZ(-85px) rotateY(-16deg); }
+    .slider-card.prev { transform: translateX(-62px) translateZ(-85px) rotateY(16deg); }
+    .progress-container { width: 205px; }
+}
+
+/* Mobile kecil */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 80px 4% 35px;
+        gap: 16px;
+    }
+    .hero-left      { height: 200px; }
+    .hero-content h1 { font-size: 1.45rem; }
+    .hero-content p  {
+        font-size: 0.82rem;
+        margin-bottom: 14px;
+    }
+    .hero-content .btn-primary {
+        padding: 10px 22px;
+        font-size: 0.85rem;
+    }
+    .slider-container { width: 175px; height: 250px; }
+    .slider-card.next { transform: translateX(52px) translateZ(-65px) rotateY(-14deg); }
+    .slider-card.prev { transform: translateX(-52px) translateZ(-65px) rotateY(14deg); }
+    .progress-container { width: 175px; margin-top: 20px; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   2. INTERACTIVE HERO (Animasi Hewan)
+   ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .interactive-hero {
+        min-height: 100svh; /* unit lebih aman dari 100vh di mobile browser */
+    }
+    .interactive-content {
+        padding: 0 1.5rem;
+        margin-top: 0; /* hapus -5vh yang bisa overflow di layar pendek */
+    }
+
+    /* Sembunyikan 2 pet tengah-atas (kiri:20% & kanan:20%) agar
+       tidak tumpang tindih dengan pet luar (kiri:7% & kanan:7%) */
+    .top-animals-container .top-pet:nth-child(2),
+    .top-animals-container .top-pet:nth-child(3) {
+        display: none;
+    }
+    .top-pet         { width: 72px; height: 72px; }
+    .pet             { width: 78px; height: 78px; }
+    .bottom-scenery  { height: 200px; }
+}
+
+@media (max-width: 480px) {
+    .top-pet        { width: 60px; height: 60px; }
+    .pet            { width: 65px; height: 65px; }
+    .bottom-scenery { height: 175px; }
+
+    .interactive-content .tagline {
+        font-size: clamp(2.2rem, 8vw, 3rem);
+    }
+    .interactive-content .description {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+    .premium-btn {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+        margin-top: 1.8rem;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   3. SHOP SECTION — tambahan untuk tablet
+   (768px sudah ada di atas, ini tambahan 992px)
+   ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 992px) {
+    .shop-slider .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .shop-slider .section-title { font-size: 30px; }
+    .slider-item.produk-card    { flex: 0 0 240px; min-width: 240px; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   4. PREMIUM SECTIONS — 480px
+   (992px & 768px sudah ditangani di CSS sebelumnya)
+   ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+    .premium-section    { padding: 50px 4%; }
+    .premium-heading    { font-size: 26px; }
+    .section-header-center { margin-bottom: 36px; }
+
+    /* About Us */
+    .about-image { height: 320px; }
+    .img-main    { width: 85%; height: 82%; }
+    .img-accent  { width: 58%; height: 46%; }
+
+    /* Bento Grid Layanan */
+    .bento-grid  { grid-auto-rows: 200px; gap: 16px; }
+    .bento-card  { padding: 20px; }
+    .bento-content h3 { font-size: 18px; }
+
+    /* VIP Banner */
+    .vip-banner          { padding: 28px 18px; }
+    .vip-banner-content h2 { font-size: 24px; }
+    .vip-banner-content p  { font-size: 14px; }
+
+    /* Testimonial */
+    .testi-title { font-size: 24px; margin-bottom: 30px; }
+    .testi-card  { padding: 26px 20px; }
+    .testi-card p { font-size: 14px; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   5. DIGITAL TRANSPARENCY
+   Saat kolom tunggal (≤768px), teks perlu center agar
+   tidak terlihat menggantung di kiri layar.
+   ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .digital-text {
+        text-align: center;
+    }
+    .btn-premium-gold {
+        margin-top: 16px;
+    }
+}

@@ -45,11 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.getElementById('progress-bar');
     const sliderContainer = document.getElementById('card-slider');
 
-    cards.forEach(card => {
-        const bgUrl = card.getAttribute('data-bg-horizontal');
-        if (bgUrl) {
-            const preloadImg = new Image();
-            preloadImg.src = bgUrl;
+    cards.forEach((card, i) => {
+        const bgHorizontal = card.getAttribute('data-bg-horizontal');
+        if (!bgHorizontal) return;
+    
+        // Preload gambar seperti sebelumnya
+        const preloadImg = new Image();
+        preloadImg.src = bgHorizontal;
+    
+        // Set background SEKARANG (bukan nanti saat slide aktif)
+        const bgLayer = document.getElementById(`hero-bg-${i}`);
+        if (bgLayer) {
+            bgLayer.style.backgroundImage = `linear-gradient(rgba(11, 27, 61, 0.75), rgba(11, 27, 61, 0.75)), url('${bgHorizontal}')`;
+            bgLayer.style.willChange = 'opacity'; // Hint GPU compositing
         }
     });
     
@@ -77,12 +85,6 @@ function updateSlider(index) {
             
             // ===== KODE BARU: GANTI BACKGROUND VIA OPACITY LAYER =====
             if (bgLayer) {
-                // Jika gambar belum pernah di-load di div ini, kita setel
-                if (!bgLayer.style.backgroundImage) {
-                    const bgHorizontal = card.getAttribute('data-bg-horizontal');
-                    bgLayer.style.backgroundImage = `linear-gradient(rgba(11, 27, 61, 0.75), rgba(11, 27, 61, 0.75)), url('${bgHorizontal}')`;
-                }
-                // Munculkan secara halus (trigger CSS opacity)
                 bgLayer.classList.add('active');
             }
             // =========================================================
@@ -101,8 +103,11 @@ function updateSlider(index) {
 
     // Reset dan mulai ulang animasi Progress Bar
     progressBar.style.animation = 'none';
-    void progressBar.offsetWidth; // Memicu reflow DOM agar animasi mengulang
-    progressBar.style.animation = 'fillProgress 5s linear forwards';
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                progressBar.style.animation = 'fillProgress 5s linear forwards';
+            });
+        });
 }
 
     // Fungsi untuk pindah ke slide berikutnya
