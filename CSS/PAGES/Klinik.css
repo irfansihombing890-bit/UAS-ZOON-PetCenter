@@ -1,31 +1,3 @@
-/* ── STATS BAR ── */
-.stats-bar {
-    background: var(--teal);
-    padding: 28px 5%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.stat-item {
-    text-align: center;
-    color: #ffffff;
-}
-
-.stat-item .stat-number {
-    font-family: 'Poppins', sans-serif;
-    font-size: 36px;
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 6px;
-}
-
-.stat-item .stat-label {
-    font-size: 13px;
-    opacity: 0.85;
-    font-weight: 600;
-}
-
 /* ── DOKTER SECTION ── */
 .dokter-section {
     background: #f9fefe;
@@ -51,11 +23,24 @@
     box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
 }
 
+/* Foto dokter — rasio 1:1 (persegi), konsisten seperti kartu Tim di halaman Tentang */
 .dokter-avatar {
     background: linear-gradient(135deg, var(--light-blue), #c8ecf0);
-    padding: 36px 20px 24px;
-    font-size: 90px;
-    line-height: 1;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.dokter-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.dokter-card:hover .dokter-avatar img {
+    transform: scale(1.05);
 }
 
 .dokter-info {
@@ -225,6 +210,157 @@
     margin-bottom: 24px;
 }
 
+/* ── KARTU PEMICU (TRIGGER) BOOKING ── */
+.booking-trigger {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 48px 36px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.booking-trigger-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--teal), #00b5c8);
+    color: #ffffff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.booking-trigger h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.booking-trigger p {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.6;
+    max-width: 320px;
+    margin-bottom: 26px;
+}
+
+.booking-trigger-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ── MODAL FORM BOOKING (mirip referensi: ikon paw, judul, subtitle, card putih) ── */
+.booking-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 26, 46, 0.55);
+    z-index: 2100;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.booking-modal-overlay.is-open {
+    display: flex;
+}
+
+.booking-modal {
+    position: relative;
+    background: #ffffff;
+    border-radius: 26px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 40px 40px 32px;
+    animation: bsmPop 0.3s ease;
+}
+
+.bm-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: var(--teal);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 2;
+}
+
+.bm-close:hover {
+    background: var(--teal-dark);
+    transform: rotate(90deg);
+}
+
+.bm-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.bm-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--teal), #00b5c8);
+    color: #ffffff;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+
+.bm-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.bm-subtitle {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.bm-form .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bm-form .form-group label i {
+    color: var(--teal);
+    font-size: 12px;
+    width: 14px;
+}
+
+@media (max-width: 600px) {
+    .booking-modal {
+        padding: 32px 22px 24px;
+        border-radius: 20px;
+    }
+    .bm-title {
+        font-size: 20px;
+    }
+}
+
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -254,7 +390,7 @@
     font-size: 14px;
     color: var(--text-dark);
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, background 0.2s;
     background: #fafbfc;
 }
 
@@ -268,6 +404,24 @@
 .form-group textarea {
     resize: vertical;
     min-height: 90px;
+}
+
+/* Kondisi error validasi — muncul saat field wajib belum diisi lalu form disubmit */
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+    border-color: #e74c3c;
+    background: #fff6f5;
+}
+
+.form-error-msg {
+    color: #e74c3c;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .form-submit {
@@ -289,6 +443,12 @@
 .form-submit:hover {
     background: var(--teal-dark);
     transform: translateY(-2px);
+}
+
+.form-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* ── PENYAKIT UMUM ── */
@@ -393,6 +553,14 @@
     justify-content: center;
     font-size: 22px;
     flex-shrink: 0;
+    overflow: hidden;
+}
+
+.testimoni-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .testimoni-author-info strong {
@@ -407,12 +575,143 @@
     color: var(--text-gray);
 }
 
+/* ── MODAL SUKSES BOOKING ── */
+.booking-success-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 26, 46, 0.55);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.booking-success-overlay.is-open {
+    display: flex;
+}
+
+.booking-success-modal {
+    position: relative;
+    background: #ffffff;
+    border-radius: 22px;
+    max-width: 420px;
+    width: 100%;
+    padding: 40px 32px 32px;
+    text-align: center;
+    animation: bsmPop 0.3s ease;
+}
+
+@keyframes bsmPop {
+    from { opacity: 0; transform: translateY(16px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bsm-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: #f4f6f9;
+    color: var(--text-gray);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.bsm-close:hover {
+    background: #eef0f3;
+}
+
+.bsm-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: var(--light-blue);
+    color: var(--teal);
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+}
+
+.bsm-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.bsm-desc {
+    font-size: 13px;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.bsm-summary {
+    background: #f9fefe;
+    border: 1px solid var(--light-blue);
+    border-radius: 14px;
+    padding: 16px 18px;
+    text-align: left;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bsm-summary div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.bsm-summary span:first-child {
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+.bsm-summary span:last-child {
+    font-weight: 800;
+    text-align: right;
+}
+
+.bsm-done {
+    width: 100%;
+    padding: 13px;
+    background: var(--teal);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+}
+
+.bsm-done:hover {
+    background: var(--teal-dark);
+}
+
+/* ── SCROLL REVEAL (JS-driven, aman jika JS gagal load — lihat Klinik.js) ── */
+.reveal.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 /* ── RESPONSIVE KLINIK ── */
 @media (max-width: 900px) {
-    .stats-bar {
-        padding: 20px;
-        grid-template-columns: repeat(2, 1fr);
-    }
     .dokter-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -431,9 +730,6 @@
 }
 
 @media (max-width: 480px) {
-    .stats-bar {
-        grid-template-columns: 1fr 1fr;
-    }
     .dokter-grid {
         grid-template-columns: 1fr;
     }
@@ -445,5 +741,8 @@
     }
     .form-row {
         grid-template-columns: 1fr;
+    }
+    .booking-success-modal {
+        padding: 32px 22px 24px;
     }
 }
