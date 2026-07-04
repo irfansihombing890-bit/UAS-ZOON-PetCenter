@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userHistory = allHistory.filter(h => h.user === activeUserName);
 
     const shopHistory = userHistory.filter(h => h.type === 'shop');
-    const layananHistory = userHistory.filter(h => h.type === 'grooming' || h.type === 'pethotel');
+    const layananHistory = userHistory.filter(h => h.type === 'grooming' || h.type === 'pethotel' || h.type === 'klinik');
 
     const tbodyShop = document.getElementById('tbodyShop');
     const tbodyLayanan = document.getElementById('tbodyLayanan');

@@ -88,11 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Ambil data dari sessionStorage
                 let users = JSON.parse(sessionStorage.getItem('zoon_users')) || [];
                 
-                // Cek apakah email sudah terdaftar
+                // 💡 PERBAIKAN: Cek apakah email ATAU username sudah terdaftar
                 const emailExist = users.some(u => u.email === cleanEmail);
+                const usernameExist = users.some(u => u.username === inputUsername.value.trim());
                 
                 if (emailExist) {
                     showError(inputEmail, "Email ini sudah terdaftar. Silakan login.");
+                    return; 
+                }
+                if (usernameExist) {
+                    showError(inputUsername, "Username ini sudah dipakai. Silakan pilih username lain.");
                     return; // Stop eksekusi agar pendaftaran tidak dilanjutkan
                 }
 

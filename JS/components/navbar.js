@@ -18,7 +18,7 @@
     const users = JSON.parse(sessionStorage.getItem('zoon_users')) || [];
 
     if (activeUserName) {
-        const activeUser = users.find(u => u.fullname === activeUserName);
+        const activeUser = users.find(u => u.username === activeUserName);
 
         if (activeUser) {
             // Sembunyikan tombol Login, Tampilkan Ikon Profil

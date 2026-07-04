@@ -773,7 +773,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 2. AUTOFILL DATA PEMILIK
         const users = JSON.parse(sessionStorage.getItem('zoon_users')) || [];
-        const activeUser = users.find(u => u.fullname === activeUserName);
+        const activeUser = users.find(u => u.username === activeUserName);
         if (activeUser) {
             const ownerName = document.getElementById('ownerName');
             const ownerPhone = document.getElementById('ownerPhone');

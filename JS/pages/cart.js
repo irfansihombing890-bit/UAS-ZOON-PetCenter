@@ -125,7 +125,7 @@ function openCheckout(itemsArray, fromCart = false) {
 
     // Ambil detail user yang sedang login
     const users = JSON.parse(sessionStorage.getItem('zoon_users')) || [];
-    const activeUser = users.find(u => u.fullname === activeUserName);
+    const activeUser = users.find(u => u.username === activeUserName);
 
     // AUTOFILL (Disuntik ke DOM dan dikunci/disabled)
     if (activeUser) {

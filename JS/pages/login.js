@@ -66,7 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (matchedUser) {
                     // JIKA BERHASIL LOGIN
                     sessionStorage.removeItem('zoon_failed_login'); // Bersihkan sisa gagal
-                    sessionStorage.setItem('zoon_active_user', JSON.stringify(matchedUser.fullname)); // Set user aktif
+                    
+                    // 👇 UBAH BARIS INI (Ganti matchedUser.fullname menjadi matchedUser.username) 👇
+                    sessionStorage.setItem('zoon_active_user', JSON.stringify(matchedUser.username));
                     
                     const btnSubmit = loginForm.querySelector('.btn-login');
                     btnSubmit.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Mengautentikasi...`;

@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ── 1. SCROLL REVEAL ── */
 function initScrollReveal() {
     const revealEls = document.querySelectorAll('.reveal');
-    console.log(`🔍 Ditemukan ${revealEls.length} elemen .reveal`);
     if (!revealEls.length) return;
 
     revealEls.forEach((el) => {
@@ -20,8 +19,6 @@ function initScrollReveal() {
         );
         const index = siblings.indexOf(el);
 
-        // Kondisi awal (tersembunyi) di-set lewat JS, bukan CSS default.
-        // Kalau JS gagal load, konten tetap terlihat normal (fail-safe).
         el.style.opacity = '0';
         el.style.transform = 'translateY(24px)';
         el.style.transition = `opacity 0.6s ease ${Math.min(index * 80, 400)}ms, transform 0.6s ease ${Math.min(index * 80, 400)}ms`;
@@ -42,7 +39,7 @@ function initScrollReveal() {
     revealEls.forEach((el) => observer.observe(el));
 }
 
-/* ── 2. MODAL BOOKING: BUKA / TUTUP ── */
+/* ── 2. MODAL BOOKING: BUKA / TUTUP & VERIFIKASI LOGIN ── */
 function initBookingModal() {
     const overlay = document.getElementById('bookingModalOverlay');
     const openBtn = document.getElementById('openBookingModal');
@@ -50,6 +47,37 @@ function initBookingModal() {
     if (!overlay) return;
 
     const openModal = () => {
+        // 💡 VERIFIKASI LOGIN
+        const activeUserName = JSON.parse(sessionStorage.getItem('zoon_active_user'));
+        if (!activeUserName) {
+            alert("Silakan Login terlebih dahulu untuk menjadwalkan kunjungan Klinik.");
+            window.location.href = "Login.html";
+            return;
+        }
+
+        // 💡 AUTOFILL DATA PEMILIK
+        const users = JSON.parse(sessionStorage.getItem('zoon_users')) || [];
+        const activeUser = users.find(u => u.username === activeUserName);
+        if (activeUser) {
+            const ownerName = document.getElementById('ownerName');
+            const ownerPhone = document.getElementById('ownerPhone');
+            
+            if (ownerName) {
+                ownerName.value = activeUser.fullname;
+                ownerName.setAttribute('disabled', 'true');
+                ownerName.style.background = '#f5f7fa';
+                ownerName.style.color = '#888';
+                ownerName.style.cursor = 'not-allowed';
+            }
+            if (ownerPhone) {
+                ownerPhone.value = activeUser.phone;
+                ownerPhone.setAttribute('disabled', 'true');
+                ownerPhone.style.background = '#f5f7fa';
+                ownerPhone.style.color = '#888';
+                ownerPhone.style.cursor = 'not-allowed';
+            }
+        }
+
         overlay.classList.add('is-open');
         document.body.style.overflow = 'hidden';
     };
@@ -62,28 +90,24 @@ function initBookingModal() {
     if (openBtn) openBtn.addEventListener('click', openModal);
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-    // Klik area gelap di luar modal untuk menutup
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) closeModal();
     });
 
-    // Tombol ESC menutup modal booking (kalau sedang terbuka)
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
             closeModal();
         }
     });
 
-    // Dipakai oleh initBookingForm() setelah submit berhasil
     window.__closeBookingModal = closeModal;
 }
 
-/* ── 3. FORM BOOKING: VALIDASI + SUBMIT ── */
+/* ── 3. FORM BOOKING: VALIDASI + SUBMIT KE RIWAYAT ── */
 function initBookingForm() {
     const form = document.getElementById('bookingForm');
     if (!form) return;
 
-    // Field yang wajib diisi (sesuai tanda * di label)
     const requiredFields = [
         { id: 'ownerName', label: 'Nama Pemilik' },
         { id: 'ownerPhone', label: 'Nomor WhatsApp' },
@@ -94,14 +118,12 @@ function initBookingForm() {
         { id: 'visitTime', label: 'Jam Kunjungan' },
     ];
 
-    // Tanggal kunjungan tidak boleh pilih hari yang sudah lewat
     const visitDateInput = document.getElementById('visitDate');
     if (visitDateInput) {
         const today = new Date().toISOString().split('T')[0];
         visitDateInput.setAttribute('min', today);
     }
 
-    // Hapus status error saat user mulai mengisi ulang field tersebut
     requiredFields.forEach(({ id }) => {
         const field = document.getElementById(id);
         if (field) {
@@ -135,33 +157,58 @@ function initBookingForm() {
         });
 
         if (!isValid) {
-            // Fokus & scroll otomatis ke field pertama yang bermasalah
             firstInvalidField.focus();
             firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return; // Form TIDAK disubmit kalau ada field kosong/tidak valid
+            return; 
         }
 
-        // Semua valid → kumpulkan data, tutup modal booking, tampilkan modal sukses
-        const data = {
-            ownerName: form.ownerName.value.trim(),
-            petName: form.petName.value.trim(),
-            petType: form.petType.value,
-            serviceNeeded: form.serviceNeeded.value,
-            visitDate: form.visitDate.value,
-            visitTime: form.visitTime.value,
-        };
+        // 💡 EFEK LOADING TOMBOL
+        const btnSubmit = form.querySelector('button[type="submit"]');
+        const originalText = btnSubmit.innerHTML;
+        btnSubmit.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Memproses...`;
+        btnSubmit.disabled = true;
 
-        if (typeof window.__closeBookingModal === 'function') {
-            window.__closeBookingModal();
-        }
+        setTimeout(() => {
+            const data = {
+                ownerName: form.ownerName.value.trim(),
+                petName: form.petName.value.trim(),
+                petType: form.petType.value,
+                serviceNeeded: form.serviceNeeded.value,
+                preferredDoctor: form.preferredDoctor.value || 'Dokter yang Tersedia',
+                visitDate: form.visitDate.value,
+                visitTime: form.visitTime.value,
+            };
 
-        showBookingSuccess(data);
-        form.reset();
+            // 💡 SIMPAN KE RIWAYAT TRANSAKSI
+            let zoonHistory = JSON.parse(sessionStorage.getItem('zoon_history')) || [];
+            const activeUser = JSON.parse(sessionStorage.getItem('zoon_active_user'));
+            
+            zoonHistory.push({
+                type: 'klinik',
+                user: activeUser,
+                orderId: 'KLN-' + Math.floor(10000 + Math.random() * 90000),
+                kategori: 'Klinik Hewan',
+                detail: `${data.serviceNeeded} <br><small>Dokter: ${data.preferredDoctor}</small><br><small>Hewan: ${data.petName} (${data.petType})</small>`,
+                jadwal: `${data.visitDate} | Pkl ${data.visitTime}`,
+                status: 'Menunggu'
+            });
+            sessionStorage.setItem('zoon_history', JSON.stringify(zoonHistory));
+
+            if (typeof window.__closeBookingModal === 'function') {
+                window.__closeBookingModal();
+            }
+
+            showBookingSuccess(data);
+            form.reset();
+
+            // Kembalikan tombol
+            btnSubmit.innerHTML = originalText;
+            btnSubmit.disabled = false;
+        }, 1500);
     });
 }
 
 function isValidPhone(value) {
-    // Terima format umum nomor Indonesia: boleh pakai spasi/strip, minimal 9 digit
     const digitsOnly = value.replace(/[\s-]/g, '');
     return /^(\+62|62|0)8\d{7,12}$/.test(digitsOnly);
 }
@@ -175,6 +222,11 @@ function showFieldError(field, message) {
     if (!errorEl) {
         errorEl = document.createElement('span');
         errorEl.className = 'form-error-msg';
+        errorEl.style.color = '#e74c3c';
+        errorEl.style.fontSize = '12px';
+        errorEl.style.fontWeight = '700';
+        errorEl.style.marginTop = '4px';
+        errorEl.style.display = 'block';
         group.appendChild(errorEl);
     }
     errorEl.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
@@ -198,12 +250,10 @@ function initSuccessModal() {
     if (closeBtn) closeBtn.addEventListener('click', closeBookingSuccess);
     if (doneBtn) doneBtn.addEventListener('click', closeBookingSuccess);
 
-    // Klik area gelap di luar modal juga menutup modal
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) closeBookingSuccess();
     });
 
-    // Tekan ESC untuk menutup modal sukses
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
             closeBookingSuccess();
@@ -219,10 +269,22 @@ function showBookingSuccess(data) {
     const formattedDate = formatDateID(data.visitDate);
 
     summary.innerHTML = `
-        <div><span>Nama Pemilik</span><span>${escapeHTML(data.ownerName)}</span></div>
-        <div><span>Nama Hewan</span><span>${escapeHTML(data.petName)} (${escapeHTML(data.petType)})</span></div>
-        <div><span>Layanan</span><span>${escapeHTML(data.serviceNeeded)}</span></div>
-        <div><span>Jadwal</span><span>${formattedDate}, ${escapeHTML(data.visitTime)}</span></div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="color: var(--text-gray); font-size: 13px;">Nama Pemilik</span>
+            <span style="font-weight: 700; font-size: 13px;">${escapeHTML(data.ownerName)}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="color: var(--text-gray); font-size: 13px;">Nama Hewan</span>
+            <span style="font-weight: 700; font-size: 13px;">${escapeHTML(data.petName)} (${escapeHTML(data.petType)})</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="color: var(--text-gray); font-size: 13px;">Layanan</span>
+            <span style="font-weight: 700; font-size: 13px; color: var(--teal);">${escapeHTML(data.serviceNeeded)}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="color: var(--text-gray); font-size: 13px;">Jadwal</span>
+            <span style="font-weight: 700; font-size: 13px;">${formattedDate}, ${escapeHTML(data.visitTime)}</span>
+        </div>
     `;
 
     overlay.classList.add('is-open');
