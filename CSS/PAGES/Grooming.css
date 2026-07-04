@@ -2,7 +2,7 @@
 .grooming-hero {
     position: relative;
     height: 380px;
-    background: url('/foto/grooming.webp') center/cover no-repeat;
+    background: url('../foto/grooming.webp') center/cover no-repeat;
     display: flex;
     align-items: center;
 }
@@ -130,7 +130,6 @@
     line-height: 1.4;
     margin: 0;
 }
-
 
 /* ── LAYANAN GROOMING OVERVIEW ── */
 .services-overview {
