@@ -2,7 +2,7 @@
 .grooming-hero {
     position: relative;
     height: 380px;
-    background: url('../foto/grooming.webp') center/cover no-repeat;
+    background: url('https://www.purina.co.id/sites/default/files/styles/hero_image_regular_xlarge_2x/public/2025-06/Apa%20Itu%20Grooming%20Kucing%20Inilah%20Tujuan%2C%20Jenis%2C%20Serta%20Prosedur%20Melakukannya.webp?itok=f5qTBx_A') center/cover no-repeat;
     display: flex;
     align-items: center;
 }
