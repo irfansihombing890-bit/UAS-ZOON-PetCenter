@@ -1,3 +1,52 @@
+/* ── HERO FOTO + BOOKING BAR ── */
+.klinik-hero {
+    position: relative;
+    height: 380px;
+    background: url('https://www.pietklinik.id/wp-content/uploads/2022/06/doctor-testing-animal-with-stethoscope-1199x800.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.klinik-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 60, 66, 0.55) 0%, rgba(0, 60, 66, 0.35) 60%, rgba(255, 255, 255, 0) 100%);
+}
+
+.klinik-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb.light {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 14px;
+    display: flex;
+    gap: 6px;
+}
+
+.breadcrumb.light a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.klinik-hero-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.klinik-hero-content p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 480px;
+}
+
 /* ── DOKTER SECTION ── */
 .dokter-section {
     background: #f9fefe;
