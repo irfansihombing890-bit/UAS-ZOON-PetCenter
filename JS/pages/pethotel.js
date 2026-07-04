@@ -318,7 +318,217 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // ── 8. BOOKING MODAL PET HOTEL (DISEMPURNAKAN) ──
+    // ── 8. CEK KETERSEDIAAN KANDANG ──
+    (function () {
+        const btnCek       = document.getElementById('btnCekKetersediaan');
+        const barCheckIn   = document.getElementById('barCheckIn');
+        const barCheckOut  = document.getElementById('barCheckOut');
+        const barTipeHewan = document.getElementById('barTipeHewan');
+        const barTipeKamar = document.getElementById('barTipeKamar');
+
+        const availOverlay  = document.getElementById('availabilityOverlay');
+        const availClose    = document.getElementById('availabilityClose');
+        const availBtnClose = document.getElementById('availBtnClose');
+        const availBtnBook  = document.getElementById('availBtnBook');
+
+        // Set nilai default tanggal hari ini & besok
+        if (barCheckIn && barCheckOut) {
+            const today    = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(today.getDate() + 1);
+            const fmt = d => d.toISOString().split('T')[0];
+            barCheckIn.value  = fmt(today);
+            barCheckOut.value = fmt(tomorrow);
+            barCheckIn.min    = fmt(today);
+            barCheckOut.min   = fmt(tomorrow);
+
+            barCheckIn.addEventListener('change', () => {
+                const ci = new Date(barCheckIn.value);
+                const co = new Date(ci);
+                co.setDate(ci.getDate() + 1);
+                barCheckOut.min = co.toISOString().split('T')[0];
+                if (barCheckOut.value && barCheckOut.value <= barCheckIn.value) {
+                    barCheckOut.value = co.toISOString().split('T')[0];
+                }
+            });
+        }
+
+        // Kapasitas total tiap tipe kamar
+        const KAPASITAS = {
+            'Deluxe Room'    : 10,
+            'Executive Room' : 8,
+            'Family Suite'   : 5,
+        };
+
+        /**
+         * Hitung sisa kandang berdasarkan data reservasi nyata di sessionStorage.
+         * Cek apakah ada reservasi yang periode-nya overlap dengan [checkIn, checkOut]
+         * untuk tipe kamar yang sama.
+         *
+         * Overlap terjadi jika: reservasi.checkIn < coDate && reservasi.checkOut > ciDate
+         */
+        function hitungSisaKandang(tipeKamar, checkIn, checkOut) {
+            const total = KAPASITAS[tipeKamar] || 10;
+
+            const allHistory = JSON.parse(sessionStorage.getItem('zoon_history')) || [];
+
+            // Filter hanya reservasi pet hotel dengan tipe kamar yang sama
+            const reservasiKamar = allHistory.filter(h =>
+                h.type === 'pethotel' &&
+                h.tipeKamar === tipeKamar &&
+                h.checkIn && h.checkOut
+            );
+
+            // Hitung berapa reservasi yang periode-nya bentrok (overlap) dengan tanggal yang dicek
+            const ciDate = new Date(checkIn);
+            const coDate = new Date(checkOut);
+
+            const bentrok = reservasiKamar.filter(r => {
+                const rCI = new Date(r.checkIn);
+                const rCO = new Date(r.checkOut);
+                // Overlap jika: rCI < coDate DAN rCO > ciDate
+                return rCI < coDate && rCO > ciDate;
+            });
+
+            const terisi = bentrok.length;
+            const sisa   = Math.max(0, total - terisi);
+            return { sisa, terisi, total, reservasiList: bentrok };
+        }
+
+        function formatTanggal(dateStr) {
+            if (!dateStr) return '-';
+            const d = new Date(dateStr + 'T00:00:00');
+            return d.toLocaleDateString('id-ID', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+        }
+
+        function openAvailModal(tipeKamar) {
+            if (!availOverlay) return;
+            availOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            const ci     = barCheckIn  ? barCheckIn.value  : '';
+            const co     = barCheckOut ? barCheckOut.value : '';
+            const hewan  = barTipeHewan ? barTipeHewan.value : '';
+            const kamar  = tipeKamar || (barTipeKamar ? barTipeKamar.value : '');
+
+            // Isi info pencarian
+            const setEl = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+            setEl('availCiDisplay',    formatTanggal(ci));
+            setEl('availCoDisplay',    formatTanggal(co));
+            setEl('availHewanDisplay', hewan  || '-');
+            setEl('availKamarDisplay', kamar  || '-');
+
+            // Hitung berdasarkan data nyata dari sessionStorage
+            const { sisa, terisi, total } = hitungSisaKandang(kamar, ci, co);
+
+            let status, statusClass, icon, deskripsi;
+            if (sisa === 0) {
+                status      = 'Penuh';
+                statusClass = 'status-penuh';
+                icon        = 'fa-times-circle';
+                deskripsi   = `Maaf, semua kandang <strong>${kamar}</strong> sudah terisi penuh untuk periode tersebut. Silakan coba tanggal atau tipe kamar lain.`;
+            } else if (sisa <= Math.ceil(total * 0.3)) {
+                status      = 'Hampir Penuh';
+                statusClass = 'status-hampir';
+                icon        = 'fa-exclamation-circle';
+                deskripsi   = `Hanya tersisa <strong>${sisa} kandang</strong> dari ${total} kandang <strong>${kamar}</strong>. Segera reservasi sebelum kehabisan!`;
+            } else {
+                status      = 'Tersedia';
+                statusClass = 'status-tersedia';
+                icon        = 'fa-check-circle';
+                deskripsi   = `<strong>${sisa} kandang</strong> dari ${total} kandang <strong>${kamar}</strong> masih tersedia untuk periode ini.`;
+            }
+
+            // Hitung durasi menginap
+            let durasiHtml = '';
+            if (ci && co) {
+                const msPerDay = 86400000;
+                const durasi   = Math.round((new Date(co) - new Date(ci)) / msPerDay);
+                if (durasi > 0) durasiHtml = `<div class="avail-durasi"><i class="fas fa-moon"></i> <strong>${durasi} malam</strong> menginap</div>`;
+            }
+
+            // Render kandang visual
+            const kandangHtml = Array.from({ length: total }, (_, i) => {
+                const cls = i < terisi ? 'kandang-item terisi' : 'kandang-item kosong';
+                const lbl = i < terisi ? 'Terisi' : 'Kosong';
+                return `<div class="${cls}" title="${lbl}"><i class="fas fa-${i < terisi ? 'lock' : 'door-open'}"></i><span>${lbl}</span></div>`;
+            }).join('');
+
+            const resultEl = document.getElementById('availResult');
+            if (resultEl) {
+                resultEl.innerHTML = `
+                    <div class="avail-status-badge ${statusClass}">
+                        <i class="fas ${icon}"></i>
+                        <span>${status}</span>
+                    </div>
+                    <p class="avail-desc">${deskripsi}</p>
+                    ${durasiHtml}
+                    <div class="avail-kandang-grid">
+                        <p class="avail-kandang-label"><i class="fas fa-th-large"></i> Visualisasi Kandang (${total} total)</p>
+                        <div class="avail-kandang-list">${kandangHtml}</div>
+                        <div class="avail-legend">
+                            <span class="legend-item"><span class="dot dot-kosong"></span> Kosong (${sisa})</span>
+                            <span class="legend-item"><span class="dot dot-terisi"></span> Terisi (${total - sisa})</span>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Tampilkan/sembunyikan tombol Reservasi
+            if (availBtnBook) {
+                if (sisa > 0) {
+                    availBtnBook.style.display = 'inline-flex';
+                    availBtnBook.dataset.kamar = kamar;
+                } else {
+                    availBtnBook.style.display = 'none';
+                }
+            }
+        }
+
+        function closeAvailModal() {
+            if (!availOverlay) return;
+            availOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (btnCek) {
+            btnCek.addEventListener('click', () => {
+                const ci = barCheckIn ? barCheckIn.value : '';
+                const co = barCheckOut ? barCheckOut.value : '';
+
+                if (!ci || !co) {
+                    alert('Silakan pilih tanggal Check In dan Check Out terlebih dahulu.');
+                    return;
+                }
+                if (co <= ci) {
+                    alert('Tanggal Check Out harus setelah Check In.');
+                    return;
+                }
+
+                openAvailModal('');
+            });
+        }
+
+        if (availClose)    availClose.addEventListener('click', closeAvailModal);
+        if (availBtnClose) availBtnClose.addEventListener('click', closeAvailModal);
+        if (availOverlay)  availOverlay.addEventListener('click', e => { if (e.target === availOverlay) closeAvailModal(); });
+
+        // Tombol "Reservasi Sekarang" dari modal ketersediaan
+        if (availBtnBook) {
+            availBtnBook.addEventListener('click', () => {
+                closeAvailModal();
+                // Buka modal booking dengan kamar yang sudah dipilih
+                const kamar = availBtnBook.dataset.kamar || '';
+                openBookingModal(kamar);
+            });
+        }
+
+        // Expose openAvailModal agar bisa dipanggil dari luar scope ini
+        window._openAvailModal = openAvailModal;
+    })();
+
+
+    // ── 9. BOOKING MODAL PET HOTEL (DISEMPURNAKAN) ──
     const bookingOverlay = document.getElementById("bookingOverlay");
     const bookingClose = document.getElementById("bookingClose");
     const bookingForm = document.getElementById("bookingHotelForm");
@@ -503,7 +713,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     kategori: 'Pet Hotel',
                     detail: `${room} <br><small>Hewan: ${pet}</small>`,
                     jadwal: `${ciDate} s/d<br>${coDate}`,
-                    status: 'Menunggu'
+                    status: 'Menunggu',
+                    // Field eksplisit untuk keperluan cek ketersediaan kandang
+                    tipeKamar: document.getElementById('phTipeKamar').value,
+                    checkIn:   ciDate,
+                    checkOut:  coDate
                 });
                 sessionStorage.setItem('zoon_history', JSON.stringify(zoonHistory));
                 // 👆 SELESAI 👆

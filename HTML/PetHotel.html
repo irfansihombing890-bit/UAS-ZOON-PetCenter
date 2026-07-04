@@ -11,6 +11,7 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="stylesheet" href="../CSS/PAGES/PetHotel.css">
 
     <script defer src="../JS/components/navbar.js"></script>
 </head>
@@ -118,24 +119,24 @@
                     <label>Check In</label>
                     <div class="booking-input">
                         <i class="fas fa-calendar"></i>
-                        <input type="date" value="2025-07-12">
+                        <input type="date" id="barCheckIn">
                     </div>
                 </div>
                 <div class="booking-field">
                     <label>Check Out</label>
                     <div class="booking-input">
                         <i class="fas fa-calendar"></i>
-                        <input type="date" value="2025-07-15">
+                        <input type="date" id="barCheckOut">
                     </div>
                 </div>
                 <div class="booking-field">
                     <label>Tipe Hewan</label>
                     <div class="booking-input">
                         <i class="fas fa-paw"></i>
-                        <select>
-                            <option>Anjing</option>
-                            <option>Kucing</option>
-                            <option>Hamster</option>
+                        <select id="barTipeHewan">
+                            <option value="Anjing">Anjing</option>
+                            <option value="Kucing">Kucing</option>
+                            <option value="Hamster">Hamster</option>
                         </select>
                     </div>
                 </div>
@@ -143,14 +144,14 @@
                     <label>Tipe Kamar</label>
                     <div class="booking-input">
                         <i class="fas fa-bed"></i>
-                        <select>
-                            <option>Deluxe Room</option>
-                            <option>Executive Room</option>
-                            <option>Family Suite</option>
+                        <select id="barTipeKamar">
+                            <option value="Deluxe Room">Deluxe Room</option>
+                            <option value="Executive Room">Executive Room</option>
+                            <option value="Family Suite">Family Suite</option>
                         </select>
                     </div>
                 </div>
-                <button class="btn-check">Cek Ketersediaan</button>
+                <button class="btn-check" id="btnCekKetersediaan">Cek Ketersediaan</button>
             </div>
         </div>
 
@@ -707,6 +708,66 @@
                     konfirmasi.</p>
                 <button type="button" class="btn-submit-booking" id="successClose">
                     <i class="fas fa-thumbs-up"></i> Oke, Mengerti!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── MODAL CEK KETERSEDIAAN ── -->
+    <div class="booking-overlay" id="availabilityOverlay">
+        <div class="availability-modal">
+            <button class="booking-close" id="availabilityClose" aria-label="Tutup">&times;</button>
+
+            <div class="avail-header">
+                <div class="avail-header-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h2>Hasil Cek Ketersediaan</h2>
+                <p id="availSubtitle">Memeriksa ketersediaan kandang...</p>
+            </div>
+
+            <!-- Info Pencarian -->
+            <div class="avail-search-info" id="availSearchInfo">
+                <div class="avail-info-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <div>
+                        <span class="avail-info-label">Check In</span>
+                        <span class="avail-info-val" id="availCiDisplay">-</span>
+                    </div>
+                </div>
+                <div class="avail-info-item">
+                    <i class="fas fa-calendar-minus"></i>
+                    <div>
+                        <span class="avail-info-label">Check Out</span>
+                        <span class="avail-info-val" id="availCoDisplay">-</span>
+                    </div>
+                </div>
+                <div class="avail-info-item">
+                    <i class="fas fa-paw"></i>
+                    <div>
+                        <span class="avail-info-label">Tipe Hewan</span>
+                        <span class="avail-info-val" id="availHewanDisplay">-</span>
+                    </div>
+                </div>
+                <div class="avail-info-item">
+                    <i class="fas fa-bed"></i>
+                    <div>
+                        <span class="avail-info-label">Tipe Kamar</span>
+                        <span class="avail-info-val" id="availKamarDisplay">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hasil Status Ketersediaan -->
+            <div class="avail-result" id="availResult">
+                <!-- Diisi oleh JS -->
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="avail-actions" id="availActions">
+                <button class="btn-avail-close" id="availBtnClose">Tutup</button>
+                <button class="btn-avail-book" id="availBtnBook" style="display:none;">
+                    <i class="fas fa-calendar-plus"></i> Reservasi Sekarang
                 </button>
             </div>
         </div>
