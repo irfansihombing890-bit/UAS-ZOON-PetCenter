@@ -274,77 +274,106 @@ nav {
 }
 
 /* ── RESPONSIVE PADA TABLET & HP ── */
-@media (max-width: 900px) {
-    nav {
-        padding: 14px 5%;
+@media (max-width: 992px) {
+    nav { 
+        padding: 14px 5%; 
     }
-    .list-hamburger {
-        display: flex;
+    
+    .list-hamburger { 
+        display: flex; 
+        z-index: 1001; 
     }
+    
+    /* Perbaikan Menu Laci Mobile (Animasi Halus & Warna Asli) */
     .nav-links {
-        display: none;
+        display: flex;
         flex-direction: column;
-        width: 100%;
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: #ffffff;
-        padding: 16px 5%;
+        width: 100%;
+        background-color: #ffffff; /* Sesuai warna asli navbar */
+        padding: 0 5%;
         border-top: 1px solid #eef0f3;
-        gap: 8px;
+        gap: 0;
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         align-items: flex-start;
+        
+        /* Trik agar tidak tiba-tiba muncul */
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
     }
-    .nav-links a, .dropdown {
-        display: block;
-        width: 100%;
+    
+    /* Muncul saat hamburger diklik */
+    .navtoggle:checked ~ .nav-links { 
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        padding: 16px 5%;
     }
-    .dropbtn {
-        width: 100%;
-        justify-content: space-between;
-        padding: 12px 16px;
+
+    .nav-links li { width: 100%; }
+    .nav-links a, .dropdown { display: block; width: 100%; }
+    
+    .dropbtn { 
+        width: 100%; 
+        justify-content: space-between; 
+        padding: 12px 16px; 
     }
-    .nav-links a {
-        padding: 12px 16px;
+    
+    .nav-links > li > a { 
+        padding: 12px 16px; 
+        border-radius: 8px; 
+        margin-bottom: 4px; 
+    }
+    
+    /* Perbaikan Dropdown Mobile */
+    .dropdown-content { 
+        position: static; 
+        box-shadow: none; 
+        background-color: var(--light-blue); /* Mengikuti variabel warna asli */
+        padding-left: 16px; 
         border-radius: 8px;
+        display: none;
+        margin-bottom: 8px;
     }
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background-color: transparent;
-        padding-left: 16px;
+    
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+        display: block;
     }
-    .navtoggle:checked ~ .nav-links {
-        display: flex;
+
+    /* Animasi Ikon Hamburger Menjadi X */
+    .list-hamburger span {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .navtoggle:checked ~ .nav-right .list-hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .navtoggle:checked ~ .nav-right .list-hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    .navtoggle:checked ~ .nav-right .list-hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
 
 @media (max-width: 480px) {
-    .topbar {
-        font-size: 10px;
-        gap: 10px;
+    .topbar { 
+        font-size: 11px; 
+        flex-direction: column; 
+        gap: 4px; 
+        padding: 8px; 
     }
-    .logo-text span:first-child {
-        font-size: 13px;
-    }
-    .logo-text span:last-child {
-        font-size: 9px;
-    }
-    .logo-icon {
-        width: 34px;
-        height: 34px;
-        font-size: 16px;
-    }
-    .nav-right {
-        gap: 12px;
-    }
-    .login-text {
-        display: none; 
-    }
-    .btn-nav-login {
-        padding: 8px 10px;
-        border-radius: 50%;
-    }
+    .logo-text span:first-child { font-size: 14px; }
+    .logo-text span:last-child { font-size: 10px; }
+    .logo-icon { width: 36px; height: 36px; font-size: 18px; }
+    .nav-right { gap: 12px; }
+    .login-text { display: none; }
+    .btn-nav-login { padding: 8px 10px; border-radius: 50%; }
 }
 
 /* ==========================================

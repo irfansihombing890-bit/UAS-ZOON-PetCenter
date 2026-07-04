@@ -202,7 +202,6 @@
 
 .ticker-wrap { position: absolute; top: 0; width: 100%; background-color: var(--ticker-bg); padding: 12px 0; overflow: hidden; display: flex; white-space: nowrap; z-index: 10; }
 .ticker { display: inline-block; white-space: nowrap; animation: ticker 25s linear infinite; font-size: 0.9rem; letter-spacing: 1px; color: var(--ticker-text); font-weight: 300; text-transform: uppercase; }
-.ticker-wrap:hover .ticker { animation-play-state: paused; }
 @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 .ticker-item { margin: 0 2rem; display: inline-flex; align-items: center; gap: 0.5rem; }
 .ticker-dot { color: var(--text-accent); font-weight: bold; }
